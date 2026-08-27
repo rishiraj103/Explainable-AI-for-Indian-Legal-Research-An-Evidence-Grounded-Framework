@@ -1,0 +1,11 @@
+{
+  "loaded_at_utc": "2026-08-27T13:06:15.198091+00:00",
+  "database": "local Docker PostgreSQL",
+  "years": [
+    1950,
+    2020
+  ],
+  "source_rows_read": 2343407,
+  "unique_chunks_loaded": 2036945,
+  "duplicate_chunk_ids_skipped": 306462
+}

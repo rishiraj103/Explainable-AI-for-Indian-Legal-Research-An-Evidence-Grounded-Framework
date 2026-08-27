@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: legal-xai-postgres
+    environment:
+      POSTGRES_DB: legal_xai
+      POSTGRES_USER: legal_xai
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:54329:5432"
+    volumes:
+      - legal_xai_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U legal_xai -d legal_xai"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  legal_xai_postgres_data:
