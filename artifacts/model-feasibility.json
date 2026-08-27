@@ -1,0 +1,136 @@
+{
+  "run_at_utc": "2026-08-27T07:22:15.416617+00:00",
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9",
+    "torch": "2.13.0+cu130",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "models": [
+    {
+      "model": "law-ai/InLegalBERT",
+      "status": "passed",
+      "device": "cuda",
+      "load_seconds": 4.2,
+      "parameter_count": 132955194,
+      "outputs": [
+        {
+          "prompt": "The appeal is hereby [MASK].",
+          "top_predictions": [
+            {
+              "token": "dismissed",
+              "probability": 0.958101
+            },
+            {
+              "token": "allowed",
+              "probability": 0.030998
+            },
+            {
+              "token": "rejected",
+              "probability": 0.008693
+            },
+            {
+              "token": "admitted",
+              "probability": 0.000831
+            },
+            {
+              "token": "accepted",
+              "probability": 0.000323
+            }
+          ],
+          "inference_seconds": 0.366
+        },
+        {
+          "prompt": "The petitioner was given an opportunity of [MASK].",
+          "top_predictions": [
+            {
+              "token": "hearing",
+              "probability": 0.985135
+            },
+            {
+              "token": "representation",
+              "probability": 0.002726
+            },
+            {
+              "token": "defence",
+              "probability": 0.00177
+            },
+            {
+              "token": "consideration",
+              "probability": 0.001226
+            },
+            {
+              "token": "appearance",
+              "probability": 0.000727
+            }
+          ],
+          "inference_seconds": 0.008
+        }
+      ],
+      "peak_gpu_memory_mb": 519.12
+    },
+    {
+      "model": "nlpaueb/legal-bert-small-uncased",
+      "status": "passed",
+      "device": "cuda",
+      "load_seconds": 2.897,
+      "parameter_count": 35099962,
+      "outputs": [
+        {
+          "prompt": "The appeal is hereby [MASK].",
+          "top_predictions": [
+            {
+              "token": "dismissed",
+              "probability": 0.622511
+            },
+            {
+              "token": "withdrawn",
+              "probability": 0.261965
+            },
+            {
+              "token": "discontinued",
+              "probability": 0.016556
+            },
+            {
+              "token": "excluded",
+              "probability": 0.011276
+            },
+            {
+              "token": "stayed",
+              "probability": 0.008735
+            }
+          ],
+          "inference_seconds": 0.016
+        },
+        {
+          "prompt": "The petitioner was given an opportunity of [MASK].",
+          "top_predictions": [
+            {
+              "token": "counsel",
+              "probability": 0.152036
+            },
+            {
+              "token": "review",
+              "probability": 0.058943
+            },
+            {
+              "token": "appeal",
+              "probability": 0.04383
+            },
+            {
+              "token": "representation",
+              "probability": 0.03277
+            },
+            {
+              "token": "distribution",
+              "probability": 0.025951
+            }
+          ],
+          "inference_seconds": 0.01
+        }
+      ],
+      "peak_gpu_memory_mb": 143.79
+    }
+  ]
+}
