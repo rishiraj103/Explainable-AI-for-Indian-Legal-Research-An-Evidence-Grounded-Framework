@@ -1,4 +1,8 @@
-from legal_xai.temporal import TemporalStatus, assess_temporal_eligibility
+from legal_xai.temporal import (
+    TemporalStatus,
+    assess_temporal_eligibility,
+    partition_evidence_candidates,
+)
 
 
 def test_earlier_year_is_eligible() -> None:
@@ -34,3 +38,17 @@ def test_missing_ildc_year_is_excluded() -> None:
 def test_unparseable_date_is_excluded() -> None:
     decision = assess_temporal_eligibility("2010_123.txt", "unknown")
     assert decision.status is TemporalStatus.EXCLUDED_MISSING_METADATA
+
+
+def test_retrieval_candidates_are_partitioned_without_dropping_exclusions() -> None:
+    candidates = [
+        {"source_id": "earlier", "decision_date": "2009-12-31"},
+        {"source_id": "same", "decision_date": "2010-01-01"},
+        {"source_id": "later", "decision_date": "2011-01-01"},
+        {"source_id": "unknown", "decision_date": None},
+    ]
+    buckets = partition_evidence_candidates(2010, candidates)
+    assert [item["source_id"] for item in buckets.eligible] == ["earlier"]
+    assert [item["source_id"] for item in buckets.ambiguous_excluded] == ["same"]
+    assert [item["source_id"] for item in buckets.ineligible] == ["later"]
+    assert [item["source_id"] for item in buckets.missing_metadata] == ["unknown"]

@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from enum import StrEnum
 import re
-from typing import Any
+from typing import Any, Iterable, Mapping
 
 
 class TemporalStatus(StrEnum):
@@ -22,6 +22,16 @@ class TemporalDecision:
     query_year: int | None
     precedent_year: int | None
     reason: str
+
+
+@dataclass(frozen=True)
+class TemporalCandidateBuckets:
+    """Evidence candidates partitioned without silently losing exclusions."""
+
+    eligible: tuple[Mapping[str, Any], ...]
+    ambiguous_excluded: tuple[Mapping[str, Any], ...]
+    ineligible: tuple[Mapping[str, Any], ...]
+    missing_metadata: tuple[Mapping[str, Any], ...]
 
 
 def _parse_year(value: Any) -> int | None:
@@ -84,4 +94,27 @@ def assess_temporal_eligibility(
         query_year=query_year,
         precedent_year=precedent_year,
         reason="Precedent year is later than the ILDC query year.",
+    )
+
+
+def partition_evidence_candidates(
+    ildc_query_year: int | str | None,
+    candidates: Iterable[Mapping[str, Any]],
+) -> TemporalCandidateBuckets:
+    """Partition retrieved evidence using each candidate's exact decision date.
+
+    The caller should return only ``eligible`` candidates to the evidence
+    generator. The other buckets are intentionally retained for auditing,
+    especially the same-year ambiguity bucket.
+    """
+
+    buckets: dict[TemporalStatus, list[Mapping[str, Any]]] = {status: [] for status in TemporalStatus}
+    for candidate in candidates:
+        decision = assess_temporal_eligibility(ildc_query_year, candidate.get("decision_date"))
+        buckets[decision.status].append(candidate)
+    return TemporalCandidateBuckets(
+        eligible=tuple(buckets[TemporalStatus.ELIGIBLE]),
+        ambiguous_excluded=tuple(buckets[TemporalStatus.AMBIGUOUS_EXCLUDED]),
+        ineligible=tuple(buckets[TemporalStatus.INELIGIBLE]),
+        missing_metadata=tuple(buckets[TemporalStatus.EXCLUDED_MISSING_METADATA]),
     )
