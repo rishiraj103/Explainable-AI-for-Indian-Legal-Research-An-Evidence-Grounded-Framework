@@ -1,0 +1,10 @@
+{
+  "primary_model": {
+    "id": "law-ai/InLegalBERT",
+    "revision": "b5ecfed8ed6cf9d25a3cb8225a8c52f161f7401a",
+    "framework": "transformers",
+    "architecture": "BERT masked-language model",
+    "device_preference": "cuda",
+    "selection_basis": "Indian legal-domain pretraining and successful local GPU feasibility check"
+  }
+}
