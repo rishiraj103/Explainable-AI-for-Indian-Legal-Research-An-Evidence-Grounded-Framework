@@ -16,3 +16,6 @@ __pycache__/
 
 # Local PostgreSQL credentials
 .env
+
+# Local retrieval index (rebuild from PostgreSQL provenance)
+/retrieval/
