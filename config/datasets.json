@@ -1,0 +1,37 @@
+{
+  "prediction_baseline": {
+    "dataset": "ILDC Single",
+    "source": "Exploration-Lab/IL-TUR",
+    "revision": "d16219ad0423cc181ec8460d930fd10a907664b6",
+    "splits": {
+      "train": 5082,
+      "validation": 994,
+      "test": 1517
+    },
+    "fields": ["id", "text", "label"],
+    "date_resolution": "year_only"
+  },
+  "evidence_corpus": {
+    "dataset": "Indian Supreme Court Judgments",
+    "source": "s3://indian-supreme-court-judgments/",
+    "years": [1950, 2020],
+    "stage": "metadata_only_no_pdfs",
+    "fields": [
+      "title",
+      "petitioner",
+      "respondent",
+      "citation",
+      "case_id",
+      "decision_date",
+      "disposal_nature",
+      "court",
+      "path",
+      "year"
+    ]
+  },
+  "temporal_eligibility": {
+    "eligible_when": "precedent_decision_year < ildc_query_year",
+    "same_year": "ambiguous_excluded",
+    "missing_or_unparseable_metadata": "excluded_missing_metadata"
+  }
+}

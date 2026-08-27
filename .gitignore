@@ -1,0 +1,10 @@
+# Raw corpora are acquired locally and must not be committed.
+/corpus/ildc/*.parquet
+/corpus/ecourts/metadata/
+/corpus/download_record.json
+/corpus/dedup_matches.csv
+/corpus/temporal_ambiguities.csv
+
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
