@@ -29,23 +29,38 @@ METADATA_FIELDS = [
 ]
 
 
-def process_year(corpus_root: Path, year: int, max_words: int, max_sentences: int) -> dict[str, int]:
-    metadata_path = corpus_root / "ecourts" / "metadata" / f"year={year}" / "metadata.parquet"
+def load_metadata(corpus_root: Path, metadata_year: int, cache: dict[int, pd.DataFrame]) -> pd.DataFrame:
+    """Load metadata by its source year, retaining the stable source `path`."""
+
+    if metadata_year not in cache:
+        metadata_path = corpus_root / "ecourts" / "metadata" / f"year={metadata_year}" / "metadata.parquet"
+        cache[metadata_year] = pd.read_parquet(metadata_path, columns=METADATA_FIELDS).set_index("path")
+    return cache[metadata_year]
+
+
+def process_year(
+    corpus_root: Path,
+    year: int,
+    max_words: int,
+    max_sentences: int,
+    metadata_cache: dict[int, pd.DataFrame],
+) -> dict[str, int]:
     pdf_dir = corpus_root / "ecourts" / "pdfs" / f"year={year}"
     output_dir = corpus_root / "ecourts" / "cleaned" / f"year={year}"
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / "chunks.jsonl"
 
-    if not metadata_path.exists() or not pdf_dir.exists():
-        return {"year": year, "documents": 0, "chunks": 0, "missing_pdfs": 0}
+    if not pdf_dir.exists():
+        return {"year": year, "documents": 0, "chunks": 0, "missing_metadata": 0}
 
-    metadata = pd.read_parquet(metadata_path, columns=METADATA_FIELDS).set_index("path")
-    documents = chunks = missing_pdfs = excluded_non_evidentiary_chunks = 0
+    documents = chunks = missing_metadata = excluded_non_evidentiary_chunks = 0
     with output_path.open("w", encoding="utf-8") as output:
         for pdf_path in sorted(pdf_dir.glob("*_EN.pdf")):
             source_path = pdf_path.stem.removesuffix("_EN")
+            metadata_year = int(source_path[:4]) if source_path[:4].isdigit() else year
+            metadata = load_metadata(corpus_root, metadata_year, metadata_cache)
             if source_path not in metadata.index:
-                missing_pdfs += 1
+                missing_metadata += 1
                 continue
             row = metadata.loc[source_path]
             if isinstance(row, pd.DataFrame):
@@ -68,7 +83,8 @@ def process_year(corpus_root: Path, year: int, max_words: int, max_sentences: in
                         }
                         record["path"] = source_path
                         record.update({
-                            "chunk_id": f"{row['case_id']}::p{chunk.page_number:04d}::c{chunk.chunk_number:03d}",
+                            "source_id": source_path,
+                            "chunk_id": f"{source_path}::p{chunk.page_number:04d}::c{chunk.chunk_number:03d}",
                             "pdf_file": pdf_path.name,
                             "page_number": chunk.page_number,
                             "passage_start_char": chunk.start_char,
@@ -82,7 +98,7 @@ def process_year(corpus_root: Path, year: int, max_words: int, max_sentences: in
         "year": year,
         "documents": documents,
         "chunks": chunks,
-        "missing_pdfs": missing_pdfs,
+        "missing_metadata": missing_metadata,
         "excluded_non_evidentiary_chunks": excluded_non_evidentiary_chunks,
     }
 
@@ -96,7 +112,8 @@ def main() -> None:
     parser.add_argument("--max-sentences", type=int, default=4)
     args = parser.parse_args()
 
-    results = [process_year(args.corpus_root, year, args.max_words, args.max_sentences)
+    metadata_cache: dict[int, pd.DataFrame] = {}
+    results = [process_year(args.corpus_root, year, args.max_words, args.max_sentences, metadata_cache)
                for year in range(args.start_year, args.end_year + 1)]
     record = {
         "updated_at_utc": datetime.now(UTC).isoformat(),
