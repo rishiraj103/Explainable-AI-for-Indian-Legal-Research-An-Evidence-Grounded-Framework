@@ -15,7 +15,7 @@
     "dataset": "Indian Supreme Court Judgments",
     "source": "s3://indian-supreme-court-judgments/",
     "years": [1950, 2020],
-    "stage": "raw_pdfs_and_cleaned_chunks_no_retrieval_index",
+    "stage": "bm25_indexed_with_postgresql_provenance",
     "pdf_count": 39069,
     "cleaned_chunk_count": 2343407,
     "fields": [
