@@ -13,10 +13,10 @@
 
 - **Source:** [vanga/indian-supreme-court-judgments](https://github.com/vanga/indian-supreme-court-judgments), public AWS Open Data bucket `s3://indian-supreme-court-judgments/` accessed without authentication.
 - **License:** CC-BY-4.0.
-- **Subset loaded:** metadata only (no PDFs), 39,073 downloaded rows (33,700 distinct case IDs) from yearly Parquet files for 1950–2020. The requested 1947–1949 period is unavailable because the source begins in 1950.
+- **Subset loaded:** 39,073 downloaded metadata rows (33,700 distinct case IDs) from yearly Parquet files for 1950–2020. The raw-English-PDF acquisition is resumable and has been validated against all 571 source PDFs for 2020; no retrieval index has been built. The requested 1947–1949 period is unavailable because the source begins in 1950.
 - **Exact-date coverage:** 39,073 records with a parseable `decision_date` out of 39,073; observed dates span 1950-03-14 to 2020-12-18.
 - **Fields retained for the next stage:** `title`, `petitioner`, `respondent`, `citation`, `case_id`, `decision_date`, `disposal_nature`, `court`, `path`, and `year`. The downloaded source Parquet files remain local-only.
-- **Known limitations:** this stage intentionally does not download judgment PDFs or build a retrieval index. Metadata alone cannot provide the evidence passages needed for E3/E4; PDFs or authoritative text will be acquired only in the approved next-week corpus-engineering work.
+- **Known limitations:** exact dates are present, but `case_id` can occasionally disagree with `decision_date`/citation (observed during the 2020 chunk review). The source `path`, original `case_id`, citation, and date are therefore all retained; downstream audits must not infer the decision year from `case_id` alone. No retrieval index has been built.
 
 ## Leakage-audit summary
 

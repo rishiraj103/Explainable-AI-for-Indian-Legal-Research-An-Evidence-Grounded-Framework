@@ -4,6 +4,8 @@
 /corpus/ecourts/pdfs/
 /corpus/ecourts/archives/
 /corpus/ecourts/acquisition_record.json
+/corpus/ecourts/cleaned/
+/corpus/ecourts/cleaning_record.json
 /corpus/download_record.json
 /corpus/dedup_matches.csv
 /corpus/temporal_ambiguities.csv
