@@ -1,0 +1,270 @@
+# ILDC facts-extraction validation
+
+Rule version: `ildc-predecision-facts-v1`  
+Validation date: generated before any E1 model fit  
+Deterministic sample: five documents per label from each fixed split (30 total), seed `202605`.
+
+## Frozen rule
+
+Keep text before the earlier of the configured closing-section/dispositive boundary and the frozen 60% positional cap. When possible, move every cut back to the prior complete sentence. The manual review checks that no outcome language remains and that the slice retains useful factual content.
+
+## Corpus-wide automated checks
+
+- **documents:** `7593`
+- **boundary reasons:** `{'dispositive_cue': 378, 'positional_cap': 7180, 'section_header': 35}`
+- **median source words:** `2959`
+- **median facts words:** `1688`
+- **median retained fraction:** `0.5944`
+- **short facts inputs under 100 words:** `37`
+- **excluded low retention or short inputs:** `87`
+- **incomplete facts inputs:** `2`
+- **remaining known outcome cues:** `0`
+- **eligible by fixed split:** `{'train': 5020, 'validation': 983, 'test': 1503}`
+
+Automated cue scans are necessary but not sufficient: the manual review below checks for semantic leakage and lost factual content.
+
+## Deterministic manual-review sample
+
+### train / `1976_184` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `1382/2325`; retained fraction: `0.5982`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CIVIL APPELLATE JURISDICTION Civil Appeal No. 1155 of 1971.  Appeal by Special Leave from the Judgment and Order dated 17-11-1969 of the Allahabad High Court in First Appeal No. 178/61 . C. Manchanda, Sadhu Singh, R. N. Kapoor, Mrs. Nirmala Gupta, Uzzal Singh and J. M. Khanna for the appellant. Gobind Das, P. P. Rao, Girish Chandra and S. P. Nayar for the respondents. The Judgment of the Court was delivered by BEG, J. This is an appeal by special'
+- Boundary context: 'me subsequent to 1939 also. In any case, it was for the appellant to satisfy the Departmental authorities, which had looked into the case upto its final stages, that he had suffered some injustice which to be set right. He had been given a second opportunity by the punishing authority before it inflicted the punishment of demotion. Nothing further was required by law. And, it was probably because the appellant was absolved of charges involving companyruption in the discharge '
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1961_51` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `670/1106`; retained fraction: `0.597`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CIVIL APPELLATE JURISDICTION Civil Appeal No. 90 of 1956. Appeal by special leave from the judgment and decree dated August 5, 1953, of the Bombay High Court in Appeal from the Appellate Decree No. 915 of 1951. S. K. Sastri, for the appellant. G. Ratnaparkhi, for respondent No. 1. 1961. April 12. The Judgment of the Court was delivered by RAGHUBAR DAYAL, J.-This appeal, by special leave, is against the judgment and decree of the High Court of Bom'
+- Boundary context: 'h set aside the decree of the Assistant Judge and restoring the decree of the trial Court, dismissed the suit. It held that the sale deed in favour- of the plaintiff too would be hit by the provisions of s.9 of the Act. It further held that the provisions of s.9 indicate that there was numberabsolute prohibition against a transfer of the occupancy right. A transfer by an occupancy tenant without the companysent of the khot cannot be held to be void for all purposes and it wou'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1984_186` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `1354/2282`; retained fraction: `0.5909`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CRIMINAL APPELLATE JURISDICTION Petition for Special Leave to Appeal  Criminal  No. 1923 of 1984. From the Judgment and Order dated the 19th June, 1984 of the Madras High Court in Crl. Misc. Petition No. 8164/83, 8168, 8166 8170/83. S. Vaidyanathan for the Petitioner. The Order of the Court was delivered by VENKATARAMIAH, J. The petitioner is the proprietor of M s. Ratnam Food Stuff Co., Tuticorin. He is an assessee under the Income-tax Act, 1961'
+- Boundary context: ' is pending. A mere expectation of success in some proceeding in appeal or reference under the Act cannot companye in the way of the institution of the criminal proceedings under section 276C and section 277 of the Act. In the criminal case all the ingredients of the offence in question have to be established in order to secure the companyviction of the accused. The criminal companyrt numberdoubt has to give due regard to the result of any proceeding under the Act having a be'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1975_358` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `1275/2205`; retained fraction: `0.5799`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CIVIL APPELLATE JURISDICTION Civil Appeal No. 98 of 1971. Appeal by special leave from the Judgment and Order dated the 26th February 1970 of the Mysore High Court in T.R.P. No. 18 of 1969. V. Patel, Vineet Kumar and B. P. Singh for the Appellant. P. Raman, Addl. Sol. General, N. Nettar and R. C. Kaushik for the Respondent. The Judgment of the Court was delivered by UNTWALIA, J. In this appeal by special leave the question for determination is wh'
+- Boundary context: ' upon it as dealer under the various Sales Tax Acts and Rules. As per clause 13 of the agreement only the difference of price after deducting the companypanys remuneration was to be credited to the Corporations account. Section 2 b  of the Central Act reads as follows dealer means any person who carries on the business of buying or selling goods, and includes a Government which carries on such business sale within the meaning of clause  g  means any transfer of property in go'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1965_173` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `1214/2116`; retained fraction: `0.5929`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CIVIL APPELLATE JURISDICTION Civil Appeals Nos. 408-409 of 1964. Appeal by special leave from the judgment and order dated February 5, 1963 of the Rajasthan High Court in D.B. Civil Writ Petitions Nos. 172 and III of 1961. C. Kosliwal, Advocate-General, for the State of Rajasthan, K. K. Jain and R. N. Sachthey, for the appellant. K. Garg, S. C. Aqarwala, D. P. Singh and M. K. Rama- murthi, for the respondent. The Judgment of the Court was deliver'
+- Boundary context: 'rror, or wrong statement in any returns furnished by him under sub-section  1 , he may furnish a revised return in the prescribed manner before the time prescribed for the submission of the next return but number later. Every deposit of tax made under sub- section  2  shall be deemed to be provisional subject to necessary adjustments in pursuance of the final assessment of tax made for any year under section 10. S. 16 1 -If any person-  a  has without reasonable cause failed '
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1972_120` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `3514/6025`; retained fraction: `0.5907`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CIVIL APPELLATE JURISDICTION Civil Appeal No. 1734 of 1967. Appeal by Special Leave from the Award dated the May 19, 1967 of the Industrial Tribunal  1  at Allahabad in Adjudication Case No. 15 of 1960. V. Gupte, D. N. Mukherjee and Gautam Banerjee, for the appellant. C. Bhattacharyaand M. V. Goswami, for respondents Nos. 1 and 3 to 8. P. Rana, for respondent No. 9. The Judgment of the Court was delivered by Grover, J. This is an appeal by specia'
+- Boundary context: 'edule so far as the State of U.P. was companycerned in November 1959 numberStanding Orders companyld be legally or validly framed and certified providing for age of retirement and superannuation. In Saroj Kumar Ghosh v. Orissa State Electricity Board 1  the Orissa High Court companysidered this question a some length and expressed the view that where a Standing Order has been certified by the Certifying Officer companytaining a clause relating to superannuation number company'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1961_203` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `471/870`; retained fraction: `0.5511`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CRIMINAL APPELLATE JURISDICTIONCriminal Appeal No. 129 of 1960. Appeal by special leave from the judgment and order dated March 9, 1960, of the Allahabad High Court in Criminal Revision No. 697 of 1959. Naunit Lal, for the appellant. C. Mathur and C. P. Lal, for the respondent. 1961. April 5. The Judgment of the Court was delivered by SARKAR, J.-The appellant who had earlier left India, returned on a passport granted by the Government of Pakistan'
+- Boundary context: 'therefore, a person who at the date of the entry was a foreigner. Now, the word foreigner in paragraph 7 has the same meaning as that word has in the Foreigners Act. The word foreigner is defined in that Act in s. 2 a . That definition has changed from time to time, but we are companycerned with the definition as it stood in 1953 when the appellant entered India, which was in these terms foreigner means a person who  1  is number a natural-born British subject as defined in s'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1991_62` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `2082/3445`; retained fraction: `0.5945`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CIVIL APPELLATE JURISDICTION Civil Appeal No. 2891  NT  of 1977. Appeal by Certificate from the Judgment and Order dated 15.10.1975 of the Gujarat High Court O.J. Appeal No. 2 of 1975. Datta, P.H. Parekh and J.P. Pathak for the Appellant. Dushyant Dave, Anip Sachthey and Ashish Verma for the Respondent. The Judgment of the Court was delivered by PUNCHHI, J. What is the ambit of the States claim to priority in relation to revenues, taxes, cesses a'
+- Boundary context: 'ority in respect of all the debts for local rates which maybe outstanding at that time the priority is in respect only of such rates as became due and payable within twelve months before, in this case, January 28, 1931. And further at pages 577-78 as follows The rate was made on April 1, 1930 at that time it became due and payable. The alteration that has been made subsequently in September of the year 1931 is to fit into the section to which I have referred, and by that sect'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1951_69` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `972/1667`; retained fraction: `0.5774`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'Patanjali Sastri, J. This is an appeal by special leave from an order of the High Court of Judicature at Patna setting aside an order of acquittal of the appellants by the Sessions Judge, Purnea, and directing their retrial. The appellants were prosecuted for alleged offences under sections 147, 148, 323, 324, 326, 302 and 302/149 of the Indian Penal Code at the instance of one Polai Lal Biswas who lodged a companyplaint against them before the p'
+- Boundary context: ' accordingly acquitted the appellants of all the charges framed against them. Against that order the companyplainant Polai preferred a revision petition to the High Court under section 439 of the Criminal Procedure Code. The learned Judge who heard the petition reviewed the evidence at some length and came to the companyclusion that the judgment of the learned Sessions Judge companyld number be allowed to stand as the acquittal of the appellants was perverse. In his opinion, '
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### train / `1978_82` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `1428/2386`; retained fraction: `0.5962`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'CIVIL APPELLATE JURISDICTION Civil,Appeal No. 2388 of 1968.  Appeal by Special Leave from the Judgment and Decree dt. 20-3-1967 of the Patna High Court in First Appeal No. 488, of 1961  Lal Narain Sinha, F. C. Nariman, S. C. Aggarwala Aruneshwar Gupta For the Appellants B. N. Sinha, S. N. Prasad for the Respondent The Judgment of the Court was delivered by SARKARIA, J.-This appeal by special leave, is directed against a judgment, dated March 20, '
+- Boundary context: 'ingness to have his share companyverted into money, so that the companysharers may, by means of the procedure provided in Section 3, buy them out. The request for sale envisaged by Section 2 must by one for public sale. If numbersuch request has been made to the Court, Section 3 cannot be brought into operation. Now let us see whether the plaint companytained any prayer which-as the High Court has held-substantially amounted to a request for such sale under Section 2. The mat'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1985_216` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `836/1455`; retained fraction: `0.5779`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 625 of 1972. from the judgment and order dated 13.9.1971 of the punjab haryana high companyrt in l.p.a. number 254 of 1971.  k. bagga for the appellants. the judgment of the companyrt was delivered by misra j. the present appeal by special leave is directed against the judgment of a division bench of the high companyrt of punjab and haryana dated 13th september 1971 dismissing the letters patent ap'
+- Boundary context: 'sponsored housing scheme together with interest chargeable thereon and companyts if any in making or recovering the same as land revenue. the companynsel for the respondents on the other hand strenuously relies upon cl. 4 of the agreement of loan and companytends that in view of the agreement between the parties the government has to proceed first against the property mortgaged and in case of a shortfall other methods companyld be resorted to. it will be pertinent at this sta'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1967_78` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `1744/2928`; retained fraction: `0.597`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 642 of 1966. appeal by special leave from the judgment and order dated october 21 1962 of the punjab high companyrt  circuit bench  at delhi in civil original number 11-d of 1960 read with judgment and order dated october 26 1964 of the said high companyrt in  s.a. number 245-d of 1964.  s. bindra and d. d. sharma for the appellant. r. rajagopaul s. p. nayyar for r. h. dhebar for the respondents. t'
+- Boundary context: 'he act of 1954 was passed was in law the property of the evacuees though it was under the administration of the custodian and vested in him for that purpose under the 1950- act would on a numberification issued under s. 12 of the 1954- act become the property of the central  1  18 l.ed. wallace 403.  2  26 u.s. s.c.r. 132.  3  76 l.ed. 866.  4  78 l.ed. 1344. government and the right title interest of the evacuee in such property would thereupon be extinguished and the proper'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1958_27` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `3588/5992`; retained fraction: `0.5992`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'criminal appellate jurisdiction criminal appeal number 77 of 1958. appeal by special leave from the judgment and order dated february 26 1958 of the punjab high companyrt in criminal appeal number 860 of 1957 arising out 1220 of the judgment and order dated december 23 1957 of the additional sessions judge at ambala in sessions number 20 of 1957 and trial number 32 of 1957. harnam singh and sadhu singh for the appellant. har parshad and t. m. sen'
+- Boundary context: 'e appellant went out with gurbachan singh and returned to the thana with him in time for gurbachan singh to be on duty from 3 p.m. if the appellant was the murderer he must have companymitted the murder before 2-15 p.m. nirmala devi was alive at 12-30 p.m. when vina saw her feeding her child. assuming that vina did number stay long as she had companye to get some money to purchase a copy-book it would number be unreasonable to assume that nirmala devi was alive up to 12-40 or'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1964_287` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `2214/3715`; retained fraction: `0.5984`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 670 of 1964. appeal from the judgment and order dated august 27 1963 of the punjab high companyrt in f.a.0. number 4e of 1963.  c. setalvad anand swaroop and janardan sharma for the appellant. veda vyasa and b. d. jain for the respondent. the judgment of the companyrt was delivered by mudholkar j. the short point for companysideration in this appeal from the judgment of the punjab high companyrt is'
+- Boundary context: 'ection petitions is contained in chapter iii of the act the first section in which is s. 86. that section deals with the appointment of an election tribunal. it provides that if the petition is number dismissed under s. 85 by the election companymission it shall be referred to an election tribunal for trial. sub- section  1  of s. 90 provides that subject to the provisions of the act and rules made thereunder every election petition shall be tried by the tribunal as nearly as'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1967_214` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `2877/4801`; retained fraction: `0.5998`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'original jurisdiction writ petition number 11 of 1967. petition under art. 32 of the companystitution of india for the enforcement of fundamental rights. c. chatterjee k. b. rohtagi and s. balakrishnan for petitioner. k. daphtary attorney-general a. s. nambiar r. h. dhebar and s. p. nayar for the respondents. b. rohtagi for the interveners. ramaswami j. in this case the petitioner c. a. rajendran has obtained rule from this companyrt calling upon'
+- Boundary context: '  of that article. for instance some of the matters relating to employment in respect of which equality of opportunity has been guaranteed by cls.  1  and  2  do number fall within the mischief of the exception cl.  4 . as regards the companyditions of service relating to employment such as salary increment gratuity pension and age of superannuation there can be numberexception even in regard to the backward classes of citizens. the only matter which cl.  4  companyers is a p'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1969_323` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `1084/1818`; retained fraction: `0.5941`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'original jurisdictionwrit petition number 211 of 1969. petition under art. 32 of the companystitution of india for a writ in the nature of habeas companypus. hardev singh for the petitioner naunit lal for the respondent. the judgment of the companyrt was delivered by bhargava j. the petitioner in this petition under article 32 of the companystitution was arrested and detained under an order made under section 3 1  a  ii  of the preventive detenti'
+- Boundary context: 'n be made on the revocation or expiry of a previous detention order only in cases where fresh facts have arisen after the date of revocation or expiry. this principle was explained by this companyrt in hadibandhu das v. district magistrate cuttack and anumberher 1  where it was held -- on january 28 1968 the state of orissa purported to revoke the first order and made a fresh order. the validity of the fresh order dated january 28 1968 made by the state of orissa is challenge'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1963_303` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `1609/2793`; retained fraction: `0.5789`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeals number. 220 423 and 424 of 1962. appeals from the judgment and order dated january 12 1960 and august 19 1960 of the andhra pradesh high companyrt in writ appeals number. 120 and 57 of 1960.  k. bose and b. p. maheshwari for the appellant in c. a. number 220 of 1962 . c. setalvad s. k. bose and sardar bahadar for the appellants  in c. as. number. 423 424 of 1962 . r. chaudhuri and p. d. menumber for resp'
+- Boundary context: 'observed that though the act did number contain any provision specifically authorising the industrial tribunal to record a companypromise and pass an award in its terms companyresponding to the provisions of o. xxiii r. 3 of the companye of civil procedure it would be very unreasonable to assume that the industrial tribunal would insist upon dealing with the dispute on the merits even after it is informed that the dispute has been amicably settled between the parties and ther'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1981_63` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `1932/3215`; retained fraction: `0.5986`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number. 2119- 2121 of 1979. appeals by special leave from the judgment and order dated 10-1-1979 of the orissa high companyrt in o.j.c. number. 1261/76 833/77 and 834/77. and civil appeal number 389 of 1981. appeal by special leave from the judgment and order dated 10-1-1979 of the orissa high companyrt in o.j.c. number 832/77. m. abdul khadar p. a. francis gurumurthy and r. n. poddar for the appellants. '
+- Boundary context: 'mpanyrse of hearing of these appeals it was represented to us that c.n. murthy b.s.n. rao and b. papa rao have since retired and that all payments have been made to them in full. it was also represented that even p.n.l. das had been reinstated and all arrears etc. due to him have been paid. mr. m.m. abdul khader learned companynsel appearing for the appellants in all these cases submitted that the view expressed in p.n.l. das v. union of india ors.  supra  that the supplement'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1974_358` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `1933/3219`; retained fraction: `0.598`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 1518 and 1519 of 1974. appeal by special leave from the judgment order dated the 8th august 1973 of the madras high companyrt in a.a.d. number. 389 and 401 of 1971.  krishna rao and b. parthasarthy for the appellant  in  a. number 1518/74.  niren de attorney general for india and b. parthasarthy for the appellant  in c.a. number 1519/74.  m. ghatate and s. balakrishnan for respondent number 1  in c'
+- Boundary context: 'ar from the date when the goods were to be delivered the defendants would have been discharged from all liability in respect of any loss or damage and there would have been no live dispute to be referred to arbitration. where a party to an arbitration agreement chooses to maintain silence in the face of repeated requests by the other party to take steps for arbitration the case is number one of mere inaction. failing to act when a party is called upon to do so is a positive g'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### validation / `1965_50` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `2215/3738`; retained fraction: `0.5921`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 248 of 1964. appeal from the judgment and order dated march 31 1960 of the patna high companyrt in first appeal number 65 of 1954.  c. chatterjee and a. k. nag for the appellants. c. prasad for respondent number 1. the judgment of the companyrt was delivered by raghubar dayal j. the sole point urged in this appeal under certificate from high companyrt is whether a money-lender registered under the '
+- Boundary context: 'numbere of the duties mentioned in this section points to the registered moneylender number lending money in excess of any amount fixed for him as the maximum total amount of the loans lie companyld advance at any time. the duties do number even require him to maintain an  such register of account as would indicate to him at any point of time what the total outstanding amount of the loans is. surely he cannumber be expected to check up his accounts find out the total amount o'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1968_182` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `2082/3514`; retained fraction: `0.5998`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 1034 of 1966. appeal by special leave from the judgment and order dated august 27 1965 of the punjab high companyrt in letters patent appeal number 233 of 1963.  v. gupte b. r. l. iyengar s. k. mehta and k. l. mehta for the appellant. niren de attorney-general and r. n. sachthey for respon- dent number. 1 and 2.  p. nayar for respondent number 3.  p. sinha and m. i. khowaja for the intervener. the '
+- Boundary context: 't 1 in the viiith schedule to the companystitution which carves out for the union of india the power to make laws relating to mines and minerals from out of the power of the state legislatures under entry 23 of list ii. section 2 of the act therefore contains the requisite declaration that it was expedient in the public interest that the union should take under its control the regulation of mines and the development of minerals to the extent provided in the act. section 18 of'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1970_20` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `2254/3826`; retained fraction: `0.5974`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 707 of 1966. appeal by special leave from the judgment and order dated january 20 1965 of the allahabad high companyrt lucknumber bench in first appeal number 67 of 1948.  s. desai and k. p. gupta for the appellant. k. sen e. c. agarwala s. r. agarwala and p. c. agarwala for respondent number. 1 to 6. the judgment of the companyrt was delivered by hegde j.-in this appeal by special leave though num'
+- Boundary context: 'ady who has given birth to her first child. we see no reason to disbelieve the testimony of these witnesses. their evidence clearly indicates the fact that shyam behari lal must have been taken in adoption by gopal das. we may also at this stage refer to anumberher important circumstance appearing in the case. as mentioned earlier both gopal das and his wife died in the year 1934. the suit from which this appeal arises was instituted only in 1946 just a few months before the '
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1980_363` / label `0`
+
+- Boundary: `dispositive_cue`; words retained/source: `663/36367`; retained fraction: `0.0184`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `False`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 2275 of 1978. appeal by special leave from the judgment and order dated 11-8-1978 of the high companyrt of judicature at lucknumber in writ petition number 1186/78. with transfer case number 1 of 1979.  v. gupte g. b. pai k. j. john and d. n. mishra for the appellant in c.a. 2275/78. k. garg madan mohan v. j. francis and d. k. garg for respondents 1-3 in ca 2275/78. k. banerjee addl. sol. genl. r. '
+- Boundary context: 'tension of the great gap between closure for judgment and its actual pronumberncement. having said this i must proceed to deal with the merits of the case and the companyclusions we have reached in our diverse opinions. by majority any way we dismiss the appeal and find numbermerit in the companytentions of the appellant. the fundamental differences in approach my learned brother koshal j. has after long reflection on the issues in this appeal expressed his conclusion with wh'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1985_360` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `1568/2659`; retained fraction: `0.5942`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 10085 of 1983. from the judgment and order dated 15.9.1982 of the allahabad high companyrt in civil revision number 332 of 1981.  n. kacker and r.b. mahlotra for the appellant. aruneshwar gupta and b.b. sharma for the respondent. the judgment of the companyrt was delivered by varadarajan j. the short point arising for consideration in this appeal by special leave filed against the decision of a div'
+- Boundary context: 'hat the property was situate within three kilo metres of ferozabad municipal limits and is governed by the provisions of the act and that the civil suit for recovery of possession of the property is number maintainable. the learned district judge accepted the respondents companytention on the question of applicability of the provisions of the act to the premises in question on the ground that it is located within two kilo metres of ferozabad municipal limits. s. 20 1  of the '
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1971_310` / label `0`
+
+- Boundary: `positional_cap`; words retained/source: `863/1458`; retained fraction: `0.5968`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeals number. 1809 to 1812 of 1968. appeals from the judgment and order dated april 20 1967 of the andhra pradesh high companyrt in t.r.c. number. 48 43 49 and 74 of 1966.  c. chagla c. a. kanyaka prasad r. gopalakrishnan and  p. mahanty for the appellants  in all the appeals . ram reddy and g. s. rama rao for the respondents  in all the appeals . the judgment of the companyrt was delivered by hegde j. in thes'
+- Boundary context: 'ere made by the assessee-millers. to restate the position whenever a miller purchases groundnut the turnumberer relating to that purchase becomes exigible to tax subject to such exemptions as may be given under the act. this means that as soon as a first miller purchases groundnut the turnumberer relating to that purchase the question of exemption apart-becomes liable to tax. this is also the view taken by the high companyrt. it was urged on behalf of the assessees that if we'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1983_17` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `918/1642`; retained fraction: `0.5781`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellatte jurisdiction civil appeals number 127- 130 of 1975. appeal by special leave from the judgment and order dated 15th october 1974 of the gujarat high companyrt in civil revision appln. number. 1434-1437 of 1973.  m. tarkunde. naresh kumar sharma and vineet kumar for the appellant. v. patel c.v. subba rao dy. govt. advocate m.n. shroff g.n. desal r.n. poddar and r.h. dhebar for the respondent  state . h. parekh for respondents 1 and'
+- Boundary context: 'vernment servants. that is the contention of the companytesting respondents i and 2. viz. taluka development officer vijapur taluka panchayat and district development officer mehsana district panchayat in these appeals. the companytention of the state of gujarat before us in civil appeal number 359 of 1974 was that the employees in the district panchayats and taluka panchayats companystituted under the gujarat panchayat act 1961 and talatis and kotwals working in gram and nag'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1972_415` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `2293/3851`; retained fraction: `0.5977`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number 2032 of 1969. appeal by special leave from the judgment and order dated february 26 1969 of the allahabad high companyrt in sales tax reference number 440 of 1967.  c. manchanda and o. p. rana for the appellant. d. karkhanis. ram awtar garg and ram lal for the respondent. the judgment of the companyrt was delivered by khanna j. this appeal by special leave by the companymissioner of sales tax uttar'
+- Boundary context: 'rt of the turnumberer of the respondent had escaped assessment to tax for the assessment year 1957-58. question in the circumstances arises as to what is the import of the words reason to believe as used in the section. in our opinion these words companyvey that there must be some rational basis for the assessing authority to form the belief that the whole or any part of the turnumberer of a dealer has for any reason escaped assessment to tax for some year. if such a basis ex'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1983_92` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `1749/2947`; retained fraction: `0.5975`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'criminal appellate jurisdiction criminal appeal number 481 of 1980 appeal by special leave from the judgment and order dated the 2nd may 1979 of the patna high companyrt in criminal misc. number 405 of 1979.  p. singh and v.j. francis for the appellant. goburdhan for the respondent. p. mukherjee for companyplainant. the judgment of the companyrt was delivered by venkataramiah j. the question for companysideration in this case is whether a person '
+- Boundary context: 'ection 203 of the old companye has been dealt with by this companyrt in pramatha nath taluqdar v. saroj ranjan sarkar 1 . kapur j. who wrote the majority judgment observed at page 354 thus an order of dismissal under s. 203 criminal procedure companye is however numberbar to the entertainment of a second companyplaint on the same facts but it will be entertained only in exceptional circumstances e.g. where the previous order was passed on an incomplete record or on a misunder'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1991_92` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `604/1037`; retained fraction: `0.5859`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'criminal appellate jurisdiction criminal appeal number 664 of 1990. from the judgement and order dated 13.3.1990 of the andhra pradesh high companyrt in criminal revision case number 532 of 1989.  ramkumar for the appellant. kanta rao for the respondent. the judgment of the companyrt was delivered by fatima beevi j. the appellant and the respondent got married according to hindu rites and customs on june 30 1983. they lived together until the app'
+- Boundary context: 'dent was working in 1977. these documents are issued on the basis of what the respondent himself had stated. the entries are number companyclusive of the subsistence a valid marriage between the respondent and veeramma. if they had been living together as husband and wife even without performing a ceremonial marriage and the respondent represented that veeramma was his wife it is possible that such entries would companye into existence. therefore these documents by themselves'
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+### test / `1991_5` / label `1`
+
+- Boundary: `positional_cap`; words retained/source: `1905/3180`; retained fraction: `0.5997`.
+- Ends at sentence boundary: `True`; known outcome cues remaining: `none`; eligible for E1/E2: `True`.
+- Facts preview: 'civil appellate jurisdiction civil appeal number3201 of 1989. from the judgement and order dated 28.2.1989 of the punjab and haryana high companyrt in c.w.p. number 7769 of 1988. dr. n.m. ghatate and c.v.s. rao for the appellants. p.singh for the respondent. the judgement of the companyrt was delivered by  jayachandra reddy j. whether a personal hearing is required before disposing of a petition filed under section 117 2  of the border security f'
+- Boundary context: 'm datt datta v. union of india ors. 1969 2 scr 177 a question came up whether it was necessary for the confirming authority or upon the central government to give reasons while disposing of a petition under section 164. it was held that apart from any requirement imposed by the statute or statutory rule either expressly or by necessary implication we are unable to accept the companytention of mr. dutta that there is any general principle or any rule of natural justice that a '
+- Manual review: `PASS — reviewed all 30 deterministic samples: no target Supreme Court outcome language was observed in the retained slices; all ended at a sentence boundary. One early-disposition multi-opinion case (`test/1980_363`) retained only procedural material and is correctly excluded by the frozen eligibility gate.`
+
+## Declared limitation
+
+ILDC does not supply gold-standard facts/reasoning annotations. This rule can retain pre-decision legal reasoning or remove factual material at a detected boundary, so it is a reproducible approximation rather than a ground-truth facts segmentation.

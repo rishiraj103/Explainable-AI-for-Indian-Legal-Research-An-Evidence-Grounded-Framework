@@ -1,0 +1,20 @@
+{
+  "version": "ildc-predecision-facts-v1",
+  "source_field": "text",
+  "purpose": "Shared facts-only input policy for E1 and E2. It is frozen before E1 fitting and must not be tuned after test evaluation.",
+  "rule": "Retain text before the earlier of: (a) the earliest matching closing-section header or dispositive cue, or (b) 60% of source characters. If a preceding sentence end occurs after at least 240 retained characters, move the cut back to that sentence end; otherwise cut exactly at the selected boundary. Every selected boundary is logged in validation.",
+  "section_header_patterns": [
+    "^[ \\t]*(?:final[ \\t]+)?(?:order|held|conclusion|operative[ \\t]+(?:order|part)|decision)[ \\t]*[:\\-\\u2013\\u2014]?[ \\t]*$"
+  ],
+  "dispositive_patterns": [
+    "\\b(?:the[ \\t]+)?(?:civil[ \\t]+)?(?:appeal(?:s)?|petition(?:s)?|application(?:s)?|writ[ \\t]+petition(?:s)?|special[ \\t]+leave[ \\t]+petition(?:s)?)[ \\t]*(?:(?:fail(?:s)?[ \\t]+and[ \\t]+)?(?:is|are|stand)[ \\t,]*)?(?:(?:therefore|accordingly|thus|hence|hereby)[ \\t,]*)?(?:allowed|dismissed|disposed[ \\t]+of|accepted|rejected|granted)\\b",
+    "\\b(?:we|i)[ \\t,]+(?:(?:therefore|accordingly|thus|hence)[ \\t,]+)?(?:allow|dismiss|dispose[ \\t]+of|grant|reject)[ \\t]+(?:(?:both|the)[ \\t]+)?(?:appeal(?:s)?|petition(?:s)?|application(?:s)?|writ[ \\t]+petition(?:s)?|special[ \\t]+leave[ \\t]+petition(?:s)?)\\b",
+    "\\b(?:in[ \\t]+the[ \\t]+result|for[ \\t]+the[ \\t]+foregoing[ \\t]+reasons)\\b[^.]{0,200}\\b(?:allow|dismiss|dispose|grant|reject|set[ \\t]+aside)\\b",
+    "\\b(?:the[ \\t]+)?impugned[ \\t]+(?:judg(?:e)?ment|order)[ \\t]+(?:is[ \\t]+)?(?:hereby[ \\t]+)?(?:set[ \\t]+aside|affirmed|upheld|quashed)\\b"
+  ],
+  "minimum_sentence_aligned_chars": 240,
+  "fallback_retained_fraction": 0.6,
+  "minimum_retained_fraction": 0.1,
+  "minimum_facts_words": 100,
+  "known_limitation": "ILDC provides no gold-standard facts/reasoning boundaries. This heuristic can leave pre-decision legal reasoning or remove factual material around a boundary; it must be reported as a limitation."
+}
