@@ -1,0 +1,27 @@
+{
+  "version": "week6-authority-key-v1",
+  "purpose": "Independent gold references for later authority-retrieval evaluation; never generated from the project's retrieval output.",
+  "query_population": "ILDC fixed test split only",
+  "inclusion_standard": [
+    "Identify the query judgment from an external judgment source, not project retrieval output.",
+    "Record only an authority explicitly cited or applied in the source judgment, with a page or paragraph locator.",
+    "Store a direct, publicly accessible source URL and the verification date.",
+    "For retrieval evaluation, an authority must satisfy the pre-query temporal rule; same-year authorities require an explicit ambiguity note."
+  ],
+  "required_entry_fields": [
+    "query_case_id",
+    "query_case_title",
+    "query_decision_date",
+    "query_source_url",
+    "authority_title",
+    "authority_citation",
+    "authority_decision_date",
+    "relationship",
+    "source_locator",
+    "verification_source_url",
+    "verified_on",
+    "independent_of_system_retrieval"
+  ],
+  "allowed_relationships": ["applied", "relied_on", "distinguished", "quoted_for_principle"],
+  "prohibited_source": "Any citation returned, ranked, or suggested by this project's retrieval system."
+}

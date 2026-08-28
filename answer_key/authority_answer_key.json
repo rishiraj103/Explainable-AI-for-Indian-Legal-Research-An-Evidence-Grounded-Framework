@@ -1,0 +1,50 @@
+{
+  "schema_version": "week6-authority-key-v1",
+  "entries": [
+    {
+      "query_case_id": "2019_890",
+      "query_case_title": "M/S ICOMM Tele Ltd. v. Punjab State Water Supply & Sewerage Board & Anr.",
+      "query_decision_date": "2019-03-11",
+      "query_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
+      "authority_title": "ABL International Ltd. v. Export Credit Guarantee Corpn. of India Ltd.",
+      "authority_citation": "(2004) 3 SCC 553",
+      "authority_decision_date": "2003-12-18",
+      "relationship": "relied_on",
+      "source_locator": "Query judgment paragraph 15 (official PDF pages 10-11): Article 14's duty to act fairly in State contracts and writ maintainability.",
+      "verification_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
+      "verified_on": "2026-08-28",
+      "independent_of_system_retrieval": true,
+      "temporal_status": "eligible_by_year"
+    },
+    {
+      "query_case_id": "2019_890",
+      "query_case_title": "M/S ICOMM Tele Ltd. v. Punjab State Water Supply & Sewerage Board & Anr.",
+      "query_decision_date": "2019-03-11",
+      "query_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
+      "authority_title": "State of J&K v. Dev Dutt Pandit",
+      "authority_citation": "(1999) 7 SCC 339",
+      "authority_decision_date": "1999-08-27",
+      "relationship": "relied_on",
+      "source_locator": "Query judgment paragraph 24 (official PDF pages 17-18): arbitration should be encouraged as a speedy, affordable dispute-resolution process.",
+      "verification_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
+      "verified_on": "2026-08-28",
+      "independent_of_system_retrieval": true,
+      "temporal_status": "eligible_by_year"
+    },
+    {
+      "query_case_id": "2019_890",
+      "query_case_title": "M/S ICOMM Tele Ltd. v. Punjab State Water Supply & Sewerage Board & Anr.",
+      "query_decision_date": "2019-03-11",
+      "query_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
+      "authority_title": "S.K. Jain v. State of Haryana",
+      "authority_citation": "(2009) 4 SCC 357",
+      "authority_decision_date": "2009-02-23",
+      "relationship": "distinguished",
+      "source_locator": "Query judgment paragraphs 12-14 (official PDF pages 7-10): security-deposit clause distinguished as materially different.",
+      "verification_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
+      "verified_on": "2026-08-28",
+      "independent_of_system_retrieval": true,
+      "temporal_status": "eligible_by_year"
+    }
+  ]
+}
