@@ -1,0 +1,45 @@
+{
+  "experiment": "E2-corrected",
+  "name": "ILDC facts-only InLegalBERT chunk-and-pool sequence-classification baseline",
+  "supersedes": "E2 256-token single-prefix result",
+  "model": {
+    "id": "law-ai/InLegalBERT",
+    "revision": "b5ecfed8ed6cf9d25a3cb8225a8c52f161f7401a",
+    "head_initialization": "AutoModelForSequenceClassification with a new randomly initialized two-label classification head"
+  },
+  "facts_extraction_config": "config/facts_extraction.json",
+  "fixed_split_files": {
+    "train": "corpus/ildc/single_train.parquet",
+    "validation": "corpus/ildc/single_validation.parquet",
+    "test": "corpus/ildc/single_test.parquet"
+  },
+  "input": {
+    "text_source": "shared extract_case_facts output only; no retrieval or evidence lookup",
+    "max_length": 512,
+    "overlap_tokens": 50,
+    "windowing": "tokenizer overflow windows; every eligible facts-only input is represented by one or more overlapping windows",
+    "primary_pooling": "mean logits by source case before softmax",
+    "comparison_pooling": "majority vote over window argmax predictions; ties resolve to the lower label"
+  },
+  "training": {
+    "seed": 202607,
+    "num_train_epochs": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "per_device_train_batch_size": 2,
+    "per_device_eval_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "gradient_checkpointing": true,
+    "fp16": true,
+    "optim": "adamw_torch"
+  },
+  "fallback_if_cuda_oom": {
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "reason": "Preserve 512-token windows and the effective batch size of 16 on the 4 GB GPU."
+  },
+  "selection_protocol": "Evaluate after every epoch. Select the checkpoint by document-level mean-logit validation accuracy only. Report majority-vote pooling as a comparison, never as a post-test selection criterion. Load the best validation checkpoint, then evaluate the test split once. Do not tune after test evaluation.",
+  "test_metrics": ["accuracy", "macro_f1", "class_0_f1", "class_1_f1", "confusion_matrix"]
+}

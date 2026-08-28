@@ -1,0 +1,93 @@
+{
+  "E2_256_token_prefix": {
+    "status": "Discarded",
+    "reason": "256-token cap; 1491/1503 (99.20%) eligible test inputs were truncated.",
+    "test_metrics": {
+      "accuracy": 0.569528,
+      "macro_f1": 0.55748,
+      "class_0_f1": 0.630497,
+      "class_1_f1": 0.484462,
+      "confusion_matrix_labels": [
+        0,
+        1
+      ],
+      "confusion_matrix": [
+        [
+          552,
+          197
+        ],
+        [
+          450,
+          304
+        ]
+      ]
+    }
+  },
+  "E2_chunk_and_pool": {
+    "status": "Corrected",
+    "reason": "512-token windows with 50-token overlap; every eligible test document is represented by one or more windows.",
+    "primary_pooling": "mean logits before softmax",
+    "test_metrics": {
+      "mean_logits": {
+        "accuracy": 0.596806,
+        "macro_f1": 0.592358,
+        "class_0_f1": 0.63494,
+        "class_1_f1": 0.549777,
+        "confusion_matrix_labels": [
+          0,
+          1
+        ],
+        "confusion_matrix": [
+          [
+            527,
+            222
+          ],
+          [
+            384,
+            370
+          ]
+        ]
+      },
+      "majority_vote": {
+        "accuracy": 0.601464,
+        "macro_f1": 0.593682,
+        "class_0_f1": 0.649912,
+        "class_1_f1": 0.537452,
+        "confusion_matrix_labels": [
+          0,
+          1
+        ],
+        "confusion_matrix": [
+          [
+            556,
+            193
+          ],
+          [
+            406,
+            348
+          ]
+        ]
+      },
+      "window_coverage": {
+        "eligible_documents": 1503,
+        "documents_with_at_least_one_window": 1503,
+        "fully_covered_documents": 1503,
+        "fully_covered_document_rate": 1.0,
+        "total_windows": 9576,
+        "min_windows_per_document": 1,
+        "median_windows_per_document": 5,
+        "max_windows_per_document": 68
+      }
+    },
+    "coverage": {
+      "eligible_documents": 1503,
+      "documents_with_at_least_one_window": 1503,
+      "fully_covered_documents": 1503,
+      "fully_covered_document_rate": 1.0,
+      "total_windows": 9576,
+      "min_windows_per_document": 1,
+      "median_windows_per_document": 5,
+      "max_windows_per_document": 68
+    }
+  }
+}

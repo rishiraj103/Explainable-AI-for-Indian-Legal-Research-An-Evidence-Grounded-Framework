@@ -1,0 +1,149 @@
+{
+  "experiment": "E2-corrected",
+  "config_path": "config/e2_chunk_pool.json",
+  "config_sha256": "633c0e3ea7fa6c49afd27f906be2d3ac7a1c91ec088f65c388cf0dbe9eed55fd",
+  "model": {
+    "id": "law-ai/InLegalBERT",
+    "revision": "b5ecfed8ed6cf9d25a3cb8225a8c52f161f7401a",
+    "head_initialization": "AutoModelForSequenceClassification with a new randomly initialized two-label classification head"
+  },
+  "facts_rule_version": "ildc-predecision-facts-v1",
+  "facts_extraction_config_sha256": "2a25d97cc5b61cb274e80d676d5af6fbdfa20c0256504155ac94b3b696e2ccf6",
+  "selection_protocol": "Evaluate after every epoch. Select the checkpoint by document-level mean-logit validation accuracy only. Report majority-vote pooling as a comparison, never as a post-test selection criterion. Load the best validation checkpoint, then evaluate the test split once. Do not tune after test evaluation.",
+  "best_checkpoint": "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318",
+  "best_validation_metric": 0.612411,
+  "splits": {
+    "train": {
+      "source_path": "corpus/ildc/single_train.parquet",
+      "source_sha256": "0d878add7371ad0d9ed41f59b0753d6c45b5fb6ebaec78b2d6284fe2a884f4b3",
+      "source_rows": 5082,
+      "eligible_rows": 5020,
+      "excluded_rows": 62,
+      "eligible_id_sha256": "d57f5865694547a83ba4adc8b03f65cc7a3ee8d98b2676b5726dcee24d830ce4",
+      "label_counts": {
+        "0": 3116,
+        "1": 1904
+      },
+      "window_count": 33702,
+      "fully_covered_documents": 5020,
+      "fully_covered_document_rate": 1.0,
+      "windows_per_document_median": 5
+    },
+    "validation": {
+      "source_path": "corpus/ildc/single_validation.parquet",
+      "source_sha256": "2140d52ecf8f9af5554c0ca9a8f15ca59994383d1e722298c1bb7ef419ca8fa1",
+      "source_rows": 994,
+      "eligible_rows": 983,
+      "excluded_rows": 11,
+      "eligible_id_sha256": "4e53bd457b937d43bf185168c9f4b945e75b8a5d8be90fd583a7d4517932b0f0",
+      "label_counts": {
+        "0": 491,
+        "1": 492
+      },
+      "window_count": 6054,
+      "fully_covered_documents": 983,
+      "fully_covered_document_rate": 1.0,
+      "windows_per_document_median": 5
+    },
+    "test": {
+      "source_path": "corpus/ildc/single_test.parquet",
+      "source_sha256": "10cddb021db95645799c22a7db000234bde5f7657d54e5c8e2c70688b0a36efc",
+      "source_rows": 1517,
+      "eligible_rows": 1503,
+      "excluded_rows": 14,
+      "eligible_id_sha256": "afc0a58e0bbaa3d647f65877ee1b83933d53b4769d5cd2988b8301b596479c4d",
+      "label_counts": {
+        "0": 749,
+        "1": 754
+      },
+      "window_count": 9576,
+      "fully_covered_documents": 1503,
+      "fully_covered_document_rate": 1.0,
+      "windows_per_document_median": 5
+    }
+  },
+  "input": {
+    "text_source": "shared extract_case_facts output only; no retrieval or evidence lookup",
+    "max_length": 512,
+    "overlap_tokens": 50,
+    "windowing": "tokenizer overflow windows; every eligible facts-only input is represented by one or more overlapping windows",
+    "primary_pooling": "mean logits by source case before softmax",
+    "comparison_pooling": "majority vote over window argmax predictions; ties resolve to the lower label"
+  },
+  "training": {
+    "seed": 202607,
+    "num_train_epochs": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "per_device_train_batch_size": 2,
+    "per_device_eval_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "gradient_checkpointing": true,
+    "fp16": true,
+    "optim": "adamw_torch"
+  },
+  "test_document_metrics": {
+    "mean_logits": {
+      "accuracy": 0.596806,
+      "macro_f1": 0.592358,
+      "class_0_f1": 0.63494,
+      "class_1_f1": 0.549777,
+      "confusion_matrix_labels": [
+        0,
+        1
+      ],
+      "confusion_matrix": [
+        [
+          527,
+          222
+        ],
+        [
+          384,
+          370
+        ]
+      ]
+    },
+    "majority_vote": {
+      "accuracy": 0.601464,
+      "macro_f1": 0.593682,
+      "class_0_f1": 0.649912,
+      "class_1_f1": 0.537452,
+      "confusion_matrix_labels": [
+        0,
+        1
+      ],
+      "confusion_matrix": [
+        [
+          556,
+          193
+        ],
+        [
+          406,
+          348
+        ]
+      ]
+    },
+    "window_coverage": {
+      "eligible_documents": 1503,
+      "documents_with_at_least_one_window": 1503,
+      "fully_covered_documents": 1503,
+      "fully_covered_document_rate": 1.0,
+      "total_windows": 9576,
+      "min_windows_per_document": 1,
+      "median_windows_per_document": 5,
+      "max_windows_per_document": 68
+    }
+  },
+  "versions": {
+    "python": "3.11.10 | packaged by conda-forge | (main, Oct 16 2024, 01:27:36) [GCC 13.3.0]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "torch": "2.5.1+cu124",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "scikit_learn": "1.5.2",
+    "pyarrow": "18.1.0"
+  },
+  "model_weights_committed": false,
+  "storage": "disk-backed NumPy memory-mapped windows"
+}
