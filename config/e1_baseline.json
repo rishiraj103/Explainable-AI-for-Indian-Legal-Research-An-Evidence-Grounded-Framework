@@ -1,0 +1,32 @@
+{
+  "experiment": "E1",
+  "name": "ILDC facts-only TF-IDF + Logistic Regression baseline",
+  "task": "binary ILDC outcome-label prediction using source labels 0 and 1 without reinterpreting their semantics",
+  "facts_extraction_config": "config/facts_extraction.json",
+  "fixed_split_files": {
+    "train": "corpus/ildc/single_train.parquet",
+    "validation": "corpus/ildc/single_validation.parquet",
+    "test": "corpus/ildc/single_test.parquet"
+  },
+  "selection_protocol": "Fit TF-IDF on eligible training inputs only. Select C by validation accuracy; break ties by the smaller C. Refit the selected pipeline on eligible train plus validation inputs once, then evaluate the test split once. Do not tune after test evaluation.",
+  "random_seed": 202605,
+  "tfidf": {
+    "lowercase": true,
+    "strip_accents": "unicode",
+    "ngram_range": [1, 2],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "norm": "l2"
+  },
+  "logistic_regression": {
+    "candidate_C": [0.1, 1.0, 10.0],
+    "solver": "liblinear",
+    "penalty": "l2",
+    "class_weight": null,
+    "max_iter": 2000,
+    "random_state": 202605
+  },
+  "test_metrics": ["accuracy", "macro_f1", "class_0_f1", "class_1_f1", "confusion_matrix"]
+}
