@@ -13,7 +13,7 @@ from pathlib import Path
 import psycopg
 
 from legal_xai.temporal import assess_temporal_eligibility
-from legal_xai.retrieval import fts_query
+from legal_xai.retrieval import exclude_query_duplicate, fts_query, query_exclusion_cases
 from build_bm25_index import INDEX_VERSION
 from load_provenance import DEFAULT_DATABASE_URL
 
@@ -31,10 +31,12 @@ def main() -> None:
     parser.add_argument("--index", type=Path, default=Path("retrieval/bm25.sqlite"))
     parser.add_argument("--database-url", default=os.getenv("LEGAL_XAI_DATABASE_URL", DEFAULT_DATABASE_URL))
     parser.add_argument("--output", type=Path, default=Path("artifacts/retrieval_result.json"))
+    parser.add_argument("--dedup-matches", type=Path, default=Path("corpus/dedup_matches.csv"))
     args = parser.parse_args()
     if args.top_k < 1 or args.candidate_k < args.top_k:
         raise ValueError("candidate-k must be at least top-k, and both must be positive")
 
+    audited_near_cases = query_exclusion_cases(args.query_id, args.dedup_matches)
     with sqlite3.connect(args.index) as index:
         rows = index.execute(
             "SELECT chunk_id, bm25(chunks_fts) AS raw_score "
@@ -57,8 +59,12 @@ def main() -> None:
 
             run_id = uuid.uuid4()
             ranked: list[dict[str, object]] = []
+            duplicate_excluded = 0
             for rank, (chunk_id, raw_score) in enumerate(rows, start=1):
                 row = metadata[chunk_id]
+                if exclude_query_duplicate(args.query_id, row[2], audited_near_cases):
+                    duplicate_excluded += 1
+                    continue
                 decision = assess_temporal_eligibility(args.query_year, row[4])
                 ranked.append({
                     "rank": rank,
@@ -99,6 +105,7 @@ def main() -> None:
         "query_year": args.query_year,
         "query": args.query,
         "candidate_count": len(ranked),
+        "query_duplicate_chunks_excluded": duplicate_excluded,
         "eligible_returned": len(eligible),
         "status_counts": {
             status: sum(item["temporal_status"] == status for item in ranked)

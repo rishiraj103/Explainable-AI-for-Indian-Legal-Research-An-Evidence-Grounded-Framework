@@ -15,4 +15,16 @@
 - Unique ILDC cases flagged for exclusion review: 5,652
 - Unique ILDC/eCourts candidate pairs flagged: 5,710
 
+## Overlaps by fixed ILDC split
+
+| ILDC split | Exact pairs | High-confidence near pairs | Unique matching eCourts cases |
+| --- | ---: | ---: | ---: |
+| Train | 3,632 | 234 | 3,786 |
+| Validation | 702 | 26 | 726 |
+| Test | 1,057 | 59 | 1,111 |
+
+## Retrieval-time handling rule
+
+The eCourts document is retained in the corpus for unrelated queries. For an ILDC query, retrieval excludes every candidate paired with that query in `dedup_matches.csv` (either exact canonical-ID or high-confidence title/party match). This query-specific rule prevents a system from retrieving the target judgment itself while preserving legitimate precedent for other cases. The near-match threshold is: same year, at least two shared distinctive title/party terms, and at least 80% coverage of the eCourts title/party-token set in ILDC text.
+
 Flagged cases are recorded in `dedup_matches.csv` (local-only corpus output). Any flagged record must be excluded from that query case's retrieval candidates in E3/E4.
