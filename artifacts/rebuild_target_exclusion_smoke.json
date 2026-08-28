@@ -1,0 +1,65 @@
+{
+  "run_id": "06330bbc-ff3e-4a55-af4b-38f79896536f",
+  "query_id": "1977_183",
+  "query_year": 1977,
+  "query": "SARVESHWAR PRASAD SHARMA STATE OF MADHYA PRADESH",
+  "candidate_count": 98,
+  "query_duplicate_chunks_excluded": 2,
+  "eligible_returned": 3,
+  "status_counts": {
+    "eligible": 18,
+    "ambiguous_excluded": 0,
+    "ineligible": 80,
+    "excluded_missing_metadata": 0
+  },
+  "eligible_results": [
+    {
+      "rank": 3,
+      "chunk_id": "1966_3_557_572::p0001::c001",
+      "source_id": "1966_3_557_572",
+      "case_id": "1966 INSC 43",
+      "citation": "[1966] 3 S.C.R. 557",
+      "decision_date": "1966-02-09",
+      "court": "Supreme Court of India",
+      "pdf_file": "1966_3_557_572_EN.pdf",
+      "page_number": 1,
+      "passage_start_char": 0,
+      "passage_end_char": 96,
+      "bm25_score": 29.82942491410305,
+      "temporal_status": "eligible",
+      "text": "·, •• STATE OF MADHYA PRADESH AND ORS. v. VISHNU PRASAD SHARMA AND ORS. F'ebruary 9, 1966 (A. K."
+    },
+    {
+      "rank": 7,
+      "chunk_id": "1964_6_846_857::p0005::c003",
+      "source_id": "1964_6_846_857",
+      "case_id": "1964 INSC 40",
+      "citation": "[1964] 6 S.C.R. 846",
+      "decision_date": "1964-02-19",
+      "court": "Supreme Court of India",
+      "pdf_file": "1964_6_846_857_EN.pdf",
+      "page_number": 5,
+      "passage_start_char": 1859,
+      "passage_end_char": 2081,
+      "bm25_score": 23.569879994917425,
+      "temporal_status": "eligible",
+      "text": "State of Madhya Pradesh('): The State of Madhya Pradesh v. The Gwalior Sugar Co. Ltd. and others(2 ): Maharaj Kumar Prithvi Raj and another v. The State of Rajasthan and others(•) and Anand Prasad Lakshminiwas Ganeriwal v."
+    },
+    {
+      "rank": 10,
+      "chunk_id": "1969_2_380_391::p0001::c001",
+      "source_id": "1969_2_380_391",
+      "case_id": "1968 INSC 267",
+      "citation": "[1969] 2 S.C.R. 380",
+      "decision_date": "1968-10-11",
+      "court": "Supreme Court of India",
+      "pdf_file": "1969_2_380_391_EN.pdf",
+      "page_number": 1,
+      "passage_start_char": 0,
+      "passage_end_char": 70,
+      "bm25_score": 23.23519478447339,
+      "temporal_status": "eligible",
+      "text": "BADRI PRASAD v. STATE OF MADHYA PRADESH & ANR. October 11, 1968 [S. M."
+    }
+  ]
+}
