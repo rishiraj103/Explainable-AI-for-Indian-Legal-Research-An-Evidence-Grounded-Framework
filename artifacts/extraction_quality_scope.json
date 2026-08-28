@@ -1,0 +1,2929 @@
+{
+  "audited_at_utc": "2026-08-28T15:32:45.448076+00:00",
+  "method": {
+    "sampling": "2 seeded random raw PDFs per available year, plus named diagnostic PDFs",
+    "seed": 20260828,
+    "quality_bar": "pass only when native text has at least 80 non-whitespace characters, no Unicode control/surrogate codepoints, fewer than two replacement or mojibake markers, ASCII-visible ratio >=0.75, and English ASCII-word/token ratio >=0.25 where applicable",
+    "scope": "Raw PDF embedded text, before cleaning/chunking; no source or derived data changed."
+  },
+  "sample_size": 145,
+  "available_years": 71,
+  "classification_counts": {
+    "pass": 142,
+    "needs_repair": 3
+  },
+  "reason_counts": {
+    "unicode_control_characters": 2,
+    "mojibake_markers": 3
+  },
+  "records": [
+    {
+      "source_id": "1950_1_759_766",
+      "pdf": "ecourts\\pdfs\\year=1950\\1950_1_759_766_EN.pdf",
+      "year": 1950,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 14861,
+        "ascii_visible_ratio": 0.997779,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3006,
+        "ascii_words": 2805,
+        "ascii_words_per_token": 0.933134
+      },
+      "native_text_preview": "S.C.R.   SUPREME COURT REPORTS      759               CHI NT AMAN RAO                              1950                                  v.                                                                        Nov.S.     THE STATE OF MADHYA PRADESH            RAM KRISHNA                            "
+    },
+    {
+      "source_id": "1950_1_747_754",
+      "pdf": "ecourts\\pdfs\\year=1950\\1950_1_747_754_EN.pdf",
+      "year": 1950,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 13844,
+        "ascii_visible_ratio": 0.997472,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3037,
+        "ascii_words": 2770,
+        "ascii_words_per_token": 0.912084
+      },
+      "native_text_preview": "        S.C.R.   SUPREME COURT REPORTS       747          that the Registrar can stay the proceedings.  It seems      1950           to us that the act of the Registrar in  asking the  civil                .                                                    .           d'          d'   b  f       ."
+    },
+    {
+      "source_id": "1951_1_51_127",
+      "pdf": "ecourts\\pdfs\\year=1951\\1951_1_51_127_EN.pdf",
+      "year": 1951,
+      "pages": 77,
+      "pages_with_embedded_images": 77,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 140862,
+        "ascii_visible_ratio": 0.998807,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 29373,
+        "ascii_words": 27335,
+        "ascii_words_per_token": 0.930617
+      },
+      "native_text_preview": "       S.C.R.      SUPREME COURT REPORTS         51       Orders passed by the Governor-General of  India  under        1950        the  Indian  Independence Act  has  still  to  be  decided,     Th• State of          I refrain from expressing any opinion on this point.                  Trip11ra    "
+    },
+    {
+      "source_id": "1951_1_655_671",
+      "pdf": "ecourts\\pdfs\\year=1951\\1951_1_655_671_EN.pdf",
+      "year": 1951,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 30183,
+        "ascii_visible_ratio": 0.999271,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6543,
+        "ascii_words": 6046,
+        "ascii_words_per_token": 0.924041
+      },
+      "native_text_preview": "  S.C.R.    SUPREME COURT REPORTS          655     MUMMAREDDI NAGI REDD! AND OTHERS             1951                                                                  MayB.                                        v.       PITTI DURAIRAJA NAIDU AND OTHERS        [MEHR CHAND MAHAJAN, MuKHERJEA and      "
+    },
+    {
+      "source_id": "1952_1_775_782",
+      "pdf": "ecourts\\pdfs\\year=1952\\1952_1_775_782_EN.pdf",
+      "year": 1952,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 14597,
+        "ascii_visible_ratio": 0.998013,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3098,
+        "ascii_words": 2840,
+        "ascii_words_per_token": 0.91672
+      },
+      "native_text_preview": "        S.C.R.    SUPREME COURT REPORTS         775             MAHABIR GOPE AND OTHERS                      1952                                            v.                                    April 14. ·         HARBANS NARAIN SINGH AND OTHERS.           [MEHR CHAND MAHAJAN, CHANDRASEKHARA AIYAR "
+    },
+    {
+      "source_id": "1953_1_272_276",
+      "pdf": "ecourts\\pdfs\\year=1952\\1953_1_272_276_EN.pdf",
+      "year": 1952,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 8180,
+        "ascii_visible_ratio": 0.997922,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1760,
+        "ascii_words": 1571,
+        "ascii_words_per_token": 0.892614
+      },
+      "native_text_preview": "          272   SUPREME COURT REPORTS   [1953]             seriously pressed the objection of unconstitutionality The State o/  based on article  15, which, in our view, was rightly   Punjab    rejected by the High Court.       v,        lrlthough we  hold that  the High Court erred on Ajriib Singh "
+    },
+    {
+      "source_id": "1953_1_661_677",
+      "pdf": "ecourts\\pdfs\\year=1953\\1953_1_661_677_EN.pdf",
+      "year": 1953,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 30583,
+        "ascii_visible_ratio": 0.998104,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6359,
+        "ascii_words": 5914,
+        "ascii_words_per_token": 0.93002
+      },
+      "native_text_preview": "S.C.R.  SUPREME COURT REPORTS     661  any such limitations Government   is,  subject  to  the       1958 qualification mentioned above, as free to make special       . h-C  d                                       .           .                                      8 atis   han ra contracts of servic"
+    },
+    {
+      "source_id": "1953_1_1129_1144",
+      "pdf": "ecourts\\pdfs\\year=1953\\1953_1_1129_1144_EN.pdf",
+      "year": 1953,
+      "pages": 16,
+      "pages_with_embedded_images": 16,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 29574,
+        "ascii_visible_ratio": 0.998208,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6159,
+        "ascii_words": 5802,
+        "ascii_words_per_token": 0.942036
+      },
+      "native_text_preview": "                                                                              •   8.C.R.   SUPREME COURT REPORTS     1129 of taxation by.the 1:-itate of Bombay.  Eal'h party \\rill      1953 bear and pay its own costs throughout.                                                                        "
+    },
+    {
+      "source_id": "1955_1_490_500",
+      "pdf": "ecourts\\pdfs\\year=1954\\1955_1_490_500_EN.pdf",
+      "year": 1954,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 21319,
+        "ascii_visible_ratio": 0.998687,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4709,
+        "ascii_words": 4158,
+        "ascii_words_per_token": 0.88299
+      },
+      "native_text_preview": "   '490     SUPREME COURT REPORTS        [1955}             IN THE MATTER OF Mr. 'G',         A SENIOR ADVOCATE OF THE               SUPREME COURT.        [MuKHERJEA, S. R. DAs, VIVIAN BosE, GHULAM               HASAN, and JAGANNADHADAS  JJ.]       Supreme  Court Rules-Order  IV,  rule 30-Advocau-Su"
+    },
+    {
+      "source_id": "1954_1_904_912",
+      "pdf": "ecourts\\pdfs\\year=1954\\1954_1_904_912_EN.pdf",
+      "year": 1954,
+      "pages": 9,
+      "pages_with_embedded_images": 9,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 16321,
+        "ascii_visible_ratio": 0.998836,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3542,
+        "ascii_words": 3241,
+        "ascii_words_per_token": 0.91502
+      },
+      "native_text_preview": "             904     SUPREME COURT REPORTS         [1954J    1954           KARNAL SINGH AND ANOTHER Ja11uary 29.                                                                         f),                  THE STATE OF PUNJAB.                         [BHAGWATI,  JAGANNADHADAS and                   "
+    },
+    {
+      "source_id": "1955_1_876_886",
+      "pdf": "ecourts\\pdfs\\year=1955\\1955_1_876_886_EN.pdf",
+      "year": 1955,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20125,
+        "ascii_visible_ratio": 0.998758,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4156,
+        "ascii_words": 3828,
+        "ascii_words_per_token": 0.921078
+      },
+      "native_text_preview": "               876     SUPREME COURT REPORTS         [1955]       1954         to  the  contention   raised  on behalf of  the  appellants.   Kun.jilal and    That sub-section reads :      Another           \"403  (2) .-A person   acquitted or  convicted of any        v.   The State of     offence ma"
+    },
+    {
+      "source_id": "1955_1_862_872",
+      "pdf": "ecourts\\pdfs\\year=1955\\1955_1_862_872_EN.pdf",
+      "year": 1955,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20604,
+        "ascii_visible_ratio": 0.998787,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4395,
+        "ascii_words": 4055,
+        "ascii_words_per_token": 0.922639
+      },
+      "native_text_preview": "              862     SUPREME COURT REPORTS        [19551    1954             ANDERSON WRIGHT LTD. ,!{oJ;embtr  I                                             v.                MORAN AND COMPANY.               [MuKHERJEA, VIVIAN BosE and JAGANNADHADAS JJ. J                    Arbitration  Act, 1940 ("
+    },
+    {
+      "source_id": "1957_1_233_273",
+      "pdf": "ecourts\\pdfs\\year=1956\\1957_1_233_273_EN.pdf",
+      "year": 1956,
+      "pages": 41,
+      "pages_with_embedded_images": 41,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 76188,
+        "ascii_visible_ratio": 0.998845,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 15786,
+        "ascii_words": 14590,
+        "ascii_words_per_token": 0.924237
+      },
+      "native_text_preview": "  S.C.R.     SUPREME COURT REPORTS        233             PANNALAL BINJRAJ                                       v.                                          D1e1mher, 21.             UNION OF INDIA.       (BHAGWATI,    JAGANNADHADAS,    VENKATARAMA           AYYAR, B. P. SINHA and S. K. DAs JJ.)    "
+    },
+    {
+      "source_id": "1956_1_288_302",
+      "pdf": "ecourts\\pdfs\\year=1956\\1956_1_288_302_EN.pdf",
+      "year": 1956,
+      "pages": 15,
+      "pages_with_embedded_images": 15,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25756,
+        "ascii_visible_ratio": 0.999456,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5598,
+        "ascii_words": 5287,
+        "ascii_words_per_token": 0.944444
+      },
+      "native_text_preview": "         288    SUPREME COURT REPORTS    [1956]   1956            SUKHA AND OTHERS                                                                         ti.Ajwil S             THE STATE OF RAJASTHAN.                 [VIVIAN BosE, JAGANNADHADAS  a.nd                 CHANDRASEKHARA AIYAR, JJ.]      "
+    },
+    {
+      "source_id": "1958_1_988_998",
+      "pdf": "ecourts\\pdfs\\year=1957\\1958_1_988_998_EN.pdf",
+      "year": 1957,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 19355,
+        "ascii_visible_ratio": 0.999742,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4222,
+        "ascii_words": 3875,
+        "ascii_words_per_token": 0.917811
+      },
+      "native_text_preview": "           988    SUPREME COURT REPORTS      (19581     1951            ASA RAM AND ANOTHER 1\\'ovember, 21 .                                V.                MST. RAM KALI AND ANOTHER                 (VENKATARAMA AIYAR, S. K. DAs and                        GAJENDRAGADKAR, JJ.)               Tenancy-"
+    },
+    {
+      "source_id": "1957_1_220_232",
+      "pdf": "ecourts\\pdfs\\year=1957\\1957_1_220_232_EN.pdf",
+      "year": 1957,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 22523,
+        "ascii_visible_ratio": 0.999023,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4765,
+        "ascii_words": 4394,
+        "ascii_words_per_token": 0.922141
+      },
+      "native_text_preview": "              220     SUPREME COURT REPORTS         (1957}      1956        largely to the effect that the appellant's men did election   H. H.Rqja    work in the morning or in the evening,  that  is,  out  of  Harindd Singh     office hours.  That shows that the work of the staff was in          .."
+    },
+    {
+      "source_id": "S_1959_1_73_91",
+      "pdf": "ecourts\\pdfs\\year=1958\\S_1959_1_73_91_EN.pdf",
+      "year": 1958,
+      "pages": 19,
+      "pages_with_embedded_images": 19,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 36722,
+        "ascii_visible_ratio": 0.998148,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7775,
+        "ascii_words": 7220,
+        "ascii_words_per_token": 0.928617
+      },
+      "native_text_preview": "(1) S.C.R. SUPREME COURT REPORTS      73 the  legal  representative  out of the  estate of the       z9'' deceased.  In our opinion, therefore, where the High  Pranab Kumar Court thinks it fit and proper to entertain a.n  applica.-        Milr1a tion in revisio~ or ca.lie for the record suo motu, it"
+    },
+    {
+      "source_id": "1959_1_821_847",
+      "pdf": "ecourts\\pdfs\\year=1958\\1959_1_821_847_EN.pdf",
+      "year": 1958,
+      "pages": 27,
+      "pages_with_embedded_images": 27,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 50079,
+        "ascii_visible_ratio": 0.996965,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 10945,
+        "ascii_words": 9778,
+        "ascii_words_per_token": 0.893376
+      },
+      "native_text_preview": "        S.C.R.   SUPREME COURT ·REPORTS       821         SHEWPUJANRAI INDRASANRAI LTD.                                                  v.                              May 9.        THE COLLECTOR OF CUSTOMS.& OTHERS            (S. R. DAS  C. J., BHAGWATI,  S. K. DAs, SuBBA RAo                     a"
+    },
+    {
+      "source_id": "1960_1_569_579",
+      "pdf": "ecourts\\pdfs\\year=1959\\1960_1_569_579_EN.pdf",
+      "year": 1959,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20432,
+        "ascii_visible_ratio": 0.999119,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4382,
+        "ascii_words": 4007,
+        "ascii_words_per_token": 0.914423
+      },
+      "native_text_preview": "S.C.R.   SUPREME COURT REPORTS      569 drawn to this aspect of the matter, they would not       1959 have permitted any  question as  to  art. 115  being raised, and the parties would have saved considerable Hindustan Forest costs thereby.                                                 Company    "
+    },
+    {
+      "source_id": "S_1959_2_936_948",
+      "pdf": "ecourts\\pdfs\\year=1959\\S_1959_2_936_948_EN.pdf",
+      "year": 1959,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 24409,
+        "ascii_visible_ratio": 0.998894,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5057,
+        "ascii_words": 4681,
+        "ascii_words_per_token": 0.925648
+      },
+      "native_text_preview": "         936  SUPREME COURT REPORTS  [1959] Supp.  r959    CROMPTON PARKINSON (WORKS) PRIVATE May  6.                   LTD., BOMBAY                                                   v.                ITS WORKMEN AND OTHERS                 (S. R. DAS,  c. J., N. H. BHAGWATI, s. K. DAS,           P. "
+    },
+    {
+      "source_id": "1961_2_995_1002",
+      "pdf": "ecourts\\pdfs\\year=1960\\1961_2_995_1002_EN.pdf",
+      "year": 1960,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 13193,
+        "ascii_visible_ratio": 0.997726,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2785,
+        "ascii_words": 2518,
+        "ascii_words_per_token": 0.904129
+      },
+      "native_text_preview": "    2 S.C.R. SUPREME COURT REPORTS      995     -<   s. 23A for other purposes.  This  contention has no       I960      force.                                                                                Sliree Changd•o       The appeal is allowed, and the case  is remitted to sugar  Mills, Ltd. "
+    },
+    {
+      "source_id": "1960_1_806_860",
+      "pdf": "ecourts\\pdfs\\year=1960\\1960_1_806_860_EN.pdf",
+      "year": 1960,
+      "pages": 55,
+      "pages_with_embedded_images": 55,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 104180,
+        "ascii_visible_ratio": 0.998743,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 21931,
+        "ascii_words": 20374,
+        "ascii_words_per_token": 0.929005
+      },
+      "native_text_preview": "            806     SUPREME COURT REPORTS  [1960(1)]        1959       Respondents 6 and 7 raised before us the question of                costs.  They stated that the trial Judge had given two     Narayan     sets of costs, which was changed  to one set by the  Bhagwantrao Gosavi Balajiwale High Co"
+    },
+    {
+      "source_id": "1962_3_72_87",
+      "pdf": "ecourts\\pdfs\\year=1961\\1962_3_72_87_EN.pdf",
+      "year": 1961,
+      "pages": 16,
+      "pages_with_embedded_images": 16,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 27086,
+        "ascii_visible_ratio": 0.996382,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5434,
+        "ascii_words": 5090,
+        "ascii_words_per_token": 0.936695
+      },
+      "native_text_preview": "                          '                   SUPREJ\\IE COl'.RT REPORTS     [196Zj  1961            M/s. RAMCHA.ND JAGADI~H CHAND                                                                  ti.             CNION OF INDIA AND .OTHERH                (P.B. GAJE:>ImAGADKAR, K.  Si::nBA RAo,        "
+    },
+    {
+      "source_id": "1962_2_775_793",
+      "pdf": "ecourts\\pdfs\\year=1961\\1962_2_775_793_EN.pdf",
+      "year": 1961,
+      "pages": 19,
+      "pages_with_embedded_images": 19,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 30707,
+        "ascii_visible_ratio": 0.998274,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6602,
+        "ascii_words": 6294,
+        "ascii_words_per_token": 0.953347
+      },
+      "native_text_preview": "                                           7752 S.C.R.   SUPREME COURT REPORTS                                                                   1961         TARACHAND DAMU SUTAH                                                         May, 4.                                  v.       THE STATE OF MA"
+    },
+    {
+      "source_id": "1963_1_63_69",
+      "pdf": "ecourts\\pdfs\\year=1962\\1963_1_63_69_EN.pdf",
+      "year": 1962,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 11090,
+        "ascii_visible_ratio": 0.997926,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2341,
+        "ascii_words": 2165,
+        "ascii_words_per_token": 0.924818
+      },
+      "native_text_preview": "1 S.C.R.   SUPREME COUR'I' REPORTS bond afresh when Bekaru furnished fresh surety  in          1962 place of Sa.fir Hussain's surety bond.  We therefore     B 1koru Singh hold that  the  appellant's bond has been  rightly             v. forfeited ou the non-appearance of Ram Narain  in     Sta~o/U.P"
+    },
+    {
+      "source_id": "1963_1_721_777",
+      "pdf": "ecourts\\pdfs\\year=1962\\1963_1_721_777_EN.pdf",
+      "year": 1962,
+      "pages": 57,
+      "pages_with_embedded_images": 57,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 87673,
+        "ascii_visible_ratio": 0.997411,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 18141,
+        "ascii_words": 16943,
+        "ascii_words_per_token": 0.933962
+      },
+      "native_text_preview": "        1 S.C.R .  SUPR.EME UOL 1RT REPORTS     721               l>R. INDRAMANI PYARELAL GTJP11A•                                            v.               W.R. NATHU AND OTHERS.                          SUBBA RAO, N. RAJ.A.GOP.A.LA          - (B. P. SINHA, c. J., K.               AYYANG.A.R, J. "
+    },
+    {
+      "source_id": "1964_3_980_985",
+      "pdf": "ecourts\\pdfs\\year=1963\\1964_3_980_985_EN.pdf",
+      "year": 1963,
+      "pages": 6,
+      "pages_with_embedded_images": 6,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 9061,
+        "ascii_visible_ratio": 0.995254,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1941,
+        "ascii_words": 1679,
+        "ascii_words_per_token": 0.865018
+      },
+      "native_text_preview": "                                                                            •                                                            • 980  SUF'REME COURT REPORTS [1964] VOL.    RAGHUBIR PROSAD DUDHEWALLA                                 v.      CHAMANLAL MEHRA & ANR.                             "
+    },
+    {
+      "source_id": "1964_1_793_808",
+      "pdf": "ecourts\\pdfs\\year=1963\\1964_1_793_808_EN.pdf",
+      "year": 1963,
+      "pages": 16,
+      "pages_with_embedded_images": 16,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 23586,
+        "ascii_visible_ratio": 0.996015,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5069,
+        "ascii_words": 4540,
+        "ascii_words_per_token": 0.89564
+      },
+      "native_text_preview": "l S.C.R.  SUPREME COURT REPORTS   793   STATE OF MADHYA PRADESH & ORS.            1963                                                                                          January, 30.                                   v.    SETH BALKISHAN NATHAN! & ORS.        (K. SUBBA·RAo, RAGHUBAR DAYAL, and"
+    },
+    {
+      "source_id": "1964_2_809_837",
+      "pdf": "ecourts\\pdfs\\year=1964\\1964_2_809_837_EN.pdf",
+      "year": 1964,
+      "pages": 29,
+      "pages_with_embedded_images": 29,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 47617,
+        "ascii_visible_ratio": 0.997375,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 9973,
+        "ascii_words": 9486,
+        "ascii_words_per_token": 0.951168
+      },
+      "native_text_preview": "\";  I  1I             , ·2, S.C.R.   SUPRIEME COURT REPORTS   809                    ' The conduct of· the  E?tcise  Inspector in tampering           19_63          with  'the  seizure  memo  is  such  as' to  affect  his                                                                               "
+    },
+    {
+      "source_id": "1964_1_535_552",
+      "pdf": "ecourts\\pdfs\\year=1964\\1964_1_535_552_EN.pdf",
+      "year": 1964,
+      "pages": 18,
+      "pages_with_embedded_images": 18,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 26459,
+        "ascii_visible_ratio": 0.996636,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5806,
+        "ascii_words": 5350,
+        "ascii_words_per_token": 0.921461
+      },
+      "native_text_preview": "         1 S.C.R.  SUPREME COURT REPORTS   535         NEW CENTRAL JUTE MILLS CO. LTD.              1963                                     •                   AND ORS.                                         Januar.J,  17.                                              v.                            "
+    },
+    {
+      "source_id": "1966_2_822_827",
+      "pdf": "ecourts\\pdfs\\year=1965\\1966_2_822_827_EN.pdf",
+      "year": 1965,
+      "pages": 6,
+      "pages_with_embedded_images": 6,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 11592,
+        "ascii_visible_ratio": 0.999137,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2588,
+        "ascii_words": 2283,
+        "ascii_words_per_token": 0.882148
+      },
+      "native_text_preview": " 822                                                                                           ., -            JAGAT BAHADUR SINGH;            A                                            v.           STATE 01'' MADHYA l'RADESH                                              '                    Novemb"
+    },
+    {
+      "source_id": "1966_1_929_936",
+      "pdf": "ecourts\\pdfs\\year=1965\\1966_1_929_936_EN.pdf",
+      "year": 1965,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 17243,
+        "ascii_visible_ratio": 0.999072,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3731,
+        "ascii_words": 3419,
+        "ascii_words_per_token": 0.916376
+      },
+      "native_text_preview": "        A        NALINI DASI ALIAS NABANALINI DASSI                                                            v.                    KRITISH CHANDRA HAZRA AND OTHERS                                     September 23, 1965           B           [P. B. GAJENDRAGADKAR, C.J.,  K. N. WANCHOO,             "
+    },
+    {
+      "source_id": "S_1966_1_419_435",
+      "pdf": "ecourts\\pdfs\\year=1966\\S_1966_1_419_435_EN.pdf",
+      "year": 1966,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 40965,
+        "ascii_visible_ratio": 0.999341,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 8890,
+        "ascii_words": 8188,
+        "ascii_words_per_token": 0.921035
+      },
+      "native_text_preview": "                                                                               419                            H. H. YESHWANT RAO GHORPADE    •                                            v.    •        THE COMMISSIONER OF WEALTH TAX, BANGALORE                                May 6, 1966          B ~,."
+    },
+    {
+      "source_id": "1966_3_672_675",
+      "pdf": "ecourts\\pdfs\\year=1966\\1966_3_672_675_EN.pdf",
+      "year": 1966,
+      "pages": 4,
+      "pages_with_embedded_images": 4,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 6918,
+        "ascii_visible_ratio": 0.998988,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1444,
+        "ascii_words": 1304,
+        "ascii_words_per_token": 0.903047
+      },
+      "native_text_preview": "                     K. S. ABDt:L AZEEZ               A                                                                      l'.         RAMANATHAN CHETTIAR & ORS.                       February 28, 1966          (P.  B.  GAJENDRAGADKAR,  C.J., K. N. WANCIIOO,                  •                     "
+    },
+    {
+      "source_id": "1967_2_528_535",
+      "pdf": "ecourts\\pdfs\\year=1967\\1967_2_528_535_EN.pdf",
+      "year": 1967,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 17086,
+        "ascii_visible_ratio": 0.998537,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3600,
+        "ascii_words": 3333,
+        "ascii_words_per_token": 0.925833
+      },
+      "native_text_preview": "  WORKMEN OF SHRI RANGAVILAS :\\IOTORS (Pl LTD.   A                    & ANR.                                                                   I'     SHRI RANGAVILAS MOTORS (PJ LTD. AND ORS.                      February  I,  1967                                                B   [M. H!DAYATULLAH, "
+    },
+    {
+      "source_id": "1967_2_520_527",
+      "pdf": "ecourts\\pdfs\\year=1967\\1967_2_520_527_EN.pdf",
+      "year": 1967,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 18147,
+        "ascii_visible_ratio": 0.999063,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3817,
+        "ascii_words": 3505,
+        "ascii_words_per_token": 0.91826
+      },
+      "native_text_preview": "    THE EMPLOYERS OF AZAM JAHI MlllS LTD.     A                                                    v.                THE WORKMEN                         (January 30, 1967)      [M. H!DAYATULLAH, V. BHARGAVA A~D G. K. M1nrn. JJ.]                                                 B     lndust~ial Disput"
+    },
+    {
+      "source_id": "1969_1_450_455",
+      "pdf": "ecourts\\pdfs\\year=1968\\1969_1_450_455_EN.pdf",
+      "year": 1968,
+      "pages": 6,
+      "pages_with_embedded_images": 6,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 11304,
+        "ascii_visible_ratio": 0.998319,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2475,
+        "ascii_words": 2211,
+        "ascii_words_per_token": 0.893333
+      },
+      "native_text_preview": "             RAGHUNATH DASS                A                                           v.            UNION OF IJliDIA AND ANR.                            July 26, 1968              (R. S. BACHAWA'I' AND K. S. HEGDE, JJ.)                                               B    Code of CM/ Procedure, 1908 "
+    },
+    {
+      "source_id": "1969_2_1033_1047",
+      "pdf": "ecourts\\pdfs\\year=1968\\1969_2_1033_1047_EN.pdf",
+      "year": 1968,
+      "pages": 15,
+      "pages_with_embedded_images": 15,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 32059,
+        "ascii_visible_ratio": 0.998565,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7160,
+        "ascii_words": 6547,
+        "ascii_words_per_token": 0.914385
+      },
+      "native_text_preview": "      A                    NISID KANT JHA                                                         v.                         STATE OF BIHAR                                December 2, 1968       B      (M. HIDAYATULLAH,  C.J.,  J. C. SHAH, V. RAMASWAMI,                        G. K. MITTER AND A. N. G"
+    },
+    {
+      "source_id": "1969_1_287_303",
+      "pdf": "ecourts\\pdfs\\year=1969\\1969_1_287_303_EN.pdf",
+      "year": 1969,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 40991,
+        "ascii_visible_ratio": 0.997804,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 8686,
+        "ascii_words": 8025,
+        "ascii_words_per_token": 0.923901
+      },
+      "native_text_preview": "     A              KALINGA TUBES LTD.    •                                          V •                         THEIR WORKMEN                             May  3, 1968       B                         [J. M. SHELAT, K.  S. HEGDE AND A. N. GROVER, JJ.J                         iildustri'al Dispute-Clos"
+    },
+    {
+      "source_id": "1969_1_800_807",
+      "pdf": "ecourts\\pdfs\\year=1969\\1969_1_800_807_EN.pdf",
+      "year": 1969,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 17584,
+        "ascii_visible_ratio": 0.998066,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3802,
+        "ascii_words": 3397,
+        "ascii_words_per_token": 0.893477
+      },
+      "native_text_preview": "8 00                  BALADIN RAM                     A                                           v.        COMMISSIONER OF INCOME-TAX, U.P.                      August21, 1968                                               B        (J. C. SHAH, V. RAMAsWAMI AND A. N. GROVER, JJ.]     Indian  lncom'-"
+    },
+    {
+      "source_id": "1970_2_639_642",
+      "pdf": "ecourts\\pdfs\\year=1970\\1970_2_639_642_EN.pdf",
+      "year": 1970,
+      "pages": 4,
+      "pages_with_embedded_images": 4,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 7737,
+        "ascii_visible_ratio": 0.997932,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1615,
+        "ascii_words": 1477,
+        "ascii_words_per_token": 0.914551
+      },
+      "native_text_preview": "                                                       639  A             NARESH CHANDRA SABA                                               v.          UNION TERRITORY OF TRIPURA & ORS.                           October 6, 1969                           [J. C. SHAH AND K. S. HBGDB, JJ.]B           C"
+    },
+    {
+      "source_id": "1970_1_413_420",
+      "pdf": "ecourts\\pdfs\\year=1970\\1970_1_413_420_EN.pdf",
+      "year": 1970,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 18730,
+        "ascii_visible_ratio": 0.998825,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3879,
+        "ascii_words": 3580,
+        "ascii_words_per_token": 0.922918
+      },
+      "native_text_preview": "                                                        413  A            CHlTRA GHOSH & ANOTHER                                            v.             UNION OF INDIA AND OTHERS                             April 25, 1969 B     [M. HIDAYATULLAH, C.J.,   J. M. SHELAT,  V. BHARGAVA,                 "
+    },
+    {
+      "source_id": "1971_1_283_287",
+      "pdf": "ecourts\\pdfs\\year=1971\\1971_1_283_287_EN.pdf",
+      "year": 1971,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 9522,
+        "ascii_visible_ratio": 0.997585,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2050,
+        "ascii_words": 1837,
+        "ascii_words_per_token": 0.896098
+      },
+      "native_text_preview": "                                                         283  A  COMMISSIONER  OF INCOME-TAX, WEsr  BENGAL                 CALCUTTA & ANR.                                               v.             HEMCHANDRA KAR & ORS.                              April 16, 1970 B             [J.C. SHAH, K. S. HE"
+    },
+    {
+      "source_id": "1971_1_442_445",
+      "pdf": "ecourts\\pdfs\\year=1971\\1971_1_442_445_EN.pdf",
+      "year": 1971,
+      "pages": 4,
+      "pages_with_embedded_images": 4,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 7008,
+        "ascii_visible_ratio": 0.998145,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1515,
+        "ascii_words": 1338,
+        "ascii_words_per_token": 0.883168
+      },
+      "native_text_preview": " 442              STATE OF PUNJAB & ORS.             A                                           v.            SUKH DEB SARUI' GUPTA                          April 29, 1970                                                 B           [J. C. SHAH, K. S. HEGDE AND A. N. GROVER, JJ.]     East Punjab Gen"
+    },
+    {
+      "source_id": "1973_2_702_713",
+      "pdf": "ecourts\\pdfs\\year=1972\\1973_2_702_713_EN.pdf",
+      "year": 1972,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25974,
+        "ascii_visible_ratio": 0.998806,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5553,
+        "ascii_words": 5194,
+        "ascii_words_per_token": 0.93535
+      },
+      "native_text_preview": " J02               BHAGWAN KAUR                A                                           V.        MAHARAJ KRISHAN SHARMA & ORS.                       October 25, 1972              i.H. R. KHANNA AND Y. V. CHANDRACHUD, JJ.]     Critninal  trial-Appraisal  of evidence  in  case of alleged nu1rder b"
+    },
+    {
+      "source_id": "1973_1_718_726",
+      "pdf": "ecourts\\pdfs\\year=1972\\1973_1_718_726_EN.pdf",
+      "year": 1972,
+      "pages": 9,
+      "pages_with_embedded_images": 9,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20448,
+        "ascii_visible_ratio": 0.998337,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4297,
+        "ascii_words": 3982,
+        "ascii_words_per_token": 0.926693
+      },
+      "native_text_preview": "  718           KAMINI KUMAR DAS CHOUDHURY            A                                          v.          STATE OF WEST BENGAL & ORS.                           July 24, 1972                  [A. N. RAY AND M. H. BEG, JJ.l                                                       B     Comtitution of "
+    },
+    {
+      "source_id": "1973_1_594_607",
+      "pdf": "ecourts\\pdfs\\year=1973\\1973_1_594_607_EN.pdf",
+      "year": 1973,
+      "pages": 14,
+      "pages_with_embedded_images": 14,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 31623,
+        "ascii_visible_ratio": 0.998798,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6638,
+        "ascii_words": 6158,
+        "ascii_words_per_token": 0.927689
+      },
+      "native_text_preview": "  594            MIS. TATA IRON & STEEL CO. LTD.         A                                            v.             THE WORKMEN & ORS.                     May 5, 1972                                                                                                                                     "
+    },
+    {
+      "source_id": "1974_2_562_571",
+      "pdf": "ecourts\\pdfs\\year=1973\\1974_2_562_571_EN.pdf",
+      "year": 1973,
+      "pages": 10,
+      "pages_with_embedded_images": 10,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25070,
+        "ascii_visible_ratio": 0.997288,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5076,
+        "ascii_words": 4755,
+        "ascii_words_per_token": 0.936761
+      },
+      "native_text_preview": " 562              KHAZAN SINGH ETC. ETC.                                     Y.                  STATE OF U.P. & ORS.                         December 3, 1973         (A. N. RAY, C. J., H. R. KHANNA, K. K. MATHEW,          A. ALAGIRJSWAMI AND P.  N. !BHAGWATJ,  JJ.]            8     Constitution of "
+    },
+    {
+      "source_id": "1975_1_80_93",
+      "pdf": "ecourts\\pdfs\\year=1974\\1975_1_80_93_EN.pdf",
+      "year": 1974,
+      "pages": 14,
+      "pages_with_embedded_images": 14,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 34681,
+        "ascii_visible_ratio": 0.998385,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7297,
+        "ascii_words": 6700,
+        "ascii_words_per_token": 0.918186
+      },
+      "native_text_preview": "  SQ             ONKARNATH SINGH AND ORS.            A                                                   v.                THE STATE OF U.P.                                                                •                             April  15, 1974                  [M. H. BEG AND R. S. SARKARIA, JJ"
+    },
+    {
+      "source_id": "1975_3_72_81",
+      "pdf": "ecourts\\pdfs\\year=1974\\1975_3_72_81_EN.pdf",
+      "year": 1974,
+      "pages": 10,
+      "pages_with_embedded_images": 10,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 27940,
+        "ascii_visible_ratio": 0.997781,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5875,
+        "ascii_words": 5439,
+        "ascii_words_per_token": 0.925787
+      },
+      "native_text_preview": " 72                                            A              RUKMANI BAI GUPTA                                             v.   STATE GOVERNMENT OF MADHYA PRADESH BHOPAL                    & ORS.                      December 20, 1974                                                    B       [K. K"
+    },
+    {
+      "source_id": "1975_3_834_838",
+      "pdf": "ecourts\\pdfs\\year=1975\\1975_3_834_838_EN.pdf",
+      "year": 1975,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 10173,
+        "ascii_visible_ratio": 0.998427,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2173,
+        "ascii_words": 1931,
+        "ascii_words_per_token": 0.888633
+      },
+      "native_text_preview": "  834           MAMLESHWAR PRASAD & ANR           A                                                ~.       KANAHAIYA LAL (DEAD) THROUGH L.Rs.                        March 4, 1975       [A. N. RAY, K. K. MATHE\"Y AND V. R. KRISHNA IYER, JJ.]                                              B     Prarctic"
+    },
+    {
+      "source_id": "1976_2_921_923",
+      "pdf": "ecourts\\pdfs\\year=1975\\1976_2_921_923_EN.pdf",
+      "year": 1975,
+      "pages": 3,
+      "pages_with_embedded_images": 3,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 6939,
+        "ascii_visible_ratio": 0.998991,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1461,
+        "ascii_words": 1330,
+        "ascii_words_per_token": 0.910335
+      },
+      "native_text_preview": "                                                               921                                                      A                BHAGWAN SINGH                                                                             II.                 THE STATE OF HARYANA                           Decemb"
+    },
+    {
+      "source_id": "1977_1_512_518",
+      "pdf": "ecourts\\pdfs\\year=1976\\1977_1_512_518_EN.pdf",
+      "year": 1976,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 18128,
+        "ascii_visible_ratio": 0.999173,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3855,
+        "ascii_words": 3453,
+        "ascii_words_per_token": 0.89572
+      },
+      "native_text_preview": "     512  A        COMMISSIONER OF INCOME TAX, KANPUR                                                       v.         M/S.  J. K. COMMERCIAL CORPORATION LTD. ETC.                            September 3, 1976 B         [H. R. KHANNA, N. L. UNTWALIA AND JAswANT SINGH, JJ.]         Income Tax Act (11 "
+    },
+    {
+      "source_id": "1977_1_128_132",
+      "pdf": "ecourts\\pdfs\\year=1976\\1977_1_128_132_EN.pdf",
+      "year": 1976,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 12782,
+        "ascii_visible_ratio": 0.999531,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2578,
+        "ascii_words": 2417,
+        "ascii_words_per_token": 0.937548
+      },
+      "native_text_preview": "     12 8 A              STATE OF ANDHRA PRADESH                                                v.                           S. N. NIZAMUDDIN ALI KHAN                             August 5, 1976 B          [A. N. RAY, C.J., M. H. BEG AND JASWANT SINGH, JJ.]           Constitution  of  lndi11,  Articl"
+    },
+    {
+      "source_id": "1978_1_710_713",
+      "pdf": "ecourts\\pdfs\\year=1977\\1978_1_710_713_EN.pdf",
+      "year": 1977,
+      "pages": 4,
+      "pages_with_embedded_images": 4,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 10318,
+        "ascii_visible_ratio": 0.999322,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2225,
+        "ascii_words": 2014,
+        "ascii_words_per_token": 0.905169
+      },
+      "native_text_preview": "      710  A                   SHYAM CHARAN                                                      v.                   SHEOJI BHAI & ANOTHER                              October 12, 1977                   [N. L. UNTWALIA AND JASWANT SINGH,  JJ.] B      Madhya Pradesh Accomfnodation Control  Act, 1961"
+    },
+    {
+      "source_id": "1977_1_631_635",
+      "pdf": "ecourts\\pdfs\\year=1977\\1977_1_631_635_EN.pdf",
+      "year": 1977,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 10809,
+        "ascii_visible_ratio": 0.998797,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2347,
+        "ascii_words": 2198,
+        "ascii_words_per_token": 0.936515
+      },
+      "native_text_preview": "                                                          631      ENGLISH ELECTRIC COMPANY OF INDIA LTD.                                                    v.    THE DEPUTY COMMERCIAL TAX OFFICER & ORS.                         Septembler 21, 1976       [A. N. RAY, C.J., M. H. BEG AND  P. N.  SHINGl"
+    },
+    {
+      "source_id": "1978_3_404_410",
+      "pdf": "ecourts\\pdfs\\year=1978\\1978_3_404_410_EN.pdf",
+      "year": 1978,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 15651,
+        "ascii_visible_ratio": 0.9977,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3285,
+        "ascii_words": 2971,
+        "ascii_words_per_token": 0.904414
+      },
+      "native_text_preview": "      404  A                    SH!BJI KHESTSHI THACKER                                                    v.     COMMISSlONERS OF DHANBAD MUNICIPALITY AND ORS.                              February 28, 1978                                                                                             "
+    },
+    {
+      "source_id": "1979_1_765_776",
+      "pdf": "ecourts\\pdfs\\year=1978\\1979_1_765_776_EN.pdf",
+      "year": 1978,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 24106,
+        "ascii_visible_ratio": 0.99888,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4933,
+        "ascii_words": 4419,
+        "ascii_words_per_token": 0.895804
+      },
+      "native_text_preview": "                                                         765      MUNICIPAL CORPORATION FOR THE CITY OF POONA ETC.  A                                                           v.            BIJLEE PRODUCTS (INDIA) LTD. ETC. ETC.                             September 14, 1978            [S. MURTAZA F"
+    },
+    {
+      "source_id": "1979_3_644_650",
+      "pdf": "ecourts\\pdfs\\year=1979\\1979_3_644_650_EN.pdf",
+      "year": 1979,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 13983,
+        "ascii_visible_ratio": 0.998641,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2837,
+        "ascii_words": 2612,
+        "ascii_words_per_token": 0.920691
+      },
+      "native_text_preview": "       644   A           HUKUM CHAND JUTE  MILLS LTD.                                                        v.      SECOND INDUSTRIAL TRIBUNAL, WEST BENGAL & ORS.                                   April 11, 1979  B         [V. R. KRISHNA IYER, V. D. TuLZAPURKAR AND R. S. PATHAK, JJ.]           Paym"
+    },
+    {
+      "source_id": "1979_3_679_684",
+      "pdf": "ecourts\\pdfs\\year=1979\\1979_3_679_684_EN.pdf",
+      "year": 1979,
+      "pages": 6,
+      "pages_with_embedded_images": 6,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 10996,
+        "ascii_visible_ratio": 0.998636,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2333,
+        "ascii_words": 2056,
+        "ascii_words_per_token": 0.881269
+      },
+      "native_text_preview": "                                                        679                                     S. N. BANERJEE                  A                                                    v.            BABU LAL GUPTA (DHANUKA) & ORS.                                  April 12, 1979                        [S"
+    },
+    {
+      "source_id": "1981_1_69_72",
+      "pdf": "ecourts\\pdfs\\year=1980\\1981_1_69_72_EN.pdf",
+      "year": 1980,
+      "pages": 4,
+      "pages_with_embedded_images": 4,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 8901,
+        "ascii_visible_ratio": 0.999101,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1859,
+        "ascii_words": 1682,
+        "ascii_words_per_token": 0.904788
+      },
+      "native_text_preview": "                                                            69                                           A         ANNA TRANSPORT CORPORATION LTD.                                        v. REGIONAL TRANSPORT AUTHORITY, DHARMAPURI & ORS.                                           B.                   "
+    },
+    {
+      "source_id": "1980_1_190_195",
+      "pdf": "ecourts\\pdfs\\year=1980\\1980_1_190_195_EN.pdf",
+      "year": 1980,
+      "pages": 6,
+      "pages_with_embedded_images": 6,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 12296,
+        "ascii_visible_ratio": 0.998536,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2692,
+        "ascii_words": 2396,
+        "ascii_words_per_token": 0.890045
+      },
+      "native_text_preview": "     190  A                STATE OF MAHARASHTRA                            ~   '                                                                                                                                                                                                                            "
+    },
+    {
+      "source_id": "1982_1_55_68",
+      "pdf": "ecourts\\pdfs\\year=1981\\1982_1_55_68_EN.pdf",
+      "year": 1981,
+      "pages": 14,
+      "pages_with_embedded_images": 14,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 27780,
+        "ascii_visible_ratio": 0.999136,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5911,
+        "ascii_words": 5397,
+        "ascii_words_per_token": 0.913043
+      },
+      "native_text_preview": "                                        A                                                                            55               ASSESSING AUTHORITY-CUM-EXCISE & TAXATION                         OFFICER, GURGAON & ANR.                                                                      v.     "
+    },
+    {
+      "source_id": "1981_1_691_693",
+      "pdf": "ecourts\\pdfs\\year=1981\\1981_1_691_693_EN.pdf",
+      "year": 1981,
+      "pages": 3,
+      "pages_with_embedded_images": 3,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 6408,
+        "ascii_visible_ratio": 0.998283,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1355,
+        "ascii_words": 1230,
+        "ascii_words_per_token": 0.907749
+      },
+      "native_text_preview": "                                                               691                     HAMIDA SARFARAZ QUREISHI      '•                                                    v.                       M. S. KASBEKAR & OTHERS                                September 11, 1980                      (R.  S. S"
+    },
+    {
+      "source_id": "1982_3_510_521",
+      "pdf": "ecourts\\pdfs\\year=1982\\1982_3_510_521_EN.pdf",
+      "year": 1982,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 22076,
+        "ascii_visible_ratio": 0.997871,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4384,
+        "ascii_words": 3810,
+        "ascii_words_per_token": 0.869069
+      },
+      "native_text_preview": " A        510                             P.P. ENTERPRISES ETC. ETC.                                                          v.  8             UNION OF INDIA & OTHERS ETC.                              March !6, 1982                                                                                    "
+    },
+    {
+      "source_id": "1982_1_718_728",
+      "pdf": "ecourts\\pdfs\\year=1982\\1982_1_718_728_EN.pdf",
+      "year": 1982,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 22888,
+        "ascii_visible_ratio": 0.999126,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4783,
+        "ascii_words": 4351,
+        "ascii_words_per_token": 0.90968
+      },
+      "native_text_preview": "        718A                   NAND LAL BAJAJ                                                               v.              THE ST A TE OF PUNJAB AND ANR, B                            September 15, 1981                          [A.P. SEN AND BAHARUL !SLAM, JJ.]                Right to be defended by"
+    },
+    {
+      "source_id": "1983_3_836_842",
+      "pdf": "ecourts\\pdfs\\year=1983\\1983_3_836_842_EN.pdf",
+      "year": 1983,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 11578,
+        "ascii_visible_ratio": 0.994127,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2517,
+        "ascii_words": 2108,
+        "ascii_words_per_token": 0.837505
+      },
+      "native_text_preview": "                           ..OOPALAKRISHNA~     .        MENON AND ANOTHER A                       •.D..RAIA REDDY AND ANOTHER                                 September 5, 1983  B                       (D. A. DESAI AND RANOANATH MISRA, JJ.]                 Code of Criminal Procedure, 1973-S.  195(/)"
+    },
+    {
+      "source_id": "1983_2_936_970",
+      "pdf": "ecourts\\pdfs\\year=1983\\1983_2_936_970_EN.pdf",
+      "year": 1983,
+      "pages": 35,
+      "pages_with_embedded_images": 35,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 76525,
+        "ascii_visible_ratio": 0.997543,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 15748,
+        "ascii_words": 14351,
+        "ascii_words_per_token": 0.91129
+      },
+      "native_text_preview": "                            A. JANARDHANA A                                                           v. •             UNION OF INDIA AND OTHERS  It                               April 26, 1983                   [D.A. DESAI AND V. BALAKRJSHNA ERAD1, JJ.)                    Service Jurisprudence-Anom"
+    },
+    {
+      "source_id": "1984_3_422_428",
+      "pdf": "ecourts\\pdfs\\year=1984\\1984_3_422_428_EN.pdf",
+      "year": 1984,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 14154,
+        "ascii_visible_ratio": 0.992652,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3054,
+        "ascii_words": 2802,
+        "ascii_words_per_token": 0.917485
+      },
+      "native_text_preview": "-  422                 ' ,A              SMT. SURINDAll KAUR SANDHU                                                              v.             HARBAX SINGH SANDHU & ANR.                                 April II, 1984  8           [V.V. Cl!ANDRACHUD, C.J, AND SABYASACl!I MUKHARJf, J,j  ·            "
+    },
+    {
+      "source_id": "1984_1_464_479",
+      "pdf": "ecourts\\pdfs\\year=1984\\1984_1_464_479_EN.pdf",
+      "year": 1984,
+      "pages": 16,
+      "pages_with_embedded_images": 16,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 32334,
+        "ascii_visible_ratio": 0.993598,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6490,
+        "ascii_words": 5833,
+        "ascii_words_per_token": 0.898767
+      },
+      "native_text_preview": "          464                       SHER SINGH & ORS.                                        v.    ..                  UNION -OF INDiA AND OTHERS    :n                                  f?ctober 21, 1983              (D.A. DESAI, 0. CH!NNAPPA REDDY AND A. VARADARAJAN, JJ.J                       Const"
+    },
+    {
+      "source_id": "S_1985_3_123_151",
+      "pdf": "ecourts\\pdfs\\year=1985\\S_1985_3_123_151_EN.pdf",
+      "year": 1985,
+      "pages": 29,
+      "pages_with_embedded_images": 29,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 60281,
+        "ascii_visible_ratio": 0.998806,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 12545,
+        "ascii_words": 11732,
+        "ascii_words_per_token": 0.935193
+      },
+      "native_text_preview": "                                                               123                         UNION OF INDIA & ORS,                                                      A                                   Vo                GODFREY PHILIPS INDIA LTD. ETC, ETC.                         ~EPTEMBER 30, 1985 "
+    },
+    {
+      "source_id": "1985_1_882_888",
+      "pdf": "ecourts\\pdfs\\year=1985\\1985_1_882_888_EN.pdf",
+      "year": 1985,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 11750,
+        "ascii_visible_ratio": 0.998894,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2373,
+        "ascii_words": 2102,
+        "ascii_words_per_token": 0.885799
+      },
+      "native_text_preview": "  A                 GURPAL TULl AND ORS., !OTC.                                                          v.                   STATE OF PUNJAB AND ORS.   B                               September  28, 1984                            [R.S. PATHAK AND R.B. MISRA, JJ.J    c     Principle-ApplicabilityCo"
+    },
+    {
+      "source_id": "1986_2_182_186",
+      "pdf": "ecourts\\pdfs\\year=1986\\1986_2_182_186_EN.pdf",
+      "year": 1986,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 9125,
+        "ascii_visible_ratio": 0.998137,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2001,
+        "ascii_words": 1744,
+        "ascii_words_per_token": 0.871564
+      },
+      "native_text_preview": "        182  A                               KONKAN TRADING CCllPANY                                          v.                      SURESH OOVIND KAMAI TARKAR & ORS.                                  APRIL 4 , 1986  B                  [E.S. VENKATARAMIAH  AND M.P. THAKKAR, JJ.]                Civil"
+    },
+    {
+      "source_id": "1986_3_308_314",
+      "pdf": "ecourts\\pdfs\\year=1986\\1986_3_308_314_EN.pdf",
+      "year": 1986,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 12634,
+        "ascii_visible_ratio": 0.999842,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2703,
+        "ascii_words": 2454,
+        "ascii_words_per_token": 0.90788
+      },
+      "native_text_preview": "A        COMMISSIONER OF INCOME TAX, BIHAR, PATNA                                  y                                                      v.     AMAR SINGH GOWAMAL & SONS, JHARIA, DHANBAD B                      JULY 17, 1986.             [R.S. PATHAK AND SABYASACHI MUKHARJI,  JJ.]                   "
+    },
+    {
+      "source_id": "1988_2_329_340",
+      "pdf": "ecourts\\pdfs\\year=1987\\1988_2_329_340_EN.pdf",
+      "year": 1987,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25757,
+        "ascii_visible_ratio": 0.999262,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5386,
+        "ascii_words": 4973,
+        "ascii_words_per_token": 0.92332
+      },
+      "native_text_preview": "             FOOD CORPORATION OF INDIA            A                                                       v. ~  •   SURENDRA, DEVENDRA & MOHENDRA TRANSPORT CO.                    DECEMBER  10, 1987                                                      B      ISABYASACHI MUKHARJI AND S. RANGANATHAN, J"
+    },
+    {
+      "source_id": "1987_2_314_317",
+      "pdf": "ecourts\\pdfs\\year=1987\\1987_2_314_317_EN.pdf",
+      "year": 1987,
+      "pages": 4,
+      "pages_with_embedded_images": 4,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 6975,
+        "ascii_visible_ratio": 0.999427,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1465,
+        "ascii_words": 1382,
+        "ascii_words_per_token": 0.943345
+      },
+      "native_text_preview": "             KANUBHAIBRAHMBHA1TA                                                 v.                   STATE OF GUJARAT                  FEBRUARY 18, 1987  B               [M.P. THAKKAR AND B.C. RAY,  JJ.]            Constitution of India,  1950,  Article 32-Writ Petition-Filing     of-Sometimes reas"
+    },
+    {
+      "source_id": "1988_1_538_545",
+      "pdf": "ecourts\\pdfs\\year=1988\\1988_1_538_545_EN.pdf",
+      "year": 1988,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 16195,
+        "ascii_visible_ratio": 0.999074,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3264,
+        "ascii_words": 3014,
+        "ascii_words_per_token": 0.923407
+      },
+      "native_text_preview": "               GULSHAN & ANR. ETC.  A                                                     v.                   ZILA PARISHAD & ORS.                   OCTOBER  16, 1987   B          [A.P. SEN AND M.N. VENKATACHALIAH,  /J.]                                                                               "
+    },
+    {
+      "source_id": "S_1988_1_269_286",
+      "pdf": "ecourts\\pdfs\\year=1988\\S_1988_1_269_286_EN.pdf",
+      "year": 1988,
+      "pages": 18,
+      "pages_with_embedded_images": 18,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 34516,
+        "ascii_visible_ratio": 0.999073,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7156,
+        "ascii_words": 6494,
+        "ascii_words_per_token": 0.90749
+      },
+      "native_text_preview": "                DIPTI NARAYAN SRIMANI                                          A                                                v.     CONTROLLER OF ESTATE DUTY, WEST BENGAL                  MAY 9, 1988       [R.S. PATHAK, CJ·AND M.N. VENKATACHALIAH,  J.]    B           Esta.le Duty Act, 1953-Sectio"
+    },
+    {
+      "source_id": "1989_1_230_237",
+      "pdf": "ecourts\\pdfs\\year=1989\\1989_1_230_237_EN.pdf",
+      "year": 1989,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 14893,
+        "ascii_visible_ratio": 0.99953,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3002,
+        "ascii_words": 2785,
+        "ascii_words_per_token": 0.927715
+      },
+      "native_text_preview": "                                             \" A             ASHOK CHAND SINGHVI         +                                                        v.             UNIVERSITY OF JODHPUR & ORS.                   JANUARY 18, 1989 B      [MURARI MOHON DUIT AND S. NATARAJAN, JJ.]            Professional Co"
+    },
+    {
+      "source_id": "1989_2_470_474",
+      "pdf": "ecourts\\pdfs\\year=1989\\1989_2_470_474_EN.pdf",
+      "year": 1989,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 9152,
+        "ascii_visible_ratio": 0.998798,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1940,
+        "ascii_words": 1727,
+        "ascii_words_per_token": 0.890206
+      },
+      "native_text_preview": ".,   ~ l               STATE OF JAMMU & KASHMIR & ORS.     A!)                                                              v.                 MAHMOOD AHMED & ORS.                             APRIL  13, 1989.       B               [S. NATARAJAN AND KULDIP SINGH, JJ.]                                 "
+    },
+    {
+      "source_id": "1990_3_649_696",
+      "pdf": "ecourts\\pdfs\\year=1990\\1990_3_649_696_EN.pdf",
+      "year": 1990,
+      "pages": 48,
+      "pages_with_embedded_images": 48,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 100129,
+        "ascii_visible_ratio": 0.999501,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 20482,
+        "ascii_words": 18578,
+        "ascii_words_per_token": 0.90704
+      },
+      "native_text_preview": "        ASHOKA MARKETING LID. AND ANR. ETC: ETC.                                             A                                                           v.           PUNJAB NATIONAL BANK AND ORS. ETC. ETC.                       AUGUST 7, 1990          [SABYASACHI MUKHARJI, CJ., B.C. RAY, M.H. KANIA,"
+    },
+    {
+      "source_id": "1990_1_753_759",
+      "pdf": "ecourts\\pdfs\\year=1990\\1990_1_753_759_EN.pdf",
+      "year": 1990,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 13241,
+        "ascii_visible_ratio": 0.999169,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2631,
+        "ascii_words": 2448,
+        "ascii_words_per_token": 0.930445
+      },
+      "native_text_preview": "            SMT. SHAKUNTALA MEHRISHI                                                  A                                                 v.    NEW DELHI MUNICIPAL COMMIITEE AND ORS.                MARCH  1, 1990          [M.N. VENKATACHALIAH, N.D. OJHA AND       B                              J.S. VE"
+    },
+    {
+      "source_id": "1991_1_421_428",
+      "pdf": "ecourts\\pdfs\\year=1991\\1991_1_421_428_EN.pdf",
+      "year": 1991,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 17060,
+        "ascii_visible_ratio": 0.999414,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3355,
+        "ascii_words": 3040,
+        "ascii_words_per_token": 0.90611
+      },
+      "native_text_preview": "                            SMT. GRACY                                                           A                                                               v.                  STATE OF KERALA AND ANR.                      FEBRUARY 15, 1991                  [B.C. RAY, L.M. SHARMA AND J.S. VERMA,"
+    },
+    {
+      "source_id": "S_1991_1_208_218",
+      "pdf": "ecourts\\pdfs\\year=1991\\S_1991_1_208_218_EN.pdf",
+      "year": 1991,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 21936,
+        "ascii_visible_ratio": 0.998906,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4486,
+        "ascii_words": 4086,
+        "ascii_words_per_token": 0.910834
+      },
+      "native_text_preview": "A          INDIAN ALUMINIUM COMPANY LIMITED                                                         v.             THANE MUNICIPAL CORPORATION                               ~                   SEPTEMBER 25, 1991 B    (S. RATNAVEL PANDIAN AND K. JAYACHANDRA REDDY, JJ.)           Maharashtra Munieipal"
+    },
+    {
+      "source_id": "S_1992_1_904_915",
+      "pdf": "ecourts\\pdfs\\year=1992\\S_1992_1_904_915_EN.pdf",
+      "year": 1992,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 22531,
+        "ascii_visible_ratio": 0.999512,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4518,
+        "ascii_words": 4150,
+        "ascii_words_per_token": 0.918548
+      },
+      "native_text_preview": "A         STATE OF MADHYA PRADESH AND ANR.                                                              v.              PRAMOD BHARTIYA AND ORS.                     OCTOBER 8, 1992 B            (KULDIP SINGH, N.M. KASLIWAL AND                            B.P. JEEVEN REDDY, JJ.)             Constituti"
+    },
+    {
+      "source_id": "S_1992_3_369_383",
+      "pdf": "ecourts\\pdfs\\year=1992\\S_1992_3_369_383_EN.pdf",
+      "year": 1992,
+      "pages": 15,
+      "pages_with_embedded_images": 15,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 28429,
+        "ascii_visible_ratio": 0.998769,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5722,
+        "ascii_words": 5188,
+        "ascii_words_per_token": 0.906676
+      },
+      "native_text_preview": " RAZAKBHAI ISSAKBHAI MANSUR! AND OTHERS ETC. ETC.  A                                                        v.             STATE OF GUJARAT AND ORS.                 DECEMBER 4, 1992    [L.M. SHARMA, CJ., S. MOHAN AND N. VENKATACHALA, JJ.J  B       Bombay Prohibition Act, 1949: Sections 2(39A) and 64"
+    },
+    {
+      "source_id": "S_1993_3_368_380",
+      "pdf": "ecourts\\pdfs\\year=1993\\S_1993_3_368_380_EN.pdf",
+      "year": 1993,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 24080,
+        "ascii_visible_ratio": 0.999668,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4914,
+        "ascii_words": 4545,
+        "ascii_words_per_token": 0.924908
+      },
+      "native_text_preview": "A        ROYAL HATCHARIES PVT. LTD. ETC. ETC.                                                                 v.        STATE OF ANDHRA PRADESH AND ANR. ETC. ETC.                     OCTOBER 15, 1993 B              [P.B. SAWANT AND B.P. JEEVAN REDDY, JJ]            The Andhra Pradesh General Sales T"
+    },
+    {
+      "source_id": "1993_3_199_279",
+      "pdf": "ecourts\\pdfs\\year=1993\\1993_3_199_279_EN.pdf",
+      "year": 1993,
+      "pages": 81,
+      "pages_with_embedded_images": 81,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 138364,
+        "ascii_visible_ratio": 0.998714,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 28708,
+        "ascii_words": 25748,
+        "ascii_words_per_token": 0.896893
+      },
+      "native_text_preview": "          FERRO ALLOYS CORPN. LTD. AND ORS. ETC. ETC.     A                                                          \"·              A.P. STATE ELECTRICITY BOARD AND ORS ETC. ETC.                          APRIL 15, 1993                                                    B                 [K. JAY A C"
+    },
+    {
+      "source_id": "S_1994_1_322_339",
+      "pdf": "ecourts\\pdfs\\year=1994\\S_1994_1_322_339_EN.pdf",
+      "year": 1994,
+      "pages": 18,
+      "pages_with_embedded_images": 18,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 34028,
+        "ascii_visible_ratio": 0.99953,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7015,
+        "ascii_words": 6397,
+        "ascii_words_per_token": 0.911903
+      },
+      "native_text_preview": "                                                                                                                                                                              ' A                 STATE OF TAMIL NADU                                                                              v.       "
+    },
+    {
+      "source_id": "S_1994_4_617_627",
+      "pdf": "ecourts\\pdfs\\year=1994\\S_1994_4_617_627_EN.pdf",
+      "year": 1994,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20194,
+        "ascii_visible_ratio": 0.999604,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4158,
+        "ascii_words": 3855,
+        "ascii_words_per_token": 0.927128
+      },
+      "native_text_preview": "         MUNICIPAL CORPORATION OF DELHI         A                                                       v.              GANESH RAZAK AND ANR.                  OCTOBER 20, 1994                                        B   [J.S. VERMA, S.P. BHARUCHA AND K.S. PARIPOORNAN, JJ.]         Industrial Disputes"
+    },
+    {
+      "source_id": "S_1995_3_639_641",
+      "pdf": "ecourts\\pdfs\\year=1995\\S_1995_3_639_641_EN.pdf",
+      "year": 1995,
+      "pages": 3,
+      "pages_with_embedded_images": 3,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 4051,
+        "ascii_visible_ratio": 0.999506,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 807,
+        "ascii_words": 740,
+        "ascii_words_per_token": 0.916976
+      },
+      "native_text_preview": "  STATE OF KARNATAKA REPRESENTED THROUGH CHIEF   A      SECRETARY TO GOVERNMENT OF KARNATAKA                                                       v.            SHRI T.R. DHANANJAYA AND ANR.                  SEPTEMBER 14, 1995                                         B             [K. RAMASWAMY AND B"
+    },
+    {
+      "source_id": "S_1995_4_146_148",
+      "pdf": "ecourts\\pdfs\\year=1995\\S_1995_4_146_148_EN.pdf",
+      "year": 1995,
+      "pages": 3,
+      "pages_with_embedded_images": 3,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 3799,
+        "ascii_visible_ratio": 0.999737,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 728,
+        "ascii_words": 670,
+        "ascii_words_per_token": 0.92033
+      },
+      "native_text_preview": "                                                                                           .. A                  SH. HUKAM CHAND KHUNDIA                                                                          r.          CHANDIGARH ADMINISTRATION AND ANR.                     OCTOBER 9, 1995 B      "
+    },
+    {
+      "source_id": "1996_2_997_1008",
+      "pdf": "ecourts\\pdfs\\year=1996\\1996_2_997_1008_EN.pdf",
+      "year": 1996,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25426,
+        "ascii_visible_ratio": 0.999449,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5333,
+        "ascii_words": 4918,
+        "ascii_words_per_token": 0.922183
+      },
+      "native_text_preview": "          GURBACHAN SINGH AND ANR.            A                                                        v.        SHIVALAK RUBBER INDUSTRIES AND ORS.                 FEBRUARY 23, 1996                                         B         (KULDIP SINGH AND FAIZAN UDDIN, JJ.]        East Punjab Rent Restri"
+    },
+    {
+      "source_id": "1996_1_215_229",
+      "pdf": "ecourts\\pdfs\\year=1996\\1996_1_215_229_EN.pdf",
+      "year": 1996,
+      "pages": 15,
+      "pages_with_embedded_images": 15,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 32045,
+        "ascii_visible_ratio": 0.996599,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6266,
+        "ascii_words": 5760,
+        "ascii_words_per_token": 0.919247
+      },
+      "native_text_preview": "                    il(j    .•             DIRECTOR OF ENFORCEMENT             A                                                                                 Y.                      MIS M.C.T.M. CORPORATION PVT. LTD. AND ORS.                              JANUARY 19. 1996                          "
+    },
+    {
+      "source_id": "1997_2_1012_1025",
+      "pdf": "ecourts\\pdfs\\year=1997\\1997_2_1012_1025_EN.pdf",
+      "year": 1997,
+      "pages": 14,
+      "pages_with_embedded_images": 14,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 27072,
+        "ascii_visible_ratio": 0.999409,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5818,
+        "ascii_words": 5380,
+        "ascii_words_per_token": 0.924716
+      },
+      "native_text_preview": "                                                       (  A                 RAJESH KUMAR ETC.                                                            v.                 DHARAMVTR AND ORS.                    MARCH 12, 1997 B              [M.K. MUKHERJEE AND BN. KIRPAL, JJ.)            Criminal Pro"
+    },
+    {
+      "source_id": "S_1997_1_164_183",
+      "pdf": "ecourts\\pdfs\\year=1997\\S_1997_1_164_183_EN.pdf",
+      "year": 1997,
+      "pages": 20,
+      "pages_with_embedded_images": 20,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 37272,
+        "ascii_visible_ratio": 0.998873,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7742,
+        "ascii_words": 7127,
+        "ascii_words_per_token": 0.920563
+      },
+      "native_text_preview": "A          AGRICULTURAL MARKET COMMITTEE                                                                  v.             SHALIMAR CHEMICAL WORKS LTD.                     MAY 7, 1997 B            (K.S. PARIPOORNAN ANDS. SAGHIR AHMAD, JJ.)          Andhra Pradesh  (Agricultural Produce and Livestock) "
+    },
+    {
+      "source_id": "1998_1_883_891",
+      "pdf": "ecourts\\pdfs\\year=1998\\1998_1_883_891_EN.pdf",
+      "year": 1998,
+      "pages": 9,
+      "pages_with_embedded_images": 9,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 18516,
+        "ascii_visible_ratio": 0.999838,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3736,
+        "ascii_words": 3447,
+        "ascii_words_per_token": 0.922645
+      },
+      "native_text_preview": "                          VIJAY KUMAR SHROTRIYA           A                                                                                              v.                         STATE OF U.P AND ORS.                          FEBRUARY 13, 1998                            [K. VENKATASWAMI AND A.P. MI"
+    },
+    {
+      "source_id": "1998_1_717_718",
+      "pdf": "ecourts\\pdfs\\year=1998\\1998_1_717_718_EN.pdf",
+      "year": 1998,
+      "pages": 2,
+      "pages_with_embedded_images": 2,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 1407,
+        "ascii_visible_ratio": 0.998579,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 306,
+        "ascii_words": 247,
+        "ascii_words_per_token": 0.80719
+      },
+      "native_text_preview": "-.                                                      P. ASHOKAN              A     , •.                                                                                       v. ....   '1'                 UNION OF INDIA AND ANR.      '  '                          FEBRUARY 6, 1998              [M.M"
+    },
+    {
+      "source_id": "1999_1_651_658",
+      "pdf": "ecourts\\pdfs\\year=1999\\1999_1_651_658_EN.pdf",
+      "year": 1999,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 14074,
+        "ascii_visible_ratio": 0.999361,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2893,
+        "ascii_words": 2544,
+        "ascii_words_per_token": 0.879364
+      },
+      "native_text_preview": "               MATHEW M. THOMAS AND ORS.           A                                                                         v.                   COMMISSIONER OF INCOME TAX                        FEBRUARY 16, 1999                         [D.P. WADHWA AND M. SRINIVASAN, JJ.]        B  ;,..           "
+    },
+    {
+      "source_id": "S_1999_1_504_516",
+      "pdf": "ecourts\\pdfs\\year=1999\\S_1999_1_504_516_EN.pdf",
+      "year": 1999,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25394,
+        "ascii_visible_ratio": 0.999409,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5263,
+        "ascii_words": 4869,
+        "ascii_words_per_token": 0.925138
+      },
+      "native_text_preview": "A   THE TRANSMISSION CORPORATION OF A.P. LTD. AND ANR.                                                                             v.            THE COMMISSIONER OF INCOME TAX, A.P.                     AUGUST 17, 1999 B                 [D.P. WADHWA AND M.B. SHAH, JJ.]            Income Tax Act, 1961"
+    },
+    {
+      "source_id": "2000_2_871_877",
+      "pdf": "ecourts\\pdfs\\year=2000\\2000_2_871_877_EN.pdf",
+      "year": 2000,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 13322,
+        "ascii_visible_ratio": 0.99985,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2768,
+        "ascii_words": 2572,
+        "ascii_words_per_token": 0.929191
+      },
+      "native_text_preview": "                        MOHAMMED GAZI               A--''                                                                                v.                              STATE OF M.P. AND ORS. -!                          MARCH 31, 2000                                        [S. SAGHIRAHMAD AND R.P. S"
+    },
+    {
+      "source_id": "2000_2_639_647",
+      "pdf": "ecourts\\pdfs\\year=2000\\2000_2_639_647_EN.pdf",
+      "year": 2000,
+      "pages": 9,
+      "pages_with_embedded_images": 9,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 18307,
+        "ascii_visible_ratio": 0.999618,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3741,
+        "ascii_words": 3512,
+        "ascii_words_per_token": 0.938786
+      },
+      "native_text_preview": "                    KULDIP SINGH                  A                                                                  v.            SUBHASH CHANDER JAIN AND ORS.                   MARCH 28, 2000                     [A.P. MISRA AND R.C. LAHOTI, JJ.]          B        Injunction-Suit for preventive inj"
+    },
+    {
+      "source_id": "S_2001_5_474_493",
+      "pdf": "ecourts\\pdfs\\year=2001\\S_2001_5_474_493_EN.pdf",
+      "year": 2001,
+      "pages": 20,
+      "pages_with_embedded_images": 20,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 41805,
+        "ascii_visible_ratio": 0.999258,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 8317,
+        "ascii_words": 7632,
+        "ascii_words_per_token": 0.917639
+      },
+      "native_text_preview": "A               THE STATE OF MAHARASHTRA                                                                                   v.               INDIAN MEDICAL A::SOCIATION AND ORS.                         DECEM!IER 6, 200 I  B                     [V.N. KHARE AND B.N. AGRAWAL, JJ.]             Education "
+    },
+    {
+      "source_id": "S_2001_4_590_592",
+      "pdf": "ecourts\\pdfs\\year=2001\\S_2001_4_590_592_EN.pdf",
+      "year": 2001,
+      "pages": 3,
+      "pages_with_embedded_images": 3,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 5653,
+        "ascii_visible_ratio": 0.999292,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1163,
+        "ascii_words": 1067,
+        "ascii_words_per_token": 0.917455
+      },
+      "native_text_preview": "A                 JOHN MATHAI ABRRAHAM                                                                      v.                   MIS. BRITISH PHYSICAL LAB. INDIA LTD.                       OCTOBER 30, 2001                                                                                               "
+    },
+    {
+      "source_id": "S_2002_3_220_230",
+      "pdf": "ecourts\\pdfs\\year=2002\\S_2002_3_220_230_EN.pdf",
+      "year": 2002,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 23798,
+        "ascii_visible_ratio": 0.999622,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4748,
+        "ascii_words": 4441,
+        "ascii_words_per_token": 0.935341
+      },
+      "native_text_preview": "A                UNION OF INDIA AND ORS.                                                               v.         SHAH GOVERDHAN L. KABRA TEACHERS COLLEGE                     OCTOBER 23, 2002                                                            ,• B                  [G.B. PATTANAIK AND RUMA PA"
+    },
+    {
+      "source_id": "2002_3_924_928",
+      "pdf": "ecourts\\pdfs\\year=2002\\2002_3_924_928_EN.pdf",
+      "year": 2002,
+      "pages": 5,
+      "pages_with_embedded_images": 5,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 7832,
+        "ascii_visible_ratio": 0.999489,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 1631,
+        "ascii_words": 1473,
+        "ascii_words_per_token": 0.903127
+      },
+      "native_text_preview": "                                                                                                                          ,.,_                                                     ).v       ,,                                                                                                             "
+    },
+    {
+      "source_id": "2003_2_631_652",
+      "pdf": "ecourts\\pdfs\\year=2003\\2003_2_631_652_EN.pdf",
+      "year": 2003,
+      "pages": 22,
+      "pages_with_embedded_images": 22,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 46886,
+        "ascii_visible_ratio": 0.999573,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 9700,
+        "ascii_words": 8866,
+        "ascii_words_per_token": 0.914021
+      },
+      "native_text_preview": "          INTERNATIONAL COACH BUILDERS LTD.       A                                                            v.          KARNATAKA STATE FINANCIAL CORPN.                  MARCH 5, 2003           [RUMA PAL AND B.N.SRIKRISHNA, JJ.]         B         State Financial Corpr,ration Act, 19511 Companies "
+    },
+    {
+      "source_id": "S_2003_6_619_626",
+      "pdf": "ecourts\\pdfs\\year=2003\\S_2003_6_619_626_EN.pdf",
+      "year": 2003,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 15064,
+        "ascii_visible_ratio": 0.999535,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3202,
+        "ascii_words": 2941,
+        "ascii_words_per_token": 0.918488
+      },
+      "native_text_preview": "                    ASHFAQ               A                                                      V.             ST ATE (GOVT. OF NCT OF DELHI)                 DECEMBER  I 0, 2003                                 B     [DORAISWAMY RAJU AND ARIJIT PASAYAT, JJ.]       Penal Code 1860 :        Ss.452,  39"
+    },
+    {
+      "source_id": "2004_1_1_9",
+      "pdf": "ecourts\\pdfs\\year=2004\\2004_1_1_9_EN.pdf",
+      "year": 2004,
+      "pages": 9,
+      "pages_with_embedded_images": 9,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 17523,
+        "ascii_visible_ratio": 0.999829,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3691,
+        "ascii_words": 3402,
+        "ascii_words_per_token": 0.921701
+      },
+      "native_text_preview": "                          MANGILAL               A                                                                            V.                      STATE OF MADHYA PRADESH                         JANUARY 5, 2004              [DORAISWAMY RAJU AND ARIJIT PASA YAT, JJ.]     B          \"(         Code"
+    },
+    {
+      "source_id": "S_2004_3_93_98",
+      "pdf": "ecourts\\pdfs\\year=2004\\S_2004_3_93_98_EN.pdf",
+      "year": 2004,
+      "pages": 6,
+      "pages_with_embedded_images": 6,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 10701,
+        "ascii_visible_ratio": 0.998879,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2169,
+        "ascii_words": 1994,
+        "ascii_words_per_token": 0.919318
+      },
+      "native_text_preview": "  •     -I             VIRENDRA NATH THR. P.A. HOLDER R.R. GUPTA   A                                                                            v.                        MOHD. JAMIL AND ORS.                                 JULY 14, 2004                 [SHIVARAJ V. PATIL AND D.M. DHARMADHIKARI, JJ.]"
+    },
+    {
+      "source_id": "S_2005_3_31_47",
+      "pdf": "ecourts\\pdfs\\year=2005\\S_2005_3_31_47_EN.pdf",
+      "year": 2005,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 31050,
+        "ascii_visible_ratio": 0.99971,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6481,
+        "ascii_words": 5685,
+        "ascii_words_per_token": 0.877179
+      },
+      "native_text_preview": "                    RANVIR SINGH AND ANR.            A                                                                 v.                         UNION OF INDIA                        SEPTEMBER 7, 2005                  [ASHOK BHAN AND S.B. SINHA, JJ.]          B              Land Acquisition Act, 18"
+    },
+    {
+      "source_id": "2005_3_509_520",
+      "pdf": "ecourts\\pdfs\\year=2005\\2005_3_509_520_EN.pdf",
+      "year": 2005,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 21779,
+        "ascii_visible_ratio": 0.999816,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4616,
+        "ascii_words": 4247,
+        "ascii_words_per_token": 0.920061
+      },
+      "native_text_preview": "                        AMIT KUMAR SHAW AND ANR.          A                                                                                    v.                            FARI DA KHA TOON AND ANR.                                   APRIL 13, 2005                   [ASHOK BHAN AND DR. AR. LAKSHMANAN"
+    },
+    {
+      "source_id": "2006_1_984_1000",
+      "pdf": "ecourts\\pdfs\\year=2006\\2006_1_984_1000_EN.pdf",
+      "year": 2006,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 34933,
+        "ascii_visible_ratio": 0.999399,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7438,
+        "ascii_words": 6868,
+        "ascii_words_per_token": 0.923366
+      },
+      "native_text_preview": "A     SMT. BAILAMMA@ DODDABAILAMMA (DEAD) AND ORS.                                                                                          v.        POORNAPRAJNA HOUSE BUILDING CO-OPERATIVE SOCIETY                      AND OTHERS                         JANUARY3I,2006 B                          [B."
+    },
+    {
+      "source_id": "S_2006_3_803_811",
+      "pdf": "ecourts\\pdfs\\year=2006\\S_2006_3_803_811_EN.pdf",
+      "year": 2006,
+      "pages": 9,
+      "pages_with_embedded_images": 9,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 16422,
+        "ascii_visible_ratio": 0.999756,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3505,
+        "ascii_words": 3183,
+        "ascii_words_per_token": 0.908131
+      },
+      "native_text_preview": "-._                     OM PRAKASH SRIVASTAVA            A                                                                                       v.                        UNION OF INDIA AND ANR.                                 JULY 24, 2006                               [ARIJIT PASAYA T AND ALT AMAS"
+    },
+    {
+      "source_id": "2007_6_417_422",
+      "pdf": "ecourts\\pdfs\\year=2007\\2007_6_417_422_EN.pdf",
+      "year": 2007,
+      "pages": 6,
+      "pages_with_embedded_images": 6,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 10685,
+        "ascii_visible_ratio": 0.999719,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2221,
+        "ascii_words": 1974,
+        "ascii_words_per_token": 0.888789
+      },
+      "native_text_preview": "   ~                      V. SHANKARANARA YANA RAO (D) BY LRS. & ORS.      A                                                                                                      v.                             LEELA VA1HY (DEAD) BY LRS. & ORS.                              MAY 11, 2007                "
+    },
+    {
+      "source_id": "2007_4_553_567",
+      "pdf": "ecourts\\pdfs\\year=2007\\2007_4_553_567_EN.pdf",
+      "year": 2007,
+      "pages": 15,
+      "pages_with_embedded_images": 15,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 22823,
+        "ascii_visible_ratio": 0.999737,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4579,
+        "ascii_words": 3958,
+        "ascii_words_per_token": 0.864381
+      },
+      "native_text_preview": "                         ZUARI INDUSTRIES LTD.             A                                                                                  v.               COMMISSIONER OF CENTRAL EXCISE & CUSTOMS                        MARCH 29, 2007                            [S. H. KAPADIA AND B. SUDERSHAN RED"
+    },
+    {
+      "source_id": "2008_7_1025_1026",
+      "pdf": "ecourts\\pdfs\\year=2008\\2008_7_1025_1026_EN.pdf",
+      "year": 2008,
+      "pages": 2,
+      "pages_with_embedded_images": 2,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 2963,
+        "ascii_visible_ratio": 1.0,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 626,
+        "ascii_words": 547,
+        "ascii_words_per_token": 0.873802
+      },
+      "native_text_preview": "                               [2008] 7 S.C.R. 1025               RAJASTHAN STATE ELECTRICITY BOARD       A                                                                      V.                    UNION OF INDIA & ORS.                              (Civil Appeal No. 7337 of 2002)                   "
+    },
+    {
+      "source_id": "2008_10_905_915",
+      "pdf": "ecourts\\pdfs\\year=2008\\2008_10_905_915_EN.pdf",
+      "year": 2008,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 16502,
+        "ascii_visible_ratio": 0.999091,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3524,
+        "ascii_words": 3050,
+        "ascii_words_per_token": 0.865494
+      },
+      "native_text_preview": "                                     [2008] 10 S.C.R. 905                  MIS SHANKAR FINANCE AND INVESTMENTS      A                                                                               V.                   STATE OF ANDHRA PRADESH & ORS.                            (Criminal Appeal No. 1449"
+    },
+    {
+      "source_id": "2009_7_392_404",
+      "pdf": "ecourts\\pdfs\\year=2009\\2009_7_392_404_EN.pdf",
+      "year": 2009,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20618,
+        "ascii_visible_ratio": 0.999127,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4371,
+        "ascii_words": 3807,
+        "ascii_words_per_token": 0.870968
+      },
+      "native_text_preview": "                           [2009] 7 S.C.R. 392                                                                                                                                                                                                                                                    ,.. -A    "
+    },
+    {
+      "source_id": "2009_16_21_33",
+      "pdf": "ecourts\\pdfs\\year=2009\\2009_16_21_33_EN.pdf",
+      "year": 2009,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20519,
+        "ascii_visible_ratio": 0.999561,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4215,
+        "ascii_words": 3790,
+        "ascii_words_per_token": 0.89917
+      },
+      "native_text_preview": "                          [2009] 16 (ADDL.) S.C.R. 21       i                 INCOME TAX OFFICER, UDAIPUR        A '                                                            v.                 MIS. ARIHANT TILES AND MARBLES (P) LTD.                                (Civil Appeal No. 8036 of 2009)   "
+    },
+    {
+      "source_id": "2010_9_563_604",
+      "pdf": "ecourts\\pdfs\\year=2010\\2010_9_563_604_EN.pdf",
+      "year": 2010,
+      "pages": 42,
+      "pages_with_embedded_images": 42,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 72961,
+        "ascii_visible_ratio": 0.999849,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 15545,
+        "ascii_words": 14587,
+        "ascii_words_per_token": 0.938372
+      },
+      "native_text_preview": "                 [2010] 9 S.C.R. 563                   STATE OF U.P.                  A                                             v.            KRISHNA MASTER & ORS.             (Criminal Appeal No. 1180 of 2004)               AUGUST 3, 2010                                         B     [HARJIT SI"
+    },
+    {
+      "source_id": "2010_2_6_21",
+      "pdf": "ecourts\\pdfs\\year=2010\\2010_2_6_21_EN.pdf",
+      "year": 2010,
+      "pages": 16,
+      "pages_with_embedded_images": 16,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25339,
+        "ascii_visible_ratio": 0.999526,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5163,
+        "ascii_words": 4647,
+        "ascii_words_per_token": 0.900058
+      },
+      "native_text_preview": "                           [2010] 2 S.C.R. 6    A           STATE BANK OF PATIALA & ORS.                                                         v.                  VINESH KUMAR BHASIN                          (Civil Appeal No. 1718 of 2010)                   JANUARY 22, 2010   8        [R.V. RAVEEN"
+    },
+    {
+      "source_id": "2011_12_1106_1127",
+      "pdf": "ecourts\\pdfs\\year=2011\\2011_12_1106_1127_EN.pdf",
+      "year": 2011,
+      "pages": 22,
+      "pages_with_embedded_images": 22,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 31366,
+        "ascii_visible_ratio": 0.999809,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 6549,
+        "ascii_words": 5851,
+        "ascii_words_per_token": 0.893419
+      },
+      "native_text_preview": "                       [2011] 12 S.C.R. 1106  A            TRILOK SUDHIRBHAI PANDYA                                                     v.                UNION OF INDIA & ORS.                       (Civil Appeal No. 8629 of 2011)                OCTOBER 13, 2011. B           [R. V. RAVEENDRAN AND A.K"
+    },
+    {
+      "source_id": "2011_8_246_257",
+      "pdf": "ecourts\\pdfs\\year=2011\\2011_8_246_257_EN.pdf",
+      "year": 2011,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 18992,
+        "ascii_visible_ratio": 0.999737,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3779,
+        "ascii_words": 3386,
+        "ascii_words_per_token": 0.896004
+      },
+      "native_text_preview": "                         [2011] 8 S.C.R. 246                               --  A                JAGDISH PARWANI                                                     v.                UNION OF INDIA & ORS.                       (Civil Appeal No. 5481 of 2011)                      JULY 15, 2011 B      "
+    },
+    {
+      "source_id": "2012_2_512_524",
+      "pdf": "ecourts\\pdfs\\year=2012\\2012_2_512_524_EN.pdf",
+      "year": 2012,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 20138,
+        "ascii_visible_ratio": 0.999801,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4050,
+        "ascii_words": 3683,
+        "ascii_words_per_token": 0.909383
+      },
+      "native_text_preview": "                        [2012] 2 S.C.R. 512  A             STATE OF ORISSA & ORS.                                                     v.                 UJJAL KUMAR BURDHAN                  (Criminal Appeal No. 546 of 2012)                 MARCH 19, 2012B                [D.K. JAIN AND ANIL R. DAVE, "
+    },
+    {
+      "source_id": "2012_1_330_351",
+      "pdf": "ecourts\\pdfs\\year=2012\\2012_1_330_351_EN.pdf",
+      "year": 2012,
+      "pages": 22,
+      "pages_with_embedded_images": 22,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 36334,
+        "ascii_visible_ratio": 0.99989,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7372,
+        "ascii_words": 6784,
+        "ascii_words_per_token": 0.920239
+      },
+      "native_text_preview": "                         [2012] 1 S.C.R. 330  A                  VASANTI DUBEY                                                       v.               STATE OF MADHYA PRADESH                   (Criminal Appeal No. 166 of 2012)                  JANUARY 17, 2012B     [ASOK KUMAR GANGULY AND GYAN SUDHA "
+    },
+    {
+      "source_id": "2013_3_319_346",
+      "pdf": "ecourts\\pdfs\\year=2013\\2013_3_319_346_EN.pdf",
+      "year": 2013,
+      "pages": 28,
+      "pages_with_embedded_images": 28,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 44640,
+        "ascii_visible_ratio": 0.999731,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 9490,
+        "ascii_words": 8513,
+        "ascii_words_per_token": 0.89705
+      },
+      "native_text_preview": "                      [2013] 3 S.C.R. 319            SATYA JAIN (D) THR. LRS. & ORS.        A                                                  v.        ANIS AHMED RUSHDIE (D) TR.LRS. & ORS.                 (Civil Appeal No. 8653 of 2012 ETC.)               DECEMBER  3, 2012                         "
+    },
+    {
+      "source_id": "2013_10_813_824",
+      "pdf": "ecourts\\pdfs\\year=2013\\2013_10_813_824_EN.pdf",
+      "year": 2013,
+      "pages": 12,
+      "pages_with_embedded_images": 12,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 18161,
+        "ascii_visible_ratio": 0.998348,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3610,
+        "ascii_words": 3200,
+        "ascii_words_per_token": 0.886427
+      },
+      "native_text_preview": "                             [2013) 10 S.C.R. 813-             ADVOCATES ASSOCIATION,, BANGALORE       A                                                                             ·•           v.      <.  -                                                      '     .. UNION OF INDIA & ORS ..       "
+    },
+    {
+      "source_id": "2014_11_16_30",
+      "pdf": "ecourts\\pdfs\\year=2014\\2014_11_16_30_EN.pdf",
+      "year": 2014,
+      "pages": 15,
+      "pages_with_embedded_images": 15,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 21217,
+        "ascii_visible_ratio": 0.998963,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4392,
+        "ascii_words": 3948,
+        "ascii_words_per_token": 0.898907
+      },
+      "native_text_preview": "                        [2014] 11 S.C.R. 16A     GENERAL MOTORS (INDIA) PRIVATE LIMITED •                                                      v.          ASHOK RAMNIK LAL TOLAT & ANR.                   (Civil Appeal Nos. 8072-8073 of 2009)                OCTOBER 09, 2014 B                          "
+    },
+    {
+      "source_id": "2014_6_762_782",
+      "pdf": "ecourts\\pdfs\\year=2014\\2014_6_762_782_EN.pdf",
+      "year": 2014,
+      "pages": 21,
+      "pages_with_embedded_images": 21,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 34223,
+        "ascii_visible_ratio": 0.999299,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7060,
+        "ascii_words": 6485,
+        "ascii_words_per_token": 0.918555
+      },
+      "native_text_preview": "                        [2014) 6 S.C.R. 762  A             MR. VIKRAM BAKSHI & ORS.                                                   v.             MS. SONIA KHOSLA (DEAD) BY LRS.         (Special Leave Petition (Criminal) No. 6873 of 2010                   MAY 08, 2014 B       [SURINDER SINGH NIJJ"
+    },
+    {
+      "source_id": "2015_2_388_398",
+      "pdf": "ecourts\\pdfs\\year=2015\\2015_2_388_398_EN.pdf",
+      "year": 2015,
+      "pages": 11,
+      "pages_with_embedded_images": 11,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 14424,
+        "ascii_visible_ratio": 1.0,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3042,
+        "ascii_words": 2743,
+        "ascii_words_per_token": 0.901709
+      },
+      "native_text_preview": "                       [2015] 2 S.C.R. 388   A    NATIONAL THERMAL POWER CORPORATION LTD.                                                          v.               M/S. ASHOK KUMAR SINGH &ORS.                        (Civil Appeal No. 1852 of2015) B               FEBRUARY 13, 2015                    "
+    },
+    {
+      "source_id": "2015_7_92_121",
+      "pdf": "ecourts\\pdfs\\year=2015\\2015_7_92_121_EN.pdf",
+      "year": 2015,
+      "pages": 30,
+      "pages_with_embedded_images": 30,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 44368,
+        "ascii_visible_ratio": 0.99973,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 9404,
+        "ascii_words": 8512,
+        "ascii_words_per_token": 0.905147
+      },
+      "native_text_preview": "                                  · (2015] 7 S.C.R. 92  A          MAHARAJ! EDUCATIONAL TRUST                                                          v.        SGS CONSTRUCTION & DEV. P. LTD. & ORS                       (Civil appeal No. 4494 of 2015) B                  MAY 15, 2015                "
+    },
+    {
+      "source_id": "2016_6_456_487",
+      "pdf": "ecourts\\pdfs\\year=2016\\2016_6_456_487_EN.pdf",
+      "year": 2016,
+      "pages": 32,
+      "pages_with_embedded_images": 32,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 57077,
+        "ascii_visible_ratio": 0.999544,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 12179,
+        "ascii_words": 10871,
+        "ascii_words_per_token": 0.892602
+      },
+      "native_text_preview": "                             [2016) 6 S.C.R. 456   A             SYSCON CONSULTANTS  P. LTD.                                                        v.        M/S. PRIMELLA SANITARY PROD.  P. LTD. AND OTHERS                           (Civil Appeal No. 2910 of2013) B                 SEPTEMBER 19, 2016"
+    },
+    {
+      "source_id": "2016_8_835_847",
+      "pdf": "ecourts\\pdfs\\year=2016\\2016_8_835_847_EN.pdf",
+      "year": 2016,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 24396,
+        "ascii_visible_ratio": 0.999754,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4976,
+        "ascii_words": 4576,
+        "ascii_words_per_token": 0.919614
+      },
+      "native_text_preview": "                        [2016] 8 S.C.R. 835                      NATHIYA                    A                                              v. STATE REP. BY INSPECTOR OF POLICE, BAGAYAM POLICE                   STATION, VELLORE                 (Criminal Appeal No. 1015 of2010)            B           "
+    },
+    {
+      "source_id": "2017_12_517_530",
+      "pdf": "ecourts\\pdfs\\year=2017\\2017_12_517_530_EN.pdf",
+      "year": 2017,
+      "pages": 14,
+      "pages_with_embedded_images": 14,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 25448,
+        "ascii_visible_ratio": 0.999332,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 5373,
+        "ascii_words": 4771,
+        "ascii_words_per_token": 0.887958
+      },
+      "native_text_preview": "                      [2017] 12 S.C.R. 517         TATA IRON AND STEEL CO. LTD. & ANOTHER      A                                                 v.              STATE OF BIHAR & OTHERS                   (Civil Appeal No. 5360 of 2005 etc.)               DECEMBER 15, 2017                 B        [J."
+    },
+    {
+      "source_id": "2017_6_472_478",
+      "pdf": "ecourts\\pdfs\\year=2017\\2017_6_472_478_EN.pdf",
+      "year": 2017,
+      "pages": 7,
+      "pages_with_embedded_images": 7,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 13317,
+        "ascii_visible_ratio": 0.999549,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2713,
+        "ascii_words": 2458,
+        "ascii_words_per_token": 0.906008
+      },
+      "native_text_preview": "                           [2017] 6 S.C.R. 472   A                STATE REPRESENTED BY            DEPUTY SUPERINTENDENT OF POLICE                                                      v.                           K. N. NEHRU ETC.                     (Criminal Appeal No. 1222 of 2017) B               "
+    },
+    {
+      "source_id": "2018_14_1257_1262",
+      "pdf": "ecourts\\pdfs\\year=2018\\2018_14_1257_1262_EN.pdf",
+      "year": 2018,
+      "pages": 6,
+      "pages_with_embedded_images": 0,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 11817,
+        "ascii_visible_ratio": 0.998731,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 2365,
+        "ascii_words": 2183,
+        "ascii_words_per_token": 0.923044
+      },
+      "native_text_preview": "                      [2018] 14 S.C.R. 1257                     1257         THE DIVISIONAL MANAGER APSRTC & ANR.      A                                          v.                        B. VENKATAIAH                     (Civil Appeal No. 12246 of 2018)                DECEMBER 07, 2018             "
+    },
+    {
+      "source_id": "2018_1_1085_1095",
+      "pdf": "ecourts\\pdfs\\year=2018\\2018_1_1085_1095_EN.pdf",
+      "year": 2018,
+      "pages": 11,
+      "pages_with_embedded_images": 0,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 21168,
+        "ascii_visible_ratio": 0.999244,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 4407,
+        "ascii_words": 4051,
+        "ascii_words_per_token": 0.919219
+      },
+      "native_text_preview": "                       [2018] 1 S.C.R. 1085                    1085          AKHILESH SINGH @ AKHILESHWAR SINGH       A                                          v.              LAL BABU SINGH & ORS.                      (Civil Appeal No. 2108 of 2018)                                             B   "
+    },
+    {
+      "source_id": "2019_18_898_923",
+      "pdf": "ecourts\\pdfs\\year=2019\\2019_18_898_923_EN.pdf",
+      "year": 2019,
+      "pages": 26,
+      "pages_with_embedded_images": 0,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 50201,
+        "ascii_visible_ratio": 0.99741,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 10064,
+        "ascii_words": 8852,
+        "ascii_words_per_token": 0.879571
+      },
+      "native_text_preview": "898       SUPREME COURT[2019]REPORTS18 S.C.R. 898      [2019] 18 S.C.R.     A   ADJUDICATING OFFICER, SECURITIES AND EXCHANGE                  BOARD OF INDIA                                                      v.                    BHAVESH PABARI   B                       (Civil Appeal No.11311 of "
+    },
+    {
+      "source_id": "2019_12_352_372",
+      "pdf": "ecourts\\pdfs\\year=2019\\2019_12_352_372_EN.pdf",
+      "year": 2019,
+      "pages": 21,
+      "pages_with_embedded_images": 0,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 38165,
+        "ascii_visible_ratio": 0.996803,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7744,
+        "ascii_words": 7027,
+        "ascii_words_per_token": 0.907412
+      },
+      "native_text_preview": "352       SUPREME COURT[2019]REPORTS12 S.C.R. 352     [2019] 12 S.C.R.     A         BAJARANG SHYAMSUNDER AGARWAL                                                v.              CENTRAL BANK OF INDIA & ANR.                       (Criminal Appeal No. 1371 of 2019)  B                SEPTEMBER 11, 2019 "
+    },
+    {
+      "source_id": "2020_2_870_879",
+      "pdf": "ecourts\\pdfs\\year=2020\\2020_2_870_879_EN.pdf",
+      "year": 2020,
+      "pages": 10,
+      "pages_with_embedded_images": 0,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 16079,
+        "ascii_visible_ratio": 0.996828,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 3332,
+        "ascii_words": 2991,
+        "ascii_words_per_token": 0.897659
+      },
+      "native_text_preview": "870       SUPREME COURT[2020]REPORTS2 S.C.R. 870        [2020] 2 S.C.R.     A       M/S. NOLA RAM DULICHAND DAL MILLS & ANR.                                                 v.                  UNION OF INDIA & ORS.                           (Civil Appeal No. 10636 of 2010)  B                FEBRUARY"
+    },
+    {
+      "source_id": "2020_3_736_756",
+      "pdf": "ecourts\\pdfs\\year=2020\\2020_3_736_756_EN.pdf",
+      "year": 2020,
+      "pages": 21,
+      "pages_with_embedded_images": 0,
+      "classification": "pass",
+      "reasons": [],
+      "metrics": {
+        "nonspace_characters": 38642,
+        "ascii_visible_ratio": 0.998318,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7727,
+        "ascii_words": 7067,
+        "ascii_words_per_token": 0.914585
+      },
+      "native_text_preview": "736       SUPREME COURT[2020]REPORTS3 S.C.R. 736        [2020] 3 S.C.R.     A           GOVERNMENT OF INDIA & ORS.                                                 v.                SITAKANT S. DUBHASHI & ANR.                            (Civil Appeal No. 987 of 2020)  B                FEBRUARY 11, 20"
+    },
+    {
+      "source_id": "1981_2_516_532",
+      "pdf": "ecourts\\pdfs\\year=1981\\1981_2_516_532_EN.pdf",
+      "year": 1981,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters",
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 35814,
+        "ascii_visible_ratio": 0.927738,
+        "control_characters": 127,
+        "replacement_characters": 0,
+        "mojibake_markers": 125,
+        "tokens": 9296,
+        "ascii_words": 5974,
+        "ascii_words_per_token": 0.642642
+      },
+      "native_text_preview": "       516                                                                                                      t                  FRANCIS CORALIE MULLIN                                                                                    ...                                          '     THE ADMINIST"
+    },
+    {
+      "source_id": "S_1994_1_136_162",
+      "pdf": "ecourts\\pdfs\\year=1994\\S_1994_1_136_162_EN.pdf",
+      "year": 1994,
+      "pages": 27,
+      "pages_with_embedded_images": 27,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters",
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 47248,
+        "ascii_visible_ratio": 0.999132,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 2,
+        "tokens": 9910,
+        "ascii_words": 9000,
+        "ascii_words_per_token": 0.908174
+      },
+      "native_text_preview": "A          MORGAN STANLEY MUTUAL FUND                                                          v.                     KARTICKDAS                    MAY 20, 1994 B            [M.N. VENKATACHALIAH, CJ., S. MOHAN AND                       DR. A.S. ANAND, JJ.]          Consumer Protection Act 1986, Secs"
+    },
+    {
+      "source_id": "2018_12_654_671",
+      "pdf": "ecourts\\pdfs\\year=2018\\2018_12_654_671_EN.pdf",
+      "year": 2018,
+      "pages": 18,
+      "pages_with_embedded_images": 0,
+      "classification": "needs_repair",
+      "reasons": [
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 33760,
+        "ascii_visible_ratio": 0.997541,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 2,
+        "tokens": 7064,
+        "ascii_words": 6255,
+        "ascii_words_per_token": 0.885476
+      },
+      "native_text_preview": "654       SUPREME COURT[2018]REPORTS12 S.C.R. 654      [2018] 12 S.C.R.     A                YASHWANT ETC.                                                 v.                THE STATE OF MAHARASHTRA                    (Criminal Appeal No(s). 385-386 of 2008)  B                 SEPTEMBER 4, 2018      "
+    }
+  ]
+}

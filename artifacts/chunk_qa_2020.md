@@ -9,6 +9,12 @@ with Python's `random.seed(20260827)` after cleaning version
 
 ## Checks and result
 
+| Defect category | Chunks affected (of 30) | Finding |
+| --- | ---: | --- |
+| Truncation | 0 | No reviewed passage ended mid-token or showed extraction cut-off. |
+| Mis-segmentation | 0 | No reviewed passage was a header, counsel list, two-word fragment, or otherwise non-evidentiary boundary. |
+| Missing metadata | 0 | Every reviewed chunk had every required provenance field. |
+
 - **Readability and sentence-sized boundaries:** 30/30 passages were readable
   legal text; none was a standalone report header, case-title header, counsel
   list, or two-word fragment.

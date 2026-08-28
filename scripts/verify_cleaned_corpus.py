@@ -29,7 +29,9 @@ REQUIRED_CHUNK_FIELDS = (
 )
 
 
-def verify_year(corpus_root: Path, year: int, expected_pdf_count: int) -> dict[str, object]:
+def verify_year(
+    corpus_root: Path, year: int, expected_pdf_count: int, allowed_quality_exclusions: set[str]
+) -> dict[str, object]:
     root = corpus_root / "ecourts"
     pdf_dir = root / "pdfs" / f"year={year}"
     metadata_path = root / "metadata" / f"year={year}" / "metadata.parquet"
@@ -67,6 +69,10 @@ def verify_year(corpus_root: Path, year: int, expected_pdf_count: int) -> dict[s
         "chunks": chunks,
         "documents_with_chunks": len(documents_with_chunks),
         "pdfs_without_chunks": sorted(local_pdfs - documents_with_chunks),
+        "allowed_quality_exclusions": sorted((local_pdfs - documents_with_chunks) & allowed_quality_exclusions),
+        "unapproved_pdfs_without_chunks": sorted(
+            (local_pdfs - documents_with_chunks) - allowed_quality_exclusions
+        ),
         "chunk_references_without_local_pdf": sorted(documents_with_chunks - local_pdfs),
         "malformed_json_records": malformed_json,
         "records_missing_required_fields": invalid_records,
@@ -84,7 +90,19 @@ def main() -> None:
 
     acquisition = json.loads((args.corpus_root / "ecourts" / "acquisition_record.json").read_text(encoding="utf-8"))
     expected = {entry["year"]: entry["source_file_count"] for entry in acquisition["years"]}
-    years = [verify_year(args.corpus_root, year, expected[year]) for year in range(args.start_year, args.end_year + 1)]
+    cleaning_record = json.loads(
+        (args.corpus_root / "ecourts" / "cleaning_record.json").read_text(encoding="utf-8")
+    )
+    allowed_quality_exclusions = {
+        f"{outcome['source_id']}_EN.pdf"
+        for result in cleaning_record.get("years", [])
+        for outcome in result.get("repair_outcomes", [])
+        if outcome["status"] == "excluded_residual_low_quality"
+    }
+    years = [
+        verify_year(args.corpus_root, year, expected[year], allowed_quality_exclusions)
+        for year in range(args.start_year, args.end_year + 1)
+    ]
     totals = {
         key: sum(int(year[key]) for year in years)
         for key in ("expected_pdfs", "local_pdfs", "metadata_rows", "chunks", "documents_with_chunks",
@@ -94,9 +112,13 @@ def main() -> None:
     totals["chunk_references_without_local_pdf"] = sum(
         len(year["chunk_references_without_local_pdf"]) for year in years
     )
+    totals["allowed_quality_exclusions"] = sum(len(year["allowed_quality_exclusions"]) for year in years)
+    totals["unapproved_pdfs_without_chunks"] = sum(
+        len(year["unapproved_pdfs_without_chunks"]) for year in years
+    )
     ready = (
         all(year["expected_pdfs"] == year["local_pdfs"] for year in years)
-        and totals["pdfs_without_chunks"] == 0
+        and totals["unapproved_pdfs_without_chunks"] == 0
         and totals["chunk_references_without_local_pdf"] == 0
         and totals["malformed_json_records"] == 0
         and totals["records_missing_required_fields"] == 0
@@ -107,6 +129,7 @@ def main() -> None:
         "scope": {"years": [args.start_year, args.end_year], "retrieval_index_built": False},
         "ready_for_week_4_retrieval_indexing": ready,
         "totals": totals,
+        "allowed_quality_exclusion_pdf_files": sorted(allowed_quality_exclusions),
         "years": years,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

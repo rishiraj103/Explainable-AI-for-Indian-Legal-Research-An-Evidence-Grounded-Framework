@@ -1,0 +1,357 @@
+{
+  "audited_at_utc": "2026-08-28T16:23:11.879266+00:00",
+  "method": {
+    "sampling": "all locally available raw PDFs",
+    "seed": 20260828,
+    "quality_bar": "pass only when native text has at least 80 non-whitespace characters, no Unicode control/surrogate codepoints, fewer than two replacement or mojibake markers, ASCII-visible ratio >=0.75, and English ASCII-word/token ratio >=0.25 where applicable",
+    "scope": "Raw PDF embedded text, before cleaning/chunking; no source or derived data changed."
+  },
+  "sample_size": 39069,
+  "available_years": 71,
+  "classification_counts": {
+    "pass": 39054,
+    "needs_repair": 15
+  },
+  "reason_counts": {
+    "unicode_control_characters": 11,
+    "mojibake_markers": 6,
+    "insufficient_embedded_text": 3
+  },
+  "records": [
+    {
+      "source_id": "1981_2_185_265",
+      "pdf": "ecourts\\pdfs\\year=1980\\1981_2_185_265_EN.pdf",
+      "year": 1980,
+      "pages": 81,
+      "pages_with_embedded_images": 81,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters"
+      ],
+      "metrics": {
+        "nonspace_characters": 180933,
+        "ascii_visible_ratio": 0.998259,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 1,
+        "tokens": 35820,
+        "ascii_words": 33205,
+        "ascii_words_per_token": 0.926996
+      },
+      "native_text_preview": "                                                      185   AKHJL BHARATIYA SOSHIT KARAMCHARI SANGH (RAIL-  A     WAY) REPRESENTED BY ITS ASSISTANT GENERAL      SECRETARY ON BEHALF OF THE ASSOCIATION                                                  v.               UNION OF INDIA AND ORS.           "
+    },
+    {
+      "source_id": "1981_2_185_265",
+      "pdf": "ecourts\\pdfs\\year=1981\\1981_2_185_265_EN.pdf",
+      "year": 1981,
+      "pages": 81,
+      "pages_with_embedded_images": 81,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters"
+      ],
+      "metrics": {
+        "nonspace_characters": 180933,
+        "ascii_visible_ratio": 0.998259,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 1,
+        "tokens": 35820,
+        "ascii_words": 33205,
+        "ascii_words_per_token": 0.926996
+      },
+      "native_text_preview": "                                                      185   AKHJL BHARATIYA SOSHIT KARAMCHARI SANGH (RAIL-  A     WAY) REPRESENTED BY ITS ASSISTANT GENERAL      SECRETARY ON BEHALF OF THE ASSOCIATION                                                  v.               UNION OF INDIA AND ORS.           "
+    },
+    {
+      "source_id": "1981_2_516_532",
+      "pdf": "ecourts\\pdfs\\year=1981\\1981_2_516_532_EN.pdf",
+      "year": 1981,
+      "pages": 17,
+      "pages_with_embedded_images": 17,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters",
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 35814,
+        "ascii_visible_ratio": 0.927738,
+        "control_characters": 127,
+        "replacement_characters": 0,
+        "mojibake_markers": 125,
+        "tokens": 9296,
+        "ascii_words": 5974,
+        "ascii_words_per_token": 0.642642
+      },
+      "native_text_preview": "       516                                                                                                      t                  FRANCIS CORALIE MULLIN                                                                                    ...                                          '     THE ADMINIST"
+    },
+    {
+      "source_id": "1981_2_615_636",
+      "pdf": "ecourts\\pdfs\\year=1981\\1981_2_615_636_EN.pdf",
+      "year": 1981,
+      "pages": 22,
+      "pages_with_embedded_images": 22,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters",
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 49876,
+        "ascii_visible_ratio": 0.998276,
+        "control_characters": 2,
+        "replacement_characters": 0,
+        "mojibake_markers": 2,
+        "tokens": 10428,
+        "ascii_words": 9609,
+        "ascii_words_per_token": 0.921461
+      },
+      "native_text_preview": "                                                                    6 1 &                         STATE OF PUNJAB              A  ..                                       v.                  WASSON SINGH AND FIVE OTHERS                                     January 1 5, 1981                           "
+    },
+    {
+      "source_id": "1983_2_249_270",
+      "pdf": "ecourts\\pdfs\\year=1983\\1983_2_249_270_EN.pdf",
+      "year": 1983,
+      "pages": 22,
+      "pages_with_embedded_images": 22,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters"
+      ],
+      "metrics": {
+        "nonspace_characters": 45377,
+        "ascii_visible_ratio": 0.997378,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 1,
+        "tokens": 9620,
+        "ascii_words": 8704,
+        "ascii_words_per_token": 0.904782
+      },
+      "native_text_preview": "                                                           249                                   A           HAJJ SIDDIK HAJI UMAR & OTHERS                                                     v.                UNION OF INDIA             B                          Jam1ary 18, 1983        (A. P. SEN, "
+    },
+    {
+      "source_id": "1983_2_676_683",
+      "pdf": "ecourts\\pdfs\\year=1983\\1983_2_676_683_EN.pdf",
+      "year": 1983,
+      "pages": 8,
+      "pages_with_embedded_images": 8,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters"
+      ],
+      "metrics": {
+        "nonspace_characters": 15097,
+        "ascii_visible_ratio": 0.99735,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 1,
+        "tokens": 3171,
+        "ascii_words": 2901,
+        "ascii_words_per_token": 0.914853
+      },
+      "native_text_preview": "      676         THB MUNICIPAL CORPORATION OF THE CITY OF  A                AHMED ABAD                                                        v.                  BEN HIRABEN MANILAL -B                                   April 5, 1983.                    [D.P. MADON AND SABYASACHl MUKITARJI, JJ.]    "
+    },
+    {
+      "source_id": "S_1985_2_131_301",
+      "pdf": "ecourts\\pdfs\\year=1985\\S_1985_2_131_301_EN.pdf",
+      "year": 1985,
+      "pages": 171,
+      "pages_with_embedded_images": 171,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters",
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 342298,
+        "ascii_visible_ratio": 0.997935,
+        "control_characters": 2,
+        "replacement_characters": 0,
+        "mojibake_markers": 2,
+        "tokens": 71543,
+        "ascii_words": 65376,
+        "ascii_words_per_token": 0.9138
+      },
+      "native_text_preview": "                                                                  131                        UNION OF INDIA AND ANOTHER                   A                                                               . v.                       TULSIRAM PATEL AND OTHERS                              JULY 11, 1985   "
+    },
+    {
+      "source_id": "S_1985_2_936_948",
+      "pdf": "ecourts\\pdfs\\year=1985\\S_1985_2_936_948_EN.pdf",
+      "year": 1985,
+      "pages": 13,
+      "pages_with_embedded_images": 13,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters",
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 25275,
+        "ascii_visible_ratio": 0.997943,
+        "control_characters": 3,
+        "replacement_characters": 0,
+        "mojibake_markers": 3,
+        "tokens": 5307,
+        "ascii_words": 4813,
+        "ascii_words_per_token": 0.906915
+      },
+      "native_text_preview": "     936                                                                                                                     .. A                             DR. K. GEORGE THOMAS                                          v.                       THE C. I. T. KERALA, ERNAKllLAM                        "
+    },
+    {
+      "source_id": "S_1988_1_411_424",
+      "pdf": "ecourts\\pdfs\\year=1988\\S_1988_1_411_424_EN.pdf",
+      "year": 1988,
+      "pages": 14,
+      "pages_with_embedded_images": 14,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters"
+      ],
+      "metrics": {
+        "nonspace_characters": 27266,
+        "ascii_visible_ratio": 0.999266,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 1,
+        "tokens": 5445,
+        "ascii_words": 5136,
+        "ascii_words_per_token": 0.943251
+      },
+      "native_text_preview": "                  JAIPAL & OTHERS                                               A                                                 ~·          STATE OF HARYANA AND OTHERS                     JUNE 2, 1988                IK.N. SINGH AND M.H. KANIA,  JJ.]          B         Constitution of India: Articl"
+    },
+    {
+      "source_id": "S_1994_1_136_162",
+      "pdf": "ecourts\\pdfs\\year=1994\\S_1994_1_136_162_EN.pdf",
+      "year": 1994,
+      "pages": 27,
+      "pages_with_embedded_images": 27,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters",
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 47248,
+        "ascii_visible_ratio": 0.999132,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 2,
+        "tokens": 9910,
+        "ascii_words": 9000,
+        "ascii_words_per_token": 0.908174
+      },
+      "native_text_preview": "A          MORGAN STANLEY MUTUAL FUND                                                          v.                     KARTICKDAS                    MAY 20, 1994 B            [M.N. VENKATACHALIAH, CJ., S. MOHAN AND                       DR. A.S. ANAND, JJ.]          Consumer Protection Act 1986, Secs"
+    },
+    {
+      "source_id": "S_1994_1_693_713",
+      "pdf": "ecourts\\pdfs\\year=1994\\S_1994_1_693_713_EN.pdf",
+      "year": 1994,
+      "pages": 21,
+      "pages_with_embedded_images": 21,
+      "classification": "needs_repair",
+      "reasons": [
+        "unicode_control_characters"
+      ],
+      "metrics": {
+        "nonspace_characters": 44542,
+        "ascii_visible_ratio": 0.999461,
+        "control_characters": 1,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 9266,
+        "ascii_words": 8654,
+        "ascii_words_per_token": 0.933952
+      },
+      "native_text_preview": "           YOGENDRA PAL AND OTHERS           A                                                        v.           MUNICIPALITY, BHATINDA AND ANR.                     JULY 15, 1994                (P.B. SAWANT AND DR. AS. ANAND, JJ.]        B        Municipalitie>-Punjab Municipal Act, 19 ll-Section "
+    },
+    {
+      "source_id": "S_1996_2_866_868",
+      "pdf": "ecourts\\pdfs\\year=1996\\S_1996_2_866_868_EN.pdf",
+      "year": 1996,
+      "pages": 1,
+      "pages_with_embedded_images": 0,
+      "classification": "needs_repair",
+      "reasons": [
+        "insufficient_embedded_text"
+      ],
+      "metrics": {
+        "nonspace_characters": 52,
+        "ascii_visible_ratio": 1.0,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 9,
+        "ascii_words": 9,
+        "ascii_words_per_token": 1.0
+      },
+      "native_text_preview": "Forbidden  You don't have permission to access this resource."
+    },
+    {
+      "source_id": "1998_1_937_947",
+      "pdf": "ecourts\\pdfs\\year=1998\\1998_1_937_947_EN.pdf",
+      "year": 1998,
+      "pages": 1,
+      "pages_with_embedded_images": 0,
+      "classification": "needs_repair",
+      "reasons": [
+        "insufficient_embedded_text"
+      ],
+      "metrics": {
+        "nonspace_characters": 33,
+        "ascii_visible_ratio": 1.0,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7,
+        "ascii_words": 7,
+        "ascii_words_per_token": 1.0
+      },
+      "native_text_preview": "Welcome User Search Page not Found here"
+    },
+    {
+      "source_id": "1998_1_948_960",
+      "pdf": "ecourts\\pdfs\\year=1998\\1998_1_948_960_EN.pdf",
+      "year": 1998,
+      "pages": 1,
+      "pages_with_embedded_images": 0,
+      "classification": "needs_repair",
+      "reasons": [
+        "insufficient_embedded_text"
+      ],
+      "metrics": {
+        "nonspace_characters": 33,
+        "ascii_visible_ratio": 1.0,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 0,
+        "tokens": 7,
+        "ascii_words": 7,
+        "ascii_words_per_token": 1.0
+      },
+      "native_text_preview": "Welcome User Search Page not Found here"
+    },
+    {
+      "source_id": "2018_12_654_671",
+      "pdf": "ecourts\\pdfs\\year=2018\\2018_12_654_671_EN.pdf",
+      "year": 2018,
+      "pages": 18,
+      "pages_with_embedded_images": 0,
+      "classification": "needs_repair",
+      "reasons": [
+        "mojibake_markers"
+      ],
+      "metrics": {
+        "nonspace_characters": 33760,
+        "ascii_visible_ratio": 0.997541,
+        "control_characters": 0,
+        "replacement_characters": 0,
+        "mojibake_markers": 2,
+        "tokens": 7064,
+        "ascii_words": 6255,
+        "ascii_words_per_token": 0.885476
+      },
+      "native_text_preview": "654       SUPREME COURT[2018]REPORTS12 S.C.R. 654      [2018] 12 S.C.R.     A                YASHWANT ETC.                                                 v.                THE STATE OF MAHARASHTRA                    (Criminal Appeal No(s). 385-386 of 2008)  B                 SEPTEMBER 4, 2018      "
+    }
+  ]
+}
