@@ -19,3 +19,10 @@ __pycache__/
 
 # Local retrieval index (rebuild from PostgreSQL provenance)
 /retrieval/
+
+# Local E2 model caches, checkpoints, and weights (results remain tracked).
+/artifacts/e2_hf_cache/
+/artifacts/e2_training_checkpoints/
+/artifacts/e2_model/
+/artifacts/e2_docker_build*.log
+/artifacts/e2_training*.log

@@ -1,0 +1,36 @@
+{
+  "experiment": "E2",
+  "name": "ILDC facts-only InLegalBERT sequence-classification baseline",
+  "model": {
+    "id": "law-ai/InLegalBERT",
+    "revision": "b5ecfed8ed6cf9d25a3cb8225a8c52f161f7401a",
+    "head_initialization": "AutoModelForSequenceClassification with a new randomly initialized two-label classification head"
+  },
+  "facts_extraction_config": "config/facts_extraction.json",
+  "fixed_split_files": {
+    "train": "corpus/ildc/single_train.parquet",
+    "validation": "corpus/ildc/single_validation.parquet",
+    "test": "corpus/ildc/single_test.parquet"
+  },
+  "input": {
+    "text_source": "shared extract_case_facts output only; no retrieval or evidence lookup",
+    "max_length": 256,
+    "truncation": true,
+    "padding": "max_length"
+  },
+  "training": {
+    "seed": 202606,
+    "num_train_epochs": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "per_device_train_batch_size": 2,
+    "per_device_eval_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "gradient_checkpointing": true,
+    "fp16": true,
+    "optim": "adamw_torch"
+  },
+  "selection_protocol": "Evaluate and save after each epoch on validation accuracy only. Load the best validation checkpoint, then evaluate the test split once. Do not tune after test evaluation.",
+  "test_metrics": ["accuracy", "macro_f1", "class_0_f1", "class_1_f1", "confusion_matrix"]
+}
