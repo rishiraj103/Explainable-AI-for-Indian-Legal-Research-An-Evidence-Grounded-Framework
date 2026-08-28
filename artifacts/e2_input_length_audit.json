@@ -1,0 +1,64 @@
+{
+  "audit": "facts-only input lengths before E2 tokenization truncation",
+  "facts_rule_version": "ildc-predecision-facts-v1",
+  "model": {
+    "id": "law-ai/InLegalBERT",
+    "revision": "b5ecfed8ed6cf9d25a3cb8225a8c52f161f7401a",
+    "max_position_embeddings": 512
+  },
+  "implemented_max_length": 256,
+  "splits": {
+    "train": {
+      "eligible_cases": 5020,
+      "min": 138,
+      "p25": 1440,
+      "median": 2208,
+      "p75": 3415,
+      "p90": 5260,
+      "p95": 7256,
+      "p99": 13535,
+      "max": 65672,
+      "mean": 2909.95,
+      "exceeds_256": 4999,
+      "exceeds_256_rate": 0.995817,
+      "exceeds_512": 4914,
+      "exceeds_512_rate": 0.978884,
+      "source_sha256": "0d878add7371ad0d9ed41f59b0753d6c45b5fb6ebaec78b2d6284fe2a884f4b3"
+    },
+    "validation": {
+      "eligible_cases": 983,
+      "min": 187,
+      "p25": 1281,
+      "median": 2020,
+      "p75": 3236,
+      "p90": 4851,
+      "p95": 6633,
+      "p99": 11561,
+      "max": 24731,
+      "mean": 2651.49,
+      "exceeds_256": 977,
+      "exceeds_256_rate": 0.993896,
+      "exceeds_512": 949,
+      "exceeds_512_rate": 0.965412,
+      "source_sha256": "2140d52ecf8f9af5554c0ca9a8f15ca59994383d1e722298c1bb7ef419ca8fa1"
+    },
+    "test": {
+      "eligible_cases": 1503,
+      "min": 134,
+      "p25": 1336,
+      "median": 2110,
+      "p75": 3322,
+      "p90": 5148,
+      "p95": 6890,
+      "p99": 12550,
+      "max": 31257,
+      "mean": 2754.89,
+      "exceeds_256": 1491,
+      "exceeds_256_rate": 0.992016,
+      "exceeds_512": 1454,
+      "exceeds_512_rate": 0.967399,
+      "source_sha256": "10cddb021db95645799c22a7db000234bde5f7657d54e5c8e2c70688b0a36efc"
+    }
+  },
+  "interpretation": "On the locked test population, 1491 of 1503 inputs (99.20%) exceed the implemented 256-token limit; 1454 (96.74%) exceed 512 tokens. The 256-token cap is therefore an explicit implementation limitation to evaluate before accepting E2 as a model-only comparison."
+}

@@ -1,0 +1,69 @@
+{
+  "audit": "saved E2 Trainer history and final-test checkpoint selection",
+  "selected_checkpoint": "artifacts/e2_training_checkpoints/checkpoint-939",
+  "best_validation_accuracy": 0.572736520854527,
+  "validation_history": [
+    {
+      "epoch": 0.9976095617529881,
+      "eval_accuracy": 0.5005086469989827,
+      "eval_macro_f1": 0.33536173089925625,
+      "eval_loss": 0.7237793207168579,
+      "step": 313
+    },
+    {
+      "epoch": 1.999203187250996,
+      "eval_accuracy": 0.5584944048830112,
+      "eval_macro_f1": 0.5086811313801363,
+      "eval_loss": 0.7225114703178406,
+      "step": 627
+    },
+    {
+      "epoch": 2.9944223107569723,
+      "eval_accuracy": 0.572736520854527,
+      "eval_macro_f1": 0.5587518596419228,
+      "eval_loss": 0.7182932496070862,
+      "step": 939
+    }
+  ],
+  "checkpoint_selection_verified": true,
+  "training_loss_observation": {
+    "first": 0.6833,
+    "last": 0.5928,
+    "relative_change_percent": -13.2445
+  },
+  "test_confusion_matrix": [
+    [
+      552,
+      197
+    ],
+    [
+      450,
+      304
+    ]
+  ],
+  "predicted_label_counts": {
+    "0": 1002,
+    "1": 501
+  },
+  "test_metrics": {
+    "accuracy": 0.569528,
+    "macro_f1": 0.55748,
+    "class_0_f1": 0.630497,
+    "class_1_f1": 0.484462,
+    "confusion_matrix_labels": [
+      0,
+      1
+    ],
+    "confusion_matrix": [
+      [
+        552,
+        197
+      ],
+      [
+        450,
+        304
+      ]
+    ]
+  },
+  "conclusion": "The saved best checkpoint and both-class prediction behavior are verified. The audit does not establish a sequence-length strategy for inputs longer than the model limit."
+}
