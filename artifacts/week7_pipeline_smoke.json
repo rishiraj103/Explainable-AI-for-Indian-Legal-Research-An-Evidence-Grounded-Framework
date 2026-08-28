@@ -1,0 +1,65 @@
+{
+  "run_id": "e2b4ec80-7253-48bb-9775-392095c23f15",
+  "query_id": "week7-pipeline-smoke",
+  "query_year": 2020,
+  "query": "anticipatory bail section 438",
+  "candidate_count": 30,
+  "query_duplicate_chunks_excluded": 0,
+  "eligible_returned": 3,
+  "status_counts": {
+    "eligible": 19,
+    "ambiguous_excluded": 11,
+    "ineligible": 0,
+    "excluded_missing_metadata": 0
+  },
+  "eligible_results": [
+    {
+      "rank": 3,
+      "chunk_id": "2018_3_739_749::p0001::c003",
+      "source_id": "2018_3_739_749",
+      "case_id": "2018 INSC 277",
+      "citation": "[2018] 3 S.C.R. 739",
+      "decision_date": "2018-03-27",
+      "court": "Supreme Court of India",
+      "pdf_file": "2018_3_739_749_EN.pdf",
+      "page_number": 1,
+      "passage_start_char": 1596,
+      "passage_end_char": 1988,
+      "bm25_score": 31.300405354989216,
+      "temporal_status": "eligible",
+      "text": "Anticipatory bail vis-a-vis regular bail – Held: The satisfaction of the Court for granting protection u/s. 438 Cr.P.C. (anticipatory bail) is different from the one u/s. 439 Cr.P.C. (regular bail) – Merely because an accused was under protection of anticipatory bail does not entitle him automatically to regular bail – Code of Criminal Procedure, 1973 – ss. 438 and 439. [2018] 3 S.C.R. 739"
+    },
+    {
+      "rank": 4,
+      "chunk_id": "2012_5_1_15::p0002::c002",
+      "source_id": "2012_5_1_15",
+      "case_id": "2012 INSC 130",
+      "citation": "[2012] 5 S.C.R. 1",
+      "decision_date": "2012-03-14",
+      "court": "Supreme Court of India",
+      "pdf_file": "2012_5_1_15_EN.pdf",
+      "page_number": 2,
+      "passage_start_char": 424,
+      "passage_end_char": 659,
+      "bm25_score": 31.162344407639097,
+      "temporal_status": "eligible",
+      "text": "The respondents applied for anticipatory bail. The Sessions Judge rejected the same. However, the High Court enlarged the respondents on c anticipatory bail under Section 438 Cr.P.C. Therefore, the appellants filed the instant appeals."
+    },
+    {
+      "rank": 6,
+      "chunk_id": "2008_14_179_205::p0018::c003",
+      "source_id": "2008_14_179_205",
+      "case_id": "2008 INSC 1125",
+      "citation": "[2008] 14 S.C.R. 179",
+      "decision_date": "2008-10-03",
+      "court": "Supreme Court of India",
+      "pdf_file": "2008_14_179_205_EN.pdf",
+      "page_number": 18,
+      "passage_start_char": 1238,
+      "passage_end_char": 1951,
+      "bm25_score": 30.51284196879472,
+      "temporal_status": "eligible",
+      "text": "Considering the exercise of power by Courts under Section 438 and grant of • anticipatory bail in favour of applicants, the Committee ob- ~ ... , served that the provision as to anticipatory bail has often been 'misused by rich and influential people'. The Committee, howt ever, opined to retain the provision subject to two conditions; (i) Public Prosecutor should be heard by the court before granting an application for- anticipatory bail; and (ii) Petition for anticipatory bail should be heard only by the court of competent jurisdiction. 40. It may be stated that Section 438 has been amended by the Code of Criminal Procedure (Amendment) Act, 2005 which now provides for hearing of Public Prosecutor before"
+    }
+  ]
+}
