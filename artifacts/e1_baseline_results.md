@@ -28,6 +28,7 @@ Selected `C=10.0` by validation accuracy; ties use the smaller C.
 - Macro F1: **0.6123**
 - Class 0 F1: `0.6330`; Class 1 F1: `0.5917`.
 - Confusion matrix (rows=true, columns=predicted; labels 0,1): `[[501, 248], [333, 421]]`.
+- Majority-class baseline: label `1` at `0.5017` accuracy; E1 improves accuracy by `11.18` percentage points.
 
 ## Reproducibility and limitation
 

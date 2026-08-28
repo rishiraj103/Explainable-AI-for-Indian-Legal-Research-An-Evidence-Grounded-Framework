@@ -1,0 +1,262 @@
+{
+  "facts_rule_version": "ildc-predecision-facts-v1",
+  "total_rows": 7593,
+  "exclusion_rate_percent": 1.1458,
+  "overall": {
+    "retained": {
+      "rows": 7506,
+      "label_counts": {
+        "0": 4356,
+        "1": 3150
+      },
+      "source_word_quantiles": {
+        "p10": 1285.5,
+        "median": 2949.5,
+        "p90": 7119.0
+      },
+      "year_range": [
+        1947,
+        2019
+      ],
+      "header_derived_case_type_counts": {
+        "civil": 5137,
+        "criminal": 1268,
+        "original": 432,
+        "other_or_unclassified": 567,
+        "writ_or_constitutional": 102
+      },
+      "header_derived_case_type_percent": {
+        "civil": 68.44,
+        "criminal": 16.89,
+        "original": 5.76,
+        "other_or_unclassified": 7.55,
+        "writ_or_constitutional": 1.36
+      }
+    },
+    "excluded": {
+      "rows": 87,
+      "label_counts": {
+        "0": 43,
+        "1": 44
+      },
+      "source_word_quantiles": {
+        "p10": 513.4,
+        "median": 3527.0,
+        "p90": 11473.0
+      },
+      "year_range": [
+        1957,
+        2008
+      ],
+      "header_derived_case_type_counts": {
+        "civil": 59,
+        "criminal": 12,
+        "original": 5,
+        "other_or_unclassified": 8,
+        "writ_or_constitutional": 3
+      },
+      "header_derived_case_type_percent": {
+        "civil": 67.82,
+        "criminal": 13.79,
+        "original": 5.75,
+        "other_or_unclassified": 9.2,
+        "writ_or_constitutional": 3.45
+      }
+    }
+  },
+  "per_fixed_split": {
+    "train": {
+      "retained": {
+        "rows": 5020,
+        "label_counts": {
+          "0": 3116,
+          "1": 1904
+        },
+        "source_word_quantiles": {
+          "p10": 1309.0,
+          "median": 2978.5,
+          "p90": 7102.0
+        },
+        "year_range": [
+          1947,
+          2019
+        ],
+        "header_derived_case_type_counts": {
+          "civil": 3423,
+          "criminal": 851,
+          "original": 303,
+          "other_or_unclassified": 372,
+          "writ_or_constitutional": 71
+        },
+        "header_derived_case_type_percent": {
+          "civil": 68.19,
+          "criminal": 16.95,
+          "original": 6.04,
+          "other_or_unclassified": 7.41,
+          "writ_or_constitutional": 1.41
+        }
+      },
+      "excluded": {
+        "rows": 62,
+        "label_counts": {
+          "0": 31,
+          "1": 31
+        },
+        "source_word_quantiles": {
+          "p10": 1512.9,
+          "median": 3532.0,
+          "p90": 12161.7
+        },
+        "year_range": [
+          1957,
+          1995
+        ],
+        "header_derived_case_type_counts": {
+          "civil": 44,
+          "criminal": 8,
+          "original": 3,
+          "other_or_unclassified": 5,
+          "writ_or_constitutional": 2
+        },
+        "header_derived_case_type_percent": {
+          "civil": 70.97,
+          "criminal": 12.9,
+          "original": 4.84,
+          "other_or_unclassified": 8.06,
+          "writ_or_constitutional": 3.23
+        }
+      }
+    },
+    "validation": {
+      "retained": {
+        "rows": 983,
+        "label_counts": {
+          "0": 491,
+          "1": 492
+        },
+        "source_word_quantiles": {
+          "p10": 1231.6,
+          "median": 2826.0,
+          "p90": 6893.2
+        },
+        "year_range": [
+          1950,
+          2008
+        ],
+        "header_derived_case_type_counts": {
+          "civil": 695,
+          "criminal": 157,
+          "original": 58,
+          "other_or_unclassified": 63,
+          "writ_or_constitutional": 10
+        },
+        "header_derived_case_type_percent": {
+          "civil": 70.7,
+          "criminal": 15.97,
+          "original": 5.9,
+          "other_or_unclassified": 6.41,
+          "writ_or_constitutional": 1.02
+        }
+      },
+      "excluded": {
+        "rows": 11,
+        "label_counts": {
+          "0": 6,
+          "1": 5
+        },
+        "source_word_quantiles": {
+          "p10": 192.0,
+          "median": 2114.0,
+          "p90": 7365.0
+        },
+        "year_range": [
+          1972,
+          1997
+        ],
+        "header_derived_case_type_counts": {
+          "civil": 7,
+          "criminal": 1,
+          "original": 1,
+          "other_or_unclassified": 1,
+          "writ_or_constitutional": 1
+        },
+        "header_derived_case_type_percent": {
+          "civil": 63.64,
+          "criminal": 9.09,
+          "original": 9.09,
+          "other_or_unclassified": 9.09,
+          "writ_or_constitutional": 9.09
+        }
+      }
+    },
+    "test": {
+      "retained": {
+        "rows": 1503,
+        "label_counts": {
+          "0": 749,
+          "1": 754
+        },
+        "source_word_quantiles": {
+          "p10": 1244.2,
+          "median": 2939.0,
+          "p90": 7244.2
+        },
+        "year_range": [
+          1950,
+          2017
+        ],
+        "header_derived_case_type_counts": {
+          "civil": 1019,
+          "criminal": 260,
+          "original": 71,
+          "other_or_unclassified": 132,
+          "writ_or_constitutional": 21
+        },
+        "header_derived_case_type_percent": {
+          "civil": 67.8,
+          "criminal": 17.3,
+          "original": 4.72,
+          "other_or_unclassified": 8.78,
+          "writ_or_constitutional": 1.4
+        }
+      },
+      "excluded": {
+        "rows": 14,
+        "label_counts": {
+          "0": 6,
+          "1": 8
+        },
+        "source_word_quantiles": {
+          "p10": 252.3,
+          "median": 4617.5,
+          "p90": 16036.8
+        },
+        "year_range": [
+          1957,
+          2008
+        ],
+        "header_derived_case_type_counts": {
+          "civil": 8,
+          "criminal": 3,
+          "original": 1,
+          "other_or_unclassified": 2
+        },
+        "header_derived_case_type_percent": {
+          "civil": 57.14,
+          "criminal": 21.43,
+          "original": 7.14,
+          "other_or_unclassified": 14.29
+        }
+      }
+    }
+  },
+  "exclusion_failure_reasons": {
+    "below_minimum_facts_words": 37,
+    "below_minimum_retained_fraction": 78
+  },
+  "excluded_boundary_reasons": {
+    "dispositive_cue": 74,
+    "positional_cap": 5,
+    "section_header": 8
+  }
+}

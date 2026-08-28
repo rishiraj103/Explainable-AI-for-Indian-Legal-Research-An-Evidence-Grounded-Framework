@@ -91,6 +91,16 @@
       ]
     ]
   },
+  "majority_class_baseline": {
+    "label": 1,
+    "label_counts": {
+      "0": 749,
+      "1": 754
+    },
+    "accuracy": 0.501663,
+    "macro_f1": 0.334072,
+    "accuracy_point_gain": 11.1777
+  },
   "splits": {
     "train": {
       "source_path": "corpus\\ildc\\single_train.parquet",

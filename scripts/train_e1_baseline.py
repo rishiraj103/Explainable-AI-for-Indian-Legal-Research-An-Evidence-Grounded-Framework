@@ -136,6 +136,7 @@ def _write_markdown(path: Path, result: dict[str, Any]) -> None:
                 f"- Macro F1: **{test['macro_f1']:.4f}**",
                 f"- Class 0 F1: `{test['class_0_f1']:.4f}`; Class 1 F1: `{test['class_1_f1']:.4f}`.",
                 f"- Confusion matrix (rows=true, columns=predicted; labels 0,1): `{test['confusion_matrix']}`.",
+                f"- Majority-class baseline: label `{result['majority_class_baseline']['label']}` at `{result['majority_class_baseline']['accuracy']:.4f}` accuracy; E1 improves accuracy by `{result['majority_class_baseline']['accuracy_point_gain']:.2f}` percentage points.",
                 "",
                 "## Reproducibility and limitation",
                 "",
@@ -197,6 +198,13 @@ def main() -> None:
     final_classifier = _classifier(config, selected_c)
     final_classifier.fit(final_features, final_labels)
     test_predictions = final_classifier.predict(final_vectorizer.transform(test_texts)).tolist()
+    test_metrics = _metrics(test_labels, test_predictions)
+    test_label_counts = Counter(test_labels)
+    majority_label = min(
+        label for label, count in test_label_counts.items() if count == max(test_label_counts.values())
+    )
+    majority_predictions = [majority_label] * len(test_labels)
+    majority_metrics = _metrics(test_labels, majority_predictions)
 
     result = {
         "experiment": config["experiment"],
@@ -207,7 +215,14 @@ def main() -> None:
         "selection_protocol": config["selection_protocol"],
         "selected_C": selected_c,
         "validation_candidates": validation_candidates,
-        "test_metrics": _metrics(test_labels, test_predictions),
+        "test_metrics": test_metrics,
+        "majority_class_baseline": {
+            "label": majority_label,
+            "label_counts": dict(sorted(test_label_counts.items())),
+            "accuracy": majority_metrics["accuracy"],
+            "macro_f1": majority_metrics["macro_f1"],
+            "accuracy_point_gain": round((test_metrics["accuracy"] - majority_metrics["accuracy"]) * 100, 4),
+        },
         "splits": split_details,
         "final_fit": {"splits": ["train", "validation"], "rows": len(final_labels)},
         "versions": {
