@@ -1,0 +1,9 @@
+{
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "candidate_k": 100,
+  "max_selected_evidence": 5,
+  "eligibility_requirement": "temporal_status == eligible",
+  "redundancy_rule": "select at most one chunk per source_id",
+  "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
+  "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker."
+}

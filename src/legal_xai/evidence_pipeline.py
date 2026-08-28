@@ -59,6 +59,30 @@ class CandidateRetrieval:
         }
 
 
+def select_diverse_evidence(
+    candidates: tuple[EvidenceCandidate, ...] | list[EvidenceCandidate], max_evidence: int
+) -> tuple[EvidenceCandidate, ...]:
+    """Select top eligible support while avoiding duplicate source judgments.
+
+    This is intentionally a simple, non-learned Week 7 selector. Its score is
+    the frozen BM25 score already produced by retrieval; rank provides a stable
+    tie-breaker. Answer generation is deliberately outside this module.
+    """
+
+    if max_evidence < 1:
+        raise ValueError("max_evidence must be positive")
+    selected: list[EvidenceCandidate] = []
+    used_sources: set[str] = set()
+    for candidate in sorted(candidates, key=lambda item: (-item.bm25_score, item.rank)):
+        if candidate.temporal_status != "eligible" or candidate.source_id in used_sources:
+            continue
+        selected.append(candidate)
+        used_sources.add(candidate.source_id)
+        if len(selected) == max_evidence:
+            break
+    return tuple(selected)
+
+
 def retrieve_temporal_candidates(
     *,
     query_id: str,
