@@ -1,0 +1,195 @@
+{
+  "experiment": "E2",
+  "config_path": "config/e2_baseline.json",
+  "config_sha256": "fd4b736f9952a4143d0af83dccb3779da4538f43650390fb98ef1db1d02d7c9d",
+  "model": {
+    "id": "law-ai/InLegalBERT",
+    "revision": "b5ecfed8ed6cf9d25a3cb8225a8c52f161f7401a",
+    "head_initialization": "AutoModelForSequenceClassification with a new randomly initialized two-label classification head"
+  },
+  "facts_rule_version": "ildc-predecision-facts-v1",
+  "facts_extraction_config_sha256": "2a25d97cc5b61cb274e80d676d5af6fbdfa20c0256504155ac94b3b696e2ccf6",
+  "selection_protocol": "Evaluate and save after each epoch on validation accuracy only. Load the best validation checkpoint, then evaluate the test split once. Do not tune after test evaluation.",
+  "best_checkpoint": "artifacts/e2_training_checkpoints/checkpoint-939",
+  "best_validation_metric": 0.572736520854527,
+  "test_metrics": {
+    "accuracy": 0.569528,
+    "macro_f1": 0.55748,
+    "class_0_f1": 0.630497,
+    "class_1_f1": 0.484462,
+    "confusion_matrix_labels": [
+      0,
+      1
+    ],
+    "confusion_matrix": [
+      [
+        552,
+        197
+      ],
+      [
+        450,
+        304
+      ]
+    ]
+  },
+  "splits": {
+    "train": {
+      "source_path": "corpus/ildc/single_train.parquet",
+      "source_sha256": "0d878add7371ad0d9ed41f59b0753d6c45b5fb6ebaec78b2d6284fe2a884f4b3",
+      "source_rows": 5082,
+      "eligible_rows": 5020,
+      "excluded_rows": 62,
+      "excluded_ids": [
+        "1957_86",
+        "1965_344",
+        "1961_76",
+        "1961_229",
+        "1959_11",
+        "1966_228",
+        "1963_95",
+        "1963_140",
+        "1960_23",
+        "1960_48",
+        "1960_274",
+        "1972_357",
+        "1967_267",
+        "1969_63",
+        "1970_14",
+        "1981_0",
+        "1981_290",
+        "1979_74",
+        "1979_226",
+        "1979_316",
+        "1980_286",
+        "1982_98",
+        "1983_128",
+        "1983_167",
+        "1983_168",
+        "1983_186",
+        "1983_226",
+        "1983_262",
+        "1983_276",
+        "1983_296",
+        "1984_74",
+        "1984_109",
+        "1984_113",
+        "1984_120",
+        "1984_167",
+        "1987_564",
+        "1987_616",
+        "1985_140",
+        "1985_169",
+        "1985_341",
+        "1991_500",
+        "1989_543",
+        "1992_78",
+        "1992_212",
+        "1992_351",
+        "1992_609",
+        "1992_610",
+        "1992_701",
+        "1988_108",
+        "1988_235",
+        "1988_261",
+        "1988_363",
+        "1988_431",
+        "1988_495",
+        "1986_89",
+        "1986_243",
+        "1993_13",
+        "1993_92",
+        "1993_215",
+        "1993_328",
+        "1993_837",
+        "1995_519"
+      ],
+      "eligible_id_sha256": "d57f5865694547a83ba4adc8b03f65cc7a3ee8d98b2676b5726dcee24d830ce4",
+      "label_counts": {
+        "0": 3116,
+        "1": 1904
+      }
+    },
+    "validation": {
+      "source_path": "corpus/ildc/single_validation.parquet",
+      "source_sha256": "2140d52ecf8f9af5554c0ca9a8f15ca59994383d1e722298c1bb7ef419ca8fa1",
+      "source_rows": 994,
+      "eligible_rows": 983,
+      "excluded_rows": 11,
+      "excluded_ids": [
+        "1996_1036",
+        "1988_242",
+        "1987_457",
+        "1997_1513",
+        "1982_54",
+        "1981_74",
+        "1972_186",
+        "1988_211",
+        "1992_520",
+        "1978_222",
+        "1983_293"
+      ],
+      "eligible_id_sha256": "4e53bd457b937d43bf185168c9f4b945e75b8a5d8be90fd583a7d4517932b0f0",
+      "label_counts": {
+        "0": 491,
+        "1": 492
+      }
+    },
+    "test": {
+      "source_path": "corpus/ildc/single_test.parquet",
+      "source_sha256": "10cddb021db95645799c22a7db000234bde5f7657d54e5c8e2c70688b0a36efc",
+      "source_rows": 1517,
+      "eligible_rows": 1503,
+      "excluded_rows": 14,
+      "excluded_ids": [
+        "1992_661",
+        "1989_57",
+        "1988_103",
+        "1974_362",
+        "1973_152",
+        "2008_2083",
+        "1964_46",
+        "1993_69",
+        "1992_208",
+        "1957_7",
+        "1965_170",
+        "1989_492",
+        "1980_363",
+        "1989_216"
+      ],
+      "eligible_id_sha256": "afc0a58e0bbaa3d647f65877ee1b83933d53b4769d5cd2988b8301b596479c4d",
+      "label_counts": {
+        "0": 749,
+        "1": 754
+      }
+    }
+  },
+  "tokenization": {
+    "max_length": 256,
+    "truncation": true,
+    "padding": "max_length"
+  },
+  "training": {
+    "seed": 202606,
+    "num_train_epochs": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "per_device_train_batch_size": 2,
+    "per_device_eval_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "gradient_checkpointing": true,
+    "fp16": true,
+    "optim": "adamw_torch"
+  },
+  "versions": {
+    "python": "3.11.10 | packaged by conda-forge | (main, Oct 16 2024, 01:27:36) [GCC 13.3.0]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "torch": "2.5.1+cu124",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "transformers": "4.46.3",
+    "scikit_learn": "1.5.2",
+    "pyarrow": "18.1.0"
+  },
+  "model_weights_committed": false
+}

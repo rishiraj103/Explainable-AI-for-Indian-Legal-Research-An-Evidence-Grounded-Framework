@@ -207,7 +207,6 @@ def main() -> None:
         logging_steps=50,
         report_to=[],
         seed=settings["seed"],
-        data_seed=settings["seed"],
         dataloader_num_workers=0,
     )
     trainer = Trainer(

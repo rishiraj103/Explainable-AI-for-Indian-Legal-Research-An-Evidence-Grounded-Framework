@@ -1,0 +1,34 @@
+{
+  "comparison": "E2 minus E1 on the single locked test evaluation",
+  "comparability": {
+    "facts_rule_version": "ildc-predecision-facts-v1",
+    "facts_extraction_config_sha256": "2a25d97cc5b61cb274e80d676d5af6fbdfa20c0256504155ac94b3b696e2ccf6",
+    "same_eligible_population_verified": true,
+    "eligible_id_sha256_by_split": {
+      "train": "d57f5865694547a83ba4adc8b03f65cc7a3ee8d98b2676b5726dcee24d830ce4",
+      "validation": "4e53bd457b937d43bf185168c9f4b945e75b8a5d8be90fd583a7d4517932b0f0",
+      "test": "afc0a58e0bbaa3d647f65877ee1b83933d53b4769d5cd2988b8301b596479c4d"
+    },
+    "retrieval_or_evidence_lookup_used": false
+  },
+  "experiments": {
+    "E1": {
+      "name": "TF-IDF + Logistic Regression",
+      "accuracy": 0.61344,
+      "macro_f1": 0.612342
+    },
+    "E2": {
+      "name": "InLegalBERT",
+      "accuracy": 0.569528,
+      "macro_f1": 0.55748,
+      "max_input_tokens": 256
+    }
+  },
+  "test_metric_deltas_e2_minus_e1": {
+    "accuracy": -0.043912,
+    "accuracy_percentage_points": -4.3912,
+    "macro_f1": -0.054862
+  },
+  "conclusion": "E2 did not beat E1 under the frozen Week 6 settings; no test-result-driven tuning was performed.",
+  "known_comparison_limitation": "E2 uses a fixed 256-token model input, while E1 uses the full shared facts extraction output."
+}
