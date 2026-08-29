@@ -4,8 +4,9 @@ Answer-key query population restricted to the ILDC fixed test split per frozen
 schema. `2019_890` is not a test-split ID and is retained only as a labeled
 `dev_example` case, excluded from evaluation and all metric computation.
 
-The evaluation target is 40 distinct ILDC test-split cases. Week 7 is complete
-at 10 cases; the remaining Week 8--10 pacing is 10, 10, and 9 cases respectively. Each
+The evaluation target is 40 distinct ILDC test-split cases. Week 7 and Week 8 are complete
+at 20 distinct cases; Week 9 and Week 10 retain the frozen pacing of 10 and 9 additional
+cases respectively. Each
 candidate must pass `scripts/check_answer_key_candidate.py` against
 `corpus/ildc/single_test.parquet` before any external source-verification work
 begins. The full answer-key validator independently enforces the same rule for
