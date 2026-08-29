@@ -1,0 +1,20 @@
+{
+  "answer_version": "week8-controlled-evidence-renderer-v1",
+  "experiment": "E3",
+  "generation_mode": "controlled_extract_only",
+  "input_contract": "Accept only the Week 7 selected, temporally eligible evidence candidates and the user query; never retrieve, rank, infer, or add authorities.",
+  "required_output_sections": [
+    "legal_issue",
+    "retrieved_authorities",
+    "evidence",
+    "uncertainty"
+  ],
+  "grounding_rule": "Every material legal statement is an exact selected-evidence passage with its stable provenance; static labels and uncertainty wording are non-material boilerplate.",
+  "disallowed_output": [
+    "new legal facts or authorities",
+    "uncited paraphrased legal conclusions",
+    "citations absent from the supplied evidence",
+    "same-year, later, missing-date, or query-duplicate evidence"
+  ],
+  "uncertainty_text": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+}
