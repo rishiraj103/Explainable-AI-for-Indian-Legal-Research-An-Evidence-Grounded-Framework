@@ -1,5 +1,8 @@
 {
-  "schema_version": "week6-authority-key-v1",
+  "schema_version": "week7-authority-key-v2",
+  "evaluation_target_test_cases": 40,
+  "evaluation_test_cases_complete": 0,
+  "evaluation_pacing": {"week_7": 10, "week_8": 10, "week_9": 10, "week_10": 9},
   "entries": [
     {
       "query_case_id": "2019_890",
@@ -14,7 +17,8 @@
       "verification_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
       "verified_on": "2026-08-28",
       "independent_of_system_retrieval": true,
-      "temporal_status": "eligible_by_year"
+      "temporal_status": "eligible_by_year",
+      "status": "dev_example"
     },
     {
       "query_case_id": "2019_890",
@@ -29,7 +33,8 @@
       "verification_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
       "verified_on": "2026-08-28",
       "independent_of_system_retrieval": true,
-      "temporal_status": "eligible_by_year"
+      "temporal_status": "eligible_by_year",
+      "status": "dev_example"
     },
     {
       "query_case_id": "2019_890",
@@ -44,7 +49,8 @@
       "verification_source_url": "https://api.sci.gov.in/supremecourt/2018/1013/1013_2018_Judgement_11-Mar-2019.pdf",
       "verified_on": "2026-08-28",
       "independent_of_system_retrieval": true,
-      "temporal_status": "eligible_by_year"
+      "temporal_status": "eligible_by_year",
+      "status": "dev_example"
     }
   ]
 }

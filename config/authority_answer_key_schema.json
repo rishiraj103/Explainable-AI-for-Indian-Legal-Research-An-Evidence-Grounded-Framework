@@ -1,5 +1,5 @@
 {
-  "version": "week6-authority-key-v1",
+  "version": "week7-authority-key-v2",
   "purpose": "Independent gold references for later authority-retrieval evaluation; never generated from the project's retrieval output.",
   "query_population": "ILDC fixed test split only",
   "inclusion_standard": [
@@ -20,8 +20,12 @@
     "source_locator",
     "verification_source_url",
     "verified_on",
-    "independent_of_system_retrieval"
+    "independent_of_system_retrieval",
+    "status"
   ],
+  "allowed_statuses": ["evaluation", "dev_example"],
+  "evaluation_target_test_cases": 40,
+  "evaluation_pacing": {"week_7": 10, "week_8": 10, "week_9": 10, "week_10": 9},
   "allowed_relationships": ["applied", "relied_on", "distinguished", "quoted_for_principle"],
   "prohibited_source": "Any citation returned, ranked, or suggested by this project's retrieval system."
 }

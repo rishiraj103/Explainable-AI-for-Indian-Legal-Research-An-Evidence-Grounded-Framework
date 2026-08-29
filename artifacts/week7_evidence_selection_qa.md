@@ -5,6 +5,11 @@ BM25 candidate retrieval, temporal eligibility and duplicate exclusion, then
 the deterministic one-chunk-per-source selector. The exact results are in
 `artifacts/week7_evidence_selection_qa.json`.
 
+These are topical development/QA prompts, not ILDC case IDs and not entries in
+the frozen test-split authority answer-key population. They assess retrieval
+usefulness only and are excluded from all answer-key coverage and evaluation
+metrics.
+
 | Query area | Selected sources | Human usefulness assessment |
 | --- | ---: | --- |
 | Anticipatory bail / section 438 | 5 | All five passages directly concern anticipatory bail, section 438, or the relationship to regular bail. |
