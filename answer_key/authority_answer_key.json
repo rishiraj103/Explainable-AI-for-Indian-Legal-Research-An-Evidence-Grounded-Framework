@@ -1,7 +1,7 @@
 {
-  "schema_version": "week7-authority-key-v2",
+  "schema_version": "week7-authority-key-v3",
   "evaluation_target_test_cases": 40,
-  "evaluation_test_cases_complete": 7,
+  "evaluation_test_cases_complete": 10,
   "evaluation_pacing": {"week_7": 10, "week_8": 10, "week_9": 10, "week_10": 9},
   "entries": [
     {
@@ -163,6 +163,63 @@
       "independent_of_system_retrieval": true,
       "temporal_status": "eligible_by_year",
       "status": "evaluation"
+    },
+    {
+      "query_case_id": "2013_95",
+      "query_case_title": "Nasib Kaur & Ors. v. Col. Surat Singh (Deceased) through L.Rs. & Ors.",
+      "query_decision_date": "2013-02-12",
+      "query_source_url": "https://indian-supreme-court-judgments.s3.amazonaws.com/data/pdf/year=2013/english/2013_1_984_995_EN.pdf",
+      "authority_title": "Achintya Kumar Saha v. M/s. Nanee Printers & Ors.",
+      "authority_citation": "(2004) 12 SCC 368",
+      "authority_decision_date": "2004-01-30",
+      "relationship": "distinguished",
+      "source_locator": "Query judgment paragraph 12 (eCourts-mirror SCR page 995): distinguished the earlier case because the core issue had been adjudicated by the first appellate court here.",
+      "verification_source_url": "https://indian-supreme-court-judgments.s3.amazonaws.com/data/pdf/year=2013/english/2013_1_984_995_EN.pdf",
+      "verified_on": "2026-08-29",
+      "independent_of_system_retrieval": true,
+      "temporal_status": "eligible_by_year",
+      "status": "evaluation",
+      "source": "eCourts mirror (same corpus as retrieval index — scraped from scr.sci.gov.in)",
+      "verification_method": "native-text",
+      "not": "live-fetched from court portal"
+    },
+    {
+      "query_case_id": "2017_14",
+      "query_case_title": "Kishore Bhadke v. State of Maharashtra",
+      "query_decision_date": "2017-01-03",
+      "query_source_url": "https://indian-supreme-court-judgments.s3.amazonaws.com/data/pdf/year=2017/english/2017_1_330_365_EN.pdf",
+      "authority_title": "State (N.C.T. of Delhi) v. Navjot Sandhu @ Afsan Guru",
+      "authority_citation": "(2005) 11 SCC 600",
+      "authority_decision_date": "2005-08-04",
+      "relationship": "relied_on",
+      "source_locator": "Query judgment paragraph 20 (eCourts-mirror SCR pages 356-358): relied on for the admissibility analysis of closely successive disclosures by multiple accused under Evidence Act section 27.",
+      "verification_source_url": "https://indian-supreme-court-judgments.s3.amazonaws.com/data/pdf/year=2017/english/2017_1_330_365_EN.pdf",
+      "verified_on": "2026-08-29",
+      "independent_of_system_retrieval": true,
+      "temporal_status": "eligible_by_year",
+      "status": "evaluation",
+      "source": "eCourts mirror (same corpus as retrieval index — scraped from scr.sci.gov.in)",
+      "verification_method": "native-text",
+      "not": "live-fetched from court portal"
+    },
+    {
+      "query_case_id": "2001_414",
+      "query_case_title": "Ravinder Kumar & Anr. v. State of Punjab",
+      "query_decision_date": "2001-08-31",
+      "query_source_url": "https://indian-supreme-court-judgments.s3.amazonaws.com/data/pdf/year=2001/english/S_2001_2_463_472_EN.pdf",
+      "authority_title": "State of Himachal Pradesh v. Jeet Singh",
+      "authority_citation": "(1999) 4 SCC 370",
+      "authority_decision_date": "1999-03-15",
+      "relationship": "quoted_for_principle",
+      "source_locator": "Query judgment (eCourts-mirror SCR page 472): quoted the earlier Court's principle that failure to prove the precise motive does not necessarily weaken a prosecution that shows possible animus.",
+      "verification_source_url": "https://indian-supreme-court-judgments.s3.amazonaws.com/data/pdf/year=2001/english/S_2001_2_463_472_EN.pdf",
+      "verified_on": "2026-08-29",
+      "independent_of_system_retrieval": true,
+      "temporal_status": "eligible_by_year",
+      "status": "evaluation",
+      "source": "eCourts mirror (same corpus as retrieval index — scraped from scr.sci.gov.in)",
+      "verification_method": "native-text",
+      "not": "live-fetched from court portal"
     }
   ]
 }

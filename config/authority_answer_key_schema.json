@@ -1,5 +1,5 @@
 {
-  "version": "week7-authority-key-v2",
+  "version": "week7-authority-key-v3",
   "purpose": "Independent gold references for later authority-retrieval evaluation; never generated from the project's retrieval output.",
   "query_population": "ILDC fixed test split only",
   "inclusion_standard": [
@@ -24,6 +24,12 @@
     "status"
   ],
   "allowed_statuses": ["evaluation", "dev_example"],
+  "source_policy": {
+    "preferred": "Live court portal or Supreme Court Reports host when convenient.",
+    "accepted_primary_fallback": "eCourts mirror, scraped from scr.sci.gov.in; it must carry its Week 3 native-text/OCR-repaired status and must not be a residual low-quality exclusion.",
+    "not_accepted": "Third-party aggregators, case-law blogs, summaries, or citations proposed by this project's retrieval system."
+  },
+  "ecourts_mirror_entry_required_fields": ["source", "verification_method", "not"],
   "evaluation_target_test_cases": 40,
   "evaluation_pacing": {"week_7": 10, "week_8": 10, "week_9": 10, "week_10": 9},
   "allowed_relationships": ["applied", "relied_on", "distinguished", "quoted_for_principle"],

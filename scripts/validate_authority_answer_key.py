@@ -5,7 +5,14 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from legal_xai.answer_key import is_test_split_case, load_test_split_ids
+from legal_xai.answer_key import (
+    is_test_split_case,
+    load_test_split_ids,
+    mirror_source_quality_status,
+)
+
+
+ECOURTS_MIRROR_SOURCE = "eCourts mirror (same corpus as retrieval index — scraped from scr.sci.gov.in)"
 
 
 def main() -> None:
@@ -31,6 +38,24 @@ def main() -> None:
             raise ValueError(f"Entry {index} is not independent of system retrieval")
         if not entry["query_source_url"].startswith("https://") or not entry["verification_source_url"].startswith("https://"):
             raise ValueError(f"Entry {index} lacks an HTTPS source URL")
+        if entry.get("source") == ECOURTS_MIRROR_SOURCE:
+            extra_missing = [field for field in schema["ecourts_mirror_entry_required_fields"] if not entry.get(field)]
+            if extra_missing:
+                raise ValueError(f"Entry {index} is an eCourts-mirror entry missing: {extra_missing}")
+            if entry["verification_method"] not in {"native-text", "OCR-repaired"}:
+                raise ValueError(f"Entry {index} has an invalid eCourts verification method")
+            filename = entry["query_source_url"].rsplit("/", 1)[-1]
+            if not filename.endswith("_EN.pdf"):
+                raise ValueError(f"Entry {index} eCourts source URL has no recognized PDF source ID")
+            source_id = filename.removesuffix("_EN.pdf")
+            quality_status = mirror_source_quality_status(source_id)
+            if quality_status == "excluded_low_quality":
+                raise ValueError(f"Entry {index} relies on a Week 3 excluded low-quality PDF")
+            if quality_status != entry["verification_method"]:
+                raise ValueError(
+                    f"Entry {index} eCourts verification method is {entry['verification_method']!r}, "
+                    f"but the Week 3 audit records {quality_status!r}"
+                )
         if entry["status"] == "evaluation":
             if not is_test_split_case(entry["query_case_id"], test_case_ids):
                 raise ValueError(
