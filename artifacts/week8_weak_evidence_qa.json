@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "17bb13cd-fee4-43ff-a3f5-78746eee6b8a",
+  "query_id": "week8-adversarial-1950",
+  "query_year": 1950,
+  "candidate_count": 99,
+  "selected_evidence_count": 0,
+  "query_duplicate_chunks_excluded": 1,
+  "status_counts": {
+    "eligible": 0,
+    "ambiguous_excluded": 0,
+    "ineligible": 99,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "constitutional validity fundamental rights",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [],
+    "evidence": [],
+    "supported_observations": [],
+    "evidence_sufficiency": "insufficient",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human. No temporally eligible, non-duplicate evidence was selected. The system cannot state a legal conclusion for this query without fabricating support."
+  }
+}

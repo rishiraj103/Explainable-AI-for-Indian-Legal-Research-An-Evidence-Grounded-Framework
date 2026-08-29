@@ -51,7 +51,7 @@ def main() -> None:
         raise ValueError("A Week 8 grounding audit failed")
     output = {
         "run_at_utc": datetime.now(UTC).isoformat(),
-        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "answer_version": results[0]["answer"]["answer_version"] if results else None,
         "query_count": len(results),
         "results": results,
     }

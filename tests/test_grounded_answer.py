@@ -35,11 +35,9 @@ def test_renderer_only_exposes_the_supplied_verbatim_evidence():
     assert_answer_grounded(answer, [source])
 
 
-def test_renderer_rejects_noneligible_or_empty_evidence():
+def test_renderer_rejects_noneligible_evidence():
     with pytest.raises(ValueError, match="ineligible"):
         render_grounded_answer(query="Issue", selected_evidence=[evidence(status="ineligible")])
-    with pytest.raises(ValueError, match="At least one"):
-        render_grounded_answer(query="Issue", selected_evidence=[])
 
 
 def test_grounding_audit_rejects_altered_passage_and_unknown_authority():
@@ -53,3 +51,32 @@ def test_grounding_audit_rejects_altered_passage_and_unknown_authority():
     answer["retrieved_authorities"][0]["evidence_id"] = "E99"
     with pytest.raises(ValueError, match="unknown evidence"):
         assert_answer_grounded(answer, [source])
+
+
+def test_grounding_audit_rejects_a_tempted_unsupported_observation():
+    source = evidence()
+    answer = render_grounded_answer(query="Issue", selected_evidence=[source]).as_dict()
+    answer["supported_observations"][0]["verbatim_passage"] = "The appeal must succeed."
+
+    with pytest.raises(ValueError, match="not verbatim"):
+        assert_answer_grounded(answer, [source])
+
+
+def test_thin_evidence_discloses_limitation_without_a_fabricated_conclusion():
+    source = evidence()
+    answer = render_grounded_answer(query="Issue", selected_evidence=[source]).as_dict()
+
+    assert answer["evidence_sufficiency"] == "limited"
+    assert "Only one eligible passage" in answer["uncertainty"]
+    assert answer["supported_observations"] == [{"evidence_id": "E1", "verbatim_passage": source.text}]
+    assert_answer_grounded(answer, [source])
+
+
+def test_no_eligible_evidence_reports_insufficiency_without_authority_claims():
+    answer = render_grounded_answer(query="Issue", selected_evidence=[]).as_dict()
+
+    assert answer["evidence_sufficiency"] == "insufficient"
+    assert answer["retrieved_authorities"] == []
+    assert answer["supported_observations"] == []
+    assert "cannot state a legal conclusion" in answer["uncertainty"]
+    assert_answer_grounded(answer, [])

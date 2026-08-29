@@ -14,11 +14,19 @@ from typing import Any, Iterable
 from legal_xai.evidence_pipeline import EvidenceCandidate
 
 
-ANSWER_VERSION = "week8-controlled-evidence-renderer-v1"
+ANSWER_VERSION = "week8-controlled-evidence-renderer-v2"
 UNCERTAINTY_TEXT = (
     "This is an evidence-grounded research brief, not legal advice. It reports only the "
     "selected retrieved passages and does not infer conclusions beyond them. Missing or "
     "incomplete evidence should be reviewed by a human."
+)
+NO_ELIGIBLE_EVIDENCE_TEXT = (
+    "No temporally eligible, non-duplicate evidence was selected. The system cannot state a "
+    "legal conclusion for this query without fabricating support."
+)
+LIMITED_EVIDENCE_TEXT = (
+    "Only one eligible passage was selected. It is displayed verbatim, but is insufficient for "
+    "a broader legal conclusion."
 )
 
 
@@ -47,6 +55,15 @@ class GroundedAnswer:
             }
             for position, item in enumerate(self.evidence, start=1)
         ]
+        if not evidence_items:
+            evidence_sufficiency = "insufficient"
+            uncertainty = f"{UNCERTAINTY_TEXT} {NO_ELIGIBLE_EVIDENCE_TEXT}"
+        elif len(evidence_items) == 1:
+            evidence_sufficiency = "limited"
+            uncertainty = f"{UNCERTAINTY_TEXT} {LIMITED_EVIDENCE_TEXT}"
+        else:
+            evidence_sufficiency = "multiple_selected_passages"
+            uncertainty = UNCERTAINTY_TEXT
         return {
             "answer_version": ANSWER_VERSION,
             "legal_issue": {"text": self.query, "source": "user_query"},
@@ -68,7 +85,8 @@ class GroundedAnswer:
                 }
                 for item in evidence_items
             ],
-            "uncertainty": UNCERTAINTY_TEXT,
+            "evidence_sufficiency": evidence_sufficiency,
+            "uncertainty": uncertainty,
         }
 
 
@@ -79,8 +97,6 @@ def render_grounded_answer(
     if not query.strip():
         raise ValueError("A legal-research query is required")
     evidence = tuple(selected_evidence)
-    if not evidence:
-        raise ValueError("At least one selected evidence candidate is required")
     invalid = [item.chunk_id for item in evidence if item.temporal_status != "eligible"]
     if invalid:
         raise ValueError(f"Grounded answers cannot include ineligible evidence: {invalid}")
@@ -121,3 +137,15 @@ def assert_answer_grounded(answer: dict[str, Any], selected_evidence: Iterable[E
         evidence_id = observation.get("evidence_id")
         if observation.get("verbatim_passage") != by_evidence_id.get(evidence_id):
             raise ValueError(f"Answer observation is not verbatim supplied evidence: {evidence_id!r}")
+    expected_sufficiency = (
+        "insufficient" if not expected else "limited" if len(expected) == 1 else "multiple_selected_passages"
+    )
+    if answer.get("evidence_sufficiency") != expected_sufficiency:
+        raise ValueError("Answer evidence sufficiency status does not match supplied evidence")
+    if expected_sufficiency == "insufficient":
+        if answer.get("retrieved_authorities") or answer.get("supported_observations"):
+            raise ValueError("An insufficient-evidence answer cannot claim authorities or observations")
+        if NO_ELIGIBLE_EVIDENCE_TEXT not in str(answer.get("uncertainty", "")):
+            raise ValueError("An insufficient-evidence answer must disclose the missing evidence")
+    elif expected_sufficiency == "limited" and LIMITED_EVIDENCE_TEXT not in str(answer.get("uncertainty", "")):
+        raise ValueError("A limited-evidence answer must disclose its limitation")

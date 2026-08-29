@@ -1,5 +1,5 @@
 {
-  "answer_version": "week8-controlled-evidence-renderer-v1",
+  "answer_version": "week8-controlled-evidence-renderer-v2",
   "experiment": "E3",
   "generation_mode": "controlled_extract_only",
   "input_contract": "Accept only the Week 7 selected, temporally eligible evidence candidates and the user query; never retrieve, rank, infer, or add authorities.",
@@ -9,7 +9,7 @@
     "evidence",
     "uncertainty"
   ],
-  "grounding_rule": "Every material legal statement is an exact selected-evidence passage with its stable provenance; static labels and uncertainty wording are non-material boilerplate.",
+  "grounding_rule": "Every material legal statement is an exact selected-evidence passage with its stable provenance; static labels and uncertainty wording are non-material boilerplate. When no eligible evidence is selected, output no authority or legal observation and state the insufficiency explicitly.",
   "disallowed_output": [
     "new legal facts or authorities",
     "uncited paraphrased legal conclusions",

@@ -1,12 +1,12 @@
 {
-  "run_at_utc": "2026-08-29T05:35:16.530326+00:00",
-  "answer_version": "week8-controlled-evidence-renderer-v1",
+  "run_at_utc": "2026-08-29T16:26:38.656387+00:00",
+  "answer_version": "week8-controlled-evidence-renderer-v2",
   "query_count": 5,
   "results": [
     {
       "experiment": "E3",
       "selection_version": "week7-bm25-diverse-support-v1",
-      "run_id": "125d33b7-fb41-42de-95b3-5d61ec4da2de",
+      "run_id": "ebf752f5-9c68-49fd-9808-0119eae207c0",
       "query_id": "week8-e3-01",
       "query_year": 2020,
       "candidate_count": 100,
@@ -20,7 +20,7 @@
       },
       "grounding_audit": "passed",
       "answer": {
-        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "answer_version": "week8-controlled-evidence-renderer-v2",
         "legal_issue": {
           "text": "anticipatory bail section 438",
           "source": "user_query"
@@ -156,13 +156,14 @@
             "verbatim_passage": "Code of Criminal Procedure, 1973 - s. 438 - State of Uttar Pradesh - Deletion of provision for anticipatory bail under s.438 CrPC by s.9 of the U.P Act 16 of 1976 - Difficulties ~ -( arising therefrom- Per Katju, J., Strong recommendation made to U.P Government to immediately issue an Ordinance to restore the provision for anticipatory bail by repealing Section 9 of UP Act 16of1976, and empowering the Allahabad High"
           }
         ],
+        "evidence_sufficiency": "multiple_selected_passages",
         "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
       }
     },
     {
       "experiment": "E3",
       "selection_version": "week7-bm25-diverse-support-v1",
-      "run_id": "22d7ad15-a2bf-4c79-9a75-709e728a7b80",
+      "run_id": "9586c3f2-f150-4cdf-9dc3-fa0dad3faeb8",
       "query_id": "week8-e3-02",
       "query_year": 2020,
       "candidate_count": 100,
@@ -176,7 +177,7 @@
       },
       "grounding_audit": "passed",
       "answer": {
-        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "answer_version": "week8-controlled-evidence-renderer-v2",
         "legal_issue": {
           "text": "land acquisition compensation",
           "source": "user_query"
@@ -312,13 +313,14 @@
             "verbatim_passage": "The Land Acquisition Officer (LAO) awarded compensation for cultivable dry lands at Rs.9,000/- per acre and for cultivable waste land at Rs. 7,000/- peracre. The Land Acquisition Officer also awarded compensation of Rs.50-70 for each lime tree and compensation ofRs.32 for each pomegranate tree. The land was taken possession on 02.03.1994 and compensation paid to the land owners. 4. As against compensation awarded by the Land Acquisition Officer, reference was made under Section 18 of the Act to the Senior Civil Judge, Gudur."
           }
         ],
+        "evidence_sufficiency": "multiple_selected_passages",
         "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
       }
     },
     {
       "experiment": "E3",
       "selection_version": "week7-bm25-diverse-support-v1",
-      "run_id": "d6f12182-01b1-4405-b58a-458f6b6f6ed3",
+      "run_id": "1aae26a1-2dbd-4fb6-a276-012768e520e8",
       "query_id": "week8-e3-03",
       "query_year": 2020,
       "candidate_count": 100,
@@ -332,7 +334,7 @@
       },
       "grounding_audit": "passed",
       "answer": {
-        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "answer_version": "week8-controlled-evidence-renderer-v2",
         "legal_issue": {
           "text": "arbitration agreement arbitrator",
           "source": "user_query"
@@ -468,13 +470,14 @@
             "verbatim_passage": "Appellant-Delhi Transport Corporation and respondent-contractor entered into an agreement. Agreement contained an arbitration clause. Dispute arose between the parties and arbitrator was appointed in 1996 in E terms of the agreement. Arbitrator conducted the arbitration proceedings and passed an award."
           }
         ],
+        "evidence_sufficiency": "multiple_selected_passages",
         "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
       }
     },
     {
       "experiment": "E3",
       "selection_version": "week7-bm25-diverse-support-v1",
-      "run_id": "85326957-a7c5-4ab8-9c4d-d36782dee08b",
+      "run_id": "d8cbfa16-a2f2-4356-8fd2-4f2dcffbbccb",
       "query_id": "week8-e3-04",
       "query_year": 2020,
       "candidate_count": 100,
@@ -488,7 +491,7 @@
       },
       "grounding_audit": "passed",
       "answer": {
-        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "answer_version": "week8-controlled-evidence-renderer-v2",
         "legal_issue": {
           "text": "NDPS recovery seizure evidence",
           "source": "user_query"
@@ -624,13 +627,14 @@
             "verbatim_passage": "Sabiha Khatun and the informer did not take place in his presence. In a case under the NDPS Act, recovery of contraband in presence of F the independent person assumes importance. The seizure witnesses, viz., PWs I and 2 cannot be said to be independent in that way. PW-2 was having a Pan Shop in front of the Bureau."
           }
         ],
+        "evidence_sufficiency": "multiple_selected_passages",
         "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
       }
     },
     {
       "experiment": "E3",
       "selection_version": "week7-bm25-diverse-support-v1",
-      "run_id": "3299e752-fb60-44a6-afa4-604efc0f8f34",
+      "run_id": "4b29668c-b506-47a1-92c4-c51f40f9cc8c",
       "query_id": "week8-e3-05",
       "query_year": 2020,
       "candidate_count": 100,
@@ -644,7 +648,7 @@
       },
       "grounding_audit": "passed",
       "answer": {
-        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "answer_version": "week8-controlled-evidence-renderer-v2",
         "legal_issue": {
           "text": "constitutional compensation right to life",
           "source": "user_query"
@@ -780,6 +784,7 @@
             "verbatim_passage": "the constitution; second, it serves as an interpretative principle for determining the scope of constitutional rights, including the right to human dignity; third, the value of human dignity has an important role in determining the proportionality of a statute limiting a constitutional right.\" 178 106. Life is precious in itself. But life is worth living because of the freedoms which enable each individual to live life as it should be lived. The best decisions on how life should be lived are entrusted to the individual."
           }
         ],
+        "evidence_sufficiency": "multiple_selected_passages",
         "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
       }
     }

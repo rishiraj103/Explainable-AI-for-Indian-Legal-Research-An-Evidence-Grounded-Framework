@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "bdae8dcd-8bde-4c59-b7aa-47e7d48bc2ba",
+  "query_id": "1977_183",
+  "query_year": 1977,
+  "candidate_count": 98,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 2,
+  "status_counts": {
+    "eligible": 18,
+    "ambiguous_excluded": 0,
+    "ineligible": 80,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "SARVESHWAR PRASAD SHARMA STATE OF MADHYA PRADESH",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1966 INSC 43",
+        "citation": "[1966] 3 S.C.R. 557",
+        "decision_date": "1966-02-09",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1964 INSC 40",
+        "citation": "[1964] 6 S.C.R. 846",
+        "decision_date": "1964-02-19",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1968 INSC 267",
+        "citation": "[1969] 2 S.C.R. 380",
+        "decision_date": "1968-10-11",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "",
+        "citation": "[1962] 1 S.C.R. 140",
+        "decision_date": "1961-03-01",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1961 INSC 75",
+        "citation": "[1962] 1 S.C.R. 151",
+        "decision_date": "1961-03-06",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1966_3_557_572::p0001::c001",
+        "source_id": "1966_3_557_572",
+        "case_id": "1966 INSC 43",
+        "citation": "[1966] 3 S.C.R. 557",
+        "decision_date": "1966-02-09",
+        "court": "Supreme Court of India",
+        "pdf_file": "1966_3_557_572_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 0,
+        "passage_end_char": 96,
+        "verbatim_passage": "·, •• STATE OF MADHYA PRADESH AND ORS. v. VISHNU PRASAD SHARMA AND ORS. F'ebruary 9, 1966 (A. K."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1964_6_846_857::p0005::c003",
+        "source_id": "1964_6_846_857",
+        "case_id": "1964 INSC 40",
+        "citation": "[1964] 6 S.C.R. 846",
+        "decision_date": "1964-02-19",
+        "court": "Supreme Court of India",
+        "pdf_file": "1964_6_846_857_EN.pdf",
+        "page_number": 5,
+        "passage_start_char": 1859,
+        "passage_end_char": 2081,
+        "verbatim_passage": "State of Madhya Pradesh('): The State of Madhya Pradesh v. The Gwalior Sugar Co. Ltd. and others(2 ): Maharaj Kumar Prithvi Raj and another v. The State of Rajasthan and others(•) and Anand Prasad Lakshminiwas Ganeriwal v."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1969_2_380_391::p0001::c001",
+        "source_id": "1969_2_380_391",
+        "case_id": "1968 INSC 267",
+        "citation": "[1969] 2 S.C.R. 380",
+        "decision_date": "1968-10-11",
+        "court": "Supreme Court of India",
+        "pdf_file": "1969_2_380_391_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 0,
+        "passage_end_char": 70,
+        "verbatim_passage": "BADRI PRASAD v. STATE OF MADHYA PRADESH & ANR. October 11, 1968 [S. M."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1962_1_140_151::p0012::c002",
+        "source_id": "1962_1_140_151",
+        "case_id": "",
+        "citation": "[1962] 1 S.C.R. 140",
+        "decision_date": "1961-03-01",
+        "court": "Supreme Court of India",
+        "pdf_file": "1962_1_140_151_EN.pdf",
+        "page_number": 12,
+        "passage_start_char": 680,
+        "passage_end_char": 766,
+        "verbatim_passage": "Appeal dismissed. JAGANNATH PRASAD SHARMA v. STATE OF UTTAR PRADESH AND OTHERS. (S. K."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1962_1_151_175::p0001::c002",
+        "source_id": "1962_1_151_175",
+        "case_id": "1961 INSC 75",
+        "citation": "[1962] 1 S.C.R. 151",
+        "decision_date": "1961-03-06",
+        "court": "Supreme Court of India",
+        "pdf_file": "1962_1_151_175_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 680,
+        "passage_end_char": 766,
+        "verbatim_passage": "Appeal dismissed. JAGANNATH PRASAD SHARMA v. STATE OF UTTAR PRADESH AND OTHERS. (S. K."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "·, •• STATE OF MADHYA PRADESH AND ORS. v. VISHNU PRASAD SHARMA AND ORS. F'ebruary 9, 1966 (A. K."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "State of Madhya Pradesh('): The State of Madhya Pradesh v. The Gwalior Sugar Co. Ltd. and others(2 ): Maharaj Kumar Prithvi Raj and another v. The State of Rajasthan and others(•) and Anand Prasad Lakshminiwas Ganeriwal v."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "BADRI PRASAD v. STATE OF MADHYA PRADESH & ANR. October 11, 1968 [S. M."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "Appeal dismissed. JAGANNATH PRASAD SHARMA v. STATE OF UTTAR PRADESH AND OTHERS. (S. K."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "Appeal dismissed. JAGANNATH PRASAD SHARMA v. STATE OF UTTAR PRADESH AND OTHERS. (S. K."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}
