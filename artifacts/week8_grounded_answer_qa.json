@@ -1,0 +1,787 @@
+{
+  "run_at_utc": "2026-08-29T05:35:16.530326+00:00",
+  "answer_version": "week8-controlled-evidence-renderer-v1",
+  "query_count": 5,
+  "results": [
+    {
+      "experiment": "E3",
+      "selection_version": "week7-bm25-diverse-support-v1",
+      "run_id": "125d33b7-fb41-42de-95b3-5d61ec4da2de",
+      "query_id": "week8-e3-01",
+      "query_year": 2020,
+      "candidate_count": 100,
+      "selected_evidence_count": 5,
+      "query_duplicate_chunks_excluded": 0,
+      "status_counts": {
+        "eligible": 70,
+        "ambiguous_excluded": 30,
+        "ineligible": 0,
+        "excluded_missing_metadata": 0
+      },
+      "grounding_audit": "passed",
+      "answer": {
+        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "legal_issue": {
+          "text": "anticipatory bail section 438",
+          "source": "user_query"
+        },
+        "retrieved_authorities": [
+          {
+            "evidence_id": "E1",
+            "case_id": "2018 INSC 277",
+            "citation": "[2018] 3 S.C.R. 739",
+            "decision_date": "2018-03-27",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E2",
+            "case_id": "2012 INSC 130",
+            "citation": "[2012] 5 S.C.R. 1",
+            "decision_date": "2012-03-14",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E3",
+            "case_id": "2008 INSC 1125",
+            "citation": "[2008] 14 S.C.R. 179",
+            "decision_date": "2008-10-03",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E4",
+            "case_id": "2010 INSC 843",
+            "citation": "[2010] 15 S.C.R. 201",
+            "decision_date": "2010-12-02",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E5",
+            "case_id": "2008 INSC 117",
+            "citation": "[2008] 2 S.C.R. 323",
+            "decision_date": "2008-01-29",
+            "court": "Supreme Court of India"
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "E1",
+            "chunk_id": "2018_3_739_749::p0001::c003",
+            "source_id": "2018_3_739_749",
+            "case_id": "2018 INSC 277",
+            "citation": "[2018] 3 S.C.R. 739",
+            "decision_date": "2018-03-27",
+            "court": "Supreme Court of India",
+            "pdf_file": "2018_3_739_749_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 1596,
+            "passage_end_char": 1988,
+            "verbatim_passage": "Anticipatory bail vis-a-vis regular bail – Held: The satisfaction of the Court for granting protection u/s. 438 Cr.P.C. (anticipatory bail) is different from the one u/s. 439 Cr.P.C. (regular bail) – Merely because an accused was under protection of anticipatory bail does not entitle him automatically to regular bail – Code of Criminal Procedure, 1973 – ss. 438 and 439. [2018] 3 S.C.R. 739"
+          },
+          {
+            "evidence_id": "E2",
+            "chunk_id": "2012_5_1_15::p0002::c002",
+            "source_id": "2012_5_1_15",
+            "case_id": "2012 INSC 130",
+            "citation": "[2012] 5 S.C.R. 1",
+            "decision_date": "2012-03-14",
+            "court": "Supreme Court of India",
+            "pdf_file": "2012_5_1_15_EN.pdf",
+            "page_number": 2,
+            "passage_start_char": 424,
+            "passage_end_char": 659,
+            "verbatim_passage": "The respondents applied for anticipatory bail. The Sessions Judge rejected the same. However, the High Court enlarged the respondents on c anticipatory bail under Section 438 Cr.P.C. Therefore, the appellants filed the instant appeals."
+          },
+          {
+            "evidence_id": "E3",
+            "chunk_id": "2008_14_179_205::p0018::c003",
+            "source_id": "2008_14_179_205",
+            "case_id": "2008 INSC 1125",
+            "citation": "[2008] 14 S.C.R. 179",
+            "decision_date": "2008-10-03",
+            "court": "Supreme Court of India",
+            "pdf_file": "2008_14_179_205_EN.pdf",
+            "page_number": 18,
+            "passage_start_char": 1238,
+            "passage_end_char": 1951,
+            "verbatim_passage": "Considering the exercise of power by Courts under Section 438 and grant of • anticipatory bail in favour of applicants, the Committee ob- ~ ... , served that the provision as to anticipatory bail has often been 'misused by rich and influential people'. The Committee, howt ever, opined to retain the provision subject to two conditions; (i) Public Prosecutor should be heard by the court before granting an application for- anticipatory bail; and (ii) Petition for anticipatory bail should be heard only by the court of competent jurisdiction. 40. It may be stated that Section 438 has been amended by the Code of Criminal Procedure (Amendment) Act, 2005 which now provides for hearing of Public Prosecutor before"
+          },
+          {
+            "evidence_id": "E4",
+            "chunk_id": "2010_15_201_274::p0001::c002",
+            "source_id": "2010_15_201_274",
+            "case_id": "2010 INSC 843",
+            "citation": "[2010] 15 S.C.R. 201",
+            "decision_date": "2010-12-02",
+            "court": "Supreme Court of India",
+            "pdf_file": "2010_15_201_274_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 176,
+            "passage_end_char": 1522,
+            "verbatim_passage": "PANICKER RADHAKRISHNAN, JJ.] Code of Criminal Procedure, 1973: s. 438 - Anticipatory bail - Grant of - Appellant was member of a political party - FIR alleging that appellant and his brother instigated their party workers to fire gun shots at the workers of opponent political party which resulted in the murder of one person - Murder took place eight days after D the incident of instigation - Application for anticipatory bail by appellant - Rejection of, by the High Court - Sustainability of - Held: Order passed by the High Court not sustainable - Appellant directed to join investigation and in the event of arrest, appellant to be released on bail on his furnishing a personal bond - Judgment of Constitution Bench of the Supreme Court in *Sibbia's case being on the same issue regarding ambit, scope and object of the concept of anticipatory bail u/s. 438 followed - Judicial discipline - Bail - Precedent. ss. 438 and 437 - Power u/s 438, if subject to limitations uls. 437 - Held: The limitations mentioned in s. 437 cannot be read into s. 438 - Plentitude of s. 438 must be given its full play - Court can impose conditions for the grant of bail - Baa s. 438 - Anticipatory bail - Grant of, for limited period - Held: Order granting anticipatory bail for a limited duration and, thereafter, directing the accused to surrender and apply"
+          },
+          {
+            "evidence_id": "E5",
+            "chunk_id": "2008_2_323_345::p0001::c003",
+            "source_id": "2008_2_323_345",
+            "case_id": "2008 INSC 117",
+            "citation": "[2008] 2 S.C.R. 323",
+            "decision_date": "2008-01-29",
+            "court": "Supreme Court of India",
+            "pdf_file": "2008_2_323_345_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 1405,
+            "passage_end_char": 1824,
+            "verbatim_passage": "Code of Criminal Procedure, 1973 - s. 438 - State of Uttar Pradesh - Deletion of provision for anticipatory bail under s.438 CrPC by s.9 of the U.P Act 16 of 1976 - Difficulties ~ -( arising therefrom- Per Katju, J., Strong recommendation made to U.P Government to immediately issue an Ordinance to restore the provision for anticipatory bail by repealing Section 9 of UP Act 16of1976, and empowering the Allahabad High"
+          }
+        ],
+        "supported_observations": [
+          {
+            "evidence_id": "E1",
+            "verbatim_passage": "Anticipatory bail vis-a-vis regular bail – Held: The satisfaction of the Court for granting protection u/s. 438 Cr.P.C. (anticipatory bail) is different from the one u/s. 439 Cr.P.C. (regular bail) – Merely because an accused was under protection of anticipatory bail does not entitle him automatically to regular bail – Code of Criminal Procedure, 1973 – ss. 438 and 439. [2018] 3 S.C.R. 739"
+          },
+          {
+            "evidence_id": "E2",
+            "verbatim_passage": "The respondents applied for anticipatory bail. The Sessions Judge rejected the same. However, the High Court enlarged the respondents on c anticipatory bail under Section 438 Cr.P.C. Therefore, the appellants filed the instant appeals."
+          },
+          {
+            "evidence_id": "E3",
+            "verbatim_passage": "Considering the exercise of power by Courts under Section 438 and grant of • anticipatory bail in favour of applicants, the Committee ob- ~ ... , served that the provision as to anticipatory bail has often been 'misused by rich and influential people'. The Committee, howt ever, opined to retain the provision subject to two conditions; (i) Public Prosecutor should be heard by the court before granting an application for- anticipatory bail; and (ii) Petition for anticipatory bail should be heard only by the court of competent jurisdiction. 40. It may be stated that Section 438 has been amended by the Code of Criminal Procedure (Amendment) Act, 2005 which now provides for hearing of Public Prosecutor before"
+          },
+          {
+            "evidence_id": "E4",
+            "verbatim_passage": "PANICKER RADHAKRISHNAN, JJ.] Code of Criminal Procedure, 1973: s. 438 - Anticipatory bail - Grant of - Appellant was member of a political party - FIR alleging that appellant and his brother instigated their party workers to fire gun shots at the workers of opponent political party which resulted in the murder of one person - Murder took place eight days after D the incident of instigation - Application for anticipatory bail by appellant - Rejection of, by the High Court - Sustainability of - Held: Order passed by the High Court not sustainable - Appellant directed to join investigation and in the event of arrest, appellant to be released on bail on his furnishing a personal bond - Judgment of Constitution Bench of the Supreme Court in *Sibbia's case being on the same issue regarding ambit, scope and object of the concept of anticipatory bail u/s. 438 followed - Judicial discipline - Bail - Precedent. ss. 438 and 437 - Power u/s 438, if subject to limitations uls. 437 - Held: The limitations mentioned in s. 437 cannot be read into s. 438 - Plentitude of s. 438 must be given its full play - Court can impose conditions for the grant of bail - Baa s. 438 - Anticipatory bail - Grant of, for limited period - Held: Order granting anticipatory bail for a limited duration and, thereafter, directing the accused to surrender and apply"
+          },
+          {
+            "evidence_id": "E5",
+            "verbatim_passage": "Code of Criminal Procedure, 1973 - s. 438 - State of Uttar Pradesh - Deletion of provision for anticipatory bail under s.438 CrPC by s.9 of the U.P Act 16 of 1976 - Difficulties ~ -( arising therefrom- Per Katju, J., Strong recommendation made to U.P Government to immediately issue an Ordinance to restore the provision for anticipatory bail by repealing Section 9 of UP Act 16of1976, and empowering the Allahabad High"
+          }
+        ],
+        "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+      }
+    },
+    {
+      "experiment": "E3",
+      "selection_version": "week7-bm25-diverse-support-v1",
+      "run_id": "22d7ad15-a2bf-4c79-9a75-709e728a7b80",
+      "query_id": "week8-e3-02",
+      "query_year": 2020,
+      "candidate_count": 100,
+      "selected_evidence_count": 5,
+      "query_duplicate_chunks_excluded": 0,
+      "status_counts": {
+        "eligible": 99,
+        "ambiguous_excluded": 1,
+        "ineligible": 0,
+        "excluded_missing_metadata": 0
+      },
+      "grounding_audit": "passed",
+      "answer": {
+        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "legal_issue": {
+          "text": "land acquisition compensation",
+          "source": "user_query"
+        },
+        "retrieved_authorities": [
+          {
+            "evidence_id": "E1",
+            "case_id": "2007 INSC 244",
+            "citation": "[2007] 3 S.C.R. 563",
+            "decision_date": "2007-03-02",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E2",
+            "case_id": "2001 INSC 369",
+            "citation": "[2001] SUPP. 1 S.C.R. 573",
+            "decision_date": "2001-08-14",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E3",
+            "case_id": "1976 INSC 48",
+            "citation": "[1976] 3 S.C.R. 585",
+            "decision_date": "1976-03-10",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E4",
+            "case_id": "2004 INSC 728",
+            "citation": "[2004] SUPP. 6 S.C.R. 1171",
+            "decision_date": "2004-12-17",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E5",
+            "case_id": "2017 INSC 645",
+            "citation": "[2017] 6 S.C.R. 524",
+            "decision_date": "2017-07-19",
+            "court": "Supreme Court of India"
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "E1",
+            "chunk_id": "2007_3_563_578::p0001::c002",
+            "source_id": "2007_3_563_578",
+            "case_id": "2007 INSC 244",
+            "citation": "[2007] 3 S.C.R. 563",
+            "decision_date": "2007-03-02",
+            "court": "Supreme Court of India",
+            "pdf_file": "2007_3_563_578_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 79,
+            "passage_end_char": 828,
+            "verbatim_passage": "AR. LAKSHMANAN AND AL TAMAS KABIR, JJ.] .... Land Acquisition Act, 1894-Sections 4 (/), 22, 23, & 24-Land Acquisition Officer granting separate compensation for land and trees- Reference Court enhancing compensation for the land but rejecting the c compensation for the trees-High Court rejecting the valuer's report and reducing the compensation-Correctness of-Held, High Court was wrong in reducing the compensation without giving any reasons-Hence, on the basis of evidence on record and valuer's report, reasonable compensation awarded for land and trees separately. A notification under section 4 of the Land Acquisition Act, 1894 was published by Land Acquisition Officer for acquisition of land of appellantsclaimants for respondent-Railways."
+          },
+          {
+            "evidence_id": "E2",
+            "chunk_id": "S_2001_1_573_577::p0001::c002",
+            "source_id": "S_2001_1_573_577",
+            "case_id": "2001 INSC 369",
+            "citation": "[2001] SUPP. 1 S.C.R. 573",
+            "decision_date": "2001-08-14",
+            "court": "Supreme Court of India",
+            "pdf_file": "S_2001_1_573_577_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 60,
+            "passage_end_char": 635,
+            "verbatim_passage": "AUGUST 14, 2001 [Y.N. KHARE AND B.N. AGRA WAL, JJ.] land Acquisition : land Acquisition Act, 1894-Section 23-Compensation-Grant a/- Reference Court enhanced compensation-High Court reduced C compensation-Held, justified-Dissimilarity between land covered by sales and land acquired with regard to locaiity, shape, site or nature of land-In such cases court can fa: compensation less than market value of land • Land acquisition Authority passed an award offering compensation for the land sought to be acquired. On reference, Additional Sub Judge enhanced D the compensation."
+          },
+          {
+            "evidence_id": "E3",
+            "chunk_id": "1976_3_585_587::p0001::c002",
+            "source_id": "1976_3_585_587",
+            "case_id": "1976 INSC 48",
+            "citation": "[1976] 3 S.C.R. 585",
+            "decision_date": "1976-03-10",
+            "court": "Supreme Court of India",
+            "pdf_file": "1976_3_585_587_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 102,
+            "passage_end_char": 375,
+            "verbatim_passage": "K. GOSWAMI, JJ.] Land Acquisition Act, 1894-Sections 23 and 24-Market value-Compensation-Potential possibilities. The respondents acquired appellant's land under the Land Acquisition Act. The Land Acquisition Officer awarded compensation at the rate of Rs. 3000/- pcr acre."
+          },
+          {
+            "evidence_id": "E4",
+            "chunk_id": "S_2004_6_1171_1176::p0001::c002",
+            "source_id": "S_2004_6_1171_1176",
+            "case_id": "2004 INSC 728",
+            "citation": "[2004] SUPP. 6 S.C.R. 1171",
+            "decision_date": "2004-12-17",
+            "court": "Supreme Court of India",
+            "pdf_file": "S_2004_6_1171_1176_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 77,
+            "passage_end_char": 684,
+            "verbatim_passage": "POMPANNA SETTY DECEMBER 17, 2004 [RUMA PAL AND C.K. THAKKER, JJ.] Land Acquisition Act, 1894 : Land Acquisition-Compensation on yield basis-Determination of- Deduction towards cultivation cost adopting of appropriate multiplier-On facts, there being fruit bearing trees on the land and finding of High Court that land-owner would be entitled to more than the compensation claimed by him, award of compensation party modified. Respondent's land admeasuring 5.99 acres, was acquired under the D ) Land Acquisition Act, 1894. The Land Acquisition Officer awarded compensation at the rate of Rs. 2,728 per acre."
+          },
+          {
+            "evidence_id": "E5",
+            "chunk_id": "2017_6_524_532::p0003::c004",
+            "source_id": "2017_6_524_532",
+            "case_id": "2017 INSC 645",
+            "citation": "[2017] 6 S.C.R. 524",
+            "decision_date": "2017-07-19",
+            "court": "Supreme Court of India",
+            "pdf_file": "2017_6_524_532_EN.pdf",
+            "page_number": 3,
+            "passage_start_char": 1457,
+            "passage_end_char": 1987,
+            "verbatim_passage": "The Land Acquisition Officer (LAO) awarded compensation for cultivable dry lands at Rs.9,000/- per acre and for cultivable waste land at Rs. 7,000/- peracre. The Land Acquisition Officer also awarded compensation of Rs.50-70 for each lime tree and compensation ofRs.32 for each pomegranate tree. The land was taken possession on 02.03.1994 and compensation paid to the land owners. 4. As against compensation awarded by the Land Acquisition Officer, reference was made under Section 18 of the Act to the Senior Civil Judge, Gudur."
+          }
+        ],
+        "supported_observations": [
+          {
+            "evidence_id": "E1",
+            "verbatim_passage": "AR. LAKSHMANAN AND AL TAMAS KABIR, JJ.] .... Land Acquisition Act, 1894-Sections 4 (/), 22, 23, & 24-Land Acquisition Officer granting separate compensation for land and trees- Reference Court enhancing compensation for the land but rejecting the c compensation for the trees-High Court rejecting the valuer's report and reducing the compensation-Correctness of-Held, High Court was wrong in reducing the compensation without giving any reasons-Hence, on the basis of evidence on record and valuer's report, reasonable compensation awarded for land and trees separately. A notification under section 4 of the Land Acquisition Act, 1894 was published by Land Acquisition Officer for acquisition of land of appellantsclaimants for respondent-Railways."
+          },
+          {
+            "evidence_id": "E2",
+            "verbatim_passage": "AUGUST 14, 2001 [Y.N. KHARE AND B.N. AGRA WAL, JJ.] land Acquisition : land Acquisition Act, 1894-Section 23-Compensation-Grant a/- Reference Court enhanced compensation-High Court reduced C compensation-Held, justified-Dissimilarity between land covered by sales and land acquired with regard to locaiity, shape, site or nature of land-In such cases court can fa: compensation less than market value of land • Land acquisition Authority passed an award offering compensation for the land sought to be acquired. On reference, Additional Sub Judge enhanced D the compensation."
+          },
+          {
+            "evidence_id": "E3",
+            "verbatim_passage": "K. GOSWAMI, JJ.] Land Acquisition Act, 1894-Sections 23 and 24-Market value-Compensation-Potential possibilities. The respondents acquired appellant's land under the Land Acquisition Act. The Land Acquisition Officer awarded compensation at the rate of Rs. 3000/- pcr acre."
+          },
+          {
+            "evidence_id": "E4",
+            "verbatim_passage": "POMPANNA SETTY DECEMBER 17, 2004 [RUMA PAL AND C.K. THAKKER, JJ.] Land Acquisition Act, 1894 : Land Acquisition-Compensation on yield basis-Determination of- Deduction towards cultivation cost adopting of appropriate multiplier-On facts, there being fruit bearing trees on the land and finding of High Court that land-owner would be entitled to more than the compensation claimed by him, award of compensation party modified. Respondent's land admeasuring 5.99 acres, was acquired under the D ) Land Acquisition Act, 1894. The Land Acquisition Officer awarded compensation at the rate of Rs. 2,728 per acre."
+          },
+          {
+            "evidence_id": "E5",
+            "verbatim_passage": "The Land Acquisition Officer (LAO) awarded compensation for cultivable dry lands at Rs.9,000/- per acre and for cultivable waste land at Rs. 7,000/- peracre. The Land Acquisition Officer also awarded compensation of Rs.50-70 for each lime tree and compensation ofRs.32 for each pomegranate tree. The land was taken possession on 02.03.1994 and compensation paid to the land owners. 4. As against compensation awarded by the Land Acquisition Officer, reference was made under Section 18 of the Act to the Senior Civil Judge, Gudur."
+          }
+        ],
+        "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+      }
+    },
+    {
+      "experiment": "E3",
+      "selection_version": "week7-bm25-diverse-support-v1",
+      "run_id": "d6f12182-01b1-4405-b58a-458f6b6f6ed3",
+      "query_id": "week8-e3-03",
+      "query_year": 2020,
+      "candidate_count": 100,
+      "selected_evidence_count": 5,
+      "query_duplicate_chunks_excluded": 0,
+      "status_counts": {
+        "eligible": 98,
+        "ambiguous_excluded": 2,
+        "ineligible": 0,
+        "excluded_missing_metadata": 0
+      },
+      "grounding_audit": "passed",
+      "answer": {
+        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "legal_issue": {
+          "text": "arbitration agreement arbitrator",
+          "source": "user_query"
+        },
+        "retrieved_authorities": [
+          {
+            "evidence_id": "E1",
+            "case_id": "2019 INSC 647",
+            "citation": "[2019] 7 S.C.R. 522",
+            "decision_date": "2019-05-08",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E2",
+            "case_id": "2011 INSC 423",
+            "citation": "[2011] 10 S.C.R. 1026",
+            "decision_date": "2011-07-04",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E3",
+            "case_id": "2010 INSC 718",
+            "citation": "[2010] 13 S.C.R. 207",
+            "decision_date": "2010-10-22",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E4",
+            "case_id": "2007 INSC 237",
+            "citation": "[2007] 3 S.C.R. 467",
+            "decision_date": "2007-03-01",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E5",
+            "case_id": "2003 INSC 239",
+            "citation": "[2003] 3 S.C.R. 678",
+            "decision_date": "2003-04-17",
+            "court": "Supreme Court of India"
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "E1",
+            "chunk_id": "2019_7_522_606::p0077::c001",
+            "source_id": "2019_7_522_606",
+            "case_id": "2019 INSC 647",
+            "citation": "[2019] 7 S.C.R. 522",
+            "decision_date": "2019-05-08",
+            "court": "Supreme Court of India",
+            "pdf_file": "2019_7_522_606_EN.pdf",
+            "page_number": 77,
+            "passage_start_char": 0,
+            "passage_end_char": 1273,
+            "verbatim_passage": "[2019] 7 S.C.R. (a) If an arbitration agreement provides that all disputes between the parties relating to the contract (some agreements may refer to some exceptions) shall be referred to arbitration and that the decision of the arbitrator shall be final and binding, the “reference” contemplated is the act of parties to the arbitration agreement, referring their disputes to an agreed arbitrator to settle the disputes. (b) If an arbitration agreement provides that in the event of any dispute between the parties, an authority named therein shall nominate the arbitrator and refer the disputes which required to be settled by arbitration, the “reference” contemplated is an act of the appointing authority referring the disputes to the arbitrator appointed by him. (c) Where the parties fail to concur in the appointment of the arbitrator(s) as required by the arbitration agreement, or the authority named in the arbitration agreement failing to nominate the arbitrator and refer the disputes raised to arbitration as required by the arbitration agreement, on an application by an aggrieved party, the court can appoint the arbitrator and on such appointment, the disputes between the parties stand referred to such arbitrator in terms of the arbitration agreement. 11."
+          },
+          {
+            "evidence_id": "E2",
+            "chunk_id": "2011_10_1026_1063::p0020::c001",
+            "source_id": "2011_10_1026_1063",
+            "case_id": "2011 INSC 423",
+            "citation": "[2011] 10 S.C.R. 1026",
+            "decision_date": "2011-07-04",
+            "court": "Supreme Court of India",
+            "pdf_file": "2011_10_1026_1063_EN.pdf",
+            "page_number": 20,
+            "passage_start_char": 0,
+            "passage_end_char": 1324,
+            "verbatim_passage": "arbitration agreement, referring their disputes to an agreed arbitrator to settle the disputes. (b) If an arbitration agreement provides that in the event of any dispute between the parties, an authority named therein shall nominate the arbitrator and refer the disputes which required to be settled by arbitration, the 'reference' contemplated is an act of the appointing authority referring the disputes to the arbitrator appointed by him. (c) Where the parties fail to concur in the appointment of arbitrator/s as required by the arbitration agreement, or the authority named in the arbitration agreement failing to nominate the arbitrator and refer the disp1Jtes raised to arbitration as required by the arbitration agreement, on an application by an aggrieved party, the court can appoint the arbitrator and on such appointment, the disputes between the parties stand referred to such arbitrator in terms of the arbitration agreement. . 10. Reference to arbitration can be in respect of all disputes between the parties or all disputes regarding a contract or in respect of specific enumerated disputes. Where 'all .disputes' are referred, the arbitrator has the jurisdiction to decide all disputes raised in the pleadings (both claims and counter claims) subject to any limitations placed by the arbitration agreement."
+          },
+          {
+            "evidence_id": "E3",
+            "chunk_id": "2010_13_207_226::p0005::c004",
+            "source_id": "2010_13_207_226",
+            "case_id": "2010 INSC 718",
+            "citation": "[2010] 13 S.C.R. 207",
+            "decision_date": "2010-10-22",
+            "court": "Supreme Court of India",
+            "pdf_file": "2010_13_207_226_EN.pdf",
+            "page_number": 5,
+            "passage_start_char": 1668,
+            "passage_end_char": 2026,
+            "verbatim_passage": "Nor has the appellant accepted the existence of any arbitration agreement by G not denying such arbitration agreement in the defence filed before the arbitrator. On the other hand, the appellant had specifically contended before the arbitrator that there was no arbitration agreement between them and, therefore, the arbitrator did not have jurisdiction. The"
+          },
+          {
+            "evidence_id": "E4",
+            "chunk_id": "2007_3_467_475::p0001::c003",
+            "source_id": "2007_3_467_475",
+            "case_id": "2007 INSC 237",
+            "citation": "[2007] 3 S.C.R. 467",
+            "decision_date": "2007-03-01",
+            "court": "Supreme Court of India",
+            "pdf_file": "2007_3_467_475_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 1008,
+            "passage_end_char": 1574,
+            "verbatim_passage": "In terms of the arbitration agreement, respondent invoked arbitration clause. It called upon the appellant to refer the dispute to be settled E through arbitrator. Respondent No. 1 named an arbitrator as sole arbitrator and if appellant was not willing to accept the arbitrator named, the appellant could appoint its arbitrator and the said two arbitrators would then appoint a Presiding Arbitrator. Appellant did not appoint arbitrator in terms of the arbitration agreement since the parties had agreed to follow Rules prescribed F by Indian Council of Arbitration."
+          },
+          {
+            "evidence_id": "E5",
+            "chunk_id": "2003_3_678_682::p0001::c002",
+            "source_id": "2003_3_678_682",
+            "case_id": "2003 INSC 239",
+            "citation": "[2003] 3 S.C.R. 678",
+            "decision_date": "2003-04-17",
+            "court": "Supreme Court of India",
+            "pdf_file": "2003_3_678_682_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 827,
+            "passage_end_char": 1130,
+            "verbatim_passage": "Appellant-Delhi Transport Corporation and respondent-contractor entered into an agreement. Agreement contained an arbitration clause. Dispute arose between the parties and arbitrator was appointed in 1996 in E terms of the agreement. Arbitrator conducted the arbitration proceedings and passed an award."
+          }
+        ],
+        "supported_observations": [
+          {
+            "evidence_id": "E1",
+            "verbatim_passage": "[2019] 7 S.C.R. (a) If an arbitration agreement provides that all disputes between the parties relating to the contract (some agreements may refer to some exceptions) shall be referred to arbitration and that the decision of the arbitrator shall be final and binding, the “reference” contemplated is the act of parties to the arbitration agreement, referring their disputes to an agreed arbitrator to settle the disputes. (b) If an arbitration agreement provides that in the event of any dispute between the parties, an authority named therein shall nominate the arbitrator and refer the disputes which required to be settled by arbitration, the “reference” contemplated is an act of the appointing authority referring the disputes to the arbitrator appointed by him. (c) Where the parties fail to concur in the appointment of the arbitrator(s) as required by the arbitration agreement, or the authority named in the arbitration agreement failing to nominate the arbitrator and refer the disputes raised to arbitration as required by the arbitration agreement, on an application by an aggrieved party, the court can appoint the arbitrator and on such appointment, the disputes between the parties stand referred to such arbitrator in terms of the arbitration agreement. 11."
+          },
+          {
+            "evidence_id": "E2",
+            "verbatim_passage": "arbitration agreement, referring their disputes to an agreed arbitrator to settle the disputes. (b) If an arbitration agreement provides that in the event of any dispute between the parties, an authority named therein shall nominate the arbitrator and refer the disputes which required to be settled by arbitration, the 'reference' contemplated is an act of the appointing authority referring the disputes to the arbitrator appointed by him. (c) Where the parties fail to concur in the appointment of arbitrator/s as required by the arbitration agreement, or the authority named in the arbitration agreement failing to nominate the arbitrator and refer the disp1Jtes raised to arbitration as required by the arbitration agreement, on an application by an aggrieved party, the court can appoint the arbitrator and on such appointment, the disputes between the parties stand referred to such arbitrator in terms of the arbitration agreement. . 10. Reference to arbitration can be in respect of all disputes between the parties or all disputes regarding a contract or in respect of specific enumerated disputes. Where 'all .disputes' are referred, the arbitrator has the jurisdiction to decide all disputes raised in the pleadings (both claims and counter claims) subject to any limitations placed by the arbitration agreement."
+          },
+          {
+            "evidence_id": "E3",
+            "verbatim_passage": "Nor has the appellant accepted the existence of any arbitration agreement by G not denying such arbitration agreement in the defence filed before the arbitrator. On the other hand, the appellant had specifically contended before the arbitrator that there was no arbitration agreement between them and, therefore, the arbitrator did not have jurisdiction. The"
+          },
+          {
+            "evidence_id": "E4",
+            "verbatim_passage": "In terms of the arbitration agreement, respondent invoked arbitration clause. It called upon the appellant to refer the dispute to be settled E through arbitrator. Respondent No. 1 named an arbitrator as sole arbitrator and if appellant was not willing to accept the arbitrator named, the appellant could appoint its arbitrator and the said two arbitrators would then appoint a Presiding Arbitrator. Appellant did not appoint arbitrator in terms of the arbitration agreement since the parties had agreed to follow Rules prescribed F by Indian Council of Arbitration."
+          },
+          {
+            "evidence_id": "E5",
+            "verbatim_passage": "Appellant-Delhi Transport Corporation and respondent-contractor entered into an agreement. Agreement contained an arbitration clause. Dispute arose between the parties and arbitrator was appointed in 1996 in E terms of the agreement. Arbitrator conducted the arbitration proceedings and passed an award."
+          }
+        ],
+        "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+      }
+    },
+    {
+      "experiment": "E3",
+      "selection_version": "week7-bm25-diverse-support-v1",
+      "run_id": "85326957-a7c5-4ab8-9c4d-d36782dee08b",
+      "query_id": "week8-e3-04",
+      "query_year": 2020,
+      "candidate_count": 100,
+      "selected_evidence_count": 5,
+      "query_duplicate_chunks_excluded": 0,
+      "status_counts": {
+        "eligible": 83,
+        "ambiguous_excluded": 17,
+        "ineligible": 0,
+        "excluded_missing_metadata": 0
+      },
+      "grounding_audit": "passed",
+      "answer": {
+        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "legal_issue": {
+          "text": "NDPS recovery seizure evidence",
+          "source": "user_query"
+        },
+        "retrieved_authorities": [
+          {
+            "evidence_id": "E1",
+            "case_id": "2015 INSC 341",
+            "citation": "[2015] 5 S.C.R. 789",
+            "decision_date": "2015-04-21",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E2",
+            "case_id": "2007 INSC 1226",
+            "citation": "[2007] 12 S.C.R. 906",
+            "decision_date": "2007-12-05",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E3",
+            "case_id": "1994 INSC 96",
+            "citation": "[1994] 2 S.C.R. 208",
+            "decision_date": "1994-03-01",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E4",
+            "case_id": "1999 INSC 320",
+            "citation": "[1999] SUPP. 1 S.C.R. 343",
+            "decision_date": "1999-08-11",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E5",
+            "case_id": "2006 INSC 671",
+            "citation": "[2006] SUPP. 6 S.C.R. 772",
+            "decision_date": "2006-09-29",
+            "court": "Supreme Court of India"
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "E1",
+            "chunk_id": "2015_5_789_799::p0004::c001",
+            "source_id": "2015_5_789_799",
+            "case_id": "2015 INSC 341",
+            "citation": "[2015] 5 S.C.R. 789",
+            "decision_date": "2015-04-21",
+            "court": "Supreme Court of India",
+            "pdf_file": "2015_5_789_799_EN.pdf",
+            "page_number": 4,
+            "passage_start_char": 0,
+            "passage_end_char": 493,
+            "verbatim_passage": "A the offence. When the independent witnesses PW1 and DW2 have not supported the prosecution case and the recovery of the contraband has not been satisfactorily proved, the conviction of the appellant under Section 15 of the NDPS Act cannot be sustained. Since in the B cases of NDPS Act the punishment is severe, therefore strict proof is required for proving the search, seizure and the recovery. [Paras 16, 17] [799-C-D, E] CRIMINALAPPELLATE JURISDICTION: Criminal Appeal C No. 682 of 2015."
+          },
+          {
+            "evidence_id": "E2",
+            "chunk_id": "2007_12_906_922::p0015::c002",
+            "source_id": "2007_12_906_922",
+            "case_id": "2007 INSC 1226",
+            "citation": "[2007] 12 S.C.R. 906",
+            "decision_date": "2007-12-05",
+            "court": "Supreme Court of India",
+            "pdf_file": "2007_12_906_922_EN.pdf",
+            "page_number": 15,
+            "passage_start_char": 374,
+            "passage_end_char": 1120,
+            "verbatim_passage": "Director, Directorate of Revenue Intelligence, [2002] 8 SCC 7, while dealing with search and seizure at a public place, this Court opined : \"In the instant case, according to the documents on record and the evidence of the witnesses, the search and seizure took place at the airport which is a public place. This being so, it is the provisions of Section 43 of the NDPS Act which would be applicable. Further, as Section 42 of the NDPS Act was not applicable in the present case, the seizure having been effected in a public place, the question of non-compliance, if any, of the provisions of Section 42 of the NDPS Act is wholly irrelevant. Furthermore, in the rnahazar which was prepared, it is clearly stated that the seizure was made by PW 1."
+          },
+          {
+            "evidence_id": "E3",
+            "chunk_id": "1994_2_208_238::p0001::c003",
+            "source_id": "1994_2_208_238",
+            "case_id": "1994 INSC 96",
+            "citation": "[1994] 2 S.C.R. 208",
+            "decision_date": "1994-03-01",
+            "court": "Supreme Court of India",
+            "pdf_file": "1994_2_208_238_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 539,
+            "passage_end_char": 1283,
+            "verbatim_passage": "D without prior infonnation under N_Dl's Act Section SO is not attracted-When there is chance recovery of Narcotic Drugs from that stage provisions of Section SO are applicable. It is obligatory on the part of the officer to infonn the accused that he has a right to be searched before a Gazetted Officer or magistrate-Section E SO held mandatory. Section SJ-Search and Seizure-Provisions in Cr.P.C. in so far as they are not inconsistent with NDPS Act are applicable to Search and Seizure under NDPS Act. Sections S2 and 57-Provisions dealing with steps to be taken after search and seizure-Held not mandatory-Violation of these provisions does not vitiate trial-Court should examine whether non-compliance has caused prejudice to the accused."
+          },
+          {
+            "evidence_id": "E4",
+            "chunk_id": "S_1999_1_343_350::p0003::c003",
+            "source_id": "S_1999_1_343_350",
+            "case_id": "1999 INSC 320",
+            "citation": "[1999] SUPP. 1 S.C.R. 343",
+            "decision_date": "1999-08-11",
+            "court": "Supreme Court of India",
+            "pdf_file": "S_1999_1_343_350_EN.pdf",
+            "page_number": 3,
+            "passage_start_char": 409,
+            "passage_end_char": 1154,
+            "verbatim_passage": "The prosecution mainly relied on the evidence of Shri T. Raman PW I, B the police officer, who effected the search and seizure and other witnesses to establish the charge of illegal possession of brown sugar. The Courts below on appreciation of the evidence on record accepted the prosecution case and passed the order of conviction and sentence as noted earlier. The main thrust of the arguments of Shri Somnath Mukherjee, learned C sounsel for the appellant was that the Courts below erred in placing reliance . on the recovery of the brown sugar from the appellant since the mandatory requirements prescribed u/s 50 of the NDPS Act had not been followed by the police officer before making the search which led to the seizure of the articles."
+          },
+          {
+            "evidence_id": "E5",
+            "chunk_id": "S_2006_6_772_784::p0009::c006",
+            "source_id": "S_2006_6_772_784",
+            "case_id": "2006 INSC 671",
+            "citation": "[2006] SUPP. 6 S.C.R. 772",
+            "decision_date": "2006-09-29",
+            "court": "Supreme Court of India",
+            "pdf_file": "S_2006_6_772_784_EN.pdf",
+            "page_number": 9,
+            "passage_start_char": 1560,
+            "passage_end_char": 1877,
+            "verbatim_passage": "Sabiha Khatun and the informer did not take place in his presence. In a case under the NDPS Act, recovery of contraband in presence of F the independent person assumes importance. The seizure witnesses, viz., PWs I and 2 cannot be said to be independent in that way. PW-2 was having a Pan Shop in front of the Bureau."
+          }
+        ],
+        "supported_observations": [
+          {
+            "evidence_id": "E1",
+            "verbatim_passage": "A the offence. When the independent witnesses PW1 and DW2 have not supported the prosecution case and the recovery of the contraband has not been satisfactorily proved, the conviction of the appellant under Section 15 of the NDPS Act cannot be sustained. Since in the B cases of NDPS Act the punishment is severe, therefore strict proof is required for proving the search, seizure and the recovery. [Paras 16, 17] [799-C-D, E] CRIMINALAPPELLATE JURISDICTION: Criminal Appeal C No. 682 of 2015."
+          },
+          {
+            "evidence_id": "E2",
+            "verbatim_passage": "Director, Directorate of Revenue Intelligence, [2002] 8 SCC 7, while dealing with search and seizure at a public place, this Court opined : \"In the instant case, according to the documents on record and the evidence of the witnesses, the search and seizure took place at the airport which is a public place. This being so, it is the provisions of Section 43 of the NDPS Act which would be applicable. Further, as Section 42 of the NDPS Act was not applicable in the present case, the seizure having been effected in a public place, the question of non-compliance, if any, of the provisions of Section 42 of the NDPS Act is wholly irrelevant. Furthermore, in the rnahazar which was prepared, it is clearly stated that the seizure was made by PW 1."
+          },
+          {
+            "evidence_id": "E3",
+            "verbatim_passage": "D without prior infonnation under N_Dl's Act Section SO is not attracted-When there is chance recovery of Narcotic Drugs from that stage provisions of Section SO are applicable. It is obligatory on the part of the officer to infonn the accused that he has a right to be searched before a Gazetted Officer or magistrate-Section E SO held mandatory. Section SJ-Search and Seizure-Provisions in Cr.P.C. in so far as they are not inconsistent with NDPS Act are applicable to Search and Seizure under NDPS Act. Sections S2 and 57-Provisions dealing with steps to be taken after search and seizure-Held not mandatory-Violation of these provisions does not vitiate trial-Court should examine whether non-compliance has caused prejudice to the accused."
+          },
+          {
+            "evidence_id": "E4",
+            "verbatim_passage": "The prosecution mainly relied on the evidence of Shri T. Raman PW I, B the police officer, who effected the search and seizure and other witnesses to establish the charge of illegal possession of brown sugar. The Courts below on appreciation of the evidence on record accepted the prosecution case and passed the order of conviction and sentence as noted earlier. The main thrust of the arguments of Shri Somnath Mukherjee, learned C sounsel for the appellant was that the Courts below erred in placing reliance . on the recovery of the brown sugar from the appellant since the mandatory requirements prescribed u/s 50 of the NDPS Act had not been followed by the police officer before making the search which led to the seizure of the articles."
+          },
+          {
+            "evidence_id": "E5",
+            "verbatim_passage": "Sabiha Khatun and the informer did not take place in his presence. In a case under the NDPS Act, recovery of contraband in presence of F the independent person assumes importance. The seizure witnesses, viz., PWs I and 2 cannot be said to be independent in that way. PW-2 was having a Pan Shop in front of the Bureau."
+          }
+        ],
+        "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+      }
+    },
+    {
+      "experiment": "E3",
+      "selection_version": "week7-bm25-diverse-support-v1",
+      "run_id": "3299e752-fb60-44a6-afa4-604efc0f8f34",
+      "query_id": "week8-e3-05",
+      "query_year": 2020,
+      "candidate_count": 100,
+      "selected_evidence_count": 5,
+      "query_duplicate_chunks_excluded": 0,
+      "status_counts": {
+        "eligible": 95,
+        "ambiguous_excluded": 5,
+        "ineligible": 0,
+        "excluded_missing_metadata": 0
+      },
+      "grounding_audit": "passed",
+      "answer": {
+        "answer_version": "week8-controlled-evidence-renderer-v1",
+        "legal_issue": {
+          "text": "constitutional compensation right to life",
+          "source": "user_query"
+        },
+        "retrieved_authorities": [
+          {
+            "evidence_id": "E1",
+            "case_id": "2000 INSC 38",
+            "citation": "[2000] 1 S.C.R. 480",
+            "decision_date": "2000-01-28",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E2",
+            "case_id": "2016 INSC 412",
+            "citation": "[2016] 4 S.C.R. 638",
+            "decision_date": "2016-05-12",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E3",
+            "case_id": "2017 INSC 1243",
+            "citation": "[2017] 12 S.C.R. 827",
+            "decision_date": "2017-12-15",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E4",
+            "case_id": "2003 INSC 427",
+            "citation": "[2003] SUPP. 3 S.C.R. 43",
+            "decision_date": "2003-08-27",
+            "court": "Supreme Court of India"
+          },
+          {
+            "evidence_id": "E5",
+            "case_id": "2017 INSC 801",
+            "citation": "[2017] 10 S.C.R. 569",
+            "decision_date": "2017-08-24",
+            "court": "Supreme Court of India"
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "E1",
+            "chunk_id": "2000_1_480_504::p0001::c003",
+            "source_id": "2000_1_480_504",
+            "case_id": "2000 INSC 38",
+            "citation": "[2000] 1 S.C.R. 480",
+            "decision_date": "2000-01-28",
+            "court": "Supreme Court of India",
+            "pdf_file": "2000_1_480_504_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 793,
+            "passage_end_char": 1503,
+            "verbatim_passage": "Public Law-Relief under, to a foreign national-Grant of-Held, the victim was enti1led tu all the constitutional rights available to a citizen w far as 'Right to life' was concerned as the Constitution guarantees all the basic E and fundamental human rights set out in the Universal Declaration of Human Rights to its citizens and other persons-Right to life includes right to live with human dignity and rape violates this right of a womarr--State under a Constitutional liability to pay compensation to the rape victim as the right available to her under Article 21 was violated-Constitution of India, F 195(}-Articles 14, 15, 16, 19, 20, 21, 22- -{lniversal Declaration of Human Rights 1948-Articles 3, 7, 9."
+          },
+          {
+            "evidence_id": "E2",
+            "chunk_id": "2016_4_638_684::p0004::c002",
+            "source_id": "2016_4_638_684",
+            "case_id": "2016 INSC 412",
+            "citation": "[2016] 4 S.C.R. 638",
+            "decision_date": "2016-05-12",
+            "court": "Supreme Court of India",
+            "pdf_file": "2016_4_638_684_EN.pdf",
+            "page_number": 4,
+            "passage_start_char": 514,
+            "passage_end_char": 944,
+            "verbatim_passage": "One such right enshrined in Article 21 is right to life and liberty. Right to life is given a purposeful meaning by this Court to include right to live with dignity. It is the purposive interpretation which has been adopted by this Court to give a content of the right to human dignity as the fulfillment of the constitutional value enshrined in Article 21. Thus, human dignity is a constitutional value and a constitutional goal."
+          },
+          {
+            "evidence_id": "E3",
+            "chunk_id": "2017_12_827_912::p0020::c002",
+            "source_id": "2017_12_827_912",
+            "case_id": "2017 INSC 1243",
+            "citation": "[2017] 12 S.C.R. 827",
+            "decision_date": "2017-12-15",
+            "court": "Supreme Court of India",
+            "pdf_file": "2017_12_827_912_EN.pdf",
+            "page_number": 20,
+            "passage_start_char": 353,
+            "passage_end_char": 783,
+            "verbatim_passage": "One such right enshrined in Article 21 is right to life and liberty. Right to life is given a purposeful meariing by this Court to include right to live with dignity. It is the purposive interpretation which has been adopted by this Court to give a content of the right to human dignity as the fulfilment of the constitutional value enshrined in Article 21. Thus, human dignity is a constitutional value and a constitutional goal."
+          },
+          {
+            "evidence_id": "E4",
+            "chunk_id": "S_2003_3_43_99::p0001::c002",
+            "source_id": "S_2003_3_43_99",
+            "case_id": "2003 INSC 427",
+            "citation": "[2003] SUPP. 3 S.C.R. 43",
+            "decision_date": "2003-08-27",
+            "court": "Supreme Court of India",
+            "pdf_file": "S_2003_3_43_99_EN.pdf",
+            "page_number": 1,
+            "passage_start_char": 105,
+            "passage_end_char": 1179,
+            "verbatim_passage": "SABHARWAL AND S.B. SINHA, JJ.] B Constitution of India, 1950: Articles 19(1)(g) and 14-Wi1d Life (Protection) Act, 1972 (as amended)-Section 49C-Prohibition in trade of imported ivory-- C Constitutional validity of-Held· Protection and preservation of wild life was in public interest and amendment was made for saving endangered species from extinction and to arrest further depletion-Hence restriction imposed in public interest-Thus Amending Act 44 of 1991 not ultra vires Articles 19(J)(g) and 14. Article 300A-Right to property-Held: Is a human right and a constitutional right but not a fundamental right-Every claim to property would not be a property right-Control of property by State short of deprivation would not entail payment of compensation. Wild Life (Protection) Act, 1972 (as amended): Sections 49-C, 40A-Trader and non-trader-Classification a/- Held: Trader and non~trader constitute different classes-Classification found on intelligible differentia clearly distinguishing one from another- F Trader cannot be discriminated with vis-a-vis the non-trader."
+          },
+          {
+            "evidence_id": "E5",
+            "chunk_id": "2017_10_569_999::p0150::c001",
+            "source_id": "2017_10_569_999",
+            "case_id": "2017 INSC 801",
+            "citation": "[2017] 10 S.C.R. 569",
+            "decision_date": "2017-08-24",
+            "court": "Supreme Court of India",
+            "pdf_file": "2017_10_569_999_EN.pdf",
+            "page_number": 150,
+            "passage_start_char": 0,
+            "passage_end_char": 525,
+            "verbatim_passage": "the constitution; second, it serves as an interpretative principle for determining the scope of constitutional rights, including the right to human dignity; third, the value of human dignity has an important role in determining the proportionality of a statute limiting a constitutional right.\" 178 106. Life is precious in itself. But life is worth living because of the freedoms which enable each individual to live life as it should be lived. The best decisions on how life should be lived are entrusted to the individual."
+          }
+        ],
+        "supported_observations": [
+          {
+            "evidence_id": "E1",
+            "verbatim_passage": "Public Law-Relief under, to a foreign national-Grant of-Held, the victim was enti1led tu all the constitutional rights available to a citizen w far as 'Right to life' was concerned as the Constitution guarantees all the basic E and fundamental human rights set out in the Universal Declaration of Human Rights to its citizens and other persons-Right to life includes right to live with human dignity and rape violates this right of a womarr--State under a Constitutional liability to pay compensation to the rape victim as the right available to her under Article 21 was violated-Constitution of India, F 195(}-Articles 14, 15, 16, 19, 20, 21, 22- -{lniversal Declaration of Human Rights 1948-Articles 3, 7, 9."
+          },
+          {
+            "evidence_id": "E2",
+            "verbatim_passage": "One such right enshrined in Article 21 is right to life and liberty. Right to life is given a purposeful meaning by this Court to include right to live with dignity. It is the purposive interpretation which has been adopted by this Court to give a content of the right to human dignity as the fulfillment of the constitutional value enshrined in Article 21. Thus, human dignity is a constitutional value and a constitutional goal."
+          },
+          {
+            "evidence_id": "E3",
+            "verbatim_passage": "One such right enshrined in Article 21 is right to life and liberty. Right to life is given a purposeful meariing by this Court to include right to live with dignity. It is the purposive interpretation which has been adopted by this Court to give a content of the right to human dignity as the fulfilment of the constitutional value enshrined in Article 21. Thus, human dignity is a constitutional value and a constitutional goal."
+          },
+          {
+            "evidence_id": "E4",
+            "verbatim_passage": "SABHARWAL AND S.B. SINHA, JJ.] B Constitution of India, 1950: Articles 19(1)(g) and 14-Wi1d Life (Protection) Act, 1972 (as amended)-Section 49C-Prohibition in trade of imported ivory-- C Constitutional validity of-Held· Protection and preservation of wild life was in public interest and amendment was made for saving endangered species from extinction and to arrest further depletion-Hence restriction imposed in public interest-Thus Amending Act 44 of 1991 not ultra vires Articles 19(J)(g) and 14. Article 300A-Right to property-Held: Is a human right and a constitutional right but not a fundamental right-Every claim to property would not be a property right-Control of property by State short of deprivation would not entail payment of compensation. Wild Life (Protection) Act, 1972 (as amended): Sections 49-C, 40A-Trader and non-trader-Classification a/- Held: Trader and non~trader constitute different classes-Classification found on intelligible differentia clearly distinguishing one from another- F Trader cannot be discriminated with vis-a-vis the non-trader."
+          },
+          {
+            "evidence_id": "E5",
+            "verbatim_passage": "the constitution; second, it serves as an interpretative principle for determining the scope of constitutional rights, including the right to human dignity; third, the value of human dignity has an important role in determining the proportionality of a statute limiting a constitutional right.\" 178 106. Life is precious in itself. But life is worth living because of the freedoms which enable each individual to live life as it should be lived. The best decisions on how life should be lived are entrusted to the individual."
+          }
+        ],
+        "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+      }
+    }
+  ]
+}

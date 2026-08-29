@@ -28,8 +28,10 @@ def test_renderer_only_exposes_the_supplied_verbatim_evidence():
     answer = render_grounded_answer(query="What principle applies?", selected_evidence=[source]).as_dict()
 
     assert answer["legal_issue"]["text"] == "What principle applies?"
+    assert answer["retrieved_authorities"][0]["citation"] == source.citation
     assert answer["evidence"][0]["verbatim_passage"] == source.text
     assert answer["supported_observations"][0]["verbatim_passage"] == source.text
+    assert "does not infer conclusions" in answer["uncertainty"]
     assert_answer_grounded(answer, [source])
 
 
