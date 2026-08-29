@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "8ec4fdc9-809d-4b40-940d-4c2c7fb369b6",
+  "query_id": "2008_1629",
+  "query_year": 2008,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 63,
+    "ambiguous_excluded": 14,
+    "ineligible": 23,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "resignation revised pay scale retrospective effect public undertaking",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1997 INSC 221",
+        "citation": "[1997] 2 S.C.R. 637",
+        "decision_date": "1997-03-03",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "2002 INSC 78",
+        "citation": "[2002] 1 S.C.R. 952",
+        "decision_date": "2002-02-13",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1994 INSC 319",
+        "citation": "[1994] SUPP. 2 S.C.R. 637",
+        "decision_date": "1994-08-16",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1995 INSC 32",
+        "citation": "[1995] 1 S.C.R. 214",
+        "decision_date": "1995-01-13",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1994 INSC 250",
+        "citation": "[1994] SUPP. 1 S.C.R. 590",
+        "decision_date": "1994-07-14",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1997_2_637_638::p0002::c001",
+        "source_id": "1997_2_637_638",
+        "case_id": "1997 INSC 221",
+        "citation": "[1997] 2 S.C.R. 637",
+        "decision_date": "1997-03-03",
+        "court": "Supreme Court of India",
+        "pdf_file": "1997_2_637_638_EN.pdf",
+        "page_number": 2,
+        "passage_start_char": 0,
+        "passage_end_char": 267,
+        "verbatim_passage": "(1997] 2 S.C.R. A scale of pay was Rs. 525-1150 which was subsequently revised by the University Grants Commission w.e.f April 1, 1974 to Rs. 700-1600. In that pay scale, his pay fixed at Rs. 780. He was paid arrears of salary with retrospective effect from 1.1.1974."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "2002_1_952_960::p0001::c003",
+        "source_id": "2002_1_952_960",
+        "case_id": "2002 INSC 78",
+        "citation": "[2002] 1 S.C.R. 952",
+        "decision_date": "2002-02-13",
+        "court": "Supreme Court of India",
+        "pdf_file": "2002_1_952_960_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 1075,
+        "passage_end_char": 1326,
+        "verbatim_passage": "The pay scale was revised in 1987 to Rs. 1400-2100 with effect from 1.2.1981. The revised pay scale was not given to the appellant. In 1988, the pay scale was further revised to Rs. 3000-4500. The appellant was given the revised pay scale of 1987 i.e."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "S_1994_2_637_659::p0010::c004",
+        "source_id": "S_1994_2_637_659",
+        "case_id": "1994 INSC 319",
+        "citation": "[1994] SUPP. 2 S.C.R. 637",
+        "decision_date": "1994-08-16",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1994_2_637_659_EN.pdf",
+        "page_number": 10,
+        "passage_start_char": 1035,
+        "passage_end_char": 1611,
+        "verbatim_passage": "Thereafter the President revised the pay scales of the Principals, G Vice-Principals, Post graduate Teachers and Trained Graduate Teachers, etc. of the Higher Secondary schools vide order dated 18.9.1970 of the Assistant Secretary to the Government of India, Ministry of Education, New Delhi. These revised pay scales were brought in force with retrospective effect from 27.5.1970. According to this revision of pay scales the TGTs (Middle) whose scale of pay was 175 - 350 and the TGTs (Higher Secon- H dary) whose pay scale was 190-425 both were merged together in one cadre"
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1995_1_214_219::p0004::c005",
+        "source_id": "1995_1_214_219",
+        "case_id": "1995 INSC 32",
+        "citation": "[1995] 1 S.C.R. 214",
+        "decision_date": "1995-01-13",
+        "court": "Supreme Court of India",
+        "pdf_file": "1995_1_214_219_EN.pdf",
+        "page_number": 4,
+        "passage_start_char": 1713,
+        "passage_end_char": 2271,
+        "verbatim_passage": "Under the Rules, the pay scale of Rs. 470-830 was revised to Rs. 640-1180; but no revised pay scale with reference to the existing pay-scale of Rs. 355-570 was prescribed under the Rules. Hence the notification providing for a revised pay-scale ( 490-840) to the existing pay-scale Rs. 355-570 was issued with effect from September 1, 1981. Similarly there were two pay-scales in the cadre of Junior Compounders and Nurses. Revised pay-scale was provided under the Rules in respect of one scale, but there was no provision in respect of the second pay-scale."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "S_1994_1_590_596::p0002::c002",
+        "source_id": "S_1994_1_590_596",
+        "case_id": "1994 INSC 250",
+        "citation": "[1994] SUPP. 1 S.C.R. 590",
+        "decision_date": "1994-07-14",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1994_1_590_596_EN.pdf",
+        "page_number": 2,
+        "passage_start_char": 46,
+        "passage_end_char": 734,
+        "verbatim_passage": "The appellant did not give any option under rule 5 of the Central A Civil Services (Revised Pay) Rules, 1986 and as such under 6(3) he bacame entitled to the revised scale of pay \"with effect on and from the 1st day of January, 1986'. Since the minimum of the revised scale of the appellant was more than the amount worked out Rule 7(A)(i)(ii) he became entitled under rule 7(A)(a) to be fixed at the minimum of the revised scale. It is B clear from the combined reading of rules 6 & 7 of the rules that the appellant was entitled to be fixed at Rs. 1640 as his basic pay with effect from January 1, 1986 in the revised scale. The pre-revised scale ceased to operate on December 31, 1985."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "(1997] 2 S.C.R. A scale of pay was Rs. 525-1150 which was subsequently revised by the University Grants Commission w.e.f April 1, 1974 to Rs. 700-1600. In that pay scale, his pay fixed at Rs. 780. He was paid arrears of salary with retrospective effect from 1.1.1974."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "The pay scale was revised in 1987 to Rs. 1400-2100 with effect from 1.2.1981. The revised pay scale was not given to the appellant. In 1988, the pay scale was further revised to Rs. 3000-4500. The appellant was given the revised pay scale of 1987 i.e."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "Thereafter the President revised the pay scales of the Principals, G Vice-Principals, Post graduate Teachers and Trained Graduate Teachers, etc. of the Higher Secondary schools vide order dated 18.9.1970 of the Assistant Secretary to the Government of India, Ministry of Education, New Delhi. These revised pay scales were brought in force with retrospective effect from 27.5.1970. According to this revision of pay scales the TGTs (Middle) whose scale of pay was 175 - 350 and the TGTs (Higher Secon- H dary) whose pay scale was 190-425 both were merged together in one cadre"
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "Under the Rules, the pay scale of Rs. 470-830 was revised to Rs. 640-1180; but no revised pay scale with reference to the existing pay-scale of Rs. 355-570 was prescribed under the Rules. Hence the notification providing for a revised pay-scale ( 490-840) to the existing pay-scale Rs. 355-570 was issued with effect from September 1, 1981. Similarly there were two pay-scales in the cadre of Junior Compounders and Nurses. Revised pay-scale was provided under the Rules in respect of one scale, but there was no provision in respect of the second pay-scale."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "The appellant did not give any option under rule 5 of the Central A Civil Services (Revised Pay) Rules, 1986 and as such under 6(3) he bacame entitled to the revised scale of pay \"with effect on and from the 1st day of January, 1986'. Since the minimum of the revised scale of the appellant was more than the amount worked out Rule 7(A)(i)(ii) he became entitled under rule 7(A)(a) to be fixed at the minimum of the revised scale. It is B clear from the combined reading of rules 6 & 7 of the rules that the appellant was entitled to be fixed at Rs. 1640 as his basic pay with effect from January 1, 1986 in the revised scale. The pre-revised scale ceased to operate on December 31, 1985."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}
