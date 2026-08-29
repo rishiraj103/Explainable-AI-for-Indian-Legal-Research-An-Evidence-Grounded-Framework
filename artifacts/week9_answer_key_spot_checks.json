@@ -24,4 +24,14 @@
     {"query_case_id":"1988_96","run_id":"3637f305-1572-4747-8455-608b10309331","authority_source_id":"1980_3_1271_1277","expected_authority":"[1980] 46 STC 63","corpus_citation":"[1980] 3 S.C.R. 1271","retrieval_selection_status":"retrieved_not_selected","best_bm25_rank":96}
   ],
   "summary": {"retrieved_and_selected":2,"retrieved_not_selected":3,"not_retrieved_in_top_100":5}
+  ,"absent_authority_presence_diagnostic": {
+    "conclusion": "All five top-100 misses are corpus-present native-text sources; the misses are retrieval-relevance findings, not corpus-coverage gaps.",
+    "cases": [
+      {"query_case_id":"1995_403","authority_source_id":"1964_8_133_152","chunk_count":90,"quality_status":"native-text"},
+      {"query_case_id":"1982_29","authority_source_id":"1976_3_160_167","chunk_count":44,"quality_status":"native-text"},
+      {"query_case_id":"1994_632","authority_source_id":"1979_2_953_973","chunk_count":100,"quality_status":"native-text"},
+      {"query_case_id":"1985_40","authority_source_id":"1964_2_888_899","chunk_count":37,"quality_status":"native-text"},
+      {"query_case_id":"1992_84","authority_source_id":"1982_1_629_658","chunk_count":108,"quality_status":"native-text"}
+    ]
+  }
 }
