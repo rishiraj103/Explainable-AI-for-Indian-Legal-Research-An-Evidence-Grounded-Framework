@@ -22,6 +22,10 @@ Run `8ec4fdc9-809d-4b40-940d-4c2c7fb369b6` queried fixed-test case `2008_1629` (
 
 The answer key expects `(2006) 9 SCC 630` for this query. The same authority is present in the eCourts corpus as `S_2006_2_582_600`, using its parallel citation `[2006] SUPP. 2 S.C.R. 582`, and was an eligible BM25 candidate at rank 29. It was therefore **retrieved but not selected** for the five-passage answer, not absent from the corpus. The answer-key comparison now reconciles a parallel reporter citation using normalized title plus exact decision date and reports this state separately. `wrong_or_unverified_displayed_citations` remains empty.
 
+### Deferred Week 12 error-analysis candidate
+
+Tag `2008_1629` / `S_2006_2_582_600` as a concrete **correct authority retrieved but not selected** instance. At Week 11–12, compare it with the other frozen answer-key queries to determine whether rank-29 omission is isolated or recurs because the Week 7 source-diverse selector favors other passages over a known authority. This is a recorded analysis question only; the frozen retrieval and selection configuration is unchanged.
+
 ## Status
 
 The citation/evidence verification module is working and remains separate from Week 10 explanation and freeze work. The answer-key population is still at 20/40 evaluation cases; the remaining Week 9 pacing work is tracked separately in the local checklist.
