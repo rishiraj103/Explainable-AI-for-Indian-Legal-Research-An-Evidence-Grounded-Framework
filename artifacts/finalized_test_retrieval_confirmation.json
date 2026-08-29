@@ -1,0 +1,114 @@
+{
+  "artifact_version": "finalized-test-confirmation-v1",
+  "purpose": "One-time post-freeze-decision confirmation only; results were not used for tuning.",
+  "selection_config": {
+    "selection_version": "week7-bm25-diverse-support-v1",
+    "candidate_k": 100,
+    "max_selected_evidence": 5,
+    "eligibility_requirement": "temporal_status == eligible",
+    "redundancy_rule": "select at most one chunk per source_id",
+    "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
+    "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker."
+  },
+  "results": [
+    {
+      "query_case_id": "2008_1629",
+      "run_id": "101340d4-b8ae-44b8-90e5-fc358f2c2e4f",
+      "expected_authority_source_id": "S_2006_2_582_600",
+      "query": "resignation revised pay scale retrospective effect public undertaking",
+      "status": "retrieved_not_selected",
+      "best_bm25_rank": 29,
+      "query_duplicate_chunks_excluded": "reused_interrupted_confirmation_run"
+    },
+    {
+      "query_case_id": "1995_425",
+      "run_id": "f4ea7583-ad0f-49ec-8e6f-d2f5341e1472",
+      "expected_authority_source_id": "1967_1_679_684",
+      "query": "panchayat secretary civil post government servant article 311",
+      "status": "retrieved_not_selected",
+      "best_bm25_rank": 56,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "2002_944",
+      "run_id": "6a296d4f-392e-4672-b592-80127c54e6b3",
+      "expected_authority_source_id": "1993_1_891_1026",
+      "query": "constitutional 72nd amendment tribal representation constitutional validity",
+      "status": "retrieved_not_selected",
+      "best_bm25_rank": 75,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "1988_96",
+      "run_id": "1b1e421f-187a-4b39-8565-dda50acb512e",
+      "expected_authority_source_id": "1980_3_1271_1277",
+      "query": "Kerala General Sales Tax cashew shells purchase turnover processing",
+      "status": "retrieved_not_selected",
+      "best_bm25_rank": 96,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "1995_403",
+      "run_id": "b23b805e-180e-49f6-8b53-1cab2b7b8fe1",
+      "expected_authority_source_id": "1964_8_133_152",
+      "query": "unlawful assembly section 149 individual membership criminal liability death sentence",
+      "status": "absent_at_k_100",
+      "best_bm25_rank": null,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "1982_29",
+      "run_id": "f2ab26e2-e57e-4c85-b522-d601ea7c6955",
+      "expected_authority_source_id": "1976_3_160_167",
+      "query": "temporary railway servant termination continuous service industrial disputes",
+      "status": "absent_at_k_100",
+      "best_bm25_rank": null,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "1994_632",
+      "run_id": "0d66da23-26c8-4c19-8a6d-0ce4392dfb0c",
+      "expected_authority_source_id": "1979_2_953_973",
+      "query": "chief engineer eligibility transfer deputation Punjab service rules",
+      "status": "absent_at_k_100",
+      "best_bm25_rank": null,
+      "query_duplicate_chunks_excluded": 16
+    },
+    {
+      "query_case_id": "1985_40",
+      "run_id": "ab9c5496-f146-4478-9a0e-923cf009477d",
+      "expected_authority_source_id": "1964_2_888_899",
+      "query": "central excise exemption notification synthetic organic dyestuffs classification",
+      "status": "absent_at_k_100",
+      "best_bm25_rank": null,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "1992_84",
+      "run_id": "219440f8-ddf5-4384-9ae3-6f71fe9e9f2b",
+      "expected_authority_source_id": "1982_1_629_658",
+      "query": "Companies Act section 73 interest liability public deposits company",
+      "status": "absent_at_k_100",
+      "best_bm25_rank": null,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "1995_412",
+      "run_id": "9109f493-9a27-4779-9d2b-bb940071cafd",
+      "expected_authority_source_id": "1987_1_1_67",
+      "query": "judicial restraint writ petition policy decision State government public interest",
+      "status": "retrieved_and_selected",
+      "best_bm25_rank": 22,
+      "query_duplicate_chunks_excluded": 0
+    },
+    {
+      "query_case_id": "1986_397",
+      "run_id": "e36fff77-83db-44f2-af59-db71cb73146b",
+      "expected_authority_source_id": "1978_3_971_981",
+      "query": "dismissal special leave petition labour court writ article 226",
+      "status": "retrieved_and_selected",
+      "best_bm25_rank": 2,
+      "query_duplicate_chunks_excluded": 0
+    }
+  ]
+}

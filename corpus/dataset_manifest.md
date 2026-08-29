@@ -39,3 +39,10 @@ The accompanying `dedup_report.md` records the matching method and the live over
 - **Authority source quality:** the ten Week 9 additions use native-text eCourts-mirror PDFs for both the query locator and the authoritative corpus source; none relies on an OCR-repaired or permanently excluded document.
 - **Parallel citations:** six additions have a source-judgment reporter form that differs from the corpus SCR citation. Their stable authority source IDs and title-plus-exact-date reconciliation are recorded in `answer_key/authority_answer_key.json`.
 - **Deferred selection finding:** three of the ten expected authorities were BM25 candidates but were not included in the frozen five-source selection; per-case ranks and run IDs are recorded in `artifacts/week9_answer_key_spot_checks.json` for Week 12 analysis.
+
+## Pre-freeze dev-only retrieval investigation
+
+- **Probe population:** eight independently source-verified ILDC train-only cases in `answer_key/dev_retrieval_probe.json`; the validator enforces `split: dev`, train/validation membership, exclusion from the fixed test split, strict temporal eligibility, and no use of permanently excluded sources.
+- **Diagnostic result:** all eight verified authority sources were absent at both BM25 top-100 and top-500 when queried from the frozen full facts-only input. The exact inputs, FTS terms, candidate counts, and run IDs are stored in `artifacts/dev_retrieval_probe_baseline.json`.
+- **Freeze decision:** no retrieval change was adopted. The persistence of 8/8 misses at top-500 meets the predefined lexical-mismatch criterion; `config/evidence_selection.json` is unchanged and this limitation is documented in `artifacts/dev_retrieval_investigation.md`.
+- **One-time test confirmation:** after that decision, the final unchanged configuration was run once on the designated eleven real answer-key cases for recordkeeping only. It returned 2 selected, 4 retrieved-but-not-selected, and 5 top-100 misses; no result was used for further tuning. See `artifacts/finalized_test_retrieval_confirmation.json`.
