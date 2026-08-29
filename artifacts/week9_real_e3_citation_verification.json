@@ -1,5 +1,5 @@
 {
-  "verification_version": "week9-citation-evidence-verifier-v1",
+  "verification_version": "week9-citation-evidence-verifier-v2",
   "input": "artifacts\\week9_real_e3_answer.json",
   "run_id": "8ec4fdc9-809d-4b40-940d-4c2c7fb369b6",
   "query_id": "2008_1629",
@@ -57,8 +57,26 @@
       "[2002] 1 s.c.r. 952"
     ],
     "matched_expected_authorities": [],
-    "expected_authorities_not_retrieved": [
+    "expected_authorities_retrieved": [
       "(2006) 9 scc 630"
+    ],
+    "expected_authorities_retrieved_not_selected": [
+      "(2006) 9 scc 630"
+    ],
+    "expected_authorities_not_retrieved": [],
+    "retrieved_expected_authority_details": [
+      {
+        "expected_authority_citation": "(2006) 9 scc 630",
+        "matches": [
+          {
+            "rank": 29,
+            "source_id": "S_2006_2_582_600",
+            "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+            "decision_date": "2006-05-12",
+            "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+          }
+        ]
+      }
     ],
     "wrong_or_unverified_displayed_citations": []
   },

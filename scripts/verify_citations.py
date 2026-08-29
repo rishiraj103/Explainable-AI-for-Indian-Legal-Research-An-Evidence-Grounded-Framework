@@ -12,6 +12,7 @@ import psycopg
 from load_provenance import DEFAULT_DATABASE_URL
 from legal_xai.citation_verifier import (
     CorpusEvidenceRecord,
+    RetrievedCandidate,
     VERIFICATION_VERSION,
     evaluate_against_answer_key,
     verify_answer_citations,
@@ -37,11 +38,12 @@ def main() -> None:
     chunk_ids = [item["chunk_id"] for item in evidence]
     records: dict[str, CorpusEvidenceRecord] = {}
     retrieved_chunk_ids: set[str] = set()
+    retrieved_candidates: list[RetrievedCandidate] = []
     with psycopg.connect(args.database_url) as connection:
         with connection.cursor() as cursor:
             if chunk_ids:
                 cursor.execute(
-                    "SELECT chunk_id, source_id, case_id, citation, decision_date, court, pdf_file, "
+                    "SELECT chunk_id, source_id, case_id, citation, decision_date, title, court, pdf_file, "
                     "page_number, passage_start_char, passage_end_char, chunk_text "
                     "FROM corpus_chunks WHERE chunk_id = ANY(%s)",
                     (chunk_ids,),
@@ -49,13 +51,31 @@ def main() -> None:
                 records = {
                     row[0]: CorpusEvidenceRecord(
                         chunk_id=row[0], source_id=row[1], case_id=row[2], citation=row[3],
-                        decision_date=row[4].isoformat(), court=row[5], pdf_file=row[6],
-                        page_number=row[7], passage_start_char=row[8], passage_end_char=row[9], text=row[10],
+                        decision_date=row[4].isoformat(), title=row[5], court=row[6], pdf_file=row[7],
+                        page_number=row[8], passage_start_char=row[9], passage_end_char=row[10], text=row[11],
                     )
                     for row in cursor.fetchall()
                 }
-            cursor.execute("SELECT chunk_id FROM retrieval_results WHERE run_id = %s", (run["run_id"],))
-            retrieved_chunk_ids = {row[0] for row in cursor.fetchall()}
+            cursor.execute(
+                "SELECT rr.rank, c.chunk_id, c.source_id, c.case_id, c.citation, c.decision_date, c.title, "
+                "c.court, c.pdf_file, c.page_number, c.passage_start_char, c.passage_end_char, c.chunk_text "
+                "FROM retrieval_results rr JOIN corpus_chunks c ON c.chunk_id = rr.chunk_id "
+                "WHERE rr.run_id = %s AND rr.temporal_status = 'eligible' ORDER BY rr.rank",
+                (run["run_id"],),
+            )
+            rows = cursor.fetchall()
+            retrieved_chunk_ids = {row[1] for row in rows}
+            retrieved_candidates = [
+                RetrievedCandidate(
+                    rank=row[0],
+                    record=CorpusEvidenceRecord(
+                        chunk_id=row[1], source_id=row[2], case_id=row[3], citation=row[4],
+                        decision_date=row[5].isoformat(), title=row[6], court=row[7], pdf_file=row[8],
+                        page_number=row[9], passage_start_char=row[10], passage_end_char=row[11], text=row[12],
+                    ),
+                )
+                for row in rows
+            ]
 
     checks = verify_answer_citations(
         answer=run["answer"], query_id=run["query_id"], query_year=int(run["query_year"]),
@@ -65,6 +85,7 @@ def main() -> None:
     key = json.loads(args.answer_key.read_text(encoding="utf-8"))
     answer_key_measurement = evaluate_against_answer_key(
         query_id=run["query_id"], checks=checks, answer_key_entries=key["entries"],
+        retrieved_candidates=retrieved_candidates,
     )
     output = {
         "verification_version": VERIFICATION_VERSION,

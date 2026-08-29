@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from copy import deepcopy
-
 from legal_xai.citation_verifier import (
     CorpusEvidenceRecord,
+    RetrievedCandidate,
     evaluate_against_answer_key,
     verify_answer_citations,
 )
@@ -12,7 +11,7 @@ from legal_xai.citation_verifier import (
 def record(*, case_id: str = "2018 INSC 12", decision_date: str = "2018-05-01") -> CorpusEvidenceRecord:
     return CorpusEvidenceRecord(
         chunk_id="chunk-1", source_id="source-1", case_id=case_id, citation="(2018) 1 SCC 12",
-        decision_date=decision_date, court="Supreme Court of India", pdf_file="source-1.pdf",
+        decision_date=decision_date, title="Example v State", court="Supreme Court of India", pdf_file="source-1.pdf",
         page_number=4, passage_start_char=10, passage_end_char=50,
         text="The corpus passage states the legal principle.",
     )
@@ -63,6 +62,12 @@ def test_rejects_an_altered_passage():
     assert "passage_mismatch" in verify(payload)[0].failures
 
 
+def test_rejects_a_fabricated_case_name_claim():
+    payload = answer()
+    payload["retrieved_authorities"][0]["case_name"] = "Invented Authority v. Fictional State"
+    assert "unsupported_authority_field:case_name" in verify(payload)[0].failures
+
+
 def test_rejects_tampered_authority_citation_metadata():
     payload = answer()
     payload["retrieved_authorities"][0]["citation"] = "Invented citation"
@@ -75,7 +80,7 @@ def test_rejects_a_citation_not_returned_for_this_query():
 
 def test_rejects_a_later_year_authority():
     source = record(decision_date="2021-01-01")
-    assert "temporal_ineligible" in verify(answer(source), source)[0].failures
+    assert verify(answer(source), source)[0].failures == ("temporal_ineligible",)
 
 
 def test_rejects_a_same_year_authority_as_ambiguous():
@@ -119,6 +124,25 @@ def test_answer_key_measurement_separates_missing_and_failed_citations():
     assert measurement["matched_expected_authorities"] == []
     assert measurement["expected_authorities_not_retrieved"] == ["(2018) 1 scc 12"]
     assert len(measurement["wrong_or_unverified_displayed_citations"]) == 1
+
+
+def test_answer_key_reconciles_parallel_citations_by_title_and_date():
+    source = record(decision_date="2006-05-12")
+    source = CorpusEvidenceRecord(
+        **{**source.__dict__, "citation": "[2006] SUPP. 2 S.C.R. 582", "title": "U. Raghavendra Acharya & Ors. versus State of Karnataka & Ors."}
+    )
+    measurement = evaluate_against_answer_key(
+        query_id="2020_99", checks=(),
+        answer_key_entries=[{
+            "status": "evaluation", "query_case_id": "2020_99", "authority_citation": "(2006) 9 SCC 630",
+            "authority_title": "U. Raghavendra Acharya & Ors. v. State of Karnataka & Ors.",
+            "authority_decision_date": "2006-05-12",
+        }],
+        retrieved_candidates=[RetrievedCandidate(record=source, rank=29)],
+    )
+    assert measurement["expected_authorities_retrieved"] == ["(2006) 9 scc 630"]
+    assert measurement["expected_authorities_retrieved_not_selected"] == ["(2006) 9 scc 630"]
+    assert measurement["expected_authorities_not_retrieved"] == []
 
 
 def test_no_citations_is_a_valid_no_evidence_response():

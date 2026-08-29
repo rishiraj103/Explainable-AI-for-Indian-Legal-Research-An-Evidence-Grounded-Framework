@@ -3,14 +3,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from pathlib import Path
+import re
 from typing import Any, Iterable, Mapping
 
 from legal_xai.retrieval import exclude_query_duplicate
 from legal_xai.temporal import assess_temporal_eligibility
 
 
-VERIFICATION_VERSION = "week9-citation-evidence-verifier-v1"
+VERIFICATION_VERSION = "week9-citation-evidence-verifier-v2"
+AUTHORITY_FIELDS = frozenset({"evidence_id", "case_id", "citation", "decision_date", "court"})
 
 
 @dataclass(frozen=True)
@@ -22,6 +23,7 @@ class CorpusEvidenceRecord:
     case_id: str | None
     citation: str | None
     decision_date: str
+    title: str | None
     court: str
     pdf_file: str
     page_number: int
@@ -48,8 +50,36 @@ class CitationCheck:
         }
 
 
+@dataclass(frozen=True)
+class RetrievedCandidate:
+    """A temporally eligible corpus chunk considered for a particular run."""
+
+    record: CorpusEvidenceRecord
+    rank: int
+
+
 def _normalise_citation(value: str | None) -> str:
     return " ".join((value or "").casefold().split())
+
+
+def _normalise_title(value: str | None) -> str:
+    """Normalize title variants such as ``v.`` and ``versus`` for cross-citation matching."""
+
+    value = (value or "").casefold().replace("versus", " v ")
+    tokens = re.findall(r"[a-z0-9]+", value)
+    return " ".join(token for token in tokens if token not in {"and", "ors", "others"})
+
+
+def _candidate_matches_expected(candidate: RetrievedCandidate, expected: Mapping[str, Any]) -> bool:
+    expected_citation = _normalise_citation(expected.get("authority_citation"))
+    if expected_citation and _normalise_citation(candidate.record.citation) == expected_citation:
+        return True
+    expected_title = _normalise_title(expected.get("authority_title"))
+    return bool(
+        expected_title
+        and expected_title == _normalise_title(candidate.record.title)
+        and str(expected.get("authority_decision_date", "")) == candidate.record.decision_date
+    )
 
 
 def _check_metadata(evidence: Mapping[str, Any], record: CorpusEvidenceRecord) -> list[str]:
@@ -108,6 +138,9 @@ def verify_answer_citations(
         chunk_id = evidence.get("chunk_id")
         record = corpus_records.get(chunk_id)
         failures: list[str] = []
+        if isinstance(authority, Mapping):
+            for field in sorted(set(authority) - AUTHORITY_FIELDS):
+                failures.append(f"unsupported_authority_field:{field}")
         if record is None:
             failures.append("corpus_chunk_missing")
         else:
@@ -133,26 +166,71 @@ def verify_answer_citations(
 
 
 def evaluate_against_answer_key(
-    *, query_id: str, checks: Iterable[CitationCheck], answer_key_entries: Iterable[Mapping[str, Any]]
+    *,
+    query_id: str,
+    checks: Iterable[CitationCheck],
+    answer_key_entries: Iterable[Mapping[str, Any]],
+    retrieved_candidates: Iterable[RetrievedCandidate] = (),
 ) -> dict[str, Any]:
-    """Measure verified displayed citations against independently sourced authorities."""
+    """Measure key-authority retrieval and final displayed citations separately.
 
-    expected = {
-        _normalise_citation(str(entry.get("authority_citation", "")))
-        for entry in answer_key_entries
+    Citation strings alone are insufficient: the eCourts corpus commonly stores an
+    S.C.R. citation while a source-verified key may identify the same authority by
+    its parallel SCC citation. Title plus exact decision date is therefore the
+    identity fallback for a candidate that was actually retrieved.
+    """
+
+    expected_entries = [
+        entry for entry in answer_key_entries
         if entry.get("status") == "evaluation" and entry.get("query_case_id") == query_id
-    }
+    ]
+    expected = {_normalise_citation(str(entry.get("authority_citation", ""))) for entry in expected_entries}
     verified = {
         _normalise_citation(check.citation)
         for check in checks
         if check.passed and check.citation
     }
+    candidates = tuple(retrieved_candidates)
+    retrieved_matches = {
+        _normalise_citation(str(entry.get("authority_citation", ""))): [
+            candidate for candidate in candidates if _candidate_matches_expected(candidate, entry)
+        ]
+        for entry in expected_entries
+    }
+    displayed_chunk_ids = {check.chunk_id for check in checks if check.passed and check.chunk_id}
+    retrieved_expected = {citation for citation, matches in retrieved_matches.items() if matches}
+    displayed_expected = {
+        citation for citation, matches in retrieved_matches.items()
+        if any(match.record.chunk_id in displayed_chunk_ids for match in matches)
+    }
+    # Preserve standalone unit use where only a displayed citation is available.
+    displayed_expected |= expected & verified
+    retrieved_expected |= displayed_expected
     failed = [check.as_dict() for check in checks if not check.passed]
     return {
         "query_id": query_id,
         "expected_authority_citations": sorted(expected),
         "verified_displayed_citations": sorted(verified),
-        "matched_expected_authorities": sorted(expected & verified),
-        "expected_authorities_not_retrieved": sorted(expected - verified),
+        "matched_expected_authorities": sorted(displayed_expected),
+        "expected_authorities_retrieved": sorted(retrieved_expected),
+        "expected_authorities_retrieved_not_selected": sorted(retrieved_expected - displayed_expected),
+        "expected_authorities_not_retrieved": sorted(expected - retrieved_expected),
+        "retrieved_expected_authority_details": [
+            {
+                "expected_authority_citation": citation,
+                "matches": [
+                    {
+                        "rank": candidate.rank,
+                        "source_id": candidate.record.source_id,
+                        "corpus_citation": candidate.record.citation,
+                        "decision_date": candidate.record.decision_date,
+                        "title": candidate.record.title,
+                    }
+                    for candidate in matches
+                ],
+            }
+            for citation, matches in sorted(retrieved_matches.items())
+            if matches
+        ],
         "wrong_or_unverified_displayed_citations": failed,
     }

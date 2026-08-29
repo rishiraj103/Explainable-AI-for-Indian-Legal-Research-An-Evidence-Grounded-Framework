@@ -1,5 +1,5 @@
 {
-  "verification_version": "week9-citation-evidence-verifier-v1",
+  "verification_version": "week9-citation-evidence-verifier-v2",
   "experiment": "E4_foundation",
   "input_contract": "A Week 8 controlled answer together with its retrieval run ID, query ID, query year, and persisted corpus provenance.",
   "required_checks": [
@@ -9,6 +9,6 @@
     "candidate is neither an exact target-case nor an audited near duplicate",
     "candidate decision year is strictly earlier than the ILDC query year"
   ],
-  "answer_key_measurement": "For test-split queries, compare citations that pass all checks with the frozen source-first authority-answer key. Record matched expected authorities, expected authorities not retrieved, and displayed citations that fail verification.",
-  "unsupported_citation_policy": "The controlled E3 renderer emits corpus case citations only. Any citation without a linked evidence chunk is rejected; statutes or other source types are not silently treated as verified."
+  "answer_key_measurement": "For test-split queries, reconcile expected authorities using citation, or title plus exact decision date when the corpus stores a parallel reporter citation. Record retrieved-but-not-selected authorities separately from authorities absent from the retrieved candidates, and displayed citations that fail verification.",
+  "unsupported_citation_policy": "The controlled E3 renderer emits corpus case citations only. Any citation without a linked evidence chunk, including an unsupported case-name field, is rejected; statutes or other source types are not silently treated as verified."
 }

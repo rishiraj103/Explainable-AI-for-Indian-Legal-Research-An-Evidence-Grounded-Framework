@@ -14,13 +14,13 @@ The verifier also compares only successfully verified displayed authorities with
 
 ## Deterministic hand-authored tests
 
-`tests/test_citation_verifier.py` contains 13 cases and all pass. The suite covers a valid citation; missing-corpus, altered-passage, altered-citation, non-retrieved, later-year, same-year, exact-query-duplicate, and near-duplicate failures; an authority without an evidence link; expected-authority match and miss accounting; and the no-evidence outcome.
+`tests/test_citation_verifier.py` contains 15 cases and all pass. The suite covers a valid citation; a fabricated case-name claim; missing-corpus, altered-passage, altered-citation, non-retrieved, later-year, same-year, exact-query-duplicate, and near-duplicate failures; an authority without an evidence link; expected-authority match and miss accounting; parallel-reporter reconciliation; and the no-evidence outcome. The later-year test asserts that temporal ineligibility is the only failure, isolating the temporal rule.
 
 ## Live E3 provenance check
 
 Run `8ec4fdc9-809d-4b40-940d-4c2c7fb369b6` queried fixed-test case `2008_1629` (year 2008) with the pay-scale/resignation issue query. The controlled E3 renderer selected five authorities. The verifier accepted all five: each was present in the corpus, unchanged, recorded in this retrieval run, non-duplicate, and dated before 2008. The machine-readable record is `artifacts/week9_real_e3_citation_verification.json`.
 
-The answer key expects `(2006) 9 SCC 630` for this query. It was not among the five retrieved authorities. This is recorded as an **expected authority not retrieved**, while `wrong_or_unverified_displayed_citations` remains empty. This is an authority-recall finding, not a citation-grounding failure.
+The answer key expects `(2006) 9 SCC 630` for this query. The same authority is present in the eCourts corpus as `S_2006_2_582_600`, using its parallel citation `[2006] SUPP. 2 S.C.R. 582`, and was an eligible BM25 candidate at rank 29. It was therefore **retrieved but not selected** for the five-passage answer, not absent from the corpus. The answer-key comparison now reconciles a parallel reporter citation using normalized title plus exact decision date and reports this state separately. `wrong_or_unverified_displayed_citations` remains empty.
 
 ## Status
 
