@@ -1,0 +1,27 @@
+{
+  "purpose": "Week 9 fixed-test authority answer-key retrieval and selection spot check",
+  "query_population": "ILDC Single fixed test split",
+  "candidate_membership_rejections": [],
+  "source_screened_but_not_used": [
+    "1997_996", "1952_98", "1995_1060", "1995_278", "1995_394", "1995_1075"
+  ],
+  "source_screening_note": "Each listed case passed the fixed-test gate, but was replaced before answer-key inclusion because its eCourts judgment did not provide a usable earlier Supreme Court authority with a primary-source record.",
+  "parallel_reporter_reconciliation": {
+    "method": "verified authority source ID; independently confirmed title plus exact decision-date reconciliation",
+    "cases": ["1995_412", "1995_403", "2002_944", "1986_397", "1992_84", "1988_96"],
+    "all_title_date_checks_passed": true
+  },
+  "cases": [
+    {"query_case_id":"1995_412","run_id":"7f9cf041-ecc6-4c2d-88cd-5422eb0db3fe","authority_source_id":"1987_1_1_67","expected_authority":"(1986) 4 SCC 566","corpus_citation":"[1987] 1 S.C.R. 1","retrieval_selection_status":"retrieved_and_selected","best_bm25_rank":22},
+    {"query_case_id":"1995_403","run_id":"0d1eb42a-f296-42b6-ab1a-bb751cba0e84","authority_source_id":"1964_8_133_152","expected_authority":"AIR 1965 SC 202","corpus_citation":"[1964] 8 S.C.R. 133","retrieval_selection_status":"not_retrieved_in_top_100","best_bm25_rank":null},
+    {"query_case_id":"1995_425","run_id":"01504563-00cd-4a05-86a5-2082e937cd5c","authority_source_id":"1967_1_679_684","expected_authority":"[1967] 1 S.C.R. 679","corpus_citation":"[1967] 1 S.C.R. 679","retrieval_selection_status":"retrieved_not_selected","best_bm25_rank":56},
+    {"query_case_id":"2002_944","run_id":"9d1df491-ea15-4590-8127-7e180e2519b2","authority_source_id":"1993_1_891_1026","expected_authority":"(1994) Supp. 1 SCC 324","corpus_citation":"[1993] 1 S.C.R. 891","retrieval_selection_status":"retrieved_not_selected","best_bm25_rank":75},
+    {"query_case_id":"1986_397","run_id":"0b163e0b-277d-4710-80cf-bf3ad0d5e03f","authority_source_id":"1978_3_971_981","expected_authority":"(1978) 3 SCC 119","corpus_citation":"[1978] 3 S.C.R. 971","retrieval_selection_status":"retrieved_and_selected","best_bm25_rank":2},
+    {"query_case_id":"1982_29","run_id":"6c8af5d5-5cd9-47db-b2bd-ac306b4d65eb","authority_source_id":"1976_3_160_167","expected_authority":"[1976] 3 S.C.R. 160","corpus_citation":"[1976] 3 S.C.R. 160","retrieval_selection_status":"not_retrieved_in_top_100","best_bm25_rank":null},
+    {"query_case_id":"1994_632","run_id":"c0d6402b-d404-4713-a3d7-8f83945c5b3d","authority_source_id":"1979_2_953_973","expected_authority":"[1979] 2 S.C.R. 953","corpus_citation":"[1979] 2 S.C.R. 953","retrieval_selection_status":"not_retrieved_in_top_100","best_bm25_rank":null},
+    {"query_case_id":"1985_40","run_id":"a4f57390-d76c-44ca-ae15-a2138c178d8e","authority_source_id":"1964_2_888_899","expected_authority":"[1964] 2 S.C.R. 888","corpus_citation":"[1964] 2 S.C.R. 888","retrieval_selection_status":"not_retrieved_in_top_100","best_bm25_rank":null},
+    {"query_case_id":"1992_84","run_id":"e0e7e9f3-7061-4db7-bb58-ee4e7e481e9b","authority_source_id":"1982_1_629_658","expected_authority":"(1981) 4 SCC 173","corpus_citation":"[1982] 1 S.C.R. 629","retrieval_selection_status":"not_retrieved_in_top_100","best_bm25_rank":null},
+    {"query_case_id":"1988_96","run_id":"3637f305-1572-4747-8455-608b10309331","authority_source_id":"1980_3_1271_1277","expected_authority":"[1980] 46 STC 63","corpus_citation":"[1980] 3 S.C.R. 1271","retrieval_selection_status":"retrieved_not_selected","best_bm25_rank":96}
+  ],
+  "summary": {"retrieved_and_selected":2,"retrieved_not_selected":3,"not_retrieved_in_top_100":5}
+}

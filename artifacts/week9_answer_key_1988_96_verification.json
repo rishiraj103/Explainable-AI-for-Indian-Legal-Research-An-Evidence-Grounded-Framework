@@ -1,0 +1,84 @@
+{
+  "verification_version": "week9-citation-evidence-verifier-v2",
+  "input": "artifacts\\week9_answer_key_1988_96_answer.json",
+  "run_id": "3637f305-1572-4747-8455-608b10309331",
+  "query_id": "1988_96",
+  "query_year": 1988,
+  "citation_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "checks": [
+    {
+      "evidence_id": "E1",
+      "chunk_id": "1986_1_610_621::p0001::c002",
+      "citation": "[1986] 1 S.C.R. 610",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E2",
+      "chunk_id": "1986_2_522_529::p0001::c003",
+      "citation": "[1986] 2 S.C.R. 522",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E3",
+      "chunk_id": "S_1976_1_110_120::p0009::c003",
+      "citation": "[1976] SUPP. 1 S.C.R. 110",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E4",
+      "chunk_id": "1957_1_837_853::p0001::c001",
+      "citation": "[1957] 1 S.C.R. 837",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E5",
+      "chunk_id": "1981_3_435_448::p0006::c003",
+      "citation": "[1981] 3 S.C.R. 435",
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "answer_key_measurement": {
+    "query_id": "1988_96",
+    "expected_authority_citations": [
+      "[1980] 46 stc 63"
+    ],
+    "verified_displayed_citations": [
+      "[1957] 1 s.c.r. 837",
+      "[1976] supp. 1 s.c.r. 110",
+      "[1981] 3 s.c.r. 435",
+      "[1986] 1 s.c.r. 610",
+      "[1986] 2 s.c.r. 522"
+    ],
+    "matched_expected_authorities": [],
+    "expected_authorities_retrieved": [
+      "[1980] 46 stc 63"
+    ],
+    "expected_authorities_retrieved_not_selected": [
+      "[1980] 46 stc 63"
+    ],
+    "expected_authorities_not_retrieved": [],
+    "retrieved_expected_authority_details": [
+      {
+        "expected_authority_citation": "[1980] 46 stc 63",
+        "matches": [
+          {
+            "rank": 96,
+            "source_id": "1980_3_1271_1277",
+            "corpus_citation": "[1980] 3 S.C.R. 1271",
+            "decision_date": "1980-05-09",
+            "title": "DEPUTY COMMISSIONER, SALES TAX (LAW) BOARD OF  REVENUE (TAXES) ERNAKULAM versus PIO FOOD PACKERS"
+          }
+        ]
+      }
+    ],
+    "wrong_or_unverified_displayed_citations": []
+  },
+  "status": "passed"
+}

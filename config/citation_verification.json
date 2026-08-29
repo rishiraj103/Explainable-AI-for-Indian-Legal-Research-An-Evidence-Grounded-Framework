@@ -9,6 +9,6 @@
     "candidate is neither an exact target-case nor an audited near duplicate",
     "candidate decision year is strictly earlier than the ILDC query year"
   ],
-  "answer_key_measurement": "For test-split queries, reconcile expected authorities using citation, or title plus exact decision date when the corpus stores a parallel reporter citation. Record retrieved-but-not-selected authorities separately from authorities absent from the retrieved candidates, and displayed citations that fail verification.",
+  "answer_key_measurement": "For test-split queries, reconcile expected authorities using the verified authority source ID, citation, or title plus exact decision date when the corpus stores a parallel reporter citation. Record retrieved-but-not-selected authorities separately from authorities absent from the retrieved candidates, and displayed citations that fail verification.",
   "unsupported_citation_policy": "The controlled E3 renderer emits corpus case citations only. Any citation without a linked evidence chunk, including an unsupported case-name field, is rejected; statutes or other source types are not silently treated as verified."
 }

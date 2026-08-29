@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "c0d6402b-d404-4713-a3d7-8f83945c5b3d",
+  "query_id": "1994_632",
+  "query_year": 1994,
+  "candidate_count": 84,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 16,
+  "status_counts": {
+    "eligible": 28,
+    "ambiguous_excluded": 3,
+    "ineligible": 53,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "chief engineer eligibility transfer deputation Punjab service rules",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1988 INSC 260",
+        "citation": "[1988] SUPP. 2 S.C.R. 797",
+        "decision_date": "1988-09-01",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1986 INSC 271",
+        "citation": "[1987] 1 S.C.R. 603",
+        "decision_date": "1986-12-17",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1991 INSC 62",
+        "citation": "[1991] 1 S.C.R. 729",
+        "decision_date": "1991-02-22",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1992 INSC 202",
+        "citation": "[1992] 3 S.C.R. 800",
+        "decision_date": "1992-08-12",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1993 INSC 70",
+        "citation": "[1993] 2 S.C.R. 121",
+        "decision_date": "1993-02-25",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "S_1988_2_797_804::p0005::c001",
+        "source_id": "S_1988_2_797_804",
+        "case_id": "1988 INSC 260",
+        "citation": "[1988] SUPP. 2 S.C.R. 797",
+        "decision_date": "1988-09-01",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1988_2_797_804_EN.pdf",
+        "page_number": 5,
+        "passage_start_char": 0,
+        "passage_end_char": 554,
+        "verbatim_passage": "'· CHIEF ENGINEER v. KS. BRAR !KANIA, J) Now, therefore, in pursuance of rule 12.5 of Punjab A Service of Engineers, Class II, P.W.D. (Buildings and Roads Branch) Rules, 1965, the Chief Commissioner, Chandigarh Administration is pleased.to order the fixation of. seniority of Shri Puranjit Singh as Assistant Engineer w.e.f. 7.10.1972 ..... \" From this it is clear that Respondent Ne. 4 was granted seniority with effect from 7.10.1972 when he was appointed on deputation as Assistant Engineer in P. W .D. (Duildings and .Roads Branch) as stated earlier."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1987_1_603_630::p0020::c003",
+        "source_id": "1987_1_603_630",
+        "case_id": "1986 INSC 271",
+        "citation": "[1987] 1 S.C.R. 603",
+        "decision_date": "1986-12-17",
+        "court": "Supreme Court of India",
+        "pdf_file": "1987_1_603_630_EN.pdf",
+        "page_number": 20,
+        "passage_start_char": 1563,
+        "passage_end_char": 2401,
+        "verbatim_passage": "Under the Rules the term 'Temporary Engineer' was defined in r.2(f) to mean an engineer in the service of the Public Works Department, Punjab whose appointment was temporary within the meaning of the Fundamental Rules, was pensionable and who was not a member of any regular service. The word 'service' as defined in r.2(g) of the Rules meant the Punjab Service of Engineers, Class II, Irrigation Branch. R.5 provided that no Temporaty Engineer could be taken into service or member of the Overseers Engineering Service, Pun jab promoted unless he had been declared by the Commission on .the report of the Chief Engineer to be fit for the service, was serving the Department and held an appointment for not less than two years continuously before the date of entry into the service. Next ~ame the Punjab Service of Engineers, Class II, P."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1991_1_729_741::p0001::c003",
+        "source_id": "1991_1_729_741",
+        "case_id": "1991 INSC 62",
+        "citation": "[1991] 1 S.C.R. 729",
+        "decision_date": "1991-02-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "1991_1_729_741_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 393,
+        "passage_end_char": 1609,
+        "verbatim_passage": "Rule 5-Punjab Excise and Taxation Department (State Service Class-II) Rules-Promotion of ministerial staff cadre as Excise and ~--...(' Taxation Officers-Abolition of cadre of Assistant Excise and Taxation Officers eligibility requirement for Excise/Taxation Inspectors 5 years minimum experience as such-Employees on deputation/transfer or holding post in. different cadre not entitled to claim service in that cadre to be treated experience in the ministerial cadre. In the Punjab Excise and Taxation Department there were two separate cadres known as \"Assistant Excise & Taxation Officers\" k governed under the State Service Class III-A Rules, 1956 and \"Excise & Taxation Officers\" governed by the State Service Class II Rules. Under the class II Rules, appointments were made in the ratio of (a) 50% by direct recruitment and (b) 50% by promotion from amongst Assistant Excise and Taxation Officers. Likewise under the Class ID-A Rules 50% of the vacancies were filled by direct recruitment and 50% by promotion from the subordinate ~taff comprising the Taxation ,i_ Inspectors, Excise Inspectors, Ministrial Staff Head Office and Ministe- / - rial Staff Sub-office who within themselves bad shares as laid down."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1992_3_800_816::p0001::c002",
+        "source_id": "1992_3_800_816",
+        "case_id": "1992 INSC 202",
+        "citation": "[1992] 3 S.C.R. 800",
+        "decision_date": "1992-08-12",
+        "court": "Supreme Court of India",
+        "pdf_file": "1992_3_800_816_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 95,
+        "passage_end_char": 1141,
+        "verbatim_passage": "AHMADI AND K. JAYACHANDRA REDDY, JJ.) Manganese Ore (India) Recmitment and Promotion Rules,: 1977: c Rules 4 and 7~ining Engineering Cadre--Promotion to the post of Chief Mining Engineef'-Eligibility criteria-Qualifications pre~cribed for direct recmitment applicable, failing which double the experience ~pecified to -- be fulfilled-Chief Mining Engineer not satisfying the requirement prior to promotion, but becoming eligible on modification of the relevant entry in the Rules-Whether should be reverted-Whether should seek re-entry into the cadre of Chief Engineer on the acquisition of eligibility on modification of the relevant entry in the Rules. The appellant joined the respondent-company in 1966 as Assistant Mining Manager and rose to the position of Chief Mining Engineer in 1980. Subsequently, pursuant to the selection made by the Departmental Promotion Committee, after interviewing the Chief Mining Engineers, the appellant who ranked fifth in seniority, was promoted as Deputy General --(, Manager, in preference to his seniors."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1993_2_121_126::p0001::c002",
+        "source_id": "1993_2_121_126",
+        "case_id": "1993 INSC 70",
+        "citation": "[1993] 2 S.C.R. 121",
+        "decision_date": "1993-02-25",
+        "court": "Supreme Court of India",
+        "pdf_file": "1993_2_121_126_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 101,
+        "passage_end_char": 542,
+        "verbatim_passage": "FEBRUARY 25, 1993 (KULDIP SINGH AND N.M. KASLIWAL, JJ.] A_ Civil Se1.:.:s: Punjab Service of Engineers Class I (Buildings and Roads Branch) c Rules, 1961>-Rules 6(1), 8, 12-f'ost of Executive Engineer, Class I-Promotion and Seniroity-Determination-1.1.1985 eligibility, date for promo-, tion--Promotion w.ej. 21.1.1986-Whether legal. The respondent in C.A. No.182 of 1993 joined service as Section 'r Officer under the appellant on 8.3.1971."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "'· CHIEF ENGINEER v. KS. BRAR !KANIA, J) Now, therefore, in pursuance of rule 12.5 of Punjab A Service of Engineers, Class II, P.W.D. (Buildings and Roads Branch) Rules, 1965, the Chief Commissioner, Chandigarh Administration is pleased.to order the fixation of. seniority of Shri Puranjit Singh as Assistant Engineer w.e.f. 7.10.1972 ..... \" From this it is clear that Respondent Ne. 4 was granted seniority with effect from 7.10.1972 when he was appointed on deputation as Assistant Engineer in P. W .D. (Duildings and .Roads Branch) as stated earlier."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "Under the Rules the term 'Temporary Engineer' was defined in r.2(f) to mean an engineer in the service of the Public Works Department, Punjab whose appointment was temporary within the meaning of the Fundamental Rules, was pensionable and who was not a member of any regular service. The word 'service' as defined in r.2(g) of the Rules meant the Punjab Service of Engineers, Class II, Irrigation Branch. R.5 provided that no Temporaty Engineer could be taken into service or member of the Overseers Engineering Service, Pun jab promoted unless he had been declared by the Commission on .the report of the Chief Engineer to be fit for the service, was serving the Department and held an appointment for not less than two years continuously before the date of entry into the service. Next ~ame the Punjab Service of Engineers, Class II, P."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "Rule 5-Punjab Excise and Taxation Department (State Service Class-II) Rules-Promotion of ministerial staff cadre as Excise and ~--...(' Taxation Officers-Abolition of cadre of Assistant Excise and Taxation Officers eligibility requirement for Excise/Taxation Inspectors 5 years minimum experience as such-Employees on deputation/transfer or holding post in. different cadre not entitled to claim service in that cadre to be treated experience in the ministerial cadre. In the Punjab Excise and Taxation Department there were two separate cadres known as \"Assistant Excise & Taxation Officers\" k governed under the State Service Class III-A Rules, 1956 and \"Excise & Taxation Officers\" governed by the State Service Class II Rules. Under the class II Rules, appointments were made in the ratio of (a) 50% by direct recruitment and (b) 50% by promotion from amongst Assistant Excise and Taxation Officers. Likewise under the Class ID-A Rules 50% of the vacancies were filled by direct recruitment and 50% by promotion from the subordinate ~taff comprising the Taxation ,i_ Inspectors, Excise Inspectors, Ministrial Staff Head Office and Ministe- / - rial Staff Sub-office who within themselves bad shares as laid down."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "AHMADI AND K. JAYACHANDRA REDDY, JJ.) Manganese Ore (India) Recmitment and Promotion Rules,: 1977: c Rules 4 and 7~ining Engineering Cadre--Promotion to the post of Chief Mining Engineef'-Eligibility criteria-Qualifications pre~cribed for direct recmitment applicable, failing which double the experience ~pecified to -- be fulfilled-Chief Mining Engineer not satisfying the requirement prior to promotion, but becoming eligible on modification of the relevant entry in the Rules-Whether should be reverted-Whether should seek re-entry into the cadre of Chief Engineer on the acquisition of eligibility on modification of the relevant entry in the Rules. The appellant joined the respondent-company in 1966 as Assistant Mining Manager and rose to the position of Chief Mining Engineer in 1980. Subsequently, pursuant to the selection made by the Departmental Promotion Committee, after interviewing the Chief Mining Engineers, the appellant who ranked fifth in seniority, was promoted as Deputy General --(, Manager, in preference to his seniors."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "FEBRUARY 25, 1993 (KULDIP SINGH AND N.M. KASLIWAL, JJ.] A_ Civil Se1.:.:s: Punjab Service of Engineers Class I (Buildings and Roads Branch) c Rules, 1961>-Rules 6(1), 8, 12-f'ost of Executive Engineer, Class I-Promotion and Seniroity-Determination-1.1.1985 eligibility, date for promo-, tion--Promotion w.ej. 21.1.1986-Whether legal. The respondent in C.A. No.182 of 1993 joined service as Section 'r Officer under the appellant on 8.3.1971."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

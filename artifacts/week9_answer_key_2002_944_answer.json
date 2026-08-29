@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "9d1df491-ea15-4590-8127-7e180e2519b2",
+  "query_id": "2002_944",
+  "query_year": 2002,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 49,
+    "ambiguous_excluded": 6,
+    "ineligible": 45,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "constitutional 72nd amendment tribal representation constitutional validity",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1975 INSC 272",
+        "citation": "[1976] 2 S.C.R. 347",
+        "decision_date": "1975-11-07",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "",
+        "citation": "[1997] SUPP. 2 S.C.R. 305",
+        "decision_date": "1997-07-11",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1992 INSC 293",
+        "citation": "[1992] SUPP. 2 S.C.R. 182",
+        "decision_date": "1992-10-22",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1993 INSC 38",
+        "citation": "[1993] 1 S.C.R. 480",
+        "decision_date": "1993-02-04",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1992 INSC 280",
+        "citation": "[1992] SUPP. 1 S.C.R. 994",
+        "decision_date": "1992-10-14",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1976_2_347_676::p0061::c001",
+        "source_id": "1976_2_347_676",
+        "case_id": "1975 INSC 272",
+        "citation": "[1976] 2 S.C.R. 347",
+        "decision_date": "1975-11-07",
+        "court": "Supreme Court of India",
+        "pdf_file": "1976_2_347_676_EN.pdf",
+        "page_number": 61,
+        "passage_start_char": 0,
+        "passage_end_char": 537,
+        "verbatim_passage": "SMT. lll!DIRA GANDHI v. RAJ NARAIN (Ray, C.J.) The respondent contends that the Representation of the People (Aniendment) Act., 1974 and the Election Laws (Amendment) ~ct, 1975 referred to as the Amendment Acts, 1974 and 1975 do not enJ~Y constitutional immunity because these Acts destroy or damage basic .structure or basic features. In view of the challenge by the respondent to the constitutional validity of the Amendment Acts, 1974 and 1975 notice was given to the Attorney General. The appeals were to be heard on 11 August, 1975."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "S_1997_2_305_506::p0187::c002",
+        "source_id": "S_1997_2_305_506",
+        "case_id": "",
+        "citation": "[1997] SUPP. 2 S.C.R. 305",
+        "decision_date": "1997-07-11",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1997_2_305_506_EN.pdf",
+        "page_number": 187,
+        "passage_start_char": 487,
+        "passage_end_char": 1249,
+        "verbatim_passage": "Reddy's case (supra) the Court also took note of the earlier case in Manchegowda & Ors. v. State of Kamataka & Ors., (1984] 3 sec 301 where constitutional validity of a similar provision in respect of tribal area of Karnataka was under challenge and the Court upheld the constitutionality with an eye to preserve and protect the tribals C in the land in the tribal areas. But in none of the aforesaid cases the question of power of the government to transfer the government land had come up for consideration. The Constitutional scheme embodied in Article 15(4) and Article 46 as well as the power conferred upon the Governor of the State under Schedule V of the Constitution are intended to preserve D and protect the interest of the tribal in the tribal areas."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "S_1992_2_182_249::p0002::c006",
+        "source_id": "S_1992_2_182_249",
+        "case_id": "1992 INSC 293",
+        "citation": "[1992] SUPP. 2 S.C.R. 182",
+        "decision_date": "1992-10-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1992_2_182_249_EN.pdf",
+        "page_number": 2,
+        "passage_start_char": 2526,
+        "passage_end_char": 2634,
+        "verbatim_passage": "Sales Tax (Amendment) Act, 1992, the constitutional validity of which has been challenged before this Court."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1993_1_480_568::p0032::c003",
+        "source_id": "1993_1_480_568",
+        "case_id": "1993 INSC 38",
+        "citation": "[1993] 1 S.C.R. 480",
+        "decision_date": "1993-02-04",
+        "court": "Supreme Court of India",
+        "pdf_file": "1993_1_480_568_EN.pdf",
+        "page_number": 32,
+        "passage_start_char": 1656,
+        "passage_end_char": 2275,
+        "verbatim_passage": "These F . amendment acts, namely, twenty-fourth and twenty-fifth besides twentyninth Amendment Act and the continuing validity of the dictum laid down in Golak Nath 's case, were the subjects for decision in Kesavananda Bharati. Though Writ Petition No. 351 of 1972 challenging the twentyfourth, twenty-fifth and twenty-sixth Amendment Act was also listed along G with other writ petitions in Kesavananda Bharali, the constitutional validity of the twenty-sixth amendment was left over for determination by a Constitution Bench. We shall now proceed to examine the constitutional validity of the ampugned Amendment Act."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "S_1992_1_994_1016::p0005::c005",
+        "source_id": "S_1992_1_994_1016",
+        "case_id": "1992 INSC 280",
+        "citation": "[1992] SUPP. 1 S.C.R. 994",
+        "decision_date": "1992-10-14",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1992_1_994_1016_EN.pdf",
+        "page_number": 5,
+        "passage_start_char": 1055,
+        "passage_end_char": 1497,
+        "verbatim_passage": "The Judgment of the Court was delivered by V. RAMASWAMI, J. In the Writ Petitions filed in the year 1983 the constitutional validity of the Orissa Additional Sales Tax (Amendment and Validation) Ordinance, 1983 is questioned. In Writ Petition Nos. 207 to 211 of 1984 and 1302of1986 the constitutional validity of the Orissa Additional Sales Tax(Amendment and Validation) Act, 1983 (Act 22of1983) which replaced G the Ordinance is in question."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "SMT. lll!DIRA GANDHI v. RAJ NARAIN (Ray, C.J.) The respondent contends that the Representation of the People (Aniendment) Act., 1974 and the Election Laws (Amendment) ~ct, 1975 referred to as the Amendment Acts, 1974 and 1975 do not enJ~Y constitutional immunity because these Acts destroy or damage basic .structure or basic features. In view of the challenge by the respondent to the constitutional validity of the Amendment Acts, 1974 and 1975 notice was given to the Attorney General. The appeals were to be heard on 11 August, 1975."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "Reddy's case (supra) the Court also took note of the earlier case in Manchegowda & Ors. v. State of Kamataka & Ors., (1984] 3 sec 301 where constitutional validity of a similar provision in respect of tribal area of Karnataka was under challenge and the Court upheld the constitutionality with an eye to preserve and protect the tribals C in the land in the tribal areas. But in none of the aforesaid cases the question of power of the government to transfer the government land had come up for consideration. The Constitutional scheme embodied in Article 15(4) and Article 46 as well as the power conferred upon the Governor of the State under Schedule V of the Constitution are intended to preserve D and protect the interest of the tribal in the tribal areas."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "Sales Tax (Amendment) Act, 1992, the constitutional validity of which has been challenged before this Court."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "These F . amendment acts, namely, twenty-fourth and twenty-fifth besides twentyninth Amendment Act and the continuing validity of the dictum laid down in Golak Nath 's case, were the subjects for decision in Kesavananda Bharati. Though Writ Petition No. 351 of 1972 challenging the twentyfourth, twenty-fifth and twenty-sixth Amendment Act was also listed along G with other writ petitions in Kesavananda Bharali, the constitutional validity of the twenty-sixth amendment was left over for determination by a Constitution Bench. We shall now proceed to examine the constitutional validity of the ampugned Amendment Act."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "The Judgment of the Court was delivered by V. RAMASWAMI, J. In the Writ Petitions filed in the year 1983 the constitutional validity of the Orissa Additional Sales Tax (Amendment and Validation) Ordinance, 1983 is questioned. In Writ Petition Nos. 207 to 211 of 1984 and 1302of1986 the constitutional validity of the Orissa Additional Sales Tax(Amendment and Validation) Act, 1983 (Act 22of1983) which replaced G the Ordinance is in question."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

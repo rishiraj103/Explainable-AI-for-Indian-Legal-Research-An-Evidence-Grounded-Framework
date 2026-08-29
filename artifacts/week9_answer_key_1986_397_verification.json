@@ -1,0 +1,98 @@
+{
+  "verification_version": "week9-citation-evidence-verifier-v2",
+  "input": "artifacts\\week9_answer_key_1986_397_answer.json",
+  "run_id": "0b163e0b-277d-4710-80cf-bf3ad0d5e03f",
+  "query_id": "1986_397",
+  "query_year": 1986,
+  "citation_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "checks": [
+    {
+      "evidence_id": "E1",
+      "chunk_id": "1978_3_971_981::p0009::c002",
+      "citation": "[1978] 3 S.C.R. 971",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E2",
+      "chunk_id": "1984_3_169_179::p0001::c004",
+      "citation": "[1984] 3 S.C.R. 169",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E3",
+      "chunk_id": "1983_2_598_604::p0002::c005",
+      "citation": "[1983] 2 S.C.R. 598",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E4",
+      "chunk_id": "1975_1_394_408::p0012::c004",
+      "citation": "[1975] 1 S.C.R. 394",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E5",
+      "chunk_id": "1981_3_213_222::p0001::c006",
+      "citation": "[1981] 3 S.C.R. 213",
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "answer_key_measurement": {
+    "query_id": "1986_397",
+    "expected_authority_citations": [
+      "(1978) 3 scc 119"
+    ],
+    "verified_displayed_citations": [
+      "[1975] 1 s.c.r. 394",
+      "[1978] 3 s.c.r. 971",
+      "[1981] 3 s.c.r. 213",
+      "[1983] 2 s.c.r. 598",
+      "[1984] 3 s.c.r. 169"
+    ],
+    "matched_expected_authorities": [
+      "(1978) 3 scc 119"
+    ],
+    "expected_authorities_retrieved": [
+      "(1978) 3 scc 119"
+    ],
+    "expected_authorities_retrieved_not_selected": [],
+    "expected_authorities_not_retrieved": [],
+    "retrieved_expected_authority_details": [
+      {
+        "expected_authority_citation": "(1978) 3 scc 119",
+        "matches": [
+          {
+            "rank": 2,
+            "source_id": "1978_3_971_981",
+            "corpus_citation": "[1978] 3 S.C.R. 971",
+            "decision_date": "1978-05-05",
+            "title": "WORKMEN OF COCHIN PORT TRUST versus BOARD OF TRUSTEES OF THE COCHIN PORT TRUST & ANR."
+          },
+          {
+            "rank": 73,
+            "source_id": "1978_3_971_981",
+            "corpus_citation": "[1978] 3 S.C.R. 971",
+            "decision_date": "1978-05-05",
+            "title": "WORKMEN OF COCHIN PORT TRUST versus BOARD OF TRUSTEES OF THE COCHIN PORT TRUST & ANR."
+          },
+          {
+            "rank": 96,
+            "source_id": "1978_3_971_981",
+            "corpus_citation": "[1978] 3 S.C.R. 971",
+            "decision_date": "1978-05-05",
+            "title": "WORKMEN OF COCHIN PORT TRUST versus BOARD OF TRUSTEES OF THE COCHIN PORT TRUST & ANR."
+          }
+        ]
+      }
+    ],
+    "wrong_or_unverified_displayed_citations": []
+  },
+  "status": "passed"
+}

@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "01504563-00cd-4a05-86a5-2082e937cd5c",
+  "query_id": "1995_425",
+  "query_year": 1995,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 60,
+    "ambiguous_excluded": 8,
+    "ineligible": 32,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "panchayat secretary civil post government servant article 311",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1977 INSC 130",
+        "citation": "[1977] 3 S.C.R. 678",
+        "decision_date": "1977-04-22",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1975 INSC 321",
+        "citation": "[1976] 2 S.C.R. 1034",
+        "decision_date": "1975-12-16",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1985 INSC 32",
+        "citation": "[1985] 2 S.C.R. 962",
+        "decision_date": "1985-02-22",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1970 INSC 213",
+        "citation": "[1971] 2 S.C.R. 583",
+        "decision_date": "1970-10-13",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1986 INSC 90",
+        "citation": "[1986] 2 S.C.R. 742",
+        "decision_date": "1986-04-23",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1977_3_678_682::p0003::c004",
+        "source_id": "1977_3_678_682",
+        "case_id": "1977 INSC 130",
+        "citation": "[1977] 3 S.C.R. 678",
+        "decision_date": "1977-04-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "1977_3_678_682_EN.pdf",
+        "page_number": 3,
+        "passage_start_char": 2038,
+        "passage_end_char": 2536,
+        "verbatim_passage": "It was held t~at \"having regard to the existing system of his recruitment, employment and functions\", he was \"a servant and a holder of a civil post under the State\", and therefore entitled to 'the protection of Article 311 ( 2) . This Court observed : \". . . . a civil post means a post not connected with defence and outside the regular civil servioes. A post is a service or employment. ...... There is a relationship of master and servant between the State and a person holding a post under it."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1976_2_1034_1040::p0005::c003",
+        "source_id": "1976_2_1034_1040",
+        "case_id": "1975 INSC 321",
+        "citation": "[1976] 2 S.C.R. 1034",
+        "decision_date": "1975-12-16",
+        "court": "Supreme Court of India",
+        "pdf_file": "1976_2_1034_1040_EN.pdf",
+        "page_number": 5,
+        "passage_start_char": 1051,
+        "passage_end_char": 1695,
+        "verbatim_passage": "The mder abolishing the post may lose its effective character if it is established to have been made arbitrarily, malafide or as a mask of some penal action within the meaning of article 311(2).\" It was further observed : \"The abolition of post may have the consequence of termination of service of a government servant. Such termination is not dismissal or removal within the meaning of article 311 of the Constituion. The opportunity of showing cause against the proposed penalty of dismissal or removal does not therefore arise in the case of abolition of post. The abolition of post is not a personal penalty against the government servant."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1985_2_962_965::p0001::c002",
+        "source_id": "1985_2_962_965",
+        "case_id": "1985 INSC 32",
+        "citation": "[1985] 2 S.C.R. 962",
+        "decision_date": "1985-02-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "1985_2_962_965_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 92,
+        "passage_end_char": 465,
+        "verbatim_passage": "SEN AND V. BALAKRISHNA ERADI, JJ.] Constitution of India, 1950, Article 311 ([)-Scope of-Suspension order passed against a government servant is not violative of Art. 311(1). Civil Senices- Orissa Civil Services (CCA) Rules, 1962, Rule 12-GoJt. servant-Suspen· slon of-Whether can be suspended by an authority subordinate to the appointing authority. The respondent in C.A."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1971_2_583_589::p0003::c006",
+        "source_id": "1971_2_583_589",
+        "case_id": "1970 INSC 213",
+        "citation": "[1971] 2 S.C.R. 583",
+        "decision_date": "1970-10-13",
+        "court": "Supreme Court of India",
+        "pdf_file": "1971_2_583_589_EN.pdf",
+        "page_number": 3,
+        "passage_start_char": 2253,
+        "passage_end_char": 2822,
+        "verbatim_passage": "The learned Judge held that there was no evidence on the record to show that the appellant was pennanently appointed to the post of Panchayat Inspector by order dated June 22, 1960, and that in reverting the appellant to the post of Panchayat Secretary by order dated August 20, 1960 without an enquiry the guarantee H · under Art. 311 of the Constitution was not violated, and that since the appellant was appointed by order dated December 13, 1960 to officiate as Panchayat Inspector the order was not in contravention of Art. 311 (2) of the Constitution. The learned"
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1986_2_742_748::p0001::c001",
+        "source_id": "1986_2_742_748",
+        "case_id": "1986 INSC 90",
+        "citation": "[1986] 2 S.C.R. 742",
+        "decision_date": "1986-04-23",
+        "court": "Supreme Court of India",
+        "pdf_file": "1986_2_742_748_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 0,
+        "passage_end_char": 571,
+        "verbatim_passage": "SECRETARY, CENTRAL BOARD OF EXCISE AND CIJS'IDtS & OBS. v. LS. MAllALIHGAM APRIL 23, 1986 [A.P. SEN & MURARI MOHAN DUTr, JJ.] Constitution of India, Article 311(2) and Central Civil Services (Classification, Control and Appeal) Rules, 1965, Rule 15(4) - Punishment - Imposition of - Second opportunity to show cause - Whether necessary. {- A charge-sheet was served on the respondent, a Govern- 111ent servant, containing two articles of charges alleging misconduct involving lack of integrity and lack of devotion to duty and conduct unbecOlling of a Government servant."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "It was held t~at \"having regard to the existing system of his recruitment, employment and functions\", he was \"a servant and a holder of a civil post under the State\", and therefore entitled to 'the protection of Article 311 ( 2) . This Court observed : \". . . . a civil post means a post not connected with defence and outside the regular civil servioes. A post is a service or employment. ...... There is a relationship of master and servant between the State and a person holding a post under it."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "The mder abolishing the post may lose its effective character if it is established to have been made arbitrarily, malafide or as a mask of some penal action within the meaning of article 311(2).\" It was further observed : \"The abolition of post may have the consequence of termination of service of a government servant. Such termination is not dismissal or removal within the meaning of article 311 of the Constituion. The opportunity of showing cause against the proposed penalty of dismissal or removal does not therefore arise in the case of abolition of post. The abolition of post is not a personal penalty against the government servant."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "SEN AND V. BALAKRISHNA ERADI, JJ.] Constitution of India, 1950, Article 311 ([)-Scope of-Suspension order passed against a government servant is not violative of Art. 311(1). Civil Senices- Orissa Civil Services (CCA) Rules, 1962, Rule 12-GoJt. servant-Suspen· slon of-Whether can be suspended by an authority subordinate to the appointing authority. The respondent in C.A."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "The learned Judge held that there was no evidence on the record to show that the appellant was pennanently appointed to the post of Panchayat Inspector by order dated June 22, 1960, and that in reverting the appellant to the post of Panchayat Secretary by order dated August 20, 1960 without an enquiry the guarantee H · under Art. 311 of the Constitution was not violated, and that since the appellant was appointed by order dated December 13, 1960 to officiate as Panchayat Inspector the order was not in contravention of Art. 311 (2) of the Constitution. The learned"
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "SECRETARY, CENTRAL BOARD OF EXCISE AND CIJS'IDtS & OBS. v. LS. MAllALIHGAM APRIL 23, 1986 [A.P. SEN & MURARI MOHAN DUTr, JJ.] Constitution of India, Article 311(2) and Central Civil Services (Classification, Control and Appeal) Rules, 1965, Rule 15(4) - Punishment - Imposition of - Second opportunity to show cause - Whether necessary. {- A charge-sheet was served on the respondent, a Govern- 111ent servant, containing two articles of charges alleging misconduct involving lack of integrity and lack of devotion to duty and conduct unbecOlling of a Government servant."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

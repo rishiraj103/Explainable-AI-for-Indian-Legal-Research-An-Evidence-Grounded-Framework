@@ -1,0 +1,107 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "a4f57390-d76c-44ca-ae15-a2138c178d8e",
+  "query_id": "1985_40",
+  "query_year": 1985,
+  "candidate_count": 100,
+  "selected_evidence_count": 3,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 3,
+    "ambiguous_excluded": 2,
+    "ineligible": 95,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "central excise exemption notification synthetic organic dyestuffs classification",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1975 INSC 243",
+        "citation": "[1976] 2 S.C.R. 93",
+        "decision_date": "1975-10-06",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1980 INSC 162",
+        "citation": "[1981] 1 S.C.R. 513",
+        "decision_date": "1980-08-26",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1981 INSC 159",
+        "citation": "[1982] 1 S.C.R. 621",
+        "decision_date": "1981-09-03",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1976_2_93_97::p0001::c002",
+        "source_id": "1976_2_93_97",
+        "case_id": "1975 INSC 243",
+        "citation": "[1976] 2 S.C.R. 93",
+        "decision_date": "1975-10-06",
+        "court": "Supreme Court of India",
+        "pdf_file": "1976_2_93_97_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 96,
+        "passage_end_char": 625,
+        "verbatim_passage": "GOSWAMI AND N. L. UNTWALIA, JJ.] i r / '\\· Central Excise Rules, 1944, '\" 8( 1 }-Exemption Notification-'Condensed Milk', if includes 'Condensed Skimmed Milk', By virtue of a Notification dated March 1, 1970, issued by the Central Government under r. 8(1) of the Central. Excise Rules, 1944, preparations of milk, leviable to excise duty under the Excrse Act, 1944, became exempt from the levy; but, from that exemption were excluded certain mil.k p~eparations, namely, items 12 and 13 of the Schedule annexed to the Nottficahon."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1981_1_513_522::p0001::c002",
+        "source_id": "1981_1_513_522",
+        "case_id": "1980 INSC 162",
+        "citation": "[1981] 1 S.C.R. 513",
+        "decision_date": "1980-08-26",
+        "court": "Supreme Court of India",
+        "pdf_file": "1981_1_513_522_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 99,
+        "passage_end_char": 453,
+        "verbatim_passage": "P. SEN & E. S. VENKATARAMIAH, JJ.] Central Excise Rules 1944-Rule 8(1) Item 7-provisos-Scope' of- Exercising the power of exemption conferred under rule 8(1) of the Central ~Excise Rules, 1944, the Central Government by a notification dated January 5, 1957 exempted certain varieties of cotton fabrics from the whole of the excise ·duty leviable thereon."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1982_1_621_628::p0001::c002",
+        "source_id": "1982_1_621_628",
+        "case_id": "1981 INSC 159",
+        "citation": "[1982] 1 S.C.R. 621",
+        "decision_date": "1981-09-03",
+        "court": "Supreme Court of India",
+        "pdf_file": "1982_1_621_628_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 93,
+        "passage_end_char": 631,
+        "verbatim_passage": "BALAKRISHNA BRAD!, JJ.] Central Excise and Salt Act 1944, Notification-Word cropen market\"- Meaning of, The appellant company manufactured various process chemicals required for the Textile Industry. The process chemicals so manufactured by them are substances known as emulsifiers and wetting out agents and they fall within the scope of tariff item 1 SAA of the first schedule to the Central Excise and Salt Act 1944. The appellant purchased 164500 kgs. of organic surface active ag~nts from the \"Industrial General Products Pvt. Ltd.\"."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "GOSWAMI AND N. L. UNTWALIA, JJ.] i r / '\\· Central Excise Rules, 1944, '\" 8( 1 }-Exemption Notification-'Condensed Milk', if includes 'Condensed Skimmed Milk', By virtue of a Notification dated March 1, 1970, issued by the Central Government under r. 8(1) of the Central. Excise Rules, 1944, preparations of milk, leviable to excise duty under the Excrse Act, 1944, became exempt from the levy; but, from that exemption were excluded certain mil.k p~eparations, namely, items 12 and 13 of the Schedule annexed to the Nottficahon."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "P. SEN & E. S. VENKATARAMIAH, JJ.] Central Excise Rules 1944-Rule 8(1) Item 7-provisos-Scope' of- Exercising the power of exemption conferred under rule 8(1) of the Central ~Excise Rules, 1944, the Central Government by a notification dated January 5, 1957 exempted certain varieties of cotton fabrics from the whole of the excise ·duty leviable thereon."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "BALAKRISHNA BRAD!, JJ.] Central Excise and Salt Act 1944, Notification-Word cropen market\"- Meaning of, The appellant company manufactured various process chemicals required for the Textile Industry. The process chemicals so manufactured by them are substances known as emulsifiers and wetting out agents and they fall within the scope of tariff item 1 SAA of the first schedule to the Central Excise and Salt Act 1944. The appellant purchased 164500 kgs. of organic surface active ag~nts from the \"Industrial General Products Pvt. Ltd.\"."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

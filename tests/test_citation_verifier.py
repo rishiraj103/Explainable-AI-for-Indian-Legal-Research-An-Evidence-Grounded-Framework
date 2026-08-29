@@ -145,6 +145,20 @@ def test_answer_key_reconciles_parallel_citations_by_title_and_date():
     assert measurement["expected_authorities_not_retrieved"] == []
 
 
+def test_answer_key_reconciles_a_parallel_citation_by_verified_source_id():
+    source = record(decision_date="2006-05-12")
+    source = CorpusEvidenceRecord(**{**source.__dict__, "source_id": "verified-source"})
+    measurement = evaluate_against_answer_key(
+        query_id="2020_99", checks=(),
+        answer_key_entries=[{
+            "status": "evaluation", "query_case_id": "2020_99", "authority_citation": "(2006) 9 SCC 630",
+            "authority_source_id": "verified-source",
+        }],
+        retrieved_candidates=[RetrievedCandidate(record=source, rank=29)],
+    )
+    assert measurement["expected_authorities_retrieved"] == ["(2006) 9 scc 630"]
+
+
 def test_no_citations_is_a_valid_no_evidence_response():
     checks = verify_answer_citations(
         answer={"evidence": [], "retrieved_authorities": []}, query_id="2020_99", query_year=2020,

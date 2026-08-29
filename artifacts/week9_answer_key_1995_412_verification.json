@@ -1,0 +1,98 @@
+{
+  "verification_version": "week9-citation-evidence-verifier-v2",
+  "input": "artifacts\\week9_answer_key_1995_412_answer.json",
+  "run_id": "7f9cf041-ecc6-4c2d-88cd-5422eb0db3fe",
+  "query_id": "1995_412",
+  "query_year": 1995,
+  "citation_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "checks": [
+    {
+      "evidence_id": "E1",
+      "chunk_id": "1990_2_110_118::p0001::c002",
+      "citation": "[1990] 2 S.C.R. 110",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E2",
+      "chunk_id": "1987_1_1_67::p0046::c002",
+      "citation": "[1987] 1 S.C.R. 1",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E3",
+      "chunk_id": "1977_1_1022_1025::p0001::c003",
+      "citation": "[1977] 1 S.C.R. 1022",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E4",
+      "chunk_id": "1981_1_507_512::p0002::c001",
+      "citation": "[1981] 1 S.C.R. 507",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E5",
+      "chunk_id": "1975_3_1002_1010::p0003::c001",
+      "citation": "[1975] 3 S.C.R. 1002",
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "answer_key_measurement": {
+    "query_id": "1995_412",
+    "expected_authority_citations": [
+      "(1986) 4 scc 566"
+    ],
+    "verified_displayed_citations": [
+      "[1975] 3 s.c.r. 1002",
+      "[1977] 1 s.c.r. 1022",
+      "[1981] 1 s.c.r. 507",
+      "[1987] 1 s.c.r. 1",
+      "[1990] 2 s.c.r. 110"
+    ],
+    "matched_expected_authorities": [
+      "(1986) 4 scc 566"
+    ],
+    "expected_authorities_retrieved": [
+      "(1986) 4 scc 566"
+    ],
+    "expected_authorities_retrieved_not_selected": [],
+    "expected_authorities_not_retrieved": [],
+    "retrieved_expected_authority_details": [
+      {
+        "expected_authority_citation": "(1986) 4 scc 566",
+        "matches": [
+          {
+            "rank": 22,
+            "source_id": "1987_1_1_67",
+            "corpus_citation": "[1987] 1 S.C.R. 1",
+            "decision_date": "1986-10-24",
+            "title": "STATE OF MADHYA PRADESH & ORS. versus NANDLAL JAISWAL & ORS."
+          },
+          {
+            "rank": 58,
+            "source_id": "1987_1_1_67",
+            "corpus_citation": "[1987] 1 S.C.R. 1",
+            "decision_date": "1986-10-24",
+            "title": "STATE OF MADHYA PRADESH & ORS. versus NANDLAL JAISWAL & ORS."
+          },
+          {
+            "rank": 95,
+            "source_id": "1987_1_1_67",
+            "corpus_citation": "[1987] 1 S.C.R. 1",
+            "decision_date": "1986-10-24",
+            "title": "STATE OF MADHYA PRADESH & ORS. versus NANDLAL JAISWAL & ORS."
+          }
+        ]
+      }
+    ],
+    "wrong_or_unverified_displayed_citations": []
+  },
+  "status": "passed"
+}

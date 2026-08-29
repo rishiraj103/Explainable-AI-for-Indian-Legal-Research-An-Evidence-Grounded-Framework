@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "0b163e0b-277d-4710-80cf-bf3ad0d5e03f",
+  "query_id": "1986_397",
+  "query_year": 1986,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 16,
+    "ambiguous_excluded": 10,
+    "ineligible": 74,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "dismissal special leave petition labour court writ article 226",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1978 INSC 109",
+        "citation": "[1978] 3 S.C.R. 971",
+        "decision_date": "1978-05-05",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1984 INSC 56",
+        "citation": "[1984] 3 S.C.R. 169",
+        "decision_date": "1984-03-08",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1983 INSC 26",
+        "citation": "[1983] 2 S.C.R. 598",
+        "decision_date": "1983-03-25",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1974 INSC 114",
+        "citation": "[1975] 1 S.C.R. 394",
+        "decision_date": "1974-05-01",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1981 INSC 66",
+        "citation": "[1981] 3 S.C.R. 213",
+        "decision_date": "1981-03-12",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1978_3_971_981::p0009::c002",
+        "source_id": "1978_3_971_981",
+        "case_id": "1978 INSC 109",
+        "citation": "[1978] 3 S.C.R. 971",
+        "decision_date": "1978-05-05",
+        "court": "Supreme Court of India",
+        "pdf_file": "1978_3_971_981_EN.pdf",
+        "page_number": 9,
+        "passage_start_char": 946,
+        "passage_end_char": 1246,
+        "verbatim_passage": "This decision was followed in P. D. Sharma v. State Bank of India(') wherein it was held that the summary dismissal of a writ petition under Article 226 challenging the order of the Labour Court was no bar .to the. entertainment of an appeal under Article 136 from the same order of the Labour Court."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1984_3_169_179::p0001::c004",
+        "source_id": "1984_3_169_179",
+        "case_id": "1984 INSC 56",
+        "citation": "[1984] 3 S.C.R. 169",
+        "decision_date": "1984-03-08",
+        "court": "Supreme Court of India",
+        "pdf_file": "1984_3_169_179_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 1262,
+        "passage_end_char": 1890,
+        "verbatim_passage": "Court in limine On a special leave petition being fi.Jed by the appellarit from which this appeal arises, this Court dfrected the Labour Court to try the other issues before it on the basis that the appellant was a workman. The Labour Court held that the finding of the Inquiry Officer was ... perverse; the punishment of dismissal was dispr0porti6nate to the gravity of the charge and the appllanl was entitled to reinstatement with full back wages and continuity of service. The management filed a writ petition in the High Co'urt challenging the findings of the Labour Court. This writ petition was transferred to this Court."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1983_2_598_604::p0002::c005",
+        "source_id": "1983_2_598_604",
+        "case_id": "1983 INSC 26",
+        "citation": "[1983] 2 S.C.R. 598",
+        "decision_date": "1983-03-25",
+        "court": "Supreme Court of India",
+        "pdf_file": "1983_2_598_604_EN.pdf",
+        "page_number": 2,
+        "passage_start_char": 1700,
+        "passage_end_char": 2017,
+        "verbatim_passage": "The appellant who was unsuccessful before the High Court of Allahabad in a writ petition filed by him under Article 226 of the Constitution has filed this appeal by special leave against the judgment of the High Court. In the writ petition the appellant had questioned the validity of the appointment ·of G . Mr. A.P."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1975_1_394_408::p0012::c004",
+        "source_id": "1975_1_394_408",
+        "case_id": "1974 INSC 114",
+        "citation": "[1975] 1 S.C.R. 394",
+        "decision_date": "1974-05-01",
+        "court": "Supreme Court of India",
+        "pdf_file": "1975_1_394_408_EN.pdf",
+        "page_number": 12,
+        "passage_start_char": 1657,
+        "passage_end_char": 2249,
+        "verbatim_passage": "The respondent then filed a writ petition in the High Court of Allahabad under Article 226 of the Constitution praying that the order of dismissal be set aside. The High Court granted the writ on the ground that the violation of the rules of natural justice and fair play rendered the order of dismissal illegal. In an appeal by the State of U. P., this Court held by a majority that Article 226 of the Constitution is not retrospective and the High Court could not exercise its powers under that Article 226 to quash the order of dismissal passed before the commencement of the Constitution."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1981_3_213_222::p0001::c006",
+        "source_id": "1981_3_213_222",
+        "case_id": "1981 INSC 66",
+        "citation": "[1981] 3 S.C.R. 213",
+        "decision_date": "1981-03-12",
+        "court": "Supreme Court of India",
+        "pdf_file": "1981_3_213_222_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 2360,
+        "passage_end_char": 2779,
+        "verbatim_passage": "Allowing the appeal, the Court HELD : I. Permission to withdraw a special leave petition cannot be equated with an order of dismissal. If a non-speaking order of dismissal cannot operate as res judicata for entertaining a fresh writ petition on the same facts and grounds taken in the special leave petition, an order permitting the withdrawal of the writ petition for the same reason cannot so operate. [219B,222C-D) c"
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "This decision was followed in P. D. Sharma v. State Bank of India(') wherein it was held that the summary dismissal of a writ petition under Article 226 challenging the order of the Labour Court was no bar .to the. entertainment of an appeal under Article 136 from the same order of the Labour Court."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "Court in limine On a special leave petition being fi.Jed by the appellarit from which this appeal arises, this Court dfrected the Labour Court to try the other issues before it on the basis that the appellant was a workman. The Labour Court held that the finding of the Inquiry Officer was ... perverse; the punishment of dismissal was dispr0porti6nate to the gravity of the charge and the appllanl was entitled to reinstatement with full back wages and continuity of service. The management filed a writ petition in the High Co'urt challenging the findings of the Labour Court. This writ petition was transferred to this Court."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "The appellant who was unsuccessful before the High Court of Allahabad in a writ petition filed by him under Article 226 of the Constitution has filed this appeal by special leave against the judgment of the High Court. In the writ petition the appellant had questioned the validity of the appointment ·of G . Mr. A.P."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "The respondent then filed a writ petition in the High Court of Allahabad under Article 226 of the Constitution praying that the order of dismissal be set aside. The High Court granted the writ on the ground that the violation of the rules of natural justice and fair play rendered the order of dismissal illegal. In an appeal by the State of U. P., this Court held by a majority that Article 226 of the Constitution is not retrospective and the High Court could not exercise its powers under that Article 226 to quash the order of dismissal passed before the commencement of the Constitution."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "Allowing the appeal, the Court HELD : I. Permission to withdraw a special leave petition cannot be equated with an order of dismissal. If a non-speaking order of dismissal cannot operate as res judicata for entertaining a fresh writ petition on the same facts and grounds taken in the special leave petition, an order permitting the withdrawal of the writ petition for the same reason cannot so operate. [219B,222C-D) c"
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

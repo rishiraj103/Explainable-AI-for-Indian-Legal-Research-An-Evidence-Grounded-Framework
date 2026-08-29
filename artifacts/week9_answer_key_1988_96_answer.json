@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "3637f305-1572-4747-8455-608b10309331",
+  "query_id": "1988_96",
+  "query_year": 1988,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 31,
+    "ambiguous_excluded": 10,
+    "ineligible": 59,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "Kerala General Sales Tax cashew shells purchase turnover processing",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1986 INSC 34",
+        "citation": "[1986] 1 S.C.R. 610",
+        "decision_date": "1986-03-12",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1986 INSC 74",
+        "citation": "[1986] 2 S.C.R. 522",
+        "decision_date": "1986-04-15",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1976 INSC 124",
+        "citation": "[1976] SUPP. 1 S.C.R. 110",
+        "decision_date": "1976-04-23",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1957 INSC 29",
+        "citation": "[1957] 1 S.C.R. 837",
+        "decision_date": "1957-04-02",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1981 INSC 88",
+        "citation": "[1981] 3 S.C.R. 435",
+        "decision_date": "1981-04-07",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1986_1_610_621::p0001::c002",
+        "source_id": "1986_1_610_621",
+        "case_id": "1986 INSC 34",
+        "citation": "[1986] 1 S.C.R. 610",
+        "decision_date": "1986-03-12",
+        "court": "Supreme Court of India",
+        "pdf_file": "1986_1_610_621_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 108,
+        "passage_end_char": 1317,
+        "verbatim_passage": "THAKKAR, JJ.] Promissory estoppel, plea of - Phrases used by Ministers ?\"- which cannot form the basis for a plea of estoppel, detailed - Sales Tax exemption granted retrospectively by the State Government by GOMS 127/73/ID dated 12.10.1973 withdrawn. by a later GOMS 143/73/ID dated 9. ll.1973 is.sued under section 10(3) of the Kerala General Sales Tax Act, 1963 (Kerala Act 15 of 1963) as amended, validity of - Power of G6vemment to cancel the earlier Notification vis-a-vis the right of the Cashew Factory owners to secure the exemption. ... ' The appellants are Cashew Processors owning arW./or ' ~ working cashew factories wherein nearly about 80 per cent of the raw nuts processed were being imported during the relevant time from Af ~ican countries. The import of raw nuts were canalised through the Cashew Corporation of India and they were allotted to the appellants and various other factory owners who were engaged in the business of processing cashewnuts. There was delay in making the assessment of sales tax payable by them under section 5 of the Kerala General Sales Tax Act, 1963 during the period 1970 to 1974 and the Department co111Denced to make assessments in or about the year 1 197 4."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1986_2_522_529::p0001::c003",
+        "source_id": "1986_2_522_529",
+        "case_id": "1986 INSC 74",
+        "citation": "[1986] 2 S.C.R. 522",
+        "decision_date": "1986-04-15",
+        "court": "Supreme Court of India",
+        "pdf_file": "1986_2_522_529_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 112,
+        "passage_end_char": 741,
+        "verbatim_passage": "KHALID AND G.L. OZA, JJ,] Kerala General Sales Tax Act, 1963 : s. 5-A(l)(a) ~ • Mutton produced after slaughtering goats and sheeps - Whether 'other goods' assessable to tax. Words and Phrases Meaning of. \"Goat and Sheep\" and ''Mutton\" - ~. Section 5-A(l )(a) of the Kerala General Sales Tax Act ';f 1963 provides for levy of purchase tax on the purchase turnover of a dealer who in the course of his business purchases goods, the sale or purchase of which is liable to tax under that Act, in circumstances in which no tax is payable under s.5 and then consumes such goods in the msnufacture of other goods for sale or otherwise."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "S_1976_1_110_120::p0009::c003",
+        "source_id": "S_1976_1_110_120",
+        "case_id": "1976 INSC 124",
+        "citation": "[1976] SUPP. 1 S.C.R. 110",
+        "decision_date": "1976-04-23",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1976_1_110_120_EN.pdf",
+        "page_number": 9,
+        "passage_start_char": 1318,
+        "passage_end_char": 2054,
+        "verbatim_passage": "Appukutty(') and Commissioner of Income-tax, Bombay v. Shapoorji Pallonii Mistry(') relied upon by Mr. Desai in support of his contention that while exercising his revisional power under section 20(3) of the Act, the Commissioner cannot travel ontside the return made by the assessee and the assessment order passed by the Sales Tax Officer with a view to finding out suppressed or escaped items of turnover and enhance the· assessment are distinguishable as in all those cases. there were specific and separate provisions which enabled escaped turnover or incorr.e being brought to tax after following a special procedure. In Dhanclakshmi Vilas Cashew Co's case (supra), there was rule 33 of Kerala General Sales Tax Rules, 1950, in M."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1957_1_837_853::p0001::c001",
+        "source_id": "1957_1_837_853",
+        "case_id": "1957 INSC 29",
+        "citation": "[1957] 1 S.C.R. 837",
+        "decision_date": "1957-04-02",
+        "court": "Supreme Court of India",
+        "pdf_file": "1957_1_837_853_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 0,
+        "passage_end_char": 656,
+        "verbatim_passage": "THE STATE OF KERALA (BHAGWATI, JAGANNADHADAS,- JAFEK IMAM, GovINDA MENON and J. L. KAPUR JJ.) Sales Tax-Assessment-Gross and net turnover-Purchase of copra-Sale of oil both inside and outside the State-Deductions -Assessable turnover-Constitution of India, Art. 28(r..Travancore- Cochin General Sales Tax Act, 1125 (Act Xi of 1125 M.E.), ss. 2(i) (k), 3, 2(r..Travancore-Cochin General Saks Tax Rules, 1950, \"· 7(k), 20(2). The business of the appellant consisted in the purchase of copra, manufacture of cocoanut oil and cake therefrom and sale of oil and cake to parties inside the State of Travancore-Cochin and sale of oil to parties outside the State."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1981_3_435_448::p0006::c003",
+        "source_id": "1981_3_435_448",
+        "case_id": "1981 INSC 88",
+        "citation": "[1981] 3 S.C.R. 435",
+        "decision_date": "1981-04-07",
+        "court": "Supreme Court of India",
+        "pdf_file": "1981_3_435_448_EN.pdf",
+        "page_number": 6,
+        "passage_start_char": 1502,
+        "passage_end_char": 1889,
+        "verbatim_passage": "Levy of sales tax and general sales tax on goods specified in Schedule III.-(!) There shall be levied a sales tax on the turnover of sales of goods specified in Schedule III at the rate set out against each of such goods in column 3 thereof, but after deducting from such turnover,- (i) resales of goods on the purchase of which the dealer is liable to pay purchase tax under sec. 16, ,/"
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "THAKKAR, JJ.] Promissory estoppel, plea of - Phrases used by Ministers ?\"- which cannot form the basis for a plea of estoppel, detailed - Sales Tax exemption granted retrospectively by the State Government by GOMS 127/73/ID dated 12.10.1973 withdrawn. by a later GOMS 143/73/ID dated 9. ll.1973 is.sued under section 10(3) of the Kerala General Sales Tax Act, 1963 (Kerala Act 15 of 1963) as amended, validity of - Power of G6vemment to cancel the earlier Notification vis-a-vis the right of the Cashew Factory owners to secure the exemption. ... ' The appellants are Cashew Processors owning arW./or ' ~ working cashew factories wherein nearly about 80 per cent of the raw nuts processed were being imported during the relevant time from Af ~ican countries. The import of raw nuts were canalised through the Cashew Corporation of India and they were allotted to the appellants and various other factory owners who were engaged in the business of processing cashewnuts. There was delay in making the assessment of sales tax payable by them under section 5 of the Kerala General Sales Tax Act, 1963 during the period 1970 to 1974 and the Department co111Denced to make assessments in or about the year 1 197 4."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "KHALID AND G.L. OZA, JJ,] Kerala General Sales Tax Act, 1963 : s. 5-A(l)(a) ~ • Mutton produced after slaughtering goats and sheeps - Whether 'other goods' assessable to tax. Words and Phrases Meaning of. \"Goat and Sheep\" and ''Mutton\" - ~. Section 5-A(l )(a) of the Kerala General Sales Tax Act ';f 1963 provides for levy of purchase tax on the purchase turnover of a dealer who in the course of his business purchases goods, the sale or purchase of which is liable to tax under that Act, in circumstances in which no tax is payable under s.5 and then consumes such goods in the msnufacture of other goods for sale or otherwise."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "Appukutty(') and Commissioner of Income-tax, Bombay v. Shapoorji Pallonii Mistry(') relied upon by Mr. Desai in support of his contention that while exercising his revisional power under section 20(3) of the Act, the Commissioner cannot travel ontside the return made by the assessee and the assessment order passed by the Sales Tax Officer with a view to finding out suppressed or escaped items of turnover and enhance the· assessment are distinguishable as in all those cases. there were specific and separate provisions which enabled escaped turnover or incorr.e being brought to tax after following a special procedure. In Dhanclakshmi Vilas Cashew Co's case (supra), there was rule 33 of Kerala General Sales Tax Rules, 1950, in M."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "THE STATE OF KERALA (BHAGWATI, JAGANNADHADAS,- JAFEK IMAM, GovINDA MENON and J. L. KAPUR JJ.) Sales Tax-Assessment-Gross and net turnover-Purchase of copra-Sale of oil both inside and outside the State-Deductions -Assessable turnover-Constitution of India, Art. 28(r..Travancore- Cochin General Sales Tax Act, 1125 (Act Xi of 1125 M.E.), ss. 2(i) (k), 3, 2(r..Travancore-Cochin General Saks Tax Rules, 1950, \"· 7(k), 20(2). The business of the appellant consisted in the purchase of copra, manufacture of cocoanut oil and cake therefrom and sale of oil and cake to parties inside the State of Travancore-Cochin and sale of oil to parties outside the State."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "Levy of sales tax and general sales tax on goods specified in Schedule III.-(!) There shall be levied a sales tax on the turnover of sales of goods specified in Schedule III at the rate set out against each of such goods in column 3 thereof, but after deducting from such turnover,- (i) resales of goods on the purchase of which the dealer is liable to pay purchase tax under sec. 16, ,/"
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

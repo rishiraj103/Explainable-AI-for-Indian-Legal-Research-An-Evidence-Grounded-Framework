@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "7f9cf041-ecc6-4c2d-88cd-5422eb0db3fe",
+  "query_id": "1995_412",
+  "query_year": 1995,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 17,
+    "ambiguous_excluded": 1,
+    "ineligible": 82,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "judicial restraint writ petition policy decision State government public interest",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1990 INSC 103",
+        "citation": "[1990] 2 S.C.R. 110",
+        "decision_date": "1990-03-22",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1986 INSC 217",
+        "citation": "[1987] 1 S.C.R. 1",
+        "decision_date": "1986-10-24",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1976 INSC 273",
+        "citation": "[1977] 1 S.C.R. 1022",
+        "decision_date": "1976-11-01",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1980 INSC 161",
+        "citation": "[1981] 1 S.C.R. 507",
+        "decision_date": "1980-08-22",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1975 INSC 77",
+        "citation": "[1975] 3 S.C.R. 1002",
+        "decision_date": "1975-03-19",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1990_2_110_118::p0001::c002",
+        "source_id": "1990_2_110_118",
+        "case_id": "1990 INSC 103",
+        "citation": "[1990] 2 S.C.R. 110",
+        "decision_date": "1990-03-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "1990_2_110_118_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 80,
+        "passage_end_char": 753,
+        "verbatim_passage": "SAHA!, JJ.] c Practice and Procedure: Judicial restraint-Need for-High Court Judge making derogatory remarks criticising counsel, parties or witnesses-Such remark not to be made unless absolutely necessary for deciding the case. While allowing a writ petition, one of the Judges delivered the main Judgment invalidating the decision of the Government on the ground that it violated Article 14 of the Constitution. The other Judge delivered a separate, but concurring opinion which contained highly disparaging remarks attributing ma/a fides and underhand dealing on D the part of the State Government. Several appeals were filed against the said decision before this Court."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1987_1_1_67::p0046::c002",
+        "source_id": "1987_1_1_67",
+        "case_id": "1986 INSC 217",
+        "citation": "[1987] 1 S.C.R. 1",
+        "decision_date": "1986-10-24",
+        "court": "Supreme Court of India",
+        "pdf_file": "1987_1_1_67_EN.pdf",
+        "page_number": 46,
+        "passage_start_char": 604,
+        "passage_end_char": 1378,
+        "verbatim_passage": "That would be making a new policy for the State Government which it was not competent for the High Court to do. Once the High Court came to the conclusion that on account of delay or !aches in the filing of the writ petitions or the creation of third.party rights in the meanwhile, the Court would not interfere with one part of C the policy decision, the Court could not interfere with the second part of the policy decision as well. The consequence of sustaining one part of the policy decision and striking'down the other would not only be to create a new policy for the State Government but it would also cause considerable hardship and injustice to respondent Nos. 5 to 11 and o also result in public mischief and inconvenience detrimental to the interest of the State."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1977_1_1022_1025::p0001::c003",
+        "source_id": "1977_1_1022_1025",
+        "case_id": "1976 INSC 273",
+        "citation": "[1977] 1 S.C.R. 1022",
+        "decision_date": "1976-11-01",
+        "court": "Supreme Court of India",
+        "pdf_file": "1977_1_1022_1025_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 141,
+        "passage_end_char": 849,
+        "verbatim_passage": "SHINGHAL, JJ.] Conzpulsory retirement-Compulsory retirement made in public interest .under the Government of India Decision No. 23i dated .30th Nov1:1nher, .1~62 below Fundamental Rule 56 (later substituted as a 11ew rule fR 56(j) )--.~ere .reference to a non-subsisting rule does not invalidate the order wlien the retirement is in public interest and boni fide. • The appellant, a Sub-ordinate Judge was compulsorily re.tired under the Government of India Decision No. 23 below Fundamental Rule No. 56 though the said rule was later substituted as FR 56(j). A writ petition assailing the order of compulsory retirement as in violation of Article 311 was dismissed by the Judicial Commissioner for ~lanipur."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1981_1_507_512::p0002::c001",
+        "source_id": "1981_1_507_512",
+        "case_id": "1980 INSC 161",
+        "citation": "[1981] 1 S.C.R. 507",
+        "decision_date": "1980-08-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "1981_1_507_512_EN.pdf",
+        "page_number": 2,
+        "passage_start_char": 0,
+        "passage_end_char": 944,
+        "verbatim_passage": "c [1981] 1 S.C.R. (4) As a policy decision was taken by the High Court that all the work pending in the court of the Judicial Officers, in respect of whom a recommendation for premature retirement had been made to the Governor, should be· withdrawn immediately pending a decision by the Government on such recommendation, it cannot be said that the withdrawal of judicial powers in the· case of the petitioner was wrong. Even his premature retirement had been properly recommended as a policy matter under the Premature Retirement: Rules. [510 G-H]1 (5) The expression \"public interest\" in the context of premature retire-· ment has a well settled meaning. It refers to cases where the interest of public· administration requires the retirement of a Government servant, who with the passage of years, has prematurely ceased to possess the standard of efficiency, competence and utility called for by the Government service to which he· belongs."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1975_3_1002_1010::p0003::c001",
+        "source_id": "1975_3_1002_1010",
+        "case_id": "1975 INSC 77",
+        "citation": "[1975] 3 S.C.R. 1002",
+        "decision_date": "1975-03-19",
+        "court": "Supreme Court of India",
+        "pdf_file": "1975_3_1002_1010_EN.pdf",
+        "page_number": 3,
+        "passage_start_char": 0,
+        "passage_end_char": 839,
+        "verbatim_passage": "[19751 3 s.c.R. In wtit ~titian No. 1448 of 1973 the petitioner was served with an order dated 28 April, 1973. The order was in terms similar tq that in writ petition No. 1253 of 1973 except that the order did not :state that \"the State Government is mtisfied that it is ia public interest to dispense with th_e service of the petitioner\". i In writ petition No. 1898 of 1973 the petitioner was served '.with an order dated 4 November, 1973 where also the order did not :state that the compulsory retirement was made by the Government on being satisfied that it was in public interest. In writ petition No. 270 of 1973 the petitioner was served with an order dated 30 March, 1970: The order w'as similar to writ petition No. 1253 viz., that the petitioner completed 25 years of qualifying service and the retirement was in public interest."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "SAHA!, JJ.] c Practice and Procedure: Judicial restraint-Need for-High Court Judge making derogatory remarks criticising counsel, parties or witnesses-Such remark not to be made unless absolutely necessary for deciding the case. While allowing a writ petition, one of the Judges delivered the main Judgment invalidating the decision of the Government on the ground that it violated Article 14 of the Constitution. The other Judge delivered a separate, but concurring opinion which contained highly disparaging remarks attributing ma/a fides and underhand dealing on D the part of the State Government. Several appeals were filed against the said decision before this Court."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "That would be making a new policy for the State Government which it was not competent for the High Court to do. Once the High Court came to the conclusion that on account of delay or !aches in the filing of the writ petitions or the creation of third.party rights in the meanwhile, the Court would not interfere with one part of C the policy decision, the Court could not interfere with the second part of the policy decision as well. The consequence of sustaining one part of the policy decision and striking'down the other would not only be to create a new policy for the State Government but it would also cause considerable hardship and injustice to respondent Nos. 5 to 11 and o also result in public mischief and inconvenience detrimental to the interest of the State."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "SHINGHAL, JJ.] Conzpulsory retirement-Compulsory retirement made in public interest .under the Government of India Decision No. 23i dated .30th Nov1:1nher, .1~62 below Fundamental Rule 56 (later substituted as a 11ew rule fR 56(j) )--.~ere .reference to a non-subsisting rule does not invalidate the order wlien the retirement is in public interest and boni fide. • The appellant, a Sub-ordinate Judge was compulsorily re.tired under the Government of India Decision No. 23 below Fundamental Rule No. 56 though the said rule was later substituted as FR 56(j). A writ petition assailing the order of compulsory retirement as in violation of Article 311 was dismissed by the Judicial Commissioner for ~lanipur."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "c [1981] 1 S.C.R. (4) As a policy decision was taken by the High Court that all the work pending in the court of the Judicial Officers, in respect of whom a recommendation for premature retirement had been made to the Governor, should be· withdrawn immediately pending a decision by the Government on such recommendation, it cannot be said that the withdrawal of judicial powers in the· case of the petitioner was wrong. Even his premature retirement had been properly recommended as a policy matter under the Premature Retirement: Rules. [510 G-H]1 (5) The expression \"public interest\" in the context of premature retire-· ment has a well settled meaning. It refers to cases where the interest of public· administration requires the retirement of a Government servant, who with the passage of years, has prematurely ceased to possess the standard of efficiency, competence and utility called for by the Government service to which he· belongs."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "[19751 3 s.c.R. In wtit ~titian No. 1448 of 1973 the petitioner was served with an order dated 28 April, 1973. The order was in terms similar tq that in writ petition No. 1253 of 1973 except that the order did not :state that \"the State Government is mtisfied that it is ia public interest to dispense with th_e service of the petitioner\". i In writ petition No. 1898 of 1973 the petitioner was served '.with an order dated 4 November, 1973 where also the order did not :state that the compulsory retirement was made by the Government on being satisfied that it was in public interest. In writ petition No. 270 of 1973 the petitioner was served with an order dated 30 March, 1970: The order w'as similar to writ petition No. 1253 viz., that the petitioner completed 25 years of qualifying service and the retirement was in public interest."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

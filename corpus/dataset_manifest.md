@@ -32,3 +32,10 @@ The accompanying `dedup_report.md` records the matching method and the live over
 - **Cross-corpus audit:** completed before the rebuild using canonical case-ID matching, with title/party near-duplicate fallback; ILDC has no citation field, so eCourts citations are retained as provenance rather than used as an equality key. The audit flags 1,057 exact and 59 high-confidence near ILDC-test pairs, and the same `dedup_matches.csv` identity mapping was retained through the rebuild.
 - **Rebuilt-index verification:** completed 2026-08-28 and rechecked 2026-08-29 in `artifacts/rebuild_safety_checks.md`, `artifacts/rebuild_target_exclusion_smoke.json`, and `artifacts/week8_rebuild_exclusion_recheck.json`. An exact ILDC test overlap (`1977_183` / `1977 INSC 183`) was presented to the rebuilt BM25 + PostgreSQL path; 2 target-case chunks were excluded before temporal eligibility and evidence selection.
 - **Runtime rule:** `src/legal_xai/retrieval.py` excludes canonical exact self-matches and every audit-listed title/party near match. `src/legal_xai/evidence_pipeline.py` applies this rule before the separate strict earlier-year temporal filter. It is therefore active for E3 retrieval, independently of same-year exclusion.
+
+## Week 9 authority-key provenance status
+
+- **Evaluation coverage:** 30 of the frozen 40 ILDC fixed-test cases are now independently source-verified.
+- **Authority source quality:** the ten Week 9 additions use native-text eCourts-mirror PDFs for both the query locator and the authoritative corpus source; none relies on an OCR-repaired or permanently excluded document.
+- **Parallel citations:** six additions have a source-judgment reporter form that differs from the corpus SCR citation. Their stable authority source IDs and title-plus-exact-date reconciliation are recorded in `answer_key/authority_answer_key.json`.
+- **Deferred selection finding:** three of the ten expected authorities were BM25 candidates but were not included in the frozen five-source selection; per-case ranks and run IDs are recorded in `artifacts/week9_answer_key_spot_checks.json` for Week 12 analysis.

@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "6c8af5d5-5cd9-47db-b2bd-ac306b4d65eb",
+  "query_id": "1982_29",
+  "query_year": 1982,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 23,
+    "ambiguous_excluded": 15,
+    "ineligible": 62,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "temporary railway servant termination continuous service industrial disputes",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1976 INSC 182",
+        "citation": "[1977] 1 S.C.R. 248",
+        "decision_date": "1976-08-19",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1973 INSC 150",
+        "citation": "[1974] 1 S.C.R. 515",
+        "decision_date": "1973-08-27",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1971 INSC 316",
+        "citation": "[1972] 2 S.C.R. 400",
+        "decision_date": "1971-11-18",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1963 INSC 244",
+        "citation": "[1964] 5 S.C.R. 683",
+        "decision_date": "1963-12-05",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1980 INSC 81",
+        "citation": "[1980] 3 S.C.R. 603",
+        "decision_date": "1980-04-14",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1977_1_248_254::p0003::c001",
+        "source_id": "1977_1_248_254",
+        "case_id": "1976 INSC 182",
+        "citation": "[1977] 1 S.C.R. 248",
+        "decision_date": "1976-08-19",
+        "court": "Supreme Court of India",
+        "pdf_file": "1977_1_248_254_EN.pdf",
+        "page_number": 3,
+        "passage_start_char": 0,
+        "passage_end_char": 1188,
+        "verbatim_passage": "[ 1977] 1 S.C.R. • oach year of qualifying service subject to a maximum of 15 months' salary as laid down in Rule 8.01 of the Code, which says. : \"8.01. Condition of eligibility.-Gratuity is granted at the discretion of Government in the Railway Department as a reward for good, efficient, continuous, and faithful service to a perma:aent railway servant if he is not a subscriber to the Provident Fund or to the Guaranteed Provident Fund, on his quitting the service, or, in the event of his de'ilth before receipt of gratuity to his widow or widows and/ or dependent children. For purposes of this rule a monthly paid railway servant borne on the temporary establishment whose pay is charged to open line capital and revenue works on which he is employed shall be deemed to be a permanent railway servant only after he had rendered 4 years' continuous service, railway servants belonging to the category of workshop staff, employed otherwise than in a supervisory capacity, shall also be considered as permanent railway servants only after they have rendered 4 years' oontinuous service\". The other rules which seemed to h•ave a bearing on the question before us are as follows : \"8.02."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1974_1_515_527::p0010::c002",
+        "source_id": "1974_1_515_527",
+        "case_id": "1973 INSC 150",
+        "citation": "[1974] 1 S.C.R. 515",
+        "decision_date": "1973-08-27",
+        "court": "Supreme Court of India",
+        "pdf_file": "1974_1_515_527_EN.pdf",
+        "page_number": 10,
+        "passage_start_char": 901,
+        "passage_end_char": 1834,
+        "verbatim_passage": "If it is shown that the termination of services is no more than discharge simpliciter effected by virtue of the contract, or the relevant rules, Article 311(2) may not be applicable to such a case. lf, however, the termination of a temporary servant's service in substance represents a penalty imposed on him or punitive action is taken against him then such termination would amount to removal and Article 311 (2) would be attracted. The position would be the same in regard to reduction in rank of an officiating servant. · The temtination of the service of a pern;ianent servant on the terms of a contract or under a service rule will attract Article 311 if such termination is in the nature of penalty and amounts to removal. This. statement of law in Moti Rain Deka case (supra) is on the consideration of Rules 148(3) and 149(3) of the Indian Railway Establishment Code. Rule 148(3) deals with non-pensionable railway servants."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1972_2_400_408::p0007::c003",
+        "source_id": "1972_2_400_408",
+        "case_id": "1971 INSC 316",
+        "citation": "[1972] 2 S.C.R. 400",
+        "decision_date": "1971-11-18",
+        "court": "Supreme Court of India",
+        "pdf_file": "1972_2_400_408_EN.pdf",
+        "page_number": 7,
+        "passage_start_char": 1728,
+        "passage_end_char": 2388,
+        "verbatim_passage": "Except in these two cases. the appointment to a post, permanent or temporary, on probation or on an officiating basis or a substantive appointment to a temporary post gives to the servant so appointed no right to the post and his service may be terminated unless his service had ripened into what is, in the service rules, called a quasi-permanent service.\" In State of Nagaland v. G. V asantha('), this Court was called upon tc decide the validity of termination of service of a goveminent servant by giving him notice of termination as prescribed ili the relevant Rules. Therein, the concerned government servant had been appointed purely on temporary basis."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1964_5_683_800::p0086::c002",
+        "source_id": "1964_5_683_800",
+        "case_id": "1963 INSC 244",
+        "citation": "[1964] 5 S.C.R. 683",
+        "decision_date": "1963-12-05",
+        "court": "Supreme Court of India",
+        "pdf_file": "1964_5_683_800_EN.pdf",
+        "page_number": 86,
+        "passage_start_char": 957,
+        "passage_end_char": 1739,
+        "verbatim_passage": "The rule however limits that right, by providing in effect that the service would be terminated at a certain age. Rule 148(3) is just another rule, limiting the servant's right to continue in service. lt is as much a condition of service as Rule 2046 and in deciding the nature and extent of the right of a railway servant to whom Rule 148(3) applies to continue in service, Rule 148l3J is of as much importance as Rule 2046. A railway servant to whom Rule 148(3) applies has two limitations put on his right to continue-(l) termination on attaining a certain age and (2) termination on service of a notice under Rule 148(3). Where the service is terminated by the order of retirement under Rule 2046, the termination is of a service where the servant has not the right to continue."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1980_3_603_612::p0008::c001",
+        "source_id": "1980_3_603_612",
+        "case_id": "1980 INSC 81",
+        "citation": "[1980] 3 S.C.R. 603",
+        "decision_date": "1980-04-14",
+        "court": "Supreme Court of India",
+        "pdf_file": "1980_3_603_612_EN.pdf",
+        "page_number": 8,
+        "passage_start_char": 0,
+        "passage_end_char": 873,
+        "verbatim_passage": "c 6.10 [1980] 3 S.C.R. get the emoluments and other benefits attached thereto. But if the servant has no right to the post, as where he is appointed to a post, permanent or temporary either on pr<>- bation or on an officiating basis and whose temporary service il'as not ripened into a quasi permanent service as defined in the Temporary Service Rules, the termination of his employment does not deprive him of any right and cannot, therefore, by itself be a punishment. One test for determining whether the termination of the service of a Governmen servant is by way of punishment is to ascerta.in whether the servant, but for such termination, had the right to hold the post. If he had a right to the post as in the three oases hereinbefore mentioned, the termination of his service will by itself be a punishment and he will be entitled to the protection of Article 311."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "[ 1977] 1 S.C.R. • oach year of qualifying service subject to a maximum of 15 months' salary as laid down in Rule 8.01 of the Code, which says. : \"8.01. Condition of eligibility.-Gratuity is granted at the discretion of Government in the Railway Department as a reward for good, efficient, continuous, and faithful service to a perma:aent railway servant if he is not a subscriber to the Provident Fund or to the Guaranteed Provident Fund, on his quitting the service, or, in the event of his de'ilth before receipt of gratuity to his widow or widows and/ or dependent children. For purposes of this rule a monthly paid railway servant borne on the temporary establishment whose pay is charged to open line capital and revenue works on which he is employed shall be deemed to be a permanent railway servant only after he had rendered 4 years' continuous service, railway servants belonging to the category of workshop staff, employed otherwise than in a supervisory capacity, shall also be considered as permanent railway servants only after they have rendered 4 years' oontinuous service\". The other rules which seemed to h•ave a bearing on the question before us are as follows : \"8.02."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "If it is shown that the termination of services is no more than discharge simpliciter effected by virtue of the contract, or the relevant rules, Article 311(2) may not be applicable to such a case. lf, however, the termination of a temporary servant's service in substance represents a penalty imposed on him or punitive action is taken against him then such termination would amount to removal and Article 311 (2) would be attracted. The position would be the same in regard to reduction in rank of an officiating servant. · The temtination of the service of a pern;ianent servant on the terms of a contract or under a service rule will attract Article 311 if such termination is in the nature of penalty and amounts to removal. This. statement of law in Moti Rain Deka case (supra) is on the consideration of Rules 148(3) and 149(3) of the Indian Railway Establishment Code. Rule 148(3) deals with non-pensionable railway servants."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "Except in these two cases. the appointment to a post, permanent or temporary, on probation or on an officiating basis or a substantive appointment to a temporary post gives to the servant so appointed no right to the post and his service may be terminated unless his service had ripened into what is, in the service rules, called a quasi-permanent service.\" In State of Nagaland v. G. V asantha('), this Court was called upon tc decide the validity of termination of service of a goveminent servant by giving him notice of termination as prescribed ili the relevant Rules. Therein, the concerned government servant had been appointed purely on temporary basis."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "The rule however limits that right, by providing in effect that the service would be terminated at a certain age. Rule 148(3) is just another rule, limiting the servant's right to continue in service. lt is as much a condition of service as Rule 2046 and in deciding the nature and extent of the right of a railway servant to whom Rule 148(3) applies to continue in service, Rule 148l3J is of as much importance as Rule 2046. A railway servant to whom Rule 148(3) applies has two limitations put on his right to continue-(l) termination on attaining a certain age and (2) termination on service of a notice under Rule 148(3). Where the service is terminated by the order of retirement under Rule 2046, the termination is of a service where the servant has not the right to continue."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "c 6.10 [1980] 3 S.C.R. get the emoluments and other benefits attached thereto. But if the servant has no right to the post, as where he is appointed to a post, permanent or temporary either on pr<>- bation or on an officiating basis and whose temporary service il'as not ripened into a quasi permanent service as defined in the Temporary Service Rules, the termination of his employment does not deprive him of any right and cannot, therefore, by itself be a punishment. One test for determining whether the termination of the service of a Governmen servant is by way of punishment is to ascerta.in whether the servant, but for such termination, had the right to hold the post. If he had a right to the post as in the three oases hereinbefore mentioned, the termination of his service will by itself be a punishment and he will be entitled to the protection of Article 311."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

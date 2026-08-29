@@ -1,0 +1,84 @@
+{
+  "verification_version": "week9-citation-evidence-verifier-v2",
+  "input": "artifacts\\week9_answer_key_2002_944_answer.json",
+  "run_id": "9d1df491-ea15-4590-8127-7e180e2519b2",
+  "query_id": "2002_944",
+  "query_year": 2002,
+  "citation_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "checks": [
+    {
+      "evidence_id": "E1",
+      "chunk_id": "1976_2_347_676::p0061::c001",
+      "citation": "[1976] 2 S.C.R. 347",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E2",
+      "chunk_id": "S_1997_2_305_506::p0187::c002",
+      "citation": "[1997] SUPP. 2 S.C.R. 305",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E3",
+      "chunk_id": "S_1992_2_182_249::p0002::c006",
+      "citation": "[1992] SUPP. 2 S.C.R. 182",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E4",
+      "chunk_id": "1993_1_480_568::p0032::c003",
+      "citation": "[1993] 1 S.C.R. 480",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E5",
+      "chunk_id": "S_1992_1_994_1016::p0005::c005",
+      "citation": "[1992] SUPP. 1 S.C.R. 994",
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "answer_key_measurement": {
+    "query_id": "2002_944",
+    "expected_authority_citations": [
+      "(1994) supp. 1 scc 324"
+    ],
+    "verified_displayed_citations": [
+      "[1976] 2 s.c.r. 347",
+      "[1992] supp. 1 s.c.r. 994",
+      "[1992] supp. 2 s.c.r. 182",
+      "[1993] 1 s.c.r. 480",
+      "[1997] supp. 2 s.c.r. 305"
+    ],
+    "matched_expected_authorities": [],
+    "expected_authorities_retrieved": [
+      "(1994) supp. 1 scc 324"
+    ],
+    "expected_authorities_retrieved_not_selected": [
+      "(1994) supp. 1 scc 324"
+    ],
+    "expected_authorities_not_retrieved": [],
+    "retrieved_expected_authority_details": [
+      {
+        "expected_authority_citation": "(1994) supp. 1 scc 324",
+        "matches": [
+          {
+            "rank": 75,
+            "source_id": "1993_1_891_1026",
+            "corpus_citation": "[1993] 1 S.C.R. 891",
+            "decision_date": "1993-02-10",
+            "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+          }
+        ]
+      }
+    ],
+    "wrong_or_unverified_displayed_citations": []
+  },
+  "status": "passed"
+}

@@ -1,0 +1,69 @@
+{
+  "verification_version": "week9-citation-evidence-verifier-v2",
+  "input": "artifacts\\week9_answer_key_1982_29_answer.json",
+  "run_id": "6c8af5d5-5cd9-47db-b2bd-ac306b4d65eb",
+  "query_id": "1982_29",
+  "query_year": 1982,
+  "citation_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "checks": [
+    {
+      "evidence_id": "E1",
+      "chunk_id": "1977_1_248_254::p0003::c001",
+      "citation": "[1977] 1 S.C.R. 248",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E2",
+      "chunk_id": "1974_1_515_527::p0010::c002",
+      "citation": "[1974] 1 S.C.R. 515",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E3",
+      "chunk_id": "1972_2_400_408::p0007::c003",
+      "citation": "[1972] 2 S.C.R. 400",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E4",
+      "chunk_id": "1964_5_683_800::p0086::c002",
+      "citation": "[1964] 5 S.C.R. 683",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "evidence_id": "E5",
+      "chunk_id": "1980_3_603_612::p0008::c001",
+      "citation": "[1980] 3 S.C.R. 603",
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "answer_key_measurement": {
+    "query_id": "1982_29",
+    "expected_authority_citations": [
+      "[1976] 3 s.c.r. 160"
+    ],
+    "verified_displayed_citations": [
+      "[1964] 5 s.c.r. 683",
+      "[1972] 2 s.c.r. 400",
+      "[1974] 1 s.c.r. 515",
+      "[1977] 1 s.c.r. 248",
+      "[1980] 3 s.c.r. 603"
+    ],
+    "matched_expected_authorities": [],
+    "expected_authorities_retrieved": [],
+    "expected_authorities_retrieved_not_selected": [],
+    "expected_authorities_not_retrieved": [
+      "[1976] 3 s.c.r. 160"
+    ],
+    "retrieved_expected_authority_details": [],
+    "wrong_or_unverified_displayed_citations": []
+  },
+  "status": "passed"
+}

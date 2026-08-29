@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "0d1eb42a-f296-42b6-ab1a-bb751cba0e84",
+  "query_id": "1995_403",
+  "query_year": 1995,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 20,
+    "ambiguous_excluded": 1,
+    "ineligible": 79,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "unlawful assembly section 149 individual membership criminal liability death sentence",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1989 INSC 12",
+        "citation": "[1989] 1 S.C.R. 130",
+        "decision_date": "1989-01-17",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1981 INSC 62",
+        "citation": "[1981] 3 S.C.R. 195",
+        "decision_date": "1981-03-10",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1989 INSC 131",
+        "citation": "[1989] 2 S.C.R. 498",
+        "decision_date": "1989-04-13",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1965 INSC 116",
+        "citation": "[1966] 1 S.C.R. 18",
+        "decision_date": "1965-04-21",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1974 INSC 68",
+        "citation": "[1974] 3 S.C.R. 734",
+        "decision_date": "1974-03-22",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1989_1_130_137::p0006::c004",
+        "source_id": "1989_1_130_137",
+        "case_id": "1989 INSC 12",
+        "citation": "[1989] 1 S.C.R. 130",
+        "decision_date": "1989-01-17",
+        "court": "Supreme Court of India",
+        "pdf_file": "1989_1_130_137_EN.pdf",
+        "page_number": 6,
+        "passage_start_char": 1510,
+        "passage_end_char": 2279,
+        "verbatim_passage": "When the accused persons assembled together, armed with lathis, and were parties to the assault on the complainant party, the prosecution is not obliged to prove which specific overt act was done by which of the accused. This section makes a member of the unlawful assembly responsible as a principal for the acts of each, and J all, merely because he is a member of an unlawful assembly. While overt act and active participation may indicate common intention of the person perpetrating the crime. the mere presence in the unlawful assembly may fasten vicariously criminal liability under section 149. It must be noted that the basis of the constructive guilt under section 149 is mere membership of the unlawful assembly, with the requisite commoo object or knowledge."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1981_3_195_199::p0001::c002",
+        "source_id": "1981_3_195_199",
+        "case_id": "1981 INSC 62",
+        "citation": "[1981] 3 S.C.R. 195",
+        "decision_date": "1981-03-10",
+        "court": "Supreme Court of India",
+        "pdf_file": "1981_3_195_199_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 70,
+        "passage_end_char": 549,
+        "verbatim_passage": "AND A.P. SEN, J.] Indian Penal Code 1860, Ss. 302 and 149-Murders committed by members of an unlawful assembly-Acquittal of some-Effect on prosecution of remaining- Death sentence for two and life sentence for others-Propriety of. Out of twelve persons, charged with the offences under section ~302 read with section 149 I.P.C. and various other charges, eight were convicted. Two of them, C and R were sentenced to death while the others were sentenced to imprisonment for life."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1989_2_498_517::p0001::c002",
+        "source_id": "1989_2_498_517",
+        "case_id": "1989 INSC 131",
+        "citation": "[1989] 2 S.C.R. 498",
+        "decision_date": "1989-04-13",
+        "court": "Supreme Court of India",
+        "pdf_file": "1989_2_498_517_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 122,
+        "passage_end_char": 1003,
+        "verbatim_passage": "AHMADI, JJ.] Criminal Procedure Code, 1973: Section 235 and section 354(3)-Sentence-Decision-Sentencing court to approach questiou seriously-Endeavour to see that all relevant facts and circumstances bearing on sentence brought on record-Sentence of severity imposed- Jmperative for Judge to indicate basis-'Special reason clause' in death sentence cases indicates obligation to explain choice of sentence. Indian Penal Code, 1860: Sections 34, 141, 149--Unlawful assembly-Fastening of vicarious responsibility on a member-Prosecution to prove act was done in prosecution of common object of .D assembly. l-I Accused Nos. I to 6, constituting an unlawful a,,.embly the common intention of which was to kill Baharan Mian, came to his house armed with deadly weapons. Baharan Mian, apprehending trouble, ran _,. inside fo arm himself but his wife prevented him from coming out again."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "1966_1_18_24::p0004::c003",
+        "source_id": "1966_1_18_24",
+        "case_id": "1965 INSC 116",
+        "citation": "[1966] 1 S.C.R. 18",
+        "decision_date": "1965-04-21",
+        "court": "Supreme Court of India",
+        "pdf_file": "1966_1_18_24_EN.pdf",
+        "page_number": 4,
+        "passage_start_char": 1055,
+        "passage_end_char": 1592,
+        "verbatim_passage": "A mere membership of an unlawfnl assembly is punishable under s. 143. Under the next section heavier punishment is awardable to a person who joins an unlawful assembly armed with a deadly weapon or with anything which used as a weapon of offence is likely to cause death. Section 145 next provides for a similar higher punishment for a person who joins or continues in an unlawful assembly knowing that it has been ordered to disperse. These sections make membership as such of an unlawful assembly punishable, though in varying degrees."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1974_3_734_737::p0001::c005",
+        "source_id": "1974_3_734_737",
+        "case_id": "1974 INSC 68",
+        "citation": "[1974] 3 S.C.R. 734",
+        "decision_date": "1974-03-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "1974_3_734_737_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 1683,
+        "passage_end_char": 2429,
+        "verbatim_passage": "[736G-HJ _. (II) In the prosecution under section 149 l.P.C., it is incumbent upon the prosecution to show that the pc~on concerned was a member of the unlawful asaembly· at the time of the commission of the offence. No vicarfQUs liability ........ _can· be fastened under section 149 I.P.C. if the person concerned goes away and ceases to be a member of the unlawful assembly before the commission of the offence and subsequently the offence is committed by Other members of the unlawful assembly. [737A-C] · Cll.IMINAL APPELLATE JURISDICTION : Criminal Appeal No. 20 of 1971.. AplJCal bv Special Leave fmm the Judgment and Order dated lhe 26th Au211st. 1970 o! the Allabab<{j High Court (Lucknow Bench l in Criminal Appeal No. 8 of 1968. · B .."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "When the accused persons assembled together, armed with lathis, and were parties to the assault on the complainant party, the prosecution is not obliged to prove which specific overt act was done by which of the accused. This section makes a member of the unlawful assembly responsible as a principal for the acts of each, and J all, merely because he is a member of an unlawful assembly. While overt act and active participation may indicate common intention of the person perpetrating the crime. the mere presence in the unlawful assembly may fasten vicariously criminal liability under section 149. It must be noted that the basis of the constructive guilt under section 149 is mere membership of the unlawful assembly, with the requisite commoo object or knowledge."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "AND A.P. SEN, J.] Indian Penal Code 1860, Ss. 302 and 149-Murders committed by members of an unlawful assembly-Acquittal of some-Effect on prosecution of remaining- Death sentence for two and life sentence for others-Propriety of. Out of twelve persons, charged with the offences under section ~302 read with section 149 I.P.C. and various other charges, eight were convicted. Two of them, C and R were sentenced to death while the others were sentenced to imprisonment for life."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "AHMADI, JJ.] Criminal Procedure Code, 1973: Section 235 and section 354(3)-Sentence-Decision-Sentencing court to approach questiou seriously-Endeavour to see that all relevant facts and circumstances bearing on sentence brought on record-Sentence of severity imposed- Jmperative for Judge to indicate basis-'Special reason clause' in death sentence cases indicates obligation to explain choice of sentence. Indian Penal Code, 1860: Sections 34, 141, 149--Unlawful assembly-Fastening of vicarious responsibility on a member-Prosecution to prove act was done in prosecution of common object of .D assembly. l-I Accused Nos. I to 6, constituting an unlawful a,,.embly the common intention of which was to kill Baharan Mian, came to his house armed with deadly weapons. Baharan Mian, apprehending trouble, ran _,. inside fo arm himself but his wife prevented him from coming out again."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "A mere membership of an unlawfnl assembly is punishable under s. 143. Under the next section heavier punishment is awardable to a person who joins an unlawful assembly armed with a deadly weapon or with anything which used as a weapon of offence is likely to cause death. Section 145 next provides for a similar higher punishment for a person who joins or continues in an unlawful assembly knowing that it has been ordered to disperse. These sections make membership as such of an unlawful assembly punishable, though in varying degrees."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "[736G-HJ _. (II) In the prosecution under section 149 l.P.C., it is incumbent upon the prosecution to show that the pc~on concerned was a member of the unlawful asaembly· at the time of the commission of the offence. No vicarfQUs liability ........ _can· be fastened under section 149 I.P.C. if the person concerned goes away and ceases to be a member of the unlawful assembly before the commission of the offence and subsequently the offence is committed by Other members of the unlawful assembly. [737A-C] · Cll.IMINAL APPELLATE JURISDICTION : Criminal Appeal No. 20 of 1971.. AplJCal bv Special Leave fmm the Judgment and Order dated lhe 26th Au211st. 1970 o! the Allabab<{j High Court (Lucknow Bench l in Criminal Appeal No. 8 of 1968. · B .."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

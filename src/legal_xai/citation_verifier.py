@@ -66,11 +66,18 @@ def _normalise_title(value: str | None) -> str:
     """Normalize title variants such as ``v.`` and ``versus`` for cross-citation matching."""
 
     value = (value or "").casefold().replace("versus", " v ")
+    value = re.sub(r"\bu\.?\s*p\.?\b", "uttar pradesh", value)
     tokens = re.findall(r"[a-z0-9]+", value)
-    return " ".join(token for token in tokens if token not in {"and", "ors", "others"})
+    return " ".join(
+        token for token in tokens
+        if token not in {"and", "anr", "another", "ors", "others", "etc", "of", "the"}
+    )
 
 
 def _candidate_matches_expected(candidate: RetrievedCandidate, expected: Mapping[str, Any]) -> bool:
+    expected_source_id = str(expected.get("authority_source_id", ""))
+    if expected_source_id and expected_source_id == candidate.record.source_id:
+        return True
     expected_citation = _normalise_citation(expected.get("authority_citation"))
     if expected_citation and _normalise_citation(candidate.record.citation) == expected_citation:
         return True
@@ -176,8 +183,9 @@ def evaluate_against_answer_key(
 
     Citation strings alone are insufficient: the eCourts corpus commonly stores an
     S.C.R. citation while a source-verified key may identify the same authority by
-    its parallel SCC citation. Title plus exact decision date is therefore the
-    identity fallback for a candidate that was actually retrieved.
+    its parallel SCC citation. A verified authority source ID, followed by title
+    plus exact decision date, are identity fallbacks for a candidate that was
+    actually retrieved.
     """
 
     expected_entries = [

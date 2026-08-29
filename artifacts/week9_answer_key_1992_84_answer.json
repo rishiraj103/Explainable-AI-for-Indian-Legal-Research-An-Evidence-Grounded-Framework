@@ -1,0 +1,157 @@
+{
+  "experiment": "E3",
+  "selection_version": "week7-bm25-diverse-support-v1",
+  "run_id": "e0e7e9f3-7061-4db7-bb58-ee4e7e481e9b",
+  "query_id": "1992_84",
+  "query_year": 1992,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 14,
+    "ambiguous_excluded": 14,
+    "ineligible": 72,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "answer": {
+    "answer_version": "week8-controlled-evidence-renderer-v2",
+    "legal_issue": {
+      "text": "Companies Act section 73 interest liability public deposits company",
+      "source": "user_query"
+    },
+    "retrieved_authorities": [
+      {
+        "evidence_id": "E1",
+        "case_id": "1983 INSC 79",
+        "citation": "[1983] 3 S.C.R. 438",
+        "decision_date": "1983-07-21",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "1981 INSC 111",
+        "citation": "[1981] 3 S.C.R. 698",
+        "decision_date": "1981-05-07",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "1987 INSC 20",
+        "citation": "[1987] 2 S.C.R. 1",
+        "decision_date": "1987-01-22",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "1990 INSC 266",
+        "citation": "[1990] SUPP. 1 S.C.R. 332",
+        "decision_date": "1990-09-04",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "1982 INSC 94",
+        "citation": "[1983] 1 S.C.R. 922",
+        "decision_date": "1982-12-10",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "1983_3_438_469::p0001::c003",
+        "source_id": "1983_3_438_469",
+        "case_id": "1983 INSC 79",
+        "citation": "[1983] 3 S.C.R. 438",
+        "decision_date": "1983-07-21",
+        "court": "Supreme Court of India",
+        "pdf_file": "1983_3_438_469_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 123,
+        "passage_end_char": 682,
+        "verbatim_passage": "MISRA JJ.J ·..._ . Companies Act, 1956-S. 58A-Companies (Acceptance of De1Josit) Ri.les, 1975-R 3A-Imposition of obligation on Companies inviting/accepting deposits froni public to deposit or invest 10 per cent of dePosits maturing during the year with q Scheduled bank or in governmeiit securities, etc. Constitutiona{ validity of. Section SSA of the Companies Act, 1956 confers power on thC Central Government to prescribe inter alia the condi'tions subject to which deposits ma'.y be invited or accepted by a company either from public or from its members."
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "1981_3_698_828::p0116::c002",
+        "source_id": "1981_3_698_828",
+        "case_id": "1981 INSC 111",
+        "citation": "[1981] 3 S.C.R. 698",
+        "decision_date": "1981-05-07",
+        "court": "Supreme Court of India",
+        "pdf_file": "1981_3_698_828_EN.pdf",
+        "page_number": 116,
+        "passage_start_char": 937,
+        "passage_end_char": 2116,
+        "verbatim_passage": "These considerations show that, after the Amending Act 65 of 1960, three distinct types of companies occupy a distinct place in the scheme of our Companies Act : (I) private companies (2) public companies and (3) private companies which have become public companies by virtue of section 43A, but which continue to include or retain the three characteristics of a private company. Sections I 74 and 252 of the Companies Act which deal respectively with quorum for meetings and minimum number of directors, recognise expressly, by their paranthetical clauses, the separate existence of public companies which have become such by virtue of section 43A. .we may also mention that while making an amendment in sub-clause (ix) of Rule 2 of the Companies (Acceptance of Deposits) Rules, 1975, the Amendment Rules, 1978 added the expression : \"Any amount received...... by a private company which has become a public company under section 43A of the Act and continues to include in its Articles of Association provisions relating to the matteni specified in clause (iii) of sub-section (I) of section 3 of the Act\", in order to bring deposits received by such companies within the Rules."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "1987_2_1_46::p0005::c001",
+        "source_id": "1987_2_1_46",
+        "case_id": "1987 INSC 20",
+        "citation": "[1987] 2 S.C.R. 1",
+        "decision_date": "1987-01-22",
+        "court": "Supreme Court of India",
+        "pdf_file": "1987_2_1_46_EN.pdf",
+        "page_number": 5,
+        "passage_start_char": 0,
+        "passage_end_char": 1026,
+        "verbatim_passage": "There is no general provision which empowers the Central Government A or the Reserve Bank of India to exempt any other prize chit or money circulation scheme from the applicability of the Act. In exercise of its powers under Section 13 of the Act the Government of West Bengal has made the Prize Chits and Money Circulation Scheme (Banning) (West Bengal) Rules, 1979. The Miscellaneous Non-Banking Companies (Reserve Bank) Directions 1977 and the Non-Banking Financial Companies (Reserve Bank) Directions came into force on July 1, 1977. On March 3, 1978 the Reserve Bank informed the Peerless Company that under the Miscellaneous Non-Banking Companies Directions which applied to the Company, the Company was prohibited from accepting deposits for more than 36 months and since the deposits accepted by the Company were for periods exceeding 36 months, the Reserve Bank wanted to know what action the Company proposed to take to comply with the requirement stipnlating the maximum period for which deposits might be accepted."
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "S_1990_1_332_339::p0001::c002",
+        "source_id": "S_1990_1_332_339",
+        "case_id": "1990 INSC 266",
+        "citation": "[1990] SUPP. 1 S.C.R. 332",
+        "decision_date": "1990-09-04",
+        "court": "Supreme Court of India",
+        "pdf_file": "S_1990_1_332_339_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 209,
+        "passage_end_char": 915,
+        "verbatim_passage": "Income-Tax Act, 1961: Section 41-Application of-Condition -Identity of assessee in previous year and subsequent year to be same-Change in the assessee's identity-No tax liability. Income Tax Act, 1961-Section 41( 1) read with Sections 391 and 394, Companies Act, 1956--Amalgamation of two Companies-Effectof-Exemption from tax liability granted to the transferor company whether can be claimed by the transferee company. Under the scheme of amalgamation and order of the High Court under Sections 391 and 394 of the Companies Act, 1956 on 28.9.1962 one Indian Sugar Company was amalgamated with the appellantassessee company. The transferor company had been allowed expenditure to the extent of Rs.58, 734."
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "1983_1_922_999::p0040::c003",
+        "source_id": "1983_1_922_999",
+        "case_id": "1982 INSC 94",
+        "citation": "[1983] 1 S.C.R. 922",
+        "decision_date": "1982-12-10",
+        "court": "Supreme Court of India",
+        "pdf_file": "1983_1_922_999_EN.pdf",
+        "page_number": 40,
+        "passage_start_char": 1185,
+        "passage_end_char": 2027,
+        "verbatim_passage": "The public interest element is now quite a ·predominant factor in the Companies Act itself. 'There are several provisions in the Companies Act which take _notice of the element of public· interest: There are other enactments like the Monopolies and Restrictive Trade Practices Act, the Industries Regulation and Development\" Act, under whose provisions, the activities· of ·a. company in~y be scrutinised in the . public interest. There are a . host of other legislations involving employment and welfare. of labour, . to which the managements o( companies are subject. The transformation of a company's.character from private to public is going,on right before our eyes. even ·as the institution of private property is also losing its diathesis. It .is in this context of ferment and development that we must. consider the problem before us."
+      }
+    ],
+    "supported_observations": [
+      {
+        "evidence_id": "E1",
+        "verbatim_passage": "MISRA JJ.J ·..._ . Companies Act, 1956-S. 58A-Companies (Acceptance of De1Josit) Ri.les, 1975-R 3A-Imposition of obligation on Companies inviting/accepting deposits froni public to deposit or invest 10 per cent of dePosits maturing during the year with q Scheduled bank or in governmeiit securities, etc. Constitutiona{ validity of. Section SSA of the Companies Act, 1956 confers power on thC Central Government to prescribe inter alia the condi'tions subject to which deposits ma'.y be invited or accepted by a company either from public or from its members."
+      },
+      {
+        "evidence_id": "E2",
+        "verbatim_passage": "These considerations show that, after the Amending Act 65 of 1960, three distinct types of companies occupy a distinct place in the scheme of our Companies Act : (I) private companies (2) public companies and (3) private companies which have become public companies by virtue of section 43A, but which continue to include or retain the three characteristics of a private company. Sections I 74 and 252 of the Companies Act which deal respectively with quorum for meetings and minimum number of directors, recognise expressly, by their paranthetical clauses, the separate existence of public companies which have become such by virtue of section 43A. .we may also mention that while making an amendment in sub-clause (ix) of Rule 2 of the Companies (Acceptance of Deposits) Rules, 1975, the Amendment Rules, 1978 added the expression : \"Any amount received...... by a private company which has become a public company under section 43A of the Act and continues to include in its Articles of Association provisions relating to the matteni specified in clause (iii) of sub-section (I) of section 3 of the Act\", in order to bring deposits received by such companies within the Rules."
+      },
+      {
+        "evidence_id": "E3",
+        "verbatim_passage": "There is no general provision which empowers the Central Government A or the Reserve Bank of India to exempt any other prize chit or money circulation scheme from the applicability of the Act. In exercise of its powers under Section 13 of the Act the Government of West Bengal has made the Prize Chits and Money Circulation Scheme (Banning) (West Bengal) Rules, 1979. The Miscellaneous Non-Banking Companies (Reserve Bank) Directions 1977 and the Non-Banking Financial Companies (Reserve Bank) Directions came into force on July 1, 1977. On March 3, 1978 the Reserve Bank informed the Peerless Company that under the Miscellaneous Non-Banking Companies Directions which applied to the Company, the Company was prohibited from accepting deposits for more than 36 months and since the deposits accepted by the Company were for periods exceeding 36 months, the Reserve Bank wanted to know what action the Company proposed to take to comply with the requirement stipnlating the maximum period for which deposits might be accepted."
+      },
+      {
+        "evidence_id": "E4",
+        "verbatim_passage": "Income-Tax Act, 1961: Section 41-Application of-Condition -Identity of assessee in previous year and subsequent year to be same-Change in the assessee's identity-No tax liability. Income Tax Act, 1961-Section 41( 1) read with Sections 391 and 394, Companies Act, 1956--Amalgamation of two Companies-Effectof-Exemption from tax liability granted to the transferor company whether can be claimed by the transferee company. Under the scheme of amalgamation and order of the High Court under Sections 391 and 394 of the Companies Act, 1956 on 28.9.1962 one Indian Sugar Company was amalgamated with the appellantassessee company. The transferor company had been allowed expenditure to the extent of Rs.58, 734."
+      },
+      {
+        "evidence_id": "E5",
+        "verbatim_passage": "The public interest element is now quite a ·predominant factor in the Companies Act itself. 'There are several provisions in the Companies Act which take _notice of the element of public· interest: There are other enactments like the Monopolies and Restrictive Trade Practices Act, the Industries Regulation and Development\" Act, under whose provisions, the activities· of ·a. company in~y be scrutinised in the . public interest. There are a . host of other legislations involving employment and welfare. of labour, . to which the managements o( companies are subject. The transformation of a company's.character from private to public is going,on right before our eyes. even ·as the institution of private property is also losing its diathesis. It .is in this context of ferment and development that we must. consider the problem before us."
+      }
+    ],
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}
