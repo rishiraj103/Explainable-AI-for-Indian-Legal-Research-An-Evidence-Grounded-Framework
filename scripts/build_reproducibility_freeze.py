@@ -55,6 +55,7 @@ def main() -> None:
     citation = json.loads((ROOT / "config/citation_verification.json").read_text(encoding="utf-8"))
     answer_key = json.loads((ROOT / "answer_key/authority_answer_key.json").read_text(encoding="utf-8"))
     query_regression = json.loads((ROOT / "artifacts/week10_post_selfmatch_freeze_regression.json").read_text(encoding="utf-8"))
+    dev_recheck = json.loads((ROOT / "artifacts/week10_dev_probe_selfmatch_recheck.json").read_text(encoding="utf-8"))
 
     evaluation_entries = [entry for entry in answer_key["entries"] if entry.get("status") == "evaluation"]
     result = {
@@ -119,6 +120,11 @@ def main() -> None:
                     "decision": query_regression["freeze_recommendation"],
                     "decision_basis": "After the direct self-match false-positive repair, salient terms were non-worsening on all six controls and retrieved/selected 2008_1629, 1995_425, and 2002_944 at ranks 1, 1, and 6. No further query-construction variation is permitted after this check.",
                 },
+                "dev_probe_selfmatch_recheck": {
+                    "artifact": file_record("artifacts/week10_dev_probe_selfmatch_recheck.json"),
+                    "summary": dev_recheck["summary"],
+                    "interpretation": dev_recheck["conclusion"],
+                },
                 "temporal_policy": "precedent_decision_year < ildc_query_year; same-year is ambiguous and excluded; missing decision date is excluded.",
                 "duplicate_policy": "Exclude alignment-gated target/near-case source IDs. Direct text self-match additionally requires at least 100 shared six-token phrase occurrences and 80% unique source-phrase coverage, preventing a quoted earlier authority from being treated as the query case.",
                 "answer_key": {
@@ -157,6 +163,7 @@ def main() -> None:
         f"- ILDC split rows: train `{result['datasets_and_splits']['ildc_single']['splits']['train']['rows']}`, validation `{result['datasets_and_splits']['ildc_single']['splits']['validation']['rows']}`, test `{result['datasets_and_splits']['ildc_single']['splits']['test']['rows']}`",
         f"- Retrieval configuration: `{selection['selection_version']}`; query builder `{selection['query_construction_version']}`; candidate depth `{selection['candidate_k']}`; selected sources `{selection['max_selected_evidence']}`.",
         "- Final real-answer-key query-builder regression: after repairing a quoted-authority false-positive self-match exclusion, salient TF-IDF terms were non-worsening on all six controls and retrieved/selected `2008_1629`, `1995_425`, and `2002_944` at ranks 1, 1, and 6. The complete record is `artifacts/week10_post_selfmatch_freeze_regression.json`.",
+        "- Dev-probe recheck: the coverage-qualified self-match rule recovered three further dev authorities, for 6/9 at k=100 and 7/9 at k=500; the earlier broad lexical-mismatch limitation is withdrawn. See `artifacts/week10_dev_probe_selfmatch_recheck.json`.",
         "- Temporal policy: candidate year must be strictly earlier than query year; same-year is logged as ambiguous and excluded; missing dates are excluded.",
         "- Duplicate policy: alignment-gated target/near-case exclusion plus a direct source-text self-match check requiring both 100 shared six-token phrases and 80% unique candidate-source coverage.",
         f"- E1 seed: `{result['experiments']['E1']['random_seed']}`. E2 seed: `{result['experiments']['E2_corrected']['random_seed']}`.",

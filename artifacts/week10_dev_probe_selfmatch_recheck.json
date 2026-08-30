@@ -1,0 +1,200 @@
+{
+  "artifact_version": "week10-dev-probe-selfmatch-recheck-v1",
+  "before_artifact": "artifacts/dev_retrieval_probe_salient_terms.json",
+  "after_artifact": "artifacts/dev_retrieval_probe_selfmatch_coverage.json",
+  "configuration": "week10-bm25-salient-terms-selfmatch-coverage-v2",
+  "rows": [
+    {
+      "query_case_id": "1980_104",
+      "authority_source_id": "1979_2_699_716",
+      "before": {
+        "100": 58,
+        "500": 58
+      },
+      "after": {
+        "100": 58,
+        "500": 58
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 23,
+        "500": 59
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 18,
+        "500": 30
+      }
+    },
+    {
+      "query_case_id": "1982_186",
+      "authority_source_id": "1980_1_736_758",
+      "before": {
+        "100": null,
+        "500": 260
+      },
+      "after": {
+        "100": null,
+        "500": 260
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 8,
+        "500": 11
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 8,
+        "500": 10
+      }
+    },
+    {
+      "query_case_id": "1984_62",
+      "authority_source_id": "1964_3_164_190",
+      "before": {
+        "100": null,
+        "500": null
+      },
+      "after": {
+        "100": 40,
+        "500": 40
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 60,
+        "500": 128
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 27,
+        "500": 49
+      }
+    },
+    {
+      "query_case_id": "1986_70",
+      "authority_source_id": "1981_2_111_154",
+      "before": {
+        "100": null,
+        "500": null
+      },
+      "after": {
+        "100": null,
+        "500": null
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 2,
+        "500": 20
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 0,
+        "500": 0
+      }
+    },
+    {
+      "query_case_id": "1988_238",
+      "authority_source_id": "1982_3_411_443",
+      "before": {
+        "100": null,
+        "500": null
+      },
+      "after": {
+        "100": 64,
+        "500": 64
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 37,
+        "500": 72
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 30,
+        "500": 43
+      }
+    },
+    {
+      "query_case_id": "1990_651",
+      "authority_source_id": "1966_2_596_606",
+      "before": {
+        "100": 92,
+        "500": 92
+      },
+      "after": {
+        "100": 92,
+        "500": 92
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 22,
+        "500": 56
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 14,
+        "500": 27
+      }
+    },
+    {
+      "query_case_id": "1992_137",
+      "authority_source_id": "1982_2_365_1455",
+      "before": {
+        "100": null,
+        "500": null
+      },
+      "after": {
+        "100": 67,
+        "500": 67
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 65,
+        "500": 277
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 15,
+        "500": 43
+      }
+    },
+    {
+      "query_case_id": "1992_464",
+      "authority_source_id": "S_1963_2_216_234",
+      "before": {
+        "100": 69,
+        "500": 69
+      },
+      "after": {
+        "100": 69,
+        "500": 69
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 44,
+        "500": 99
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 34,
+        "500": 44
+      }
+    },
+    {
+      "query_case_id": "1993_66",
+      "authority_source_id": "1976_2_347_676",
+      "before": {
+        "100": null,
+        "500": null
+      },
+      "after": {
+        "100": null,
+        "500": null
+      },
+      "before_duplicate_chunks_excluded": {
+        "100": 24,
+        "500": 63
+      },
+      "after_duplicate_chunks_excluded": {
+        "100": 18,
+        "500": 32
+      }
+    }
+  ],
+  "summary": {
+    "before_found_at_k100": 3,
+    "before_found_at_k500": 4,
+    "after_found_at_k100": 6,
+    "after_found_at_k500": 7,
+    "newly_retrieved_after_fix": [
+      "1984_62",
+      "1988_238",
+      "1992_137"
+    ]
+  },
+  "conclusion": "The pre-fix broad lexical-mismatch conclusion is withdrawn: the self-match rule was a material contributor. The corrected configuration retrieves 6/9 expected authorities at k=100 and 7/9 at k=500; newly retrieved after the repair are 1984_62, 1988_238, 1992_137. Only the remaining absent cases are residual retrieval failures, not evidence for a corpus-wide lexical-mismatch claim."
+}

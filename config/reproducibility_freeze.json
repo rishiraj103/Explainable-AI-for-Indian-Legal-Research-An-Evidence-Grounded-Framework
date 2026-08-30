@@ -33,8 +33,8 @@
     "ecourts_retrieval_corpus": {
       "dataset_manifest": {
         "path": "corpus/dataset_manifest.md",
-        "sha256": "3761d57f70b30a55b7491d246f716e093648d89baf655b29b9e5217686f1df31",
-        "bytes": 7982
+        "sha256": "eb3f54d8e7f5b49b2653d34c1d791659ee7b7a392aecad1e57e9283ea4a1b389",
+        "bytes": 9014
       },
       "alignment_gated_crosswalk": {
         "path": "corpus/dedup_matches.csv",
@@ -297,6 +297,25 @@
         ],
         "decision": "adopt_salient_tfidf",
         "decision_basis": "After the direct self-match false-positive repair, salient terms were non-worsening on all six controls and retrieved/selected 2008_1629, 1995_425, and 2002_944 at ranks 1, 1, and 6. No further query-construction variation is permitted after this check."
+      },
+      "dev_probe_selfmatch_recheck": {
+        "artifact": {
+          "path": "artifacts/week10_dev_probe_selfmatch_recheck.json",
+          "sha256": "ffb92f8b3992de060f035d625eddb6e1c7ce2e02e1140fc57d73bf5cac57c0ec",
+          "bytes": 4771
+        },
+        "summary": {
+          "before_found_at_k100": 3,
+          "before_found_at_k500": 4,
+          "after_found_at_k100": 6,
+          "after_found_at_k500": 7,
+          "newly_retrieved_after_fix": [
+            "1984_62",
+            "1988_238",
+            "1992_137"
+          ]
+        },
+        "interpretation": "The pre-fix broad lexical-mismatch conclusion is withdrawn: the self-match rule was a material contributor. The corrected configuration retrieves 6/9 expected authorities at k=100 and 7/9 at k=500; newly retrieved after the repair are 1984_62, 1988_238, 1992_137. Only the remaining absent cases are residual retrieval failures, not evidence for a corpus-wide lexical-mismatch claim."
       },
       "temporal_policy": "precedent_decision_year < ildc_query_year; same-year is ambiguous and excluded; missing decision date is excluded.",
       "duplicate_policy": "Exclude alignment-gated target/near-case source IDs. Direct text self-match additionally requires at least 100 shared six-token phrase occurrences and 80% unique source-phrase coverage, preventing a quoted earlier authority from being treated as the query case.",

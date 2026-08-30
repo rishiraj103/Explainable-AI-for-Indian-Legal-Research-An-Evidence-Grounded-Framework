@@ -1,5 +1,11 @@
 # Week 9 round-two salient-term retrieval correction
 
+> **Superseded in part by Week 10 self-match repair.** Its salient-term query
+> comparison remains an audit record, but the reported residual lexical-
+> mismatch interpretation was affected by the raw shared-phrase self-match
+> rule. See `artifacts/week10_dev_probe_selfmatch_recheck.md` for the
+> controlling corrected comparison.
+
 ## Corrective scope
 
 This is the one permitted corrective attempt after the corrected dev probe

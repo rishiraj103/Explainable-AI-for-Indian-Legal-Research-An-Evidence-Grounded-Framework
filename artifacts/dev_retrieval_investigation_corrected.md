@@ -1,5 +1,10 @@
 # Corrected Week 9 dev-only retrieval investigation
 
+> **Superseded by Week 10 self-match recheck.** This report used the earlier
+> raw shared-phrase content-self-match rule. The later coverage-qualified fix
+> recovered several expected dev authorities; see
+> `artifacts/week10_dev_probe_selfmatch_recheck.md` for the controlling result.
+
 ## Scope and validity
 
 This investigation supersedes the earlier eight-case probe, whose query-source
