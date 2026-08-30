@@ -116,7 +116,7 @@ Project progress tracker. It is committed only when the user has explicitly appr
 
 - [x] Freeze the finalized Week 11 result record as the only input to Week 12 analysis; do not tune or rerun any system based on the test findings.
 - [x] Categorize all 30 answer-key-covered cases into expected authority retrieved-and-selected, retrieved-but-not-selected, and absent-at-k=100 buckets.
-- [x] Check for E1-versus-E2 outcome-prediction disagreement examples without rerunning either model. Only aggregate metrics/confusion matrices were retained, not per-case prediction vectors; record this reproducibility limitation rather than manufacture post-hoc examples.
+- [x] Deterministically reconstruct frozen E1 (C=10.0, fixed train+validation facts-only data) and run inference-only E2 from checkpoint-6318; both exactly reproduce the frozen metrics and retain per-case predictions. E1/E2 disagreements: full n=1,503: 238 E1-only correct, 213 E2-only correct; cohort n=30: 3 each.
 - [x] Separate provenance-valid citation status from answer-key authority consistency; do not call an alternative citation irrelevant without a human relevance label.
 - [x] Record temporal-integrity outcomes and at least one honest retrieval/selection limitation for the results discussion.
 - [x] Finalize the Week 12 error-analysis table and commit it without changing frozen evaluation settings. No chart is required to communicate the three exhaustive retrieval buckets.

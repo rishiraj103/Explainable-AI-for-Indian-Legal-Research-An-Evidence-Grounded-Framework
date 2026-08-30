@@ -23,3 +23,14 @@ This analysis uses the finalized Week 11 records only. It does not rerun a model
 ## Interpretation for results/discussion
 
 The results distinguish two reliability properties. Once evidence is selected, the system reliably preserves provenance, grounding, and temporal eligibility. It does not reliably recover the single predefined authority within its candidate set, so high citation validity must not be presented as high authority coverage. The fixed five-source display policy also caps authority-consistent precision at 0.222222 with 4.5 displayed citations per case; observed precision is 0.081481 (36.7% of that ceiling).
+
+## Recovered E1/E2 prediction cross-reference
+
+The frozen E1 model was not serialized in its original run. It was deterministically reconstructed from the locked facts-only extraction, train+validation data, TF-IDF settings, C=10.0, and seed, and exactly reproduced 0.613440 accuracy / 0.612342 macro F1 before its artifact and predictions were retained. E2 inference used only frozen checkpoint `checkpoint-6318` and cached 512-token/50-overlap windows, reproducing 0.596806 / 0.592358 exactly.
+
+| Population | Both correct | E1 correct, E2 wrong | E1 wrong, E2 correct | Both wrong |
+|---|---:|---:|---:|---:|
+| Full test, n=1,503 | 684 | 238 (`1957_125`) | 213 (`1967_145`) | 368 |
+| Answer-key cohort, n=30 | 18 | 3 (`1997_792`) | 3 (`1995_375`) | 6 |
+
+E3/E4 do not make outcome predictions, so “E2 wrong, E3/E4 outcome correct,” “E3/E4 outcome correct but citation unsupported,” and “correct authority retrieved but final answer wrong” are structurally inapplicable. There are zero E3 outputs rejected by E4’s verifier (all 135 citations pass), zero later-date citations, and 19/30 cases where citations are traceable but the expected authority is not selected (for example, `1997_792`). A persisted-evidence faithfulness spot check passes for 5/5 fixed cases (`2008_1629`, `1997_792`, `1980_133`, `2002_944`, `1988_96`). See `artifacts/week12_prediction_cross_reference.md`.
