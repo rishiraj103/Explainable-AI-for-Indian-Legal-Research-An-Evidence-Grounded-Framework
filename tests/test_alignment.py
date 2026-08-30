@@ -1,4 +1,9 @@
-from legal_xai.alignment import assess_content_alignment, shared_six_token_phrases
+from legal_xai.alignment import (
+    assess_content_alignment,
+    shared_phrase_count_from_query_set,
+    shared_six_token_phrases,
+    six_token_phrase_set,
+)
 
 
 def test_alignment_requires_metadata_and_direct_document_content() -> None:
@@ -33,3 +38,10 @@ def test_direct_phrase_counter_can_stop_at_gate_threshold() -> None:
     count, example = shared_six_token_phrases(text, text, stop_at=10)
     assert count == 10
     assert example == "one two three four five six"
+
+
+def test_precomputed_fingerprints_preserve_direct_phrase_result() -> None:
+    text = "one two three four five six seven eight nine ten " * 30
+    expected = shared_six_token_phrases(text, text, stop_at=10)
+    actual = shared_phrase_count_from_query_set(six_token_phrase_set(text), text, stop_at=10)
+    assert actual == expected

@@ -6,7 +6,11 @@ import re
 import csv
 from pathlib import Path
 
-from legal_xai.alignment import DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES, shared_six_token_phrases
+from legal_xai.alignment import (
+    DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
+    shared_phrase_count_from_query_set,
+    shared_six_token_phrases,
+)
 
 
 def fts_query(query_text: str) -> str:
@@ -46,6 +50,7 @@ def exclude_query_duplicate(
     *,
     query_case_text: str | None = None,
     candidate_source_text: str | None = None,
+    query_six_token_phrases: set[str] | None = None,
 ) -> bool:
     """Exclude only a content-alignment-audited target or near-duplicate source.
 
@@ -58,9 +63,15 @@ def exclude_query_duplicate(
     if str(candidate_case_id) in audited_near_cases:
         return True
     if query_case_text and candidate_source_text:
-        count, _ = shared_six_token_phrases(
-            query_case_text, candidate_source_text,
-            stop_at=DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
-        )
+        if query_six_token_phrases is None:
+            count, _ = shared_six_token_phrases(
+                query_case_text, candidate_source_text,
+                stop_at=DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
+            )
+        else:
+            count, _ = shared_phrase_count_from_query_set(
+                query_six_token_phrases, candidate_source_text,
+                stop_at=DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
+            )
         return count >= DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES
     return False

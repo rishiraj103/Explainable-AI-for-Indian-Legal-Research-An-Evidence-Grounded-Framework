@@ -14,6 +14,8 @@ REQUIRED_FIELDS = {
     "split", "source_split", "query_case_id", "query_source_id", "query_decision_date",
     "authority_source_id", "authority_decision_date", "authority_source_type",
     "authority_passage_locator", "authority_verification_method", "independent_of_system_retrieval",
+    "query_alignment_title_party_passed", "query_alignment_direct_six_token_phrases",
+    "authority_citation_present_in_query_source",
 }
 
 
@@ -22,7 +24,7 @@ def main() -> None:
     parser.add_argument("--probe", type=Path, default=Path("answer_key/dev_retrieval_probe.json"))
     args = parser.parse_args()
     payload = json.loads(args.probe.read_text(encoding="utf-8"))
-    if payload.get("schema_version") != "dev-retrieval-probe-v1":
+    if payload.get("schema_version") != "dev-retrieval-probe-v2":
         raise SystemExit("REJECTED: unexpected dev-probe schema version")
     train = load_split_ids("corpus/ildc/single_train.parquet")
     validation = load_split_ids("corpus/ildc/single_validation.parquet")
@@ -40,6 +42,12 @@ def main() -> None:
         ids.add(query_id)
         if entry["source_split"] not in {"train", "validation"}:
             raise SystemExit(f"REJECTED: {query_id} has invalid source split")
+        if not entry["query_alignment_title_party_passed"]:
+            raise SystemExit(f"REJECTED: {query_id} failed title/party alignment")
+        if int(entry["query_alignment_direct_six_token_phrases"]) < 100:
+            raise SystemExit(f"REJECTED: {query_id} failed direct content alignment")
+        if not entry["authority_citation_present_in_query_source"]:
+            raise SystemExit(f"REJECTED: {query_id} authority citation was not source-verified")
         if date.fromisoformat(entry["authority_decision_date"]) >= date.fromisoformat(entry["query_decision_date"]):
             raise SystemExit(f"REJECTED: {query_id} has a temporally ineligible authority")
         for source_id in (entry["query_source_id"], entry["authority_source_id"]):

@@ -15,6 +15,7 @@ from pathlib import Path
 import psycopg
 import pyarrow.parquet as pq
 
+from legal_xai.alignment import six_token_phrase_set
 from legal_xai.retrieval import exclude_query_duplicate, fts_query, query_exclusion_cases
 from legal_xai.temporal import assess_temporal_eligibility
 
@@ -113,6 +114,7 @@ def retrieve_temporal_candidates(
         raise ValueError("candidate_k must be positive")
     audited_near_cases = query_exclusion_cases(query_id, dedup_matches)
     query_case_text = load_ildc_case_text(query_id)
+    query_six_token_phrases = six_token_phrase_set(query_case_text) if query_case_text else None
     with sqlite3.connect(index_path) as index:
         rows = index.execute(
             "SELECT chunk_id, bm25(chunks_fts) AS raw_score "
@@ -142,12 +144,17 @@ def retrieve_temporal_candidates(
                 (source_ids,),
             )
             source_texts = {str(row[0]): str(row[1] or "") for row in cursor.fetchall()}
+            duplicate_by_source: dict[str, bool] = {}
             for rank, (chunk_id, raw_score) in enumerate(rows, start=1):
                 row = metadata[chunk_id]
-                if exclude_query_duplicate(
-                    query_id, row[2], audited_near_cases,
-                    query_case_text=query_case_text, candidate_source_text=source_texts.get(str(row[1])),
-                ):
+                source_id = str(row[1])
+                if source_id not in duplicate_by_source:
+                    duplicate_by_source[source_id] = exclude_query_duplicate(
+                        query_id, row[2], audited_near_cases,
+                        query_case_text=query_case_text, candidate_source_text=source_texts.get(source_id),
+                        query_six_token_phrases=query_six_token_phrases,
+                    )
+                if duplicate_by_source[source_id]:
                     duplicate_excluded += 1
                     continue
                 temporal = assess_temporal_eligibility(query_year, row[4])

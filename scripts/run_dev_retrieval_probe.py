@@ -64,7 +64,7 @@ def found_rank(retrieval: object, authority_source_id: str) -> int | None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--probe", type=Path, default=Path("answer_key/dev_retrieval_probe.json"))
-    parser.add_argument("--candidate-k", type=int, action="append", default=[100, 500])
+    parser.add_argument("--candidate-k", type=int, action="append", default=[500])
     parser.add_argument("--index-version", default="week9-bm25-diverse-support-v1")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -113,7 +113,7 @@ def main() -> None:
             "retrievals": retrievals,
         })
     payload = {
-        "artifact_version": "dev-retrieval-probe-baseline-v1",
+        "artifact_version": "dev-retrieval-probe-corrected-v2",
         "probe_file": str(args.probe).replace("\\", "/"),
         "query_construction": "full frozen facts-only input; current fts_query then keeps the first 32 alphanumeric terms in source order",
         "candidate_ks": sorted(set(args.candidate_k)),

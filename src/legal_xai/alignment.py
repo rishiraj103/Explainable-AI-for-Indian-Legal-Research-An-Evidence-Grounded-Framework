@@ -37,6 +37,36 @@ def document_tokens(value: object) -> list[str]:
     return re.findall(r"[a-z]{3,}", ("" if value is None else str(value)).casefold())
 
 
+def six_token_phrase_set(value: object, *, width: int = 6) -> set[str]:
+    """Create reusable direct-content fingerprints for one document."""
+    tokens = document_tokens(value)
+    return {" ".join(tokens[index:index + width]) for index in range(len(tokens) - width + 1)}
+
+
+def shared_phrase_count_from_query_set(
+    query_phrases: set[str],
+    source_text: object,
+    *,
+    width: int = 6,
+    stop_at: int | None = None,
+) -> tuple[int, str | None]:
+    """Count source fingerprints against a precomputed query fingerprint set."""
+    source = document_tokens(source_text)
+    if not query_phrases or len(source) < width:
+        return 0, None
+    count = 0
+    first: str | None = None
+    for index in range(len(source) - width + 1):
+        phrase = " ".join(source[index:index + width])
+        if phrase not in query_phrases:
+            continue
+        count += 1
+        first = first or phrase
+        if stop_at is not None and count >= stop_at:
+            break
+    return count, first
+
+
 def title_party_tokens(title: object, petitioner: object, respondent: object) -> set[str]:
     """Build the reusable metadata identity signature for an eCourts source."""
     return normalized_tokens(" ".join(str(value or "") for value in (title, petitioner, respondent)))
@@ -71,22 +101,9 @@ def shared_six_token_phrases(
     ``stop_at`` keeps full-corpus scans bounded while still distinguishing an
     aligned document from a collision at the configured gate threshold.
     """
-    query = document_tokens(ildc_text)
-    source = document_tokens(source_text)
-    if len(query) < width or len(source) < width:
-        return 0, None
-    query_phrases = {" ".join(query[index:index + width]) for index in range(len(query) - width + 1)}
-    count = 0
-    first: str | None = None
-    for index in range(len(source) - width + 1):
-        phrase = " ".join(source[index:index + width])
-        if phrase not in query_phrases:
-            continue
-        count += 1
-        first = first or phrase
-        if stop_at is not None and count >= stop_at:
-            break
-    return count, first
+    return shared_phrase_count_from_query_set(
+        six_token_phrase_set(ildc_text, width=width), source_text, width=width, stop_at=stop_at,
+    )
 
 
 @dataclass(frozen=True)
