@@ -1,7 +1,9 @@
 # ILDC/eCourts matching root-cause analysis
 
-**Status:** diagnosis only. No matching rule, answer-key entry, retrieval
-configuration, or dev probe was changed by this analysis.
+**Status:** root cause confirmed and the crosswalk/retrieval stopgap corrected.
+This document preserves the diagnosis. Answer-key re-resolution and dev-probe
+rebuild remain deliberately blocked until the separately recorded correction
+checkpoint is complete; see `artifacts/matching_correction_checkpoint.md`.
 
 ## Root cause
 

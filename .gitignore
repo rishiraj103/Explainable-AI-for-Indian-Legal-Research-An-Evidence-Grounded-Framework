@@ -8,6 +8,7 @@
 /corpus/ecourts/cleaning_record.json
 /corpus/download_record.json
 /corpus/dedup_matches.csv
+/corpus/dedup_alignment_rejections.csv
 /corpus/temporal_ambiguities.csv
 
 # Python runtime artifacts

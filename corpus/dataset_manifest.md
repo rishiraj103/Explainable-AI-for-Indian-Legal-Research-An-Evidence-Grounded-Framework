@@ -18,20 +18,19 @@
 - **Fields retained for the next stage:** `title`, `petitioner`, `respondent`, `citation`, `case_id`, `decision_date`, `disposal_nature`, `court`, `path`, and `year`. The downloaded source Parquet files remain local-only.
 - **Known limitations:** exact dates are present, but `case_id` can occasionally disagree with `decision_date`/citation or be absent. The source `path` is therefore retained as the mandatory stable `source_id`, alongside the original `case_id`, citation, and date; downstream audits must not infer the decision year from `case_id` alone.
 
-## Leakage-audit summary
+## Alignment-gated crosswalk correction
 
-- **Exact canonical-ID overlaps (unique ILDC cases):** 5,391
-- **High-confidence near title/party overlaps (unique ILDC cases):** 261
-- **Unique ILDC cases flagged for exclusion review:** 5,652
-- **Unique ILDC/eCourts candidate pairs flagged:** 5,710
-
-The accompanying `dedup_report.md` records the matching method and the live overlap count. Flagged records must be excluded from retrieval candidates for the matching ILDC query case.
+- **Syntactic-ID candidate population:** 5,391 ILDC cases have a superficially matching `YYYY INSC N` eCourts identifier. This is a candidate hint only; it is not an identity claim.
+- **Syntactic-ID scan:** 11 candidate pairs pass both title/party and direct six-token content alignment; 5,380 syntactic-ID candidates fail and are identifier-namespace collisions.
+- **Full candidate crosswalk:** title/party fallback candidates are included in addition to syntactic candidates. Of 8,927 deduplicated candidate pairs, 1,304 are accepted by the alignment gate and 7,623 are rejected. The accepted 1,304 mappings in `corpus/dedup_matches.csv` are the authoritative replacement for the former 5,710 unvalidated mappings.
+- **Standing safety controls:** retrieval excludes only an alignment-audited crosswalk mapping and also applies a direct full-query-document/sourcedocument six-token self-match check at runtime. Canonical-ID equality alone is never a self-match condition.
+- **Methodological impact:** this quantified namespace collision is a standalone finding; see `artifacts/matching_root_cause.md`, `corpus/dedup_report.md`, and `corpus/dedup_alignment_rejections.csv`. Week 10 freeze and Week 11 answer-key metrics remain blocked pending source re-resolution and revalidation.
 
 ## Post-rebuild retrieval-exclusion status
 
-- **Cross-corpus audit:** completed before the rebuild using canonical case-ID matching, with title/party near-duplicate fallback; ILDC has no citation field, so eCourts citations are retained as provenance rather than used as an equality key. The audit flags 1,057 exact and 59 high-confidence near ILDC-test pairs, and the same `dedup_matches.csv` identity mapping was retained through the rebuild.
-- **Rebuilt-index verification:** completed 2026-08-28 and rechecked 2026-08-29 in `artifacts/rebuild_safety_checks.md`, `artifacts/rebuild_target_exclusion_smoke.json`, and `artifacts/week8_rebuild_exclusion_recheck.json`. An exact ILDC test overlap (`1977_183` / `1977 INSC 183`) was presented to the rebuilt BM25 + PostgreSQL path; 2 target-case chunks were excluded before temporal eligibility and evidence selection.
-- **Runtime rule:** `src/legal_xai/retrieval.py` excludes canonical exact self-matches and every audit-listed title/party near match. `src/legal_xai/evidence_pipeline.py` applies this rule before the separate strict earlier-year temporal filter. It is therefore active for E3 retrieval, independently of same-year exclusion.
+- **Superseded prior audit:** the earlier canonical-ID report and `1977_183` two-chunk smoke exclusion are invalidated by the namespace-collision correction.
+- **Corrected `1977_183` check:** under the alignment-gated map plus runtime content guard, the former syntactic source is not excluded and no content-aligned self-match occurs in the top-100 candidate set (`query_duplicate_chunks_excluded: 0`). This establishes that the old smoke was not evidence of safe target exclusion; true-source discovery remains required.
+- **Runtime rule:** `src/legal_xai/retrieval.py` excludes only audited alignment-gated mappings and direct document-content self-matches. `src/legal_xai/evidence_pipeline.py` applies this before temporal filtering, independently of same-year exclusion.
 
 ## Week 9 authority-key provenance status
 

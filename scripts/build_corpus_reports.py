@@ -3,12 +3,15 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
 import pandas as pd
+import psycopg
 
+from legal_xai.alignment import assess_content_alignment, normalized_tokens
 from legal_xai.temporal import assess_temporal_eligibility
 
 
@@ -28,11 +31,7 @@ STOP_WORDS = {
     "and", "the", "of", "for", "with", "ors", "anr", "another", "others", "state", "india",
     "union", "ltd", "limited", "court", "supreme", "commission", "department", "authority",
 }
-
-
-def normalized_tokens(value: object) -> set[str]:
-    text = "" if value is None else str(value).lower()
-    return {token for token in re.findall(r"[a-z][a-z0-9]{2,}", text) if token not in STOP_WORDS}
+DEFAULT_DATABASE_URL = "postgresql://legal_xai:legal_xai_local_only_2026@127.0.0.1:54329/legal_xai"
 
 
 def ildc_id_from_ecourts_case_id(case_id: object) -> str | None:
@@ -63,7 +62,7 @@ def load_ecourts(corpus_root: Path) -> pd.DataFrame:
     return pd.concat([pd.read_parquet(path, columns=ECOURTS_COLUMNS) for path in files], ignore_index=True)
 
 
-def find_near_matches(ildc: pd.DataFrame, ecourts: pd.DataFrame, exact_ildc_ids: set[str]) -> list[dict[str, object]]:
+def find_near_matches(ildc: pd.DataFrame, ecourts: pd.DataFrame) -> list[dict[str, object]]:
     """Find high-confidence title/party matches where the canonical IDs do not align.
 
     Candidates are blocked by year and distinctive title/party terms. A match
@@ -94,7 +93,7 @@ def find_near_matches(ildc: pd.DataFrame, ecourts: pd.DataFrame, exact_ildc_ids:
 
     matches: list[dict[str, object]] = []
     for _, ildc_row in ildc.iterrows():
-        if ildc_row["id"] in exact_ildc_ids or pd.isna(ildc_row["query_year"]):
+        if pd.isna(ildc_row["query_year"]):
             continue
         text_tokens = normalized_tokens(ildc_row["text"])
         candidate_indexes: set[int] = set()
@@ -108,7 +107,7 @@ def find_near_matches(ildc: pd.DataFrame, ecourts: pd.DataFrame, exact_ildc_ids:
             if len(shared) >= 2 and coverage >= 0.8:
                 matches.append(
                     {
-                        "match_type": "near_title_party",
+                        "candidate_origin": "near_title_party",
                         "score": round(coverage, 3),
                         "ildc_id": ildc_row["id"],
                         "split": ildc_row["split"],
@@ -116,41 +115,87 @@ def find_near_matches(ildc: pd.DataFrame, ecourts: pd.DataFrame, exact_ildc_ids:
                         "citation": candidate["citation"],
                         "decision_date": candidate["decision_date"],
                         "title": candidate["title"],
+                        "petitioner": candidate["petitioner"],
+                        "respondent": candidate["respondent"],
+                        "source_id": candidate["path"],
                     }
                 )
     return matches
 
 
-def write_dedup_report(corpus_root: Path, ildc: pd.DataFrame, ecourts: pd.DataFrame) -> dict[str, int]:
+def fetch_source_texts(source_ids: set[str], database_url: str) -> dict[str, str]:
+    """Read only candidate-source text from provenance in bounded batches."""
+    texts: dict[str, str] = {}
+    with psycopg.connect(database_url) as connection, connection.cursor() as cursor:
+        ordered = sorted(source_ids)
+        for start in range(0, len(ordered), 200):
+            cursor.execute(
+                "SELECT source_id, string_agg(chunk_text, ' ' ORDER BY page_number, passage_start_char) "
+                "FROM corpus_chunks WHERE source_id = ANY(%s) GROUP BY source_id",
+                (ordered[start:start + 200],),
+            )
+            texts.update({str(row[0]): str(row[1] or "") for row in cursor.fetchall()})
+    return texts
+
+
+def write_dedup_report(
+    corpus_root: Path, ildc: pd.DataFrame, ecourts: pd.DataFrame, database_url: str
+) -> dict[str, int]:
     raw_ecourts_rows = len(ecourts)
-    ecourts = ecourts.drop_duplicates(subset=["case_id"], keep="first").copy()
+    ecourts = ecourts.drop_duplicates(subset=["path"], keep="first").copy()
     ecourts["ildc_id_candidate"] = ecourts["case_id"].map(ildc_id_from_ecourts_case_id)
     ildc_identifiers = set(ildc["id"])
-    exact = ecourts.loc[ecourts["ildc_id_candidate"].isin(ildc_identifiers)].copy()
-    exact_matches = ildc[["id", "split"]].merge(
-        exact,
-        left_on="id",
-        right_on="ildc_id_candidate",
-        how="inner",
+    syntactic = ecourts.loc[ecourts["ildc_id_candidate"].isin(ildc_identifiers)].copy()
+    exact_matches = ildc[["id", "split", "text"]].merge(
+        syntactic, left_on="id", right_on="ildc_id_candidate", how="inner",
     )
     exact_rows = [
         {
-            "match_type": "exact_canonical_id",
-            "score": 1.0,
+            "candidate_origin": "syntactic_id",
             "ildc_id": row.id,
             "split": row.split,
+            "ildc_text": row.text,
             "ecourts_case_id": row.case_id,
             "citation": row.citation,
             "decision_date": row.decision_date,
             "title": row.title,
+            "petitioner": row.petitioner,
+            "respondent": row.respondent,
+            "source_id": row.path,
         }
         for row in exact_matches.itertuples(index=False)
     ]
-    near_rows = find_near_matches(ildc, ecourts, set(exact_matches["id"]))
-    all_matches = exact_rows + near_rows
+    near_rows = find_near_matches(ildc, ecourts)
+    ildc_texts = dict(zip(ildc["id"], ildc["text"]))
+    for row in near_rows:
+        row["ildc_text"] = ildc_texts[row["ildc_id"]]
+    candidates: dict[tuple[str, str], dict[str, object]] = {}
+    for row in exact_rows + near_rows:
+        key = (str(row["ildc_id"]), str(row["source_id"]))
+        if key in candidates:
+            candidates[key]["candidate_origin"] = str(candidates[key]["candidate_origin"]) + "+" + str(row["candidate_origin"])
+        else:
+            candidates[key] = row
+    source_texts = fetch_source_texts({str(row["source_id"]) for row in candidates.values()}, database_url)
+    accepted: list[dict[str, object]] = []
+    rejected: list[dict[str, object]] = []
+    for row in candidates.values():
+        source_id = str(row["source_id"])
+        alignment = assess_content_alignment(
+            ildc_text=row["ildc_text"], source_text=source_texts.get(source_id, ""), title=row["title"],
+            petitioner=row["petitioner"], respondent=row["respondent"],
+        )
+        target = accepted if alignment.passed else rejected
+        target.append({
+            "match_type": "alignment_gated", "score": alignment.direct_phrase_count,
+            "ildc_id": row["ildc_id"], "split": row["split"], "ecourts_case_id": row["ecourts_case_id"],
+            "citation": row["citation"], "decision_date": row["decision_date"], "title": row["title"],
+            "source_id": source_id, "candidate_origin": row["candidate_origin"], **alignment.as_dict(),
+        })
     matches_file = corpus_root / "dedup_matches.csv"
-    matches = pd.DataFrame(all_matches).drop_duplicates(subset=["match_type", "ildc_id", "ecourts_case_id"])
+    matches = pd.DataFrame(accepted).drop_duplicates(subset=["ildc_id", "ecourts_case_id"])
     matches.to_csv(matches_file, index=False)
+    pd.DataFrame(rejected).to_csv(corpus_root / "dedup_alignment_rejections.csv", index=False)
     exact_case_count = len(exact_matches["id"].unique())
     near_case_count = len({row["ildc_id"] for row in near_rows})
     flagged_ildc_case_count = matches["ildc_id"].nunique()
@@ -160,16 +205,18 @@ def write_dedup_report(corpus_root: Path, ildc: pd.DataFrame, ecourts: pd.DataFr
         "",
         "## Method",
         "",
-        "- Exact match: canonicalized eCourts `case_id` values of the form `YYYY INSC N` were compared with ILDC IDs of the form `YYYY_N`.",
-        "- Near match: for records without an exact ID match, eCourts title/petitioner/respondent tokens were compared only with ILDC text from the same year. A near match requires at least two shared distinctive terms and 80% title/party-token coverage. This is a conservative audit and does not claim to identify every duplicate.",
+        "- Canonicalized ID equality is a candidate hint only, never an identity match.",
+        "- Every syntactic-ID or title/party candidate is accepted only after title/party and direct six-token content alignment both pass.",
         "",
         "## Results",
         "",
         f"- ILDC cases inspected: {len(ildc):,}",
         f"- eCourts metadata rows downloaded: {raw_ecourts_rows:,}",
         f"- Distinct eCourts case IDs inspected: {len(ecourts):,}",
-        f"- Exact canonical-ID overlaps (unique ILDC cases): {exact_case_count:,}",
-        f"- High-confidence near title/party overlaps (unique ILDC cases): {near_case_count:,}",
+        f"- Syntactic-ID candidates (unique ILDC cases): {exact_case_count:,}",
+        f"- Title/party candidates (unique ILDC cases): {near_case_count:,}",
+        f"- Alignment-gated mappings accepted: {len(matches):,}",
+        f"- Alignment-gated candidates rejected: {len(rejected):,}",
         f"- Unique ILDC cases flagged for exclusion review: {flagged_ildc_case_count:,}",
         f"- Unique ILDC/eCourts candidate pairs flagged: {len(matches):,}",
         "",
@@ -181,6 +228,7 @@ def write_dedup_report(corpus_root: Path, ildc: pd.DataFrame, ecourts: pd.DataFr
         "near_cases": near_case_count,
         "flagged_ildc_cases": flagged_ildc_case_count,
         "candidate_pairs": len(matches),
+        "alignment_rejections": len(rejected),
     }
 
 
@@ -253,13 +301,16 @@ The same-year bucket is stored separately in `temporal_ambiguities.csv` for late
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--corpus-root", type=Path, default=Path("corpus"))
+    parser.add_argument("--database-url", default=os.getenv("LEGAL_XAI_DATABASE_URL", DEFAULT_DATABASE_URL))
+    parser.add_argument("--alignment-only", action="store_true", help="Rebuild only alignment-gated leakage artifacts.")
     args = parser.parse_args()
 
     ildc = load_ildc(args.corpus_root)
     ecourts = load_ecourts(args.corpus_root)
-    overlap_counts = write_dedup_report(args.corpus_root, ildc, ecourts)
+    overlap_counts = write_dedup_report(args.corpus_root, ildc, ecourts, args.database_url)
     write_temporal_overlap_audit(args.corpus_root, ecourts)
-    write_manifest(args.corpus_root, ildc, ecourts, overlap_counts)
+    if not args.alignment_only:
+        write_manifest(args.corpus_root, ildc, ecourts, overlap_counts)
 
 
 if __name__ == "__main__":

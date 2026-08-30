@@ -88,9 +88,9 @@ def test_rejects_a_same_year_authority_as_ambiguous():
     assert "temporal_ambiguous_excluded" in verify(answer(source), source)[0].failures
 
 
-def test_rejects_an_exact_target_case_match_even_when_retrieved():
+def test_does_not_treat_syntactic_id_equality_as_a_target_match():
     source = record(case_id="2020 INSC 99")
-    assert "query_duplicate_source" in verify(answer(source), source)[0].failures
+    assert verify(answer(source), source)[0].passed
 
 
 def test_rejects_an_audited_near_duplicate_even_when_ids_differ():

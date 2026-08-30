@@ -13,12 +13,25 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 import psycopg
+import pyarrow.parquet as pq
 
 from legal_xai.retrieval import exclude_query_duplicate, fts_query, query_exclusion_cases
 from legal_xai.temporal import assess_temporal_eligibility
 
 
 TEMPORAL_POLICY = "precedent_decision_year < ildc_query_year; same-year excluded as ambiguous"
+
+
+def load_ildc_case_text(query_id: str) -> str | None:
+    """Resolve an ILDC case's full text for standing content self-leakage checks."""
+    for split in ("train", "validation", "test"):
+        path = Path(f"corpus/ildc/single_{split}.parquet")
+        if not path.exists():
+            continue
+        table = pq.read_table(path, columns=["id", "text"], filters=[("id", "=", query_id)])
+        if table.num_rows:
+            return str(table.column("text")[0].as_py() or "")
+    return None
 
 
 @dataclass(frozen=True)
@@ -99,6 +112,7 @@ def retrieve_temporal_candidates(
     if candidate_k < 1:
         raise ValueError("candidate_k must be positive")
     audited_near_cases = query_exclusion_cases(query_id, dedup_matches)
+    query_case_text = load_ildc_case_text(query_id)
     with sqlite3.connect(index_path) as index:
         rows = index.execute(
             "SELECT chunk_id, bm25(chunks_fts) AS raw_score "
@@ -121,9 +135,19 @@ def retrieve_temporal_candidates(
                 (chunk_ids,),
             )
             metadata = {row[0]: row for row in cursor.fetchall()}
+            source_ids = sorted({str(row[1]) for row in metadata.values()})
+            cursor.execute(
+                "SELECT source_id, string_agg(chunk_text, ' ' ORDER BY page_number, passage_start_char) "
+                "FROM corpus_chunks WHERE source_id = ANY(%s) GROUP BY source_id",
+                (source_ids,),
+            )
+            source_texts = {str(row[0]): str(row[1] or "") for row in cursor.fetchall()}
             for rank, (chunk_id, raw_score) in enumerate(rows, start=1):
                 row = metadata[chunk_id]
-                if exclude_query_duplicate(query_id, row[2], audited_near_cases):
+                if exclude_query_duplicate(
+                    query_id, row[2], audited_near_cases,
+                    query_case_text=query_case_text, candidate_source_text=source_texts.get(str(row[1])),
+                ):
                     duplicate_excluded += 1
                     continue
                 temporal = assess_temporal_eligibility(query_year, row[4])

@@ -6,6 +6,8 @@ import re
 import csv
 from pathlib import Path
 
+from legal_xai.alignment import DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES, shared_six_token_phrases
+
 
 def fts_query(query_text: str) -> str:
     """Convert natural-language input to a conservative FTS5 OR query."""
@@ -37,6 +39,28 @@ def query_exclusion_cases(query_id: str, matches_file: Path) -> set[str]:
     return excluded
 
 
-def exclude_query_duplicate(query_id: str, candidate_case_id: str | None, audited_near_cases: set[str]) -> bool:
-    """Exclude exact self matches and audited near-duplicate source cases."""
-    return canonical_case_id(query_id) == canonical_case_id(candidate_case_id) or str(candidate_case_id) in audited_near_cases
+def exclude_query_duplicate(
+    query_id: str,
+    candidate_case_id: str | None,
+    audited_near_cases: set[str],
+    *,
+    query_case_text: str | None = None,
+    candidate_source_text: str | None = None,
+) -> bool:
+    """Exclude only a content-alignment-audited target or near-duplicate source.
+
+    ILDC's ``YYYY_N`` suffix and eCourts' ``YYYY INSC N`` suffix are not a
+    common identity namespace.  Canonical-ID equality is therefore unsafe as a
+    retrieval-time self-match rule; accepted crosswalk rows provide the only
+    admissible target-case identities.
+    """
+    del query_id  # Kept for the stable public call signature and audit logs.
+    if str(candidate_case_id) in audited_near_cases:
+        return True
+    if query_case_text and candidate_source_text:
+        count, _ = shared_six_token_phrases(
+            query_case_text, candidate_source_text,
+            stop_at=DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
+        )
+        return count >= DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES
+    return False
