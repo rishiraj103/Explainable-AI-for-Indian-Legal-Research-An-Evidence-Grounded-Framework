@@ -96,12 +96,12 @@ def salient_query_terms(query_text: str, *, max_terms: int = SALIENT_QUERY_MAX_T
     return selected
 
 
-def fts_query(query_text: str, *, mode: str = "legacy_first_32") -> str:
+def fts_query(query_text: str, *, mode: str = "salient_tfidf") -> str:
     """Convert facts text to a configured, deterministic FTS5 OR query.
 
-    ``salient_tfidf`` is retained for the recorded Week 9 corrective attempt.
-    It is not the frozen runtime default because it did not meet the
-    predeclared majority-of-nine dev-probe adoption criterion.
+    ``salient_tfidf`` is the Week 10 frozen runtime default after the final
+    paired Week 9 regression found no real-control degradation. The legacy
+    mode remains available only to reproduce the recorded comparison.
     """
     if mode == "legacy_first_32":
         terms = re.findall(r"[A-Za-z0-9]{2,}", query_text.casefold())[:SALIENT_QUERY_MAX_TERMS]

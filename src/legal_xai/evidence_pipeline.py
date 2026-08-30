@@ -107,7 +107,7 @@ def retrieve_temporal_candidates(
     database_url: str,
     dedup_matches: Path,
     index_version: str,
-    query_mode: str = "legacy_first_32",
+    query_mode: str = "salient_tfidf",
 ) -> CandidateRetrieval:
     """Retrieve and log a provenance-linked candidate set for one legal query."""
 

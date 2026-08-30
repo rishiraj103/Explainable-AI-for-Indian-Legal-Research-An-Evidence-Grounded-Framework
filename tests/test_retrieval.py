@@ -31,8 +31,13 @@ def test_salient_query_terms_are_bounded_and_unique() -> None:
     assert len(terms) == len(set(terms))
 
 
-def test_legacy_query_mode_remains_the_frozen_default() -> None:
-    assert fts_query("Anticipatory bail under Section 438") == "anticipatory OR bail OR under OR section OR 438"
+def test_legacy_query_mode_remains_available_for_regression_reproduction() -> None:
+    assert fts_query("Anticipatory bail under Section 438", mode="legacy_first_32") == "anticipatory OR bail OR under OR section OR 438"
+
+
+def test_salient_query_mode_is_the_frozen_default() -> None:
+    text = "Civil appellate jurisdiction. Municipal octroi on petroleum products under section 482."
+    assert fts_query(text) == fts_query(text, mode="salient_tfidf")
 
 
 def test_fts_query_rejects_unknown_mode() -> None:

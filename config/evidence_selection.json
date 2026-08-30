@@ -1,12 +1,12 @@
 {
-  "selection_version": "week7-bm25-diverse-support-v1",
+  "selection_version": "week10-bm25-salient-terms-v1",
   "candidate_k": 100,
   "max_selected_evidence": 5,
-  "query_construction_version": "legacy-first-32-terms-v1",
-  "query_construction": "first 32 alphanumeric facts-only terms in source order; retained after the one permitted TF-IDF salient-term corrective attempt reached 3/9 authorities at k=100 and 4/9 at k=500, below the predeclared majority-of-nine adoption threshold",
-  "salient_term_candidate_version": "tfidf-segment-salient-terms-v1 (investigated, not adopted)",
+  "query_construction_version": "tfidf-segment-salient-terms-v1",
+  "query_construction": "deterministic TF-IDF salient-term extraction over the full frozen facts-only text: segment by sentence/paragraph, remove procedural-report boilerplate, score unigrams by segment TF-IDF with a mild within-document frequency factor, retain section/article cues, and select at most 32 unique terms",
+  "legacy_query_construction": "legacy-first-32-terms-v1 (retained only to reproduce the Week 9 final regression)",
   "eligibility_requirement": "temporal_status == eligible",
   "redundancy_rule": "select at most one chunk per source_id",
   "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
-  "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker."
+  "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. The salient-term query builder was adopted after the final fixed-test regression showed no degradation on six pre-specified controls and one improvement."
 }

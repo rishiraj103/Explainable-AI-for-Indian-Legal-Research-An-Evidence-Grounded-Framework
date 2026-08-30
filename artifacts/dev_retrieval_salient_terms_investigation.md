@@ -40,13 +40,13 @@ first-32-term truncation was a real contributing defect, but it does not meet
 the predeclared meaningful-improvement threshold: a majority of the nine cases
 must be found at k=100 or k=500.
 
-## Final freeze decision
+## Round-two decision (superseded by final regression)
 
-**Do not adopt the salient-term candidate.** The frozen configuration remains
-`week7-bm25-diverse-support-v1`, candidate k=100, first-32-term FTS5 OR query,
-and five-source diverse selection. The salient extractor remains a tested,
-explicitly non-adopted candidate in the codebase so the experiment is
-reproducible, but is not the runtime default.
+At this point alone, the candidate did not meet the original dev-only
+majority-of-nine adoption threshold. This provisional decision is superseded
+by the single final real-answer-key regression in
+`artifacts/week9_final_freeze_regression.md`, which adopted the salient
+extractor after it was non-worsening on all six pre-specified controls.
 
 The remaining misses after this correction support a bounded lexical-mismatch
 limitation: query truncation explains some, but not enough, of the observed
