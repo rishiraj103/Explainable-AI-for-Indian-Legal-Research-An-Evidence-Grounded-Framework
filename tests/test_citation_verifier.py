@@ -159,6 +159,28 @@ def test_answer_key_reconciles_a_parallel_citation_by_verified_source_id():
     assert measurement["expected_authorities_retrieved"] == ["(2006) 9 scc 630"]
 
 
+def test_answer_key_reconciles_the_corrected_nadodi_scc_scr_parallel_citations():
+    source = record(decision_date="1992-04-28")
+    source = CorpusEvidenceRecord(
+        **{
+            **source.__dict__,
+            "citation": "[1992] 2 S.C.R. 794",
+            "title": "Nadodi Jayaraman etc. versus State of Tamil Nadu",
+        }
+    )
+    measurement = evaluate_against_answer_key(
+        query_id="2013_35",
+        checks=(),
+        answer_key_entries=[{
+            "status": "evaluation", "query_case_id": "2013_35", "authority_citation": "(1992) 3 SCC 161",
+            "authority_title": "Nadodi Jayaraman v. State of Tamil Nadu",
+            "authority_decision_date": "1992-04-28",
+        }],
+        retrieved_candidates=[RetrievedCandidate(record=source, rank=7)],
+    )
+    assert measurement["expected_authorities_retrieved"] == ["(1992) 3 scc 161"]
+
+
 def test_no_citations_is_a_valid_no_evidence_response():
     checks = verify_answer_citations(
         answer={"evidence": [], "retrieved_authorities": []}, query_id="2020_99", query_year=2020,

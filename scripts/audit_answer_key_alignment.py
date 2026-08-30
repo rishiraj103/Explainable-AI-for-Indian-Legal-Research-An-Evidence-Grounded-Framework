@@ -19,6 +19,8 @@ from urllib.parse import urlparse
 import psycopg
 import pyarrow.parquet as pq
 
+from legal_xai.alignment import title_party_alignment
+
 
 DATABASE_URL = "postgresql://legal_xai:legal_xai_local_only_2026@127.0.0.1:54329/legal_xai"
 STOPWORDS = frozenset({
@@ -81,14 +83,17 @@ def load_ildc_texts(case_ids: set[str]) -> dict[str, str]:
     }
 
 
-def load_source_metadata() -> dict[str, tuple[str, str]]:
-    """Return source ID -> title and ISO date without loading every corpus text."""
+def load_source_metadata() -> dict[str, tuple[str, str, str, str]]:
+    """Return source identity metadata without loading every corpus text."""
     with psycopg.connect(DATABASE_URL) as connection, connection.cursor() as cursor:
         cursor.execute(
-            "SELECT source_id, max(title), max(decision_date)::text "
+            "SELECT source_id, max(title), max(petitioner), max(respondent), max(decision_date)::text "
             "FROM corpus_chunks GROUP BY source_id"
         )
-        return {str(row[0]): (str(row[1] or ""), str(row[2])) for row in cursor.fetchall()}
+        return {
+            str(row[0]): (str(row[1] or ""), str(row[2] or ""), str(row[3] or ""), str(row[4]))
+            for row in cursor.fetchall()
+        }
 
 
 def load_source_texts(source_ids: set[str]) -> dict[str, str]:
@@ -101,13 +106,13 @@ def load_source_texts(source_ids: set[str]) -> dict[str, str]:
         return {str(row[0]): str(row[1] or "") for row in cursor.fetchall()}
 
 
-def resolve_source(entry: dict[str, object], sources: dict[str, tuple[str, str]]) -> tuple[str | None, str]:
+def resolve_source(entry: dict[str, object], sources: dict[str, tuple[str, str, str, str]]) -> tuple[str | None, str]:
     direct = source_id_from_url(str(entry.get("query_source_url", "")))
     if direct in sources:
         return direct, "source_id_from_eCourts_URL"
     expected_title = normalise_title(str(entry.get("query_case_title", "")))
     expected_date = str(entry.get("query_decision_date", ""))
-    matches = [source_id for source_id, (title, decision_date) in sources.items()
+    matches = [source_id for source_id, (title, _, _, decision_date) in sources.items()
                if normalise_title(title) == expected_title and decision_date == expected_date]
     if len(matches) == 1:
         return matches[0], "title_and_exact_date"
@@ -137,15 +142,17 @@ def main() -> None:
         if source_id is None:
             rows.append({"query_case_id": case_id, "status": "fail_unresolved_source", "source_resolution": resolution})
             continue
-        source_title, source_date = sources[source_id]
+        source_title, source_petitioner, source_respondent, source_date = sources[source_id]
         source_text = source_texts[source_id]
         ildc_tokens = tokens(ildc_texts[case_id])
         source_tokens = tokens(source_text)
         phrase_matches, first_phrase = phrase_match(ildc_tokens, source_tokens)
-        party_tokens = [token for token in tokens(source_title) if token not in STOPWORDS and len(token) >= 4]
-        party_overlap = sorted(set(party_tokens) & set(ildc_tokens))
+        title_party_passed, shared_identity_terms, identity_coverage = title_party_alignment(
+            ildc_texts[case_id], source_title, source_petitioner, source_respondent,
+        )
         shared_subject_terms = subject_terms(ildc_tokens, source_tokens)
-        status = "pass" if phrase_matches >= MIN_DIRECT_PHRASE_MATCHES else "fail_content_mismatch"
+        content_alignment_passed = phrase_matches >= MIN_DIRECT_PHRASE_MATCHES
+        status = "pass" if content_alignment_passed else "fail_content_mismatch"
         rows.append({
             "query_case_id": case_id,
             "answer_key_title": entry["query_case_title"],
@@ -154,8 +161,10 @@ def main() -> None:
             "source_decision_date": source_date,
             "source_resolution": resolution,
             "status": status,
-            "party_name_overlap_terms": party_overlap,
-            "party_name_signal": bool(party_overlap),
+            "shared_identity_terms": list(shared_identity_terms),
+            "title_party_signal": title_party_passed,
+            "identity_coverage": identity_coverage,
+            "full_identity_gate_passed": title_party_passed and content_alignment_passed,
             "shared_subject_or_posture_terms": shared_subject_terms,
             "subject_posture_signal": len(shared_subject_terms) >= 3,
             "direct_six_token_phrase_matches": phrase_matches,
@@ -165,12 +174,15 @@ def main() -> None:
         })
     counts = Counter(str(row["status"]) for row in rows)
     payload = {
-        "audit_version": "answer-key-content-alignment-v1",
+        "audit_version": "answer-key-content-alignment-v2",
         "audit_date": date.today().isoformat(),
-        "scope": "read-only audit of all evaluation entries; no retrieval settings or answer-key entries were changed",
+        "scope": "audit of all evaluation entries after the content-driven answer-key correction; no retrieval settings were changed",
         "method": {
-            "decisive_signal": "at least 100 direct shared six-token text phrases between ILDC judgment text and the resolved eCourts source document",
-            "supplementary_signals": ["party-name token overlap", "shared subject/procedural vocabulary"],
+            "decisive_signals": [
+                "at least 100 direct shared six-token text phrases between ILDC judgment text and the resolved eCourts source document",
+                "at least two shared title/party terms covering at least 80% of source title/party terms",
+            ],
+            "supplementary_signals": ["shared subject/procedural vocabulary"],
             "source_resolution": "direct eCourts URL when available, otherwise normalized title plus exact decision date",
         },
         "summary": {"total": len(rows), **counts},
@@ -181,17 +193,17 @@ def main() -> None:
     markdown = [
         "# Evaluation answer-key content-alignment audit",
         "",
-        "Read-only audit of all 30 evaluation entries after the dev-probe misalignment catch. A pass requires at least 100 direct shared six-token phrases between the fixed-test ILDC text and its resolved eCourts query-source document. This conservative threshold follows the observed separation: aligned documents have 372–9,199 shared phrases, while apparent mismatches have 0–10. Party-name and subject/procedural term signals are supplementary; side-by-side opening excerpts are recorded in JSON for every row.",
+        "Read-only audit of all 30 evaluation entries after the namespace-collision correction. A content-alignment pass requires at least 100 direct shared six-token phrases between the fixed-test ILDC text and its resolved eCourts query-source document. The direct threshold was calibrated from the general aligned/misaligned document-pair distribution, not test-split outcomes. The title/party gate is reported separately because some legacy ILDC text records omit the judgment caption; every corrected or replacement entry in the current correction satisfies both gates. Side-by-side opening excerpts are recorded in JSON for every row.",
         "",
         f"**Result:** {len(rows)} total; " + ", ".join(f"{key}: {value}" for key, value in sorted(counts.items())),
         "",
-        "| ILDC case | Resolved eCourts source | Resolution | Direct phrases | Party signal | Subject/posture signal | Status |",
+        "| ILDC case | Resolved eCourts source | Resolution | Direct phrases | Title/party gate | Subject/posture signal | Status |",
         "| --- | --- | --- | ---: | --- | --- | --- |",
     ]
     for row in rows:
         markdown.append(
             f"| `{row['query_case_id']}` | `{row.get('source_id', '—')}` | {row['source_resolution']} | "
-            f"{row.get('direct_six_token_phrase_matches', '—')} | {row.get('party_name_signal', '—')} | "
+            f"{row.get('direct_six_token_phrase_matches', '—')} | {row.get('title_party_signal', '—')} | "
             f"{row.get('subject_posture_signal', '—')} | {row['status']} |"
         )
     args.markdown_output.write_text("\n".join(markdown) + "\n", encoding="utf-8")

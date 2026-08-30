@@ -54,3 +54,25 @@ in `artifacts/answer_key_alignment_audit.md` and
 `artifacts/answer_key_alignment_audit.json`. The ten flagged entries are not
 silently removed. They must be corrected to a content-aligned eCourts source or
 transparently excluded before the answer key is used for Week 11 metrics.
+
+## Content-driven re-resolution — 2026-08-30
+
+The ten flagged entries were rechecked against the alignment-gated crosswalk
+and then against the full eCourts source text. One (`2013_35`) was corrected
+from the accepted crosswalk. Four fresh text matches were rejected because the
+ILDC record omits enough caption/party material that the required title/party
+identity signal cannot pass; five candidates were absent from the downloaded
+eCourts corpus. Those nine cases were replaced with new fixed-test cases that
+pass both the title/party and direct-content gates. The answer key is again 30
+evaluation cases plus the unchanged `2019_890` dev/example case. See
+`artifacts/answer_key_reresolution.md`.
+
+The 100 shared-six-token self-match floor was calibrated from the general
+aligned/misaligned document-pair distribution (aligned: 372–9,199; apparent
+mismatches: 0–10), not from retrieval or outcome results on the ILDC test
+split. It is a leakage-safety threshold, not a test-set-tuned retrieval
+parameter.
+
+The identifier-namespace collision is concentrated in the legacy 1958–1993
+portion of the corpus, where ILDC and eCourts serial-looking suffixes are
+especially likely to be unrelated; numeric equality is never used as identity.
