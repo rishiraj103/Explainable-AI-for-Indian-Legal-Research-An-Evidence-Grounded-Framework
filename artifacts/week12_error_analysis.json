@@ -1,0 +1,90 @@
+{
+  "analysis_version": "week12-frozen-result-error-analysis-v1",
+  "basis": {
+    "week11_freeze": "config/week11_evaluation_round.json",
+    "week11_metrics": "artifacts/week11_initial_evaluation.json",
+    "week11_error_buckets": "artifacts/week11_error_analysis.json",
+    "no_reruns_or_configuration_changes": true
+  },
+  "mandatory_categories": {
+    "E1_vs_E2_outcome_prediction": {
+      "aggregate": {
+        "E1_accuracy": 0.61344,
+        "E1_macro_f1": 0.612342,
+        "E2_mean_logit_accuracy": 0.596806,
+        "E2_mean_logit_macro_f1": 0.592358,
+        "accuracy_difference_E2_minus_E1": -0.016634000000000038
+      },
+      "case_level_disagreement_examples": "Unavailable: the frozen E1/E2 artifacts retain aggregate metrics and confusion matrices, not per-case prediction vectors. No model was rerun merely to manufacture post-hoc examples."
+    },
+    "correct_authority_retrieved_and_selected": [
+      "2008_1629",
+      "1995_322",
+      "1995_375",
+      "1986_176",
+      "1977_99",
+      "1980_222",
+      "1980_105",
+      "1995_425",
+      "2002_944",
+      "1982_29",
+      "1988_96"
+    ],
+    "correct_authority_retrieved_but_not_selected": [
+      {
+        "query_case_id": "1980_133",
+        "details": [
+          {
+            "expected_authority_citation": "[1957] 1 s.c.r. 121",
+            "matches": [
+              {
+                "rank": 48,
+                "source_id": "1957_1_121_143",
+                "corpus_citation": "[1957] 1 S.C.R. 121",
+                "decision_date": "1956-11-27",
+                "title": "HARIPRASAD SHIVSHANKAR SHUKLA versus A. D. DIVIKAR"
+              },
+              {
+                "rank": 99,
+                "source_id": "1957_1_121_143",
+                "corpus_citation": "[1957] 1 S.C.R. 121",
+                "decision_date": "1956-11-27",
+                "title": "HARIPRASAD SHIVSHANKAR SHUKLA versus A. D. DIVIKAR"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "correct_authority_absent_at_k100": [
+      "1997_792",
+      "1993_185",
+      "1971_295",
+      "1974_36",
+      "1986_378",
+      "1984_136",
+      "2013_35",
+      "1980_217",
+      "1978_33",
+      "1981_187",
+      "1977_145",
+      "1981_55",
+      "1995_412",
+      "1995_403",
+      "1986_397",
+      "1994_632",
+      "1985_40",
+      "1992_84"
+    ],
+    "provenance_valid_but_substantive_relevance_unadjudicated": {
+      "citation_items": 124,
+      "explanation": "A citation that differs from the single expected authority is not automatically substantively irrelevant; no human relevance label was fabricated."
+    },
+    "temporal_integrity": {
+      "temporal_violations": 0,
+      "interpretation": "No date-rule violation occurred in the frozen 30-case run, so there is no violation example to select."
+    },
+    "E3_E4_outcome_comparison": "Not applicable: E3/E4 are evidence-retrieval/explanation systems and do not emit an outcome label."
+  },
+  "central_finding": "Verification succeeds for retrieved evidence, but expected-authority retrieval coverage is the binding limitation: 11/30 selected, 1/30 retrieved but not selected, and 18/30 absent at k=100."
+}
