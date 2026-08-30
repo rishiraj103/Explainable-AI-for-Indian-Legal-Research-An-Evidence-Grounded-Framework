@@ -1,5 +1,5 @@
 {
-  "selection_version": "week10-bm25-salient-terms-v1",
+  "selection_version": "week10-bm25-salient-terms-selfmatch-coverage-v2",
   "candidate_k": 100,
   "max_selected_evidence": 5,
   "query_construction_version": "tfidf-segment-salient-terms-v1",
@@ -8,5 +8,6 @@
   "eligibility_requirement": "temporal_status == eligible",
   "redundancy_rule": "select at most one chunk per source_id",
   "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
-  "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. The salient-term query builder was adopted after the final fixed-test regression showed no degradation on six pre-specified controls and one improvement."
+  "direct_content_self_match_rule": "Exclude a content self-match only when at least 100 six-token phrase occurrences overlap and at least 80% of the candidate source's unique six-token fingerprints occur in the query case. This preserves true self-copy protection while retaining an earlier authority substantially quoted in a later query judgment.",
+  "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. After a false-positive content-self-match exclusion was corrected, the final fixed-test regression found salient terms non-worsening on all six controls and improved three expected authorities to ranks 1, 1, and 6."
 }

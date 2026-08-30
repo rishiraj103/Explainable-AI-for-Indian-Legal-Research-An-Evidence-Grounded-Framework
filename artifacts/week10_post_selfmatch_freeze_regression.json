@@ -1,0 +1,260 @@
+{
+  "artifact_version": "week10-post-self-match-freeze-regression-v1",
+  "purpose": "Required one-time rerun after correcting a false-positive quoted-authority self-match exclusion; results determine the final query-construction freeze decision.",
+  "input_policy": "Both modes use identical full frozen facts-only input. Historical issue-query ranks identify controls but are not compared numerically to fresh facts-only ranks.",
+  "index": "retrieval/bm25.sqlite (unchanged week7 BM25 index)",
+  "candidate_ks": [
+    100,
+    500
+  ],
+  "results": [
+    {
+      "query_case_id": "1995_412",
+      "expected_authority_source_id": "1987_1_1_67",
+      "historical_issue_query_result": {
+        "rank": 22,
+        "status": "retrieved_and_selected"
+      },
+      "facts_boundary_reason": "positional_cap",
+      "facts_word_count": 6559,
+      "modes": {
+        "legacy_first_32": {
+          "100": {
+            "run_id": "213477c3-d6c1-4fec-854b-0b72124d9ae5",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "1f176e5d-97ab-41de-b41d-69bc0d668d01",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          }
+        },
+        "salient_tfidf": {
+          "100": {
+            "run_id": "23ab94d7-16e3-4089-a7d4-dbe7629cdaed",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "bebea52f-3568-42ca-9622-81d87469a67e",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          }
+        }
+      },
+      "salient_non_worsening_at_k500": true
+    },
+    {
+      "query_case_id": "1986_397",
+      "expected_authority_source_id": "1978_3_971_981",
+      "historical_issue_query_result": {
+        "rank": 2,
+        "status": "retrieved_and_selected"
+      },
+      "facts_boundary_reason": "dispositive_cue",
+      "facts_word_count": 443,
+      "modes": {
+        "legacy_first_32": {
+          "100": {
+            "run_id": "f32e0fc2-44e8-4400-a38e-5cc1b3d1a22f",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "ee6affe7-dbf0-4ce8-a8d8-82d60a4e0ec2",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          }
+        },
+        "salient_tfidf": {
+          "100": {
+            "run_id": "55c0f2d0-ffa6-4b24-a8f5-68c5ff7892fc",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "1dd69d96-decb-4501-a09e-82b5cc8cca3e",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          }
+        }
+      },
+      "salient_non_worsening_at_k500": true
+    },
+    {
+      "query_case_id": "2008_1629",
+      "expected_authority_source_id": "S_2006_2_582_600",
+      "historical_issue_query_result": {
+        "rank": 29,
+        "status": "retrieved_not_selected"
+      },
+      "facts_boundary_reason": "positional_cap",
+      "facts_word_count": 1465,
+      "modes": {
+        "legacy_first_32": {
+          "100": {
+            "run_id": "894c9ddf-6b96-4c9d-8d4e-f899faa14921",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "85a8cc6a-5e18-4e5a-9422-8904b5341310",
+            "rank": 230,
+            "status": "retrieved_not_selected",
+            "query_duplicate_chunks_excluded": 0
+          }
+        },
+        "salient_tfidf": {
+          "100": {
+            "run_id": "b355f0db-4e6e-4fd5-b0ad-ede4b533b0bd",
+            "rank": 1,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "0c14a137-4e0e-4ae0-a9d0-cd256cf65745",
+            "rank": 1,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          }
+        }
+      },
+      "salient_non_worsening_at_k500": true
+    },
+    {
+      "query_case_id": "1995_425",
+      "expected_authority_source_id": "1967_1_679_684",
+      "historical_issue_query_result": {
+        "rank": 56,
+        "status": "retrieved_not_selected"
+      },
+      "facts_boundary_reason": "positional_cap",
+      "facts_word_count": 1988,
+      "modes": {
+        "legacy_first_32": {
+          "100": {
+            "run_id": "a324f060-7510-4f43-8888-7c18a2e905b7",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "e9655df5-9f78-4774-94f1-437dbc215cc1",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          }
+        },
+        "salient_tfidf": {
+          "100": {
+            "run_id": "f48c4eb7-6edf-4b5d-8c0e-2e5281959d05",
+            "rank": 1,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "a4752a8f-b3a4-4205-9002-78f5b1707265",
+            "rank": 1,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          }
+        }
+      },
+      "salient_non_worsening_at_k500": true
+    },
+    {
+      "query_case_id": "2002_944",
+      "expected_authority_source_id": "1993_1_891_1026",
+      "historical_issue_query_result": {
+        "rank": 75,
+        "status": "retrieved_not_selected"
+      },
+      "facts_boundary_reason": "positional_cap",
+      "facts_word_count": 1493,
+      "modes": {
+        "legacy_first_32": {
+          "100": {
+            "run_id": "6cdc3619-91ad-48cc-bd0c-52335d37d4df",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "5320d584-bf5c-403f-86a3-a25efbbf1a2c",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          }
+        },
+        "salient_tfidf": {
+          "100": {
+            "run_id": "86bd6708-c288-4a05-9107-119ab5b1d33a",
+            "rank": 6,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "3ff63fb1-5e75-49e2-8f38-433ca446dcc6",
+            "rank": 6,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          }
+        }
+      },
+      "salient_non_worsening_at_k500": true
+    },
+    {
+      "query_case_id": "1988_96",
+      "expected_authority_source_id": "1980_3_1271_1277",
+      "historical_issue_query_result": {
+        "rank": 96,
+        "status": "retrieved_not_selected"
+      },
+      "facts_boundary_reason": "positional_cap",
+      "facts_word_count": 989,
+      "modes": {
+        "legacy_first_32": {
+          "100": {
+            "run_id": "cdc9cb27-1042-4d3b-b97a-e1f83905f239",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "200b1c9e-4b9b-4505-b261-7c6faf6a6463",
+            "rank": null,
+            "status": "absent",
+            "query_duplicate_chunks_excluded": 0
+          }
+        },
+        "salient_tfidf": {
+          "100": {
+            "run_id": "ef51a6be-1527-459b-8fc9-769613c49b00",
+            "rank": 13,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          },
+          "500": {
+            "run_id": "6b4bdc28-c740-4cfb-9504-9c9bace4ec15",
+            "rank": 13,
+            "status": "retrieved_and_selected",
+            "query_duplicate_chunks_excluded": 0
+          }
+        }
+      },
+      "salient_non_worsening_at_k500": true
+    }
+  ],
+  "salient_strictly_non_worsening_on_all_six_at_k500": true,
+  "freeze_recommendation": "adopt_salient_tfidf"
+}

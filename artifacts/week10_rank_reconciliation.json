@@ -1,0 +1,94 @@
+{
+  "artifact_version": "week10-rank-discrepancy-reconciliation-v1",
+  "scope": "One-time reconciliation of 2008_1629, 1995_425, and 2002_944; no retrieval tuning or configuration change.",
+  "current_index": {
+    "path": "retrieval/bm25.sqlite",
+    "sha256": "b136237a7128e2bc49f8339d2994cb5f54a6019d9f45e29b70a15b5ea1d5937e"
+  },
+  "final_regression_context": {
+    "artifact": "artifacts/week9_final_freeze_regression.json",
+    "query_input": "full frozen facts-only extraction",
+    "legacy_method": "legacy_first_32"
+  },
+  "rows": [
+    {
+      "query_case_id": "2008_1629",
+      "expected_authority_source_id": "S_2006_2_582_600",
+      "historical_measurement": {
+        "query_text": "resignation revised pay scale retrospective effect public undertaking",
+        "index_version": "fts5-bm25-unicode61-v1",
+        "created_at_utc": "2026-08-29 16:42:04.83355+00",
+        "temporal_policy": "precedent_decision_year < ildc_query_year; same-year excluded as ambiguous",
+        "rank": 29
+      },
+      "current_legacy_issue_query": {
+        "query": "resignation revised pay scale retrospective effect public undertaking",
+        "raw_index_rank_at_k500": 29,
+        "pipeline_rank_at_k500": null,
+        "pipeline_run_id": "a47cdbae-bdf4-4c80-8647-01aac5619ea4",
+        "query_duplicate_chunks_excluded": 16
+      },
+      "current_authority_presence": {
+        "corpus_chunk_count": 81,
+        "decision_date": "2006-05-12",
+        "temporal_status": "eligible",
+        "in_alignment_gated_target_exclusions": false,
+        "shared_six_token_phrase_count_with_query_case": 609,
+        "content_duplicate_excluded": true
+      }
+    },
+    {
+      "query_case_id": "1995_425",
+      "expected_authority_source_id": "1967_1_679_684",
+      "historical_measurement": {
+        "query_text": "panchayat secretary civil post government servant article 311",
+        "index_version": "fts5-bm25-unicode61-v1",
+        "created_at_utc": "2026-08-29 17:20:09.528746+00",
+        "temporal_policy": "precedent_decision_year < ildc_query_year; same-year excluded as ambiguous",
+        "rank": 56
+      },
+      "current_legacy_issue_query": {
+        "query": "panchayat secretary civil post government servant article 311",
+        "raw_index_rank_at_k500": 56,
+        "pipeline_rank_at_k500": null,
+        "pipeline_run_id": "541df9d8-9408-4d14-bb82-c9a7911a6013",
+        "query_duplicate_chunks_excluded": 42
+      },
+      "current_authority_presence": {
+        "corpus_chunk_count": 33,
+        "decision_date": "1966-10-03",
+        "temporal_status": "eligible",
+        "in_alignment_gated_target_exclusions": false,
+        "shared_six_token_phrase_count_with_query_case": 388,
+        "content_duplicate_excluded": true
+      }
+    },
+    {
+      "query_case_id": "2002_944",
+      "expected_authority_source_id": "1993_1_891_1026",
+      "historical_measurement": {
+        "query_text": "constitutional 72nd amendment tribal representation constitutional validity",
+        "index_version": "fts5-bm25-unicode61-v1",
+        "created_at_utc": "2026-08-29 17:20:10.400267+00",
+        "temporal_policy": "precedent_decision_year < ildc_query_year; same-year excluded as ambiguous",
+        "rank": 75
+      },
+      "current_legacy_issue_query": {
+        "query": "constitutional 72nd amendment tribal representation constitutional validity",
+        "raw_index_rank_at_k500": 75,
+        "pipeline_rank_at_k500": null,
+        "pipeline_run_id": "09b8f441-6585-4f2c-8c84-680667440dc3",
+        "query_duplicate_chunks_excluded": 10
+      },
+      "current_authority_presence": {
+        "corpus_chunk_count": 510,
+        "decision_date": "1993-02-10",
+        "temporal_status": "eligible",
+        "in_alignment_gated_target_exclusions": false,
+        "shared_six_token_phrase_count_with_query_case": 284,
+        "content_duplicate_excluded": true
+      }
+    }
+  ],
+  "conclusion": "At least one expected authority did not survive the current legacy issue-query pipeline; inspect its per-case exclusion fields before freeze finalization."
+}

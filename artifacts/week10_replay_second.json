@@ -1,8 +1,8 @@
 {
   "experiment": "E4",
-  "selection_version": "week10-bm25-salient-terms-v1",
+  "selection_version": "week10-bm25-salient-terms-selfmatch-coverage-v2",
   "query_construction_version": "tfidf-segment-salient-terms-v1",
-  "run_id": "4cfdc7d8-2613-492f-90fe-8f332b56ac7f",
+  "run_id": "2085144a-230a-4db1-b995-f38fd8d45f8e",
   "query_id": "week10-replay-01",
   "query_year": 2020,
   "candidate_count": 100,

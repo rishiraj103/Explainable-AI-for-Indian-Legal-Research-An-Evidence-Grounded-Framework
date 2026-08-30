@@ -58,6 +58,16 @@ def test_content_self_match_is_excluded_without_crosswalk_mapping() -> None:
     assert exclude_query_duplicate("2019_890", "unmapped", set(), query_case_text=text, candidate_source_text=text)
 
 
+def test_quoted_prior_authority_is_not_mistaken_for_the_query_case() -> None:
+    quoted = "The earlier authority states a distinctive legal principle in these exact words. " * 120
+    query = f"Facts of the later dispute. {quoted} The later court applies the authority."
+    source = f"{quoted} " + ("Additional authority reasoning not reproduced in the later case. " * 120)
+
+    assert not exclude_query_duplicate(
+        "2019_890", "unmapped", set(), query_case_text=query, candidate_source_text=source,
+    )
+
+
 def test_topically_similar_but_distinct_document_is_retained() -> None:
     query = "Alice challenged termination after a disciplinary enquiry at her school. " * 120
     candidate = "Bob challenged termination after a procurement dispute at his factory. " * 120

@@ -14,12 +14,19 @@ from legal_xai.alignment import (
     DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
     shared_phrase_count_from_query_set,
     shared_six_token_phrases,
+    six_token_phrase_set,
 )
 
 
 SALIENT_QUERY_VERSION = "tfidf-segment-salient-terms-v1"
 SALIENT_QUERY_MAX_TERMS = 32
 LEGACY_QUERY_VERSION = "legacy-first-32-terms-v1"
+# A large shared-phrase count alone is not enough: a later judgment can quote
+# substantial passages from a valid earlier precedent.  Direct self-match
+# exclusion therefore also requires that almost all candidate-source phrases
+# occur in the query case, the signature of the same judgment rather than a
+# cited authority.
+MIN_DIRECT_SOURCE_PHRASE_COVERAGE = 0.80
 
 # These are structural terms found repeatedly in Supreme Court-report opening
 # matter. They add little legal-issue discrimination and previously dominated
@@ -143,7 +150,7 @@ def exclude_query_duplicate(
     candidate_source_text: str | None = None,
     query_six_token_phrases: set[str] | None = None,
 ) -> bool:
-    """Exclude only a content-alignment-audited target or near-duplicate source.
+    """Exclude an audited target/near case or a near-complete direct text copy.
 
     ILDC's ``YYYY_N`` suffix and eCourts' ``YYYY INSC N`` suffix are not a
     common identity namespace.  Canonical-ID equality is therefore unsafe as a
@@ -155,6 +162,7 @@ def exclude_query_duplicate(
         return True
     if query_case_text and candidate_source_text:
         if query_six_token_phrases is None:
+            query_six_token_phrases = six_token_phrase_set(query_case_text)
             count, _ = shared_six_token_phrases(
                 query_case_text, candidate_source_text,
                 stop_at=DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
@@ -164,5 +172,13 @@ def exclude_query_duplicate(
                 query_six_token_phrases, candidate_source_text,
                 stop_at=DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES,
             )
-        return count >= DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES
+        # Coverage uses unique phrase fingerprints.  Occurrence count remains
+        # useful for the 100-phrase floor, but repeated boilerplate must not
+        # make an exact same-document copy appear to have low coverage.
+        source_phrases = six_token_phrase_set(candidate_source_text)
+        source_coverage = len(query_six_token_phrases & source_phrases) / len(source_phrases) if source_phrases else 0.0
+        return (
+            count >= DEFAULT_MIN_DIRECT_SIX_TOKEN_PHRASES
+            and source_coverage >= MIN_DIRECT_SOURCE_PHRASE_COVERAGE
+        )
     return False
