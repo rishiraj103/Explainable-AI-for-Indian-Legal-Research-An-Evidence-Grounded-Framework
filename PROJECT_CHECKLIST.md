@@ -120,3 +120,11 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Separate provenance-valid citation status from answer-key authority consistency; do not call an alternative citation irrelevant without a human relevance label.
 - [x] Record temporal-integrity outcomes and at least one honest retrieval/selection limitation for the results discussion.
 - [x] Finalize the Week 12 error-analysis table and commit it without changing frozen evaluation settings. No chart is required to communicate the three exhaustive retrieval buckets.
+
+## Week 13 - Human Review of Explanation Quality
+
+- [x] Prepare a fixed paired review packet that compares structured evidence-linked briefs with the same evidence in a flattened presentation, using four frozen Week 11 cases and alternating presentation order.
+- [x] Prepare a structured response template covering source clarity, ease of locating provenance, appropriate trust, uncertainty clarity, and comparative preference.
+- [ ] Obtain an independent reviewer response, or explicitly begin the delayed self-review fallback if no outside reviewer is available.
+- [ ] Summarize reviewer ratings and qualitative feedback; state the reviewer status and small-sample limitation honestly.
+- [ ] Commit the completed Week 13 feedback record without modifying system outputs or frozen settings.

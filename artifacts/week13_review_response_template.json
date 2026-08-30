@@ -1,0 +1,90 @@
+{
+  "review_version": "week13-human-explanation-review-v1",
+  "reviewer": {
+    "role_or_background": "",
+    "review_date": "",
+    "outside_reviewer": null
+  },
+  "ratings": [
+    {
+      "case_id": "2008_1629",
+      "presentation_order": "structured_first",
+      "display_1": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "display_2": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "comparison_preference": "",
+      "comparison_notes": ""
+    },
+    {
+      "case_id": "1997_792",
+      "presentation_order": "flat_first",
+      "display_1": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "display_2": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "comparison_preference": "",
+      "comparison_notes": ""
+    },
+    {
+      "case_id": "1980_133",
+      "presentation_order": "structured_first",
+      "display_1": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "display_2": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "comparison_preference": "",
+      "comparison_notes": ""
+    },
+    {
+      "case_id": "2002_944",
+      "presentation_order": "flat_first",
+      "display_1": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "display_2": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "comparison_preference": "",
+      "comparison_notes": ""
+    }
+  ]
+}
