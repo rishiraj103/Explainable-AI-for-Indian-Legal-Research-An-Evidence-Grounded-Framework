@@ -1,0 +1,53 @@
+{
+  "audit_version": "e2-chunk-pool-training-audit-v1",
+  "checkpoint": "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318",
+  "checkpoint_matches_result": false,
+  "best_validation_metric_from_state": 0.612411,
+  "best_validation_metric_from_result": 0.612411,
+  "validation_history": [
+    {
+      "epoch": 0.9998219690226099,
+      "mean_logit_validation_accuracy": 0.538149,
+      "mean_logit_validation_macro_f1": 0.448135,
+      "majority_vote_validation_accuracy": 0.537131,
+      "eval_loss": 0.7559767961502075,
+      "step": 2106
+    },
+    {
+      "epoch": 1.99964393804522,
+      "mean_logit_validation_accuracy": 0.606307,
+      "mean_logit_validation_macro_f1": 0.598853,
+      "majority_vote_validation_accuracy": 0.600203,
+      "eval_loss": 0.809455931186676,
+      "step": 4212
+    },
+    {
+      "epoch": 2.9994659070678296,
+      "mean_logit_validation_accuracy": 0.612411,
+      "mean_logit_validation_macro_f1": 0.606744,
+      "majority_vote_validation_accuracy": 0.595117,
+      "eval_loss": 1.073988676071167,
+      "step": 6318
+    }
+  ],
+  "test_window_coverage": {
+    "eligible_documents": 1503,
+    "documents_with_at_least_one_window": 1503,
+    "fully_covered_documents": 1503,
+    "fully_covered_document_rate": 1.0,
+    "total_windows": 9576,
+    "min_windows_per_document": 1,
+    "median_windows_per_document": 5,
+    "max_windows_per_document": 68
+  },
+  "test_confusion_matrix": [
+    [
+      527,
+      222
+    ],
+    [
+      384,
+      370
+    ]
+  ]
+}

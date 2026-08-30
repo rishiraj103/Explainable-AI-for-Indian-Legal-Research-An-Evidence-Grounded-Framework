@@ -50,6 +50,7 @@ def split_record(split: str) -> dict[str, Any]:
 def main() -> None:
     e1 = json.loads((ROOT / "artifacts/e1_baseline_results.json").read_text(encoding="utf-8"))
     e2 = json.loads((ROOT / "artifacts/e2_chunk_pool_results.json").read_text(encoding="utf-8"))
+    e2_correction = json.loads((ROOT / "artifacts/e2_correction_manifest.json").read_text(encoding="utf-8"))
     selection = json.loads((ROOT / "config/evidence_selection.json").read_text(encoding="utf-8"))
     answer = json.loads((ROOT / "config/grounded_answer.json").read_text(encoding="utf-8"))
     citation = json.loads((ROOT / "config/citation_verification.json").read_text(encoding="utf-8"))
@@ -85,6 +86,8 @@ def main() -> None:
             "E2_corrected": {
                 "config": file_record("config/e2_chunk_pool.json"),
                 "result": file_record("artifacts/e2_chunk_pool_results.json"),
+                "correction_manifest": file_record("artifacts/e2_correction_manifest.json"),
+                "discarded_256_token_prefix": e2_correction["E2_256_token_prefix"],
                 "random_seed": e2["training"]["seed"],
                 "model": e2["model"],
                 "test_metrics": e2["test_document_metrics"],
@@ -167,6 +170,7 @@ def main() -> None:
         "- Temporal policy: candidate year must be strictly earlier than query year; same-year is logged as ambiguous and excluded; missing dates are excluded.",
         "- Duplicate policy: alignment-gated target/near-case exclusion plus a direct source-text self-match check requiring both 100 shared six-token phrases and 80% unique candidate-source coverage.",
         f"- E1 seed: `{result['experiments']['E1']['random_seed']}`. E2 seed: `{result['experiments']['E2_corrected']['random_seed']}`.",
+        "- E2 correction: the former 256-token-prefix result remains recorded as discarded because 99.20% of eligible test inputs were truncated; the accepted result is the 512-token, 50-overlap chunk-and-pool run in `artifacts/e2_correction_manifest.json`.",
         f"- Answer key: `{len(evaluation_entries)}/40` evaluation entries, with the separate dev/example record retained outside metric computation.",
         "- The complete machine-readable freeze, including SHA-256 hashes for every frozen source, is `config/reproducibility_freeze.json`.",
         "- The bounded replay contract is executed by `scripts/run_week10_reproducibility_replay.py`.",

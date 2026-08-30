@@ -103,6 +103,35 @@
         "sha256": "d68be6f4950b984d663341441e7216324b4a02c2e5bfa839bef204a760e09d80",
         "bytes": 5052
       },
+      "correction_manifest": {
+        "path": "artifacts/e2_correction_manifest.json",
+        "sha256": "1ae92bc5e5b54fac129480e3c647dd755527cd66fc8f4fa476c636c4341b9f0e",
+        "bytes": 2309
+      },
+      "discarded_256_token_prefix": {
+        "status": "Discarded",
+        "reason": "256-token cap; 1491/1503 (99.20%) eligible test inputs were truncated.",
+        "test_metrics": {
+          "accuracy": 0.569528,
+          "macro_f1": 0.55748,
+          "class_0_f1": 0.630497,
+          "class_1_f1": 0.484462,
+          "confusion_matrix_labels": [
+            0,
+            1
+          ],
+          "confusion_matrix": [
+            [
+              552,
+              197
+            ],
+            [
+              450,
+              304
+            ]
+          ]
+        }
+      },
       "random_seed": 202607,
       "model": {
         "id": "law-ai/InLegalBERT",

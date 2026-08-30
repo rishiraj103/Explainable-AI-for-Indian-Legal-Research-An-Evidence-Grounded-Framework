@@ -10,6 +10,7 @@ This is the pre-evaluation freeze for the fixed data, model, retrieval, explanat
 - Temporal policy: candidate year must be strictly earlier than query year; same-year is logged as ambiguous and excluded; missing dates are excluded.
 - Duplicate policy: alignment-gated target/near-case exclusion plus a direct source-text self-match check requiring both 100 shared six-token phrases and 80% unique candidate-source coverage.
 - E1 seed: `202605`. E2 seed: `202607`.
+- E2 correction: the former 256-token-prefix result remains recorded as discarded because 99.20% of eligible test inputs were truncated; the accepted result is the 512-token, 50-overlap chunk-and-pool run in `artifacts/e2_correction_manifest.json`.
 - Answer key: `30/40` evaluation entries, with the separate dev/example record retained outside metric computation.
 - The complete machine-readable freeze, including SHA-256 hashes for every frozen source, is `config/reproducibility_freeze.json`.
 - The bounded replay contract is executed by `scripts/run_week10_reproducibility_replay.py`.

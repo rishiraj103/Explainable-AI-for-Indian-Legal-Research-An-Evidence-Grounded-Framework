@@ -1,16 +1,18 @@
-# Locked E1–E2 comparison
+# Locked E1–E2 Comparison (Corrected E2)
 
-Both experiments used the frozen `ildc-predecision-facts-v1` extractor and exactly the same eligible cases in every fixed ILDC split. Neither used retrieval or evidence lookup.
+Both experiments use `ildc-predecision-facts-v1`, the same eligible fixed ILDC split cases, and no retrieval/evidence lookup.
 
-| Test metric | E1: TF-IDF + Logistic Regression | E2: InLegalBERT | E2 − E1 |
+| Test metric | E1: TF-IDF + Logistic Regression | E2: InLegalBERT mean logits (primary) | E2: majority vote (comparison) |
 | --- | ---: | ---: | ---: |
-| Accuracy | 0.6134 | 0.5695 | -0.0439 (-4.39 pp) |
-| Macro F1 | 0.6123 | 0.5575 | -0.0549 |
+| Accuracy | 0.6134 | 0.5968 | 0.6015 |
+| Macro F1 | 0.6123 | 0.5924 | 0.5937 |
 
-## Result
+Majority-class baseline accuracy: `0.5017`. Corrected E2 trails E1 by `1.66` percentage points (mean logits) and `1.20` points (majority vote).
 
-E2 did **not** beat E1 under the frozen Week 6 settings. This is recorded as the outcome of the planned comparison, not tuned away. E1 remains the stronger facts-only baseline on this test evaluation.
+## Discarded prior result
 
-## Interpretation constraint
+The old 256-token prefix E2 result (accuracy `0.5695`, macro F1 `0.5575`) is **discarded — truncation bug**: 1,491/1,503 eligible test inputs (99.20%) were truncated. It must not be compared with E1 as a final E2 result.
 
-The shared extractor and eligible-ID hashes make the included case population comparable. E2 nevertheless tokenizes inputs to 256 tokens for the InLegalBERT architecture and 4 GB GPU limit, while E1 consumes its full extracted text. That fixed input-length difference is a documented limitation when attributing the result only to model architecture.
+## Conclusion
+
+Corrected InLegalBERT trails E1 under both pooling reports, while both exceed the 50.17% majority-class baseline. The discarded 256-token result is retained only for traceability.
