@@ -111,3 +111,12 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Compile the initial side-by-side E1/E2/E3/E4 result table with per-row denominators, frozen configuration identifiers, and no post-test tuning.
 - [ ] If a human explanation-readability review is planned, prepare the outreach/materials now; do not treat it as a metric until the planned later review stage.
 - [x] Run evaluation validation and commit the real evaluation artifacts. The scoped E1/E2 and E3/E4 result sets are complete; `pytest -q` is constrained to the project `tests/` suite to avoid collecting the local model cache. Do not begin Week 12 analysis.
+
+## Week 12 - Analyze Successes, Failures, and Limits
+
+- [x] Freeze the finalized Week 11 result record as the only input to Week 12 analysis; do not tune or rerun any system based on the test findings.
+- [x] Categorize all 30 answer-key-covered cases into expected authority retrieved-and-selected, retrieved-but-not-selected, and absent-at-k=100 buckets.
+- [ ] Identify and document E1-versus-E2 outcome-prediction disagreement examples from stored, frozen per-case predictions, if available without rerunning either model.
+- [x] Separate provenance-valid citation status from answer-key authority consistency; do not call an alternative citation irrelevant without a human relevance label.
+- [x] Record temporal-integrity outcomes and at least one honest retrieval/selection limitation for the results discussion.
+- [ ] Finalize the Week 12 tables/charts and commit the completed analysis without changing frozen evaluation settings.

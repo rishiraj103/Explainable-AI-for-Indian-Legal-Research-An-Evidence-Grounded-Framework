@@ -25,5 +25,36 @@
     }
   },
   "alignment_sanity_artifact": "artifacts/week11_answer_key_sanity_check.json",
-  "status": "frozen_for_initial_week11_evaluation"
+  "final_results": {
+    "finalized_at_utc": "2026-08-30T11:03:08.0588025Z",
+    "artifact": "artifacts/week11_initial_evaluation.json",
+    "error_analysis_artifact": "artifacts/week11_error_analysis.json",
+    "E3_E4_reference_authority_outcomes": {
+      "expected_authorities": 30,
+      "retrieved_and_selected": 11,
+      "retrieved_but_not_selected": 1,
+      "absent_at_k100": 18,
+      "recall_at_5": {
+        "numerator": 5,
+        "denominator": 30,
+        "value": 0.166667
+      },
+      "recall_at_100": {
+        "numerator": 12,
+        "denominator": 30,
+        "value": 0.4
+      },
+      "authority_consistent_precision": {
+        "numerator": 11,
+        "denominator": 135,
+        "value": 0.081481,
+        "population": "final selected and displayed evidence items, not raw top-k candidates"
+      }
+    }
+  },
+  "result_finality": {
+    "E1_E2_full_test_n1503": "Final for this evaluation round. The deferred answer-key cases do not affect outcome-prediction metrics and will not trigger a rerun.",
+    "E3_E4_answer_key_subset_n30": "Final for this evaluation round. A future 10-case answer-key extension must be reported as a separate evaluation extension or round, not overwrite these frozen n=30 results."
+  },
+  "status": "finalized_week11_evaluation_round"
 }

@@ -27,6 +27,12 @@ The E3/E4 run used the fully corrected frozen retrieval configuration, `week10-b
 
 Authority-consistent precision is **11 expected-authority evidence items / 135 final selected and displayed evidence items = 0.081481**. It is not precision over every raw top-100 candidate. Recall is 11/30 cases where the predefined authority was selected, and the resulting F1 is 0.133333. This implements the frozen metric's intended question: whether the citations actually displayed by the system match the predefined reference evidence.
 
+The observed precision should be read against its structural ceiling. Each query has one predefined reference authority while the frozen renderer displayed 135 citations across 30 cases, or **4.5 citations per case**. Even a selector that displayed the expected authority for every query, while retaining that fixed average number of citations, could achieve at most **1 / 4.5 = 0.222222** authority-consistent precision (30/135). The observed 0.081481 is therefore 36.7% of that fixed-cardinality ceiling; it is not directly comparable to a single-citation-per-case precision score.
+
+## Evaluation-round finality
+
+Both result families are final for this evaluation round: E1/E2 outcome metrics remain final at n=1,503, and E3/E4 evidence metrics remain final at n=30. The deferred ten answer-key cases neither require nor justify rerunning E1/E2. If they are verified later, their E3/E4 metrics will be reported as a clearly separate answer-key extension/evaluation round; they will not overwrite the frozen n=30 Week 11 results.
+
 ## Answer-key sanity check
 
 All 30 frozen cases are fixed-test-split members and pass the current, corrected content-alignment gate. Twenty are in the 1958--1993 identifier-collision-risk era; every one passed individually. See `artifacts/week11_answer_key_sanity_check.json`.
