@@ -1,6 +1,6 @@
 # Indian Legal XAI Project Checklist
 
-Local progress tracker only. Do not add, commit, or push this file.
+Project progress tracker. It is committed only when the user has explicitly approved it alongside real completed work.
 
 ## Week 1 — Completed
 
@@ -92,3 +92,11 @@ Local progress tracker only. Do not add, commit, or push this file.
 - [x] Rebuild the invalidated dev probe from alignment-gated train/validation mappings and complete the bounded k=500 investigation. (9/9 verified authorities absent; configuration kept as-is with an evidence-backed lexical-mismatch limitation; corrected artifact and 65-test suite recorded.)
 - [x] Complete the one permitted salient-term query correction on the same nine dev cases. (TF-IDF full-facts extraction improved 0/9 to 3/9 at k=100 and 4/9 at k=500; the provisional non-adoption was superseded by the final fixed-control regression below.)
 - [x] Complete the final non-iterative real-answer-key query-builder regression. (Salient terms were non-worsening on all six fixed controls and improved 1988_96 from absent to rank 13; adopted as the Week 10 frozen query-construction method.)
+
+## Week 10 - Explain Outputs Clearly and Freeze the Configuration
+
+- [x] Define and enforce the fixed E4 explanation order: legal issue, applicable authorities, supporting evidence, conclusion, then any uncertainty/missing-evidence note. The conclusion is fixed non-inferential wording linked only to displayed evidence IDs.
+- [x] Verify strict temporal eligibility is active in the full E4 retrieval-to-explanation path, not only as a standalone helper. A 2020 smoke run logged 30 same-year candidates as ambiguous/excluded and citation verification accepted all five selected earlier authorities.
+- [x] Create one reproducibility-freeze record covering dataset/corpus versions, fixed split hashes, facts-extraction rule, E1/E2 settings and seeds, BM25/index settings, query construction, selection settings, temporal and duplicate-exclusion policies, and environment versions.
+- [x] Perform a bounded reproducibility replay of one representative pipeline run and record whether its structured output and provenance reproduce. Two independent runs matched after excluding only generated run UUIDs.
+- [x] Run the full test suite and freeze validation; commit the real Week 10 work and its checklist entry without beginning Week 11 evaluation. (73 tests passed; authority-key and dev-probe validators passed.)

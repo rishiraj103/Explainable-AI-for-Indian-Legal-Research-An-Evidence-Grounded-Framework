@@ -1,0 +1,195 @@
+{
+  "experiment": "E4",
+  "selection_version": "week10-bm25-salient-terms-v1",
+  "query_construction_version": "tfidf-segment-salient-terms-v1",
+  "run_id": "ccfa39e1-cc41-42a2-9270-edd77d5e7feb",
+  "query_id": "week10-replay-01",
+  "query_year": 2020,
+  "candidate_count": 100,
+  "selected_evidence_count": 5,
+  "query_duplicate_chunks_excluded": 0,
+  "status_counts": {
+    "eligible": 70,
+    "ambiguous_excluded": 30,
+    "ineligible": 0,
+    "excluded_missing_metadata": 0
+  },
+  "grounding_audit": "passed",
+  "citation_verification": {
+    "status": "passed",
+    "passed_count": 5,
+    "checks": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "2018_3_739_749::p0001::c003",
+        "citation": "[2018] 3 S.C.R. 739",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "2012_5_1_15::p0002::c002",
+        "citation": "[2012] 5 S.C.R. 1",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "2008_14_179_205::p0018::c003",
+        "citation": "[2008] 14 S.C.R. 179",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "2010_15_201_274::p0001::c002",
+        "citation": "[2010] 15 S.C.R. 201",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "2008_2_323_345::p0001::c003",
+        "citation": "[2008] 2 S.C.R. 323",
+        "passed": true,
+        "failures": []
+      }
+    ]
+  },
+  "answer": {
+    "answer_version": "week10-verified-explanation-renderer-v1",
+    "explanation_order": [
+      "legal_issue",
+      "applicable_law_and_cases",
+      "supporting_evidence",
+      "conclusion",
+      "uncertainty"
+    ],
+    "legal_issue": {
+      "text": "anticipatory bail section 438",
+      "source": "user_query"
+    },
+    "applicable_law_and_cases": [
+      {
+        "evidence_id": "E1",
+        "case_id": "2018 INSC 277",
+        "citation": "[2018] 3 S.C.R. 739",
+        "decision_date": "2018-03-27",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E2",
+        "case_id": "2012 INSC 130",
+        "citation": "[2012] 5 S.C.R. 1",
+        "decision_date": "2012-03-14",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E3",
+        "case_id": "2008 INSC 1125",
+        "citation": "[2008] 14 S.C.R. 179",
+        "decision_date": "2008-10-03",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E4",
+        "case_id": "2010 INSC 843",
+        "citation": "[2010] 15 S.C.R. 201",
+        "decision_date": "2010-12-02",
+        "court": "Supreme Court of India"
+      },
+      {
+        "evidence_id": "E5",
+        "case_id": "2008 INSC 117",
+        "citation": "[2008] 2 S.C.R. 323",
+        "decision_date": "2008-01-29",
+        "court": "Supreme Court of India"
+      }
+    ],
+    "supporting_evidence": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "2018_3_739_749::p0001::c003",
+        "source_id": "2018_3_739_749",
+        "case_id": "2018 INSC 277",
+        "citation": "[2018] 3 S.C.R. 739",
+        "decision_date": "2018-03-27",
+        "court": "Supreme Court of India",
+        "pdf_file": "2018_3_739_749_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 1596,
+        "passage_end_char": 1988,
+        "verbatim_passage": "Anticipatory bail vis-a-vis regular bail – Held: The satisfaction of the Court for granting protection u/s. 438 Cr.P.C. (anticipatory bail) is different from the one u/s. 439 Cr.P.C. (regular bail) – Merely because an accused was under protection of anticipatory bail does not entitle him automatically to regular bail – Code of Criminal Procedure, 1973 – ss. 438 and 439. [2018] 3 S.C.R. 739"
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "2012_5_1_15::p0002::c002",
+        "source_id": "2012_5_1_15",
+        "case_id": "2012 INSC 130",
+        "citation": "[2012] 5 S.C.R. 1",
+        "decision_date": "2012-03-14",
+        "court": "Supreme Court of India",
+        "pdf_file": "2012_5_1_15_EN.pdf",
+        "page_number": 2,
+        "passage_start_char": 424,
+        "passage_end_char": 659,
+        "verbatim_passage": "The respondents applied for anticipatory bail. The Sessions Judge rejected the same. However, the High Court enlarged the respondents on c anticipatory bail under Section 438 Cr.P.C. Therefore, the appellants filed the instant appeals."
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "2008_14_179_205::p0018::c003",
+        "source_id": "2008_14_179_205",
+        "case_id": "2008 INSC 1125",
+        "citation": "[2008] 14 S.C.R. 179",
+        "decision_date": "2008-10-03",
+        "court": "Supreme Court of India",
+        "pdf_file": "2008_14_179_205_EN.pdf",
+        "page_number": 18,
+        "passage_start_char": 1238,
+        "passage_end_char": 1951,
+        "verbatim_passage": "Considering the exercise of power by Courts under Section 438 and grant of • anticipatory bail in favour of applicants, the Committee ob- ~ ... , served that the provision as to anticipatory bail has often been 'misused by rich and influential people'. The Committee, howt ever, opined to retain the provision subject to two conditions; (i) Public Prosecutor should be heard by the court before granting an application for- anticipatory bail; and (ii) Petition for anticipatory bail should be heard only by the court of competent jurisdiction. 40. It may be stated that Section 438 has been amended by the Code of Criminal Procedure (Amendment) Act, 2005 which now provides for hearing of Public Prosecutor before"
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "2010_15_201_274::p0001::c002",
+        "source_id": "2010_15_201_274",
+        "case_id": "2010 INSC 843",
+        "citation": "[2010] 15 S.C.R. 201",
+        "decision_date": "2010-12-02",
+        "court": "Supreme Court of India",
+        "pdf_file": "2010_15_201_274_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 176,
+        "passage_end_char": 1522,
+        "verbatim_passage": "PANICKER RADHAKRISHNAN, JJ.] Code of Criminal Procedure, 1973: s. 438 - Anticipatory bail - Grant of - Appellant was member of a political party - FIR alleging that appellant and his brother instigated their party workers to fire gun shots at the workers of opponent political party which resulted in the murder of one person - Murder took place eight days after D the incident of instigation - Application for anticipatory bail by appellant - Rejection of, by the High Court - Sustainability of - Held: Order passed by the High Court not sustainable - Appellant directed to join investigation and in the event of arrest, appellant to be released on bail on his furnishing a personal bond - Judgment of Constitution Bench of the Supreme Court in *Sibbia's case being on the same issue regarding ambit, scope and object of the concept of anticipatory bail u/s. 438 followed - Judicial discipline - Bail - Precedent. ss. 438 and 437 - Power u/s 438, if subject to limitations uls. 437 - Held: The limitations mentioned in s. 437 cannot be read into s. 438 - Plentitude of s. 438 must be given its full play - Court can impose conditions for the grant of bail - Baa s. 438 - Anticipatory bail - Grant of, for limited period - Held: Order granting anticipatory bail for a limited duration and, thereafter, directing the accused to surrender and apply"
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "2008_2_323_345::p0001::c003",
+        "source_id": "2008_2_323_345",
+        "case_id": "2008 INSC 117",
+        "citation": "[2008] 2 S.C.R. 323",
+        "decision_date": "2008-01-29",
+        "court": "Supreme Court of India",
+        "pdf_file": "2008_2_323_345_EN.pdf",
+        "page_number": 1,
+        "passage_start_char": 1405,
+        "passage_end_char": 1824,
+        "verbatim_passage": "Code of Criminal Procedure, 1973 - s. 438 - State of Uttar Pradesh - Deletion of provision for anticipatory bail under s.438 CrPC by s.9 of the U.P Act 16 of 1976 - Difficulties ~ -( arising therefrom- Per Katju, J., Strong recommendation made to U.P Government to immediately issue an Ordinance to restore the provision for anticipatory bail by repealing Section 9 of UP Act 16of1976, and empowering the Allahabad High"
+      }
+    ],
+    "conclusion": {
+      "text": "No legal conclusion is inferred beyond the cited supporting evidence; review the verbatim passages and their provenance.",
+      "mode": "evidence_bound_no_inference",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    },
+    "evidence_sufficiency": "multiple_selected_passages",
+    "uncertainty": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+  }
+}

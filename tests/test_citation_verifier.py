@@ -47,6 +47,15 @@ def test_verifies_a_corpus_backed_retrieved_temporally_eligible_citation():
     assert checks[0].passed
 
 
+def test_verifies_week10_named_explanation_sections():
+    payload = answer()
+    payload["supporting_evidence"] = payload.pop("evidence")
+    payload["applicable_law_and_cases"] = payload.pop("retrieved_authorities")
+    checks = verify(payload)
+    assert len(checks) == 1
+    assert checks[0].passed
+
+
 def test_rejects_a_missing_corpus_chunk():
     payload = answer()
     checks = verify_answer_citations(

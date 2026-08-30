@@ -1,0 +1,277 @@
+{
+  "freeze_version": "week10-reproducibility-freeze-v1",
+  "scope": "Week 10 configuration freeze before Week 11 evaluation; no Week 11 metrics are included.",
+  "datasets_and_splits": {
+    "ildc_single": {
+      "splits": {
+        "train": {
+          "path": "corpus/ildc/single_train.parquet",
+          "sha256": "0d878add7371ad0d9ed41f59b0753d6c45b5fb6ebaec78b2d6284fe2a884f4b3",
+          "bytes": 56421032,
+          "rows": 5082
+        },
+        "validation": {
+          "path": "corpus/ildc/single_validation.parquet",
+          "sha256": "2140d52ecf8f9af5554c0ca9a8f15ca59994383d1e722298c1bb7ef419ca8fa1",
+          "bytes": 10770658,
+          "rows": 994
+        },
+        "test": {
+          "path": "corpus/ildc/single_test.parquet",
+          "sha256": "10cddb021db95645799c22a7db000234bde5f7657d54e5c8e2c70688b0a36efc",
+          "bytes": 16839899,
+          "rows": 1517
+        }
+      },
+      "facts_extraction": {
+        "path": "config/facts_extraction.json",
+        "sha256": "2a25d97cc5b61cb274e80d676d5af6fbdfa20c0256504155ac94b3b696e2ccf6",
+        "bytes": 2069
+      },
+      "known_limitation": "ILDC decision dates are year-granular; strict precedent filtering uses eCourts exact decision dates."
+    },
+    "ecourts_retrieval_corpus": {
+      "dataset_manifest": {
+        "path": "corpus/dataset_manifest.md",
+        "sha256": "c0dd3580f8ad54563955b40ce47cd92072a1cc04eedaa79f80990b8cbe850e16",
+        "bytes": 7342
+      },
+      "alignment_gated_crosswalk": {
+        "path": "corpus/dedup_matches.csv",
+        "sha256": "b05d93d58935ac89163fffe8aadb560d23b8d4d6158eeffb0b46003436b274c0",
+        "bytes": 386115
+      },
+      "cleaning_record": {
+        "path": "corpus/ecourts/cleaning_record.json",
+        "sha256": "6cf58140c663c6cf27a16276c20d570e2dde1a1d76a1ddf263aa929e3ea2076e",
+        "bytes": 18822
+      },
+      "bm25_index": {
+        "path": "retrieval/bm25.sqlite",
+        "sha256": "b136237a7128e2bc49f8339d2994cb5f54a6019d9f45e29b70a15b5ea1d5937e",
+        "bytes": 2079342592
+      },
+      "index_build_record": {
+        "path": "artifacts/bm25_index.json",
+        "sha256": "e8668a6ece679fb098008e78de288ca4269a11a9f4fb5e67aae375e7a0ce4661",
+        "bytes": 291
+      }
+    }
+  },
+  "experiments": {
+    "E1": {
+      "config": {
+        "path": "config/e1_baseline.json",
+        "sha256": "ce52fe6601c92a9c9cb40a83bc6c0124c929070cbf5d64029b5e3b02ca47b55a",
+        "bytes": 1249
+      },
+      "result": {
+        "path": "artifacts/e1_baseline_results.json",
+        "sha256": "0726043d7e2445886f7c8658e4c7b8560f321d079b3e8203aa2d5890c9ccf13d",
+        "bytes": 5858
+      },
+      "random_seed": 202605,
+      "test_metrics": {
+        "accuracy": 0.61344,
+        "macro_f1": 0.612342,
+        "class_0_f1": 0.632975,
+        "class_1_f1": 0.591708,
+        "confusion_matrix_labels": [
+          0,
+          1
+        ],
+        "confusion_matrix": [
+          [
+            501,
+            248
+          ],
+          [
+            333,
+            421
+          ]
+        ]
+      }
+    },
+    "E2_corrected": {
+      "config": {
+        "path": "config/e2_chunk_pool.json",
+        "sha256": "633c0e3ea7fa6c49afd27f906be2d3ac7a1c91ec088f65c388cf0dbe9eed55fd",
+        "bytes": 2124
+      },
+      "result": {
+        "path": "artifacts/e2_chunk_pool_results.json",
+        "sha256": "d68be6f4950b984d663341441e7216324b4a02c2e5bfa839bef204a760e09d80",
+        "bytes": 5052
+      },
+      "random_seed": 202607,
+      "model": {
+        "id": "law-ai/InLegalBERT",
+        "revision": "b5ecfed8ed6cf9d25a3cb8225a8c52f161f7401a",
+        "head_initialization": "AutoModelForSequenceClassification with a new randomly initialized two-label classification head"
+      },
+      "test_metrics": {
+        "mean_logits": {
+          "accuracy": 0.596806,
+          "macro_f1": 0.592358,
+          "class_0_f1": 0.63494,
+          "class_1_f1": 0.549777,
+          "confusion_matrix_labels": [
+            0,
+            1
+          ],
+          "confusion_matrix": [
+            [
+              527,
+              222
+            ],
+            [
+              384,
+              370
+            ]
+          ]
+        },
+        "majority_vote": {
+          "accuracy": 0.601464,
+          "macro_f1": 0.593682,
+          "class_0_f1": 0.649912,
+          "class_1_f1": 0.537452,
+          "confusion_matrix_labels": [
+            0,
+            1
+          ],
+          "confusion_matrix": [
+            [
+              556,
+              193
+            ],
+            [
+              406,
+              348
+            ]
+          ]
+        },
+        "window_coverage": {
+          "eligible_documents": 1503,
+          "documents_with_at_least_one_window": 1503,
+          "fully_covered_documents": 1503,
+          "fully_covered_document_rate": 1.0,
+          "total_windows": 9576,
+          "min_windows_per_document": 1,
+          "median_windows_per_document": 5,
+          "max_windows_per_document": 68
+        }
+      }
+    },
+    "E4": {
+      "implementation": {
+        "src/legal_xai/retrieval.py": {
+          "path": "src/legal_xai/retrieval.py",
+          "sha256": "ff3df70116061891d62b540f584eaadc34dc81185df2e5a9a57589e46e00651c",
+          "bytes": 7295
+        },
+        "src/legal_xai/evidence_pipeline.py": {
+          "path": "src/legal_xai/evidence_pipeline.py",
+          "sha256": "9c515cea671c9fff6e55f0fbe063afda21bf6b1f26f3647c6c849024fe9b627f",
+          "bytes": 7439
+        },
+        "src/legal_xai/grounded_answer.py": {
+          "path": "src/legal_xai/grounded_answer.py",
+          "sha256": "2843b021e1e79ca62aa045689924598ceee25247fdcc58c3184dc7748bb8dccb",
+          "bytes": 8572
+        },
+        "src/legal_xai/citation_verifier.py": {
+          "path": "src/legal_xai/citation_verifier.py",
+          "sha256": "a9e17ee52109f17cbbd49068babb835be42f95e8b7559fbb3fe2791ef618cb09",
+          "bytes": 9634
+        },
+        "scripts/run_grounded_answer_pipeline.py": {
+          "path": "scripts/run_grounded_answer_pipeline.py",
+          "sha256": "e3c99ad7011acac95205503a57af238641566cd78825a2a365c3e7afa1c667ec",
+          "bytes": 6234
+        }
+      },
+      "answer_renderer": {
+        "answer_version": "week10-verified-explanation-renderer-v1",
+        "experiment": "E4",
+        "generation_mode": "controlled_extract_only",
+        "input_contract": "Accept only the Week 7 selected, temporally eligible evidence candidates and the user query; never retrieve, rank, infer, or add authorities.",
+        "required_output_sections": [
+          "legal_issue",
+          "applicable_law_and_cases",
+          "supporting_evidence",
+          "conclusion",
+          "uncertainty"
+        ],
+        "grounding_rule": "Every material legal statement is an exact selected-evidence passage with its stable provenance. The conclusion is frozen non-inferential boilerplate tied only to the displayed evidence IDs; static labels and uncertainty wording are non-material boilerplate. When no eligible evidence is selected, output no authority and state the insufficiency explicitly.",
+        "disallowed_output": [
+          "new legal facts or authorities",
+          "uncited paraphrased legal conclusions",
+          "citations absent from the supplied evidence",
+          "same-year, later, missing-date, or query-duplicate evidence"
+        ],
+        "uncertainty_text": "This is an evidence-grounded research brief, not legal advice. It reports only the selected retrieved passages and does not infer conclusions beyond them. Missing or incomplete evidence should be reviewed by a human."
+      },
+      "citation_verifier": {
+        "verification_version": "week9-citation-evidence-verifier-v2",
+        "experiment": "E4_foundation",
+        "input_contract": "A Week 8 controlled answer together with its retrieval run ID, query ID, query year, and persisted corpus provenance.",
+        "required_checks": [
+          "case citation resolves to an existing corpus chunk",
+          "displayed passage and provenance exactly match the corpus record",
+          "chunk was recorded in the retrieval run for this query",
+          "candidate is neither an exact target-case nor an audited near duplicate",
+          "candidate decision year is strictly earlier than the ILDC query year"
+        ],
+        "answer_key_measurement": "For test-split queries, reconcile expected authorities using the verified authority source ID, citation, or title plus exact decision date when the corpus stores a parallel reporter citation. Record retrieved-but-not-selected authorities separately from authorities absent from the retrieved candidates, and displayed citations that fail verification.",
+        "unsupported_citation_policy": "The controlled E3 renderer emits corpus case citations only. Any citation without a linked evidence chunk, including an unsupported case-name field, is rejected; statutes or other source types are not silently treated as verified."
+      },
+      "retrieval_selection": {
+        "selection_version": "week10-bm25-salient-terms-v1",
+        "candidate_k": 100,
+        "max_selected_evidence": 5,
+        "query_construction_version": "tfidf-segment-salient-terms-v1",
+        "query_construction": "deterministic TF-IDF salient-term extraction over the full frozen facts-only text: segment by sentence/paragraph, remove procedural-report boilerplate, score unigrams by segment TF-IDF with a mild within-document frequency factor, retain section/article cues, and select at most 32 unique terms",
+        "legacy_query_construction": "legacy-first-32-terms-v1 (retained only to reproduce the Week 9 final regression)",
+        "eligibility_requirement": "temporal_status == eligible",
+        "redundancy_rule": "select at most one chunk per source_id",
+        "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
+        "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. The salient-term query builder was adopted after the final fixed-test regression showed no degradation on six pre-specified controls and one improvement."
+      },
+      "temporal_policy": "precedent_decision_year < ildc_query_year; same-year is ambiguous and excluded; missing decision date is excluded.",
+      "duplicate_policy": "Exclude alignment-gated target/near-case source IDs and any direct source document meeting the six-token content self-match threshold.",
+      "answer_key": {
+        "record": {
+          "path": "answer_key/authority_answer_key.json",
+          "sha256": "f4ccb0fa8bfc11425988eb0b615b491c9908a97cb9d2c8a5343a14dae8600e81",
+          "bytes": 43544
+        },
+        "evaluation_entries": 30,
+        "evaluation_target": 40,
+        "dev_example_entries": 3
+      }
+    }
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "scikit-learn": "1.9.0",
+      "pyarrow": "21.0.0",
+      "psycopg": "3.3.4",
+      "pytest": "9.1.1",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.15.0"
+    },
+    "database_url_source": "LEGAL_XAI_DATABASE_URL environment variable or scripts/load_provenance.py default; credentials are intentionally not frozen in the repository.",
+    "cuda_visible_devices": "not-set"
+  },
+  "replay_contract": {
+    "script": "scripts/run_week10_reproducibility_replay.py",
+    "query": {
+      "query_id": "week10-replay-01",
+      "query_year": 2020,
+      "query": "anticipatory bail section 438"
+    },
+    "comparison": "Two independent E4 runs must match after excluding generated retrieval run IDs; selected chunks, answer structure, citations, temporal counts, and provenance must be identical."
+  }
+}

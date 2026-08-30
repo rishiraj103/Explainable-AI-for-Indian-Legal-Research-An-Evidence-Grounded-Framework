@@ -1,0 +1,70 @@
+{
+  "replay_version": "week10-bounded-e4-replay-v1",
+  "query": {
+    "query_id": "week10-replay-01",
+    "query_year": 2020,
+    "query": "anticipatory bail section 438"
+  },
+  "first_run_id": "1f984e75-6eb5-457e-b3ac-d9df2c6f9b24",
+  "second_run_id": "ccfa39e1-cc41-42a2-9270-edd77d5e7feb",
+  "comparison_excludes": [
+    "run_id"
+  ],
+  "first_stable_sha256": "14bfe630e8161c23c51687c14bae36472aab8fd2843c6230104e0657d6f948ba",
+  "second_stable_sha256": "14bfe630e8161c23c51687c14bae36472aab8fd2843c6230104e0657d6f948ba",
+  "matches": true,
+  "selected_chunk_ids": [
+    "2018_3_739_749::p0001::c003",
+    "2012_5_1_15::p0002::c002",
+    "2008_14_179_205::p0018::c003",
+    "2010_15_201_274::p0001::c002",
+    "2008_2_323_345::p0001::c003"
+  ],
+  "citation_verification": {
+    "status": "passed",
+    "passed_count": 5,
+    "checks": [
+      {
+        "evidence_id": "E1",
+        "chunk_id": "2018_3_739_749::p0001::c003",
+        "citation": "[2018] 3 S.C.R. 739",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E2",
+        "chunk_id": "2012_5_1_15::p0002::c002",
+        "citation": "[2012] 5 S.C.R. 1",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E3",
+        "chunk_id": "2008_14_179_205::p0018::c003",
+        "citation": "[2008] 14 S.C.R. 179",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E4",
+        "chunk_id": "2010_15_201_274::p0001::c002",
+        "citation": "[2010] 15 S.C.R. 201",
+        "passed": true,
+        "failures": []
+      },
+      {
+        "evidence_id": "E5",
+        "chunk_id": "2008_2_323_345::p0001::c003",
+        "citation": "[2008] 2 S.C.R. 323",
+        "passed": true,
+        "failures": []
+      }
+    ]
+  },
+  "temporal_status_counts": {
+    "eligible": 70,
+    "ambiguous_excluded": 30,
+    "ineligible": 0,
+    "excluded_missing_metadata": 0
+  }
+}

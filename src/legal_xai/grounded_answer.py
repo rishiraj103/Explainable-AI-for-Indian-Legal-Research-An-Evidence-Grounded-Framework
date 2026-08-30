@@ -14,7 +14,14 @@ from typing import Any, Iterable
 from legal_xai.evidence_pipeline import EvidenceCandidate
 
 
-ANSWER_VERSION = "week8-controlled-evidence-renderer-v2"
+ANSWER_VERSION = "week10-verified-explanation-renderer-v1"
+EXPLANATION_ORDER = (
+    "legal_issue",
+    "applicable_law_and_cases",
+    "supporting_evidence",
+    "conclusion",
+    "uncertainty",
+)
 UNCERTAINTY_TEXT = (
     "This is an evidence-grounded research brief, not legal advice. It reports only the "
     "selected retrieved passages and does not infer conclusions beyond them. Missing or "
@@ -27,6 +34,16 @@ NO_ELIGIBLE_EVIDENCE_TEXT = (
 LIMITED_EVIDENCE_TEXT = (
     "Only one eligible passage was selected. It is displayed verbatim, but is insufficient for "
     "a broader legal conclusion."
+)
+MULTIPLE_EVIDENCE_CONCLUSION = (
+    "No legal conclusion is inferred beyond the cited supporting evidence; review the "
+    "verbatim passages and their provenance."
+)
+LIMITED_EVIDENCE_CONCLUSION = (
+    "No broader legal conclusion is stated because only one supporting passage was selected."
+)
+NO_EVIDENCE_CONCLUSION = (
+    "No legal conclusion is stated because no temporally eligible, non-duplicate evidence was selected."
 )
 
 
@@ -58,16 +75,20 @@ class GroundedAnswer:
         if not evidence_items:
             evidence_sufficiency = "insufficient"
             uncertainty = f"{UNCERTAINTY_TEXT} {NO_ELIGIBLE_EVIDENCE_TEXT}"
+            conclusion = NO_EVIDENCE_CONCLUSION
         elif len(evidence_items) == 1:
             evidence_sufficiency = "limited"
             uncertainty = f"{UNCERTAINTY_TEXT} {LIMITED_EVIDENCE_TEXT}"
+            conclusion = LIMITED_EVIDENCE_CONCLUSION
         else:
             evidence_sufficiency = "multiple_selected_passages"
             uncertainty = UNCERTAINTY_TEXT
+            conclusion = MULTIPLE_EVIDENCE_CONCLUSION
         return {
             "answer_version": ANSWER_VERSION,
+            "explanation_order": list(EXPLANATION_ORDER),
             "legal_issue": {"text": self.query, "source": "user_query"},
-            "retrieved_authorities": [
+            "applicable_law_and_cases": [
                 {
                     "evidence_id": item["evidence_id"],
                     "case_id": item["case_id"],
@@ -77,14 +98,12 @@ class GroundedAnswer:
                 }
                 for item in evidence_items
             ],
-            "evidence": evidence_items,
-            "supported_observations": [
-                {
-                    "evidence_id": item["evidence_id"],
-                    "verbatim_passage": item["verbatim_passage"],
-                }
-                for item in evidence_items
-            ],
+            "supporting_evidence": evidence_items,
+            "conclusion": {
+                "text": conclusion,
+                "mode": "evidence_bound_no_inference",
+                "evidence_ids": [item["evidence_id"] for item in evidence_items],
+            },
             "evidence_sufficiency": evidence_sufficiency,
             "uncertainty": uncertainty,
         }
@@ -110,7 +129,9 @@ def assert_answer_grounded(answer: dict[str, Any], selected_evidence: Iterable[E
     expected = {item.chunk_id: item for item in selected_evidence}
     if answer.get("answer_version") != ANSWER_VERSION:
         raise ValueError("Unexpected grounded-answer version")
-    evidence_items = answer.get("evidence", [])
+    if answer.get("explanation_order") != list(EXPLANATION_ORDER):
+        raise ValueError("Answer explanation sections are not in the frozen order")
+    evidence_items = answer.get("supporting_evidence", [])
     if len(evidence_items) != len(expected):
         raise ValueError("Answer evidence count does not match its supplied evidence")
     seen: set[str] = set()
@@ -129,23 +150,31 @@ def assert_answer_grounded(answer: dict[str, Any], selected_evidence: Iterable[E
             if item.get(field) != getattr(source, field):
                 raise ValueError(f"Answer alters {field} for {chunk_id!r}")
         by_evidence_id[item["evidence_id"]] = source.text
-    for authority in answer.get("retrieved_authorities", []):
+    for authority in answer.get("applicable_law_and_cases", []):
         evidence_id = authority.get("evidence_id")
         if evidence_id not in by_evidence_id:
             raise ValueError(f"Answer authority references unknown evidence: {evidence_id!r}")
-    for observation in answer.get("supported_observations", []):
-        evidence_id = observation.get("evidence_id")
-        if observation.get("verbatim_passage") != by_evidence_id.get(evidence_id):
-            raise ValueError(f"Answer observation is not verbatim supplied evidence: {evidence_id!r}")
     expected_sufficiency = (
         "insufficient" if not expected else "limited" if len(expected) == 1 else "multiple_selected_passages"
     )
     if answer.get("evidence_sufficiency") != expected_sufficiency:
         raise ValueError("Answer evidence sufficiency status does not match supplied evidence")
+    conclusion = answer.get("conclusion", {})
+    if conclusion.get("mode") != "evidence_bound_no_inference":
+        raise ValueError("Answer conclusion is not evidence-bound")
+    if conclusion.get("evidence_ids") != [item["evidence_id"] for item in evidence_items]:
+        raise ValueError("Answer conclusion references evidence inconsistently")
     if expected_sufficiency == "insufficient":
-        if answer.get("retrieved_authorities") or answer.get("supported_observations"):
+        if answer.get("applicable_law_and_cases"):
             raise ValueError("An insufficient-evidence answer cannot claim authorities or observations")
+        if conclusion.get("text") != NO_EVIDENCE_CONCLUSION:
+            raise ValueError("An insufficient-evidence answer must not infer a conclusion")
         if NO_ELIGIBLE_EVIDENCE_TEXT not in str(answer.get("uncertainty", "")):
             raise ValueError("An insufficient-evidence answer must disclose the missing evidence")
-    elif expected_sufficiency == "limited" and LIMITED_EVIDENCE_TEXT not in str(answer.get("uncertainty", "")):
-        raise ValueError("A limited-evidence answer must disclose its limitation")
+    elif expected_sufficiency == "limited":
+        if conclusion.get("text") != LIMITED_EVIDENCE_CONCLUSION:
+            raise ValueError("A limited-evidence answer must not infer a broader conclusion")
+        if LIMITED_EVIDENCE_TEXT not in str(answer.get("uncertainty", "")):
+            raise ValueError("A limited-evidence answer must disclose its limitation")
+    elif conclusion.get("text") != MULTIPLE_EVIDENCE_CONCLUSION:
+        raise ValueError("A multiple-evidence answer must use the frozen non-inferential conclusion")

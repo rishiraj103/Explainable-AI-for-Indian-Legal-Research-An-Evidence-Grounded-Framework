@@ -121,7 +121,9 @@ def verify_answer_citations(
 ) -> tuple[CitationCheck, ...]:
     """Verify every displayed citation against corpus, run, dedup, and time rules."""
 
-    evidence_items = answer.get("evidence", [])
+    # Week 10 uses explanatory section names; accept the old names only so
+    # archived Week 8/9 outputs remain independently reproducible.
+    evidence_items = answer.get("supporting_evidence", answer.get("evidence", []))
     by_evidence_id = {
         item.get("evidence_id"): item
         for item in evidence_items
@@ -129,7 +131,7 @@ def verify_answer_citations(
     }
     checks: list[CitationCheck] = []
 
-    for authority in answer.get("retrieved_authorities", []):
+    for authority in answer.get("applicable_law_and_cases", answer.get("retrieved_authorities", [])):
         evidence_id = authority.get("evidence_id") if isinstance(authority, Mapping) else None
         evidence = by_evidence_id.get(evidence_id)
         if evidence is None:
