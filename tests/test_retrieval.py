@@ -1,15 +1,43 @@
 import pytest
 
-from legal_xai.retrieval import exclude_query_duplicate, fts_query
+from legal_xai.retrieval import exclude_query_duplicate, fts_query, salient_query_terms
 
 
 def test_fts_query_extracts_searchable_terms() -> None:
-    assert fts_query("Anticipatory bail under Section 438") == "anticipatory OR bail OR under OR section OR 438"
+    terms = fts_query("Anticipatory bail under Section 438", mode="salient_tfidf").split(" OR ")
+    assert {"anticipatory", "bail", "section", "438"}.issubset(terms)
 
 
 def test_fts_query_rejects_non_searchable_input() -> None:
     with pytest.raises(ValueError, match="two-character"):
         fts_query("?!")
+
+
+def test_salient_query_terms_look_beyond_procedural_opening_boilerplate() -> None:
+    text = (
+        "Civil appellate jurisdiction civil appeal leave granted by the high court. "
+        "The appeal challenges a municipal octroi assessment on petroleum products. "
+        "The petroleum pipeline and municipal corporation dispute concerns section 482 liability."
+    )
+    terms = salient_query_terms(text)
+    assert {"municipal", "octroi", "petroleum", "section", "482"}.issubset(terms)
+    assert not {"civil", "appellate", "jurisdiction", "appeal", "court", "leave"} & set(terms)
+
+
+def test_salient_query_terms_are_bounded_and_unique() -> None:
+    text = " ".join(f"substantive{i}" for i in range(80))
+    terms = salient_query_terms(text)
+    assert len(terms) == 32
+    assert len(terms) == len(set(terms))
+
+
+def test_legacy_query_mode_remains_the_frozen_default() -> None:
+    assert fts_query("Anticipatory bail under Section 438") == "anticipatory OR bail OR under OR section OR 438"
+
+
+def test_fts_query_rejects_unknown_mode() -> None:
+    with pytest.raises(ValueError, match="unknown query mode"):
+        fts_query("valid terms", mode="unknown")
 
 
 def test_syntactic_id_equality_is_not_treated_as_a_self_match() -> None:

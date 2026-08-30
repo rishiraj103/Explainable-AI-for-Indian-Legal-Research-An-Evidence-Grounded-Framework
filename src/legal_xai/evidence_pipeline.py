@@ -107,6 +107,7 @@ def retrieve_temporal_candidates(
     database_url: str,
     dedup_matches: Path,
     index_version: str,
+    query_mode: str = "legacy_first_32",
 ) -> CandidateRetrieval:
     """Retrieve and log a provenance-linked candidate set for one legal query."""
 
@@ -119,7 +120,7 @@ def retrieve_temporal_candidates(
         rows = index.execute(
             "SELECT chunk_id, bm25(chunks_fts) AS raw_score "
             "FROM chunks_fts WHERE chunks_fts MATCH ? ORDER BY raw_score LIMIT ?",
-            (fts_query(query), candidate_k),
+            (fts_query(query, mode=query_mode), candidate_k),
         ).fetchall()
     if not rows:
         raise ValueError("BM25 returned no candidates for the supplied query")

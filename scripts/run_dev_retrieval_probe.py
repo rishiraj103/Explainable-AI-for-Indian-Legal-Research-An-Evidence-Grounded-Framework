@@ -65,7 +65,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--probe", type=Path, default=Path("answer_key/dev_retrieval_probe.json"))
     parser.add_argument("--candidate-k", type=int, action="append", default=[500])
-    parser.add_argument("--index-version", default="week9-bm25-diverse-support-v1")
+    parser.add_argument("--index-version", default="week9-bm25-salient-terms-candidate-v1")
+    parser.add_argument("--query-mode", choices=("legacy_first_32", "salient_tfidf"), default="salient_tfidf")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -91,6 +92,7 @@ def main() -> None:
                 database_url=DATABASE_URL,
                 dedup_matches=Path("corpus/dedup_matches.csv"),
                 index_version=args.index_version,
+                query_mode=args.query_mode,
             )
             rank = found_rank(retrieval, str(entry["authority_source_id"]))
             retrievals[str(candidate_k)] = {
@@ -107,15 +109,16 @@ def main() -> None:
             "query_extraction_boundary_reason": facts.boundary_reason,
             "query_input": query,
             "query_input_word_count": len(query.split()),
-            "bm25_fts_query": fts_query(query),
-            "bm25_fts_term_count": len(fts_query(query).split(" OR ")),
+            "bm25_fts_query": fts_query(query, mode=args.query_mode),
+            "bm25_fts_term_count": len(fts_query(query, mode=args.query_mode).split(" OR ")),
             **authority_chunk_statistics(str(entry["authority_source_id"])),
             "retrievals": retrievals,
         })
     payload = {
         "artifact_version": "dev-retrieval-probe-corrected-v2",
         "probe_file": str(args.probe).replace("\\", "/"),
-        "query_construction": "full frozen facts-only input; current fts_query then keeps the first 32 alphanumeric terms in source order",
+        "query_mode": args.query_mode,
+        "query_construction": "full frozen facts-only input; TF-IDF ranks substantive terms across sentence/paragraph segments after procedural-stopword removal, retains statute/article cues, and selects up to 32 unique terms" if args.query_mode == "salient_tfidf" else "full frozen facts-only input; first 32 alphanumeric terms in source order",
         "candidate_ks": sorted(set(args.candidate_k)),
         "results": results,
     }
