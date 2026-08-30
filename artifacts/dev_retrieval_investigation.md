@@ -1,5 +1,7 @@
 # Bounded dev-only retrieval investigation
 
+> **Alignment correction — 2026-08-30.** The retrieval ranks below are preserved as an audit trail, but their former interpretation as a facts-to-authority lexical-mismatch finding is **superseded pending reconstruction**. Manual side-by-side reads confirmed that 3 of the original 8 dev probes (37.5%) joined an ILDC text to a different eCourts query judgment through canonical-ID matching. This triggered a full read-only audit of the 30 evaluation answer-key query-source mappings: 20 passed direct content alignment, 9 had a resolved but content-mismatched source, and 1 could not be resolved. See `artifacts/answer_key_alignment_audit.md`. No retrieval setting, answer-key entry, or evaluation result was silently changed.
+
 **Purpose.** This is a pre-freeze diagnostic, not evaluation tuning. The probe population is the eight independently source-verified ILDC **train** cases in `answer_key/dev_retrieval_probe.json`; it is structurally separate from `answer_key/authority_answer_key.json`. The probe validator confirmed that none is in the fixed ILDC test split and neither a query nor authority is one of the permanently excluded low-quality eCourts PDFs.
 
 ## Step 1 — ranking versus corpus absence
@@ -17,7 +19,7 @@ The current BM25 configuration was run at candidate limits 100 and 500. The veri
 | `2004_139` | `2003_1_634_652` | absent | absent |
 | `2003_78` | `1971_1_844_850` | absent | absent |
 
-The full machine-readable run IDs, exact ranks, and source metadata are in `artifacts/dev_retrieval_probe_baseline.json`.
+The full machine-readable run IDs, exact ranks, and source metadata are in `artifacts/dev_retrieval_probe_baseline.json`. They cannot support an RQ1 retrieval-recall conclusion until the dev probe is rebuilt with a content-alignment gate.
 
 ## Step 2 — query construction inspection
 
@@ -38,9 +40,9 @@ Facts slices range from 943–3,460 words (median 1,918), compared with authorit
 
 ## Steps 3–5 — one-fix rule and freeze decision
 
-**Chosen path: no adoptable fix.** All 8/8 authorities persisted as absent at top-500, satisfying the task's explicit deeper lexical-mismatch condition. No salient-term extractor or BM25 parameter modification was attempted, and `config/evidence_selection.json` remains unchanged at `week7-bm25-diverse-support-v1`, candidate limit 100, and five-source selection.
+**Provisional path, superseded by alignment correction.** No salient-term extractor or BM25 parameter modification was attempted, and `config/evidence_selection.json` remains unchanged at `week7-bm25-diverse-support-v1`, candidate limit 100, and five-source selection. The original 8/8 top-500 absence cannot be used to diagnose lexical mismatch because the expected-authority mappings were not all aligned to the ILDC inputs.
 
-The before/final comparison is consequently identical: 0/8 authorities in top-100 before and 0/8 under the finalized original configuration. This is documented as a known limitation of lexical BM25 retrieval for facts-to-authority matching, not an unexamined gap. The configuration to freeze in Week 10 is the original configuration.
+The original before/final comparison remains preserved (0/8 authorities in top-100), but it is not a valid retrieval-quality result. The configuration remains unchanged until the approved matching-logic correction, permanent alignment gate, and rebuilt dev-only investigation are complete.
 
 ## Step 6 — one-time fixed-test confirmation
 

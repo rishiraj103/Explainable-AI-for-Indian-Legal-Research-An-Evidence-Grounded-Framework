@@ -39,3 +39,18 @@ selected (ranks 56, 75, and 96), and five outside the candidate set. The three
 selection omissions are tagged for Week 12 analysis only; retrieval and
 selection configuration remains frozen. See
 `artifacts/week9_answer_key_spot_checks.json`.
+
+## Content-alignment correction audit — 2026-08-30
+
+Canonical ILDC/eCourts identifiers were found not to be sufficient proof that
+the paired documents are the same judgment. Three of eight development-probe
+spot reads were mismatched, triggering a read-only audit of all 30 evaluation
+query-source mappings. The audit uses direct shared six-token text fingerprints
+as its decisive signal, supported by party-name and subject/procedural overlap.
+
+Results: **20 passed**, **9 resolved sources failed content alignment**, and
+**1 source was unresolved**. The per-case table and side-by-side excerpts are
+in `artifacts/answer_key_alignment_audit.md` and
+`artifacts/answer_key_alignment_audit.json`. The ten flagged entries are not
+silently removed. They must be corrected to a content-aligned eCourts source or
+transparently excluded before the answer key is used for Week 11 metrics.
