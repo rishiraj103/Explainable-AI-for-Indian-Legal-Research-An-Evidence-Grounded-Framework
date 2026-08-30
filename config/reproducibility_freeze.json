@@ -237,6 +237,66 @@
         "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
         "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. The salient-term query builder was adopted after the final fixed-test regression showed no degradation on six pre-specified controls and one improvement."
       },
+      "query_builder_final_regression": {
+        "artifact": {
+          "path": "artifacts/week9_final_freeze_regression.json",
+          "sha256": "5d674c626e00d84e6c88d25493958c70c52f964b1ee24eca1ea7d3541b505016",
+          "bytes": 8394
+        },
+        "method_comparison": "legacy_first_32 versus salient_tfidf on six pre-specified real answer-key controls at k=100 and k=500, using identical full facts-only inputs and the unchanged BM25 index/safety filters.",
+        "results": [
+          {
+            "query_case_id": "1995_412",
+            "legacy_k100": null,
+            "legacy_k500": null,
+            "salient_k100": null,
+            "salient_k500": null,
+            "non_worsening": true
+          },
+          {
+            "query_case_id": "1986_397",
+            "legacy_k100": null,
+            "legacy_k500": null,
+            "salient_k100": null,
+            "salient_k500": null,
+            "non_worsening": true
+          },
+          {
+            "query_case_id": "2008_1629",
+            "legacy_k100": null,
+            "legacy_k500": null,
+            "salient_k100": null,
+            "salient_k500": null,
+            "non_worsening": true
+          },
+          {
+            "query_case_id": "1995_425",
+            "legacy_k100": null,
+            "legacy_k500": null,
+            "salient_k100": null,
+            "salient_k500": null,
+            "non_worsening": true
+          },
+          {
+            "query_case_id": "2002_944",
+            "legacy_k100": null,
+            "legacy_k500": null,
+            "salient_k100": null,
+            "salient_k500": null,
+            "non_worsening": true
+          },
+          {
+            "query_case_id": "1988_96",
+            "legacy_k100": null,
+            "legacy_k500": null,
+            "salient_k100": 13,
+            "salient_k500": 13,
+            "non_worsening": true
+          }
+        ],
+        "decision": "adopt_salient_tfidf",
+        "decision_basis": "Salient terms were non-worsening on all six controls and improved 1988_96 from absent to rank 13 at both depths. No further query-construction variation is permitted after this check."
+      },
       "temporal_policy": "precedent_decision_year < ildc_query_year; same-year is ambiguous and excluded; missing decision date is excluded.",
       "duplicate_policy": "Exclude alignment-gated target/near-case source IDs and any direct source document meeting the six-token content self-match threshold.",
       "answer_key": {

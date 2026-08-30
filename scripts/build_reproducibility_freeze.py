@@ -54,6 +54,7 @@ def main() -> None:
     answer = json.loads((ROOT / "config/grounded_answer.json").read_text(encoding="utf-8"))
     citation = json.loads((ROOT / "config/citation_verification.json").read_text(encoding="utf-8"))
     answer_key = json.loads((ROOT / "answer_key/authority_answer_key.json").read_text(encoding="utf-8"))
+    query_regression = json.loads((ROOT / "artifacts/week9_final_freeze_regression.json").read_text(encoding="utf-8"))
 
     evaluation_entries = [entry for entry in answer_key["entries"] if entry.get("status") == "evaluation"]
     result = {
@@ -101,6 +102,23 @@ def main() -> None:
                 "answer_renderer": answer,
                 "citation_verifier": citation,
                 "retrieval_selection": selection,
+                "query_builder_final_regression": {
+                    "artifact": file_record("artifacts/week9_final_freeze_regression.json"),
+                    "method_comparison": "legacy_first_32 versus salient_tfidf on six pre-specified real answer-key controls at k=100 and k=500, using identical full facts-only inputs and the unchanged BM25 index/safety filters.",
+                    "results": [
+                        {
+                            "query_case_id": row["query_case_id"],
+                            "legacy_k100": row["modes"]["legacy_first_32"]["100"]["rank"],
+                            "legacy_k500": row["modes"]["legacy_first_32"]["500"]["rank"],
+                            "salient_k100": row["modes"]["salient_tfidf"]["100"]["rank"],
+                            "salient_k500": row["modes"]["salient_tfidf"]["500"]["rank"],
+                            "non_worsening": row["salient_non_worsening_at_k500"],
+                        }
+                        for row in query_regression["results"]
+                    ],
+                    "decision": query_regression["freeze_recommendation"],
+                    "decision_basis": "Salient terms were non-worsening on all six controls and improved 1988_96 from absent to rank 13 at both depths. No further query-construction variation is permitted after this check.",
+                },
                 "temporal_policy": "precedent_decision_year < ildc_query_year; same-year is ambiguous and excluded; missing decision date is excluded.",
                 "duplicate_policy": "Exclude alignment-gated target/near-case source IDs and any direct source document meeting the six-token content self-match threshold.",
                 "answer_key": {
@@ -138,6 +156,7 @@ def main() -> None:
         f"- Freeze version: `{FREEZE_VERSION}`",
         f"- ILDC split rows: train `{result['datasets_and_splits']['ildc_single']['splits']['train']['rows']}`, validation `{result['datasets_and_splits']['ildc_single']['splits']['validation']['rows']}`, test `{result['datasets_and_splits']['ildc_single']['splits']['test']['rows']}`",
         f"- Retrieval configuration: `{selection['selection_version']}`; query builder `{selection['query_construction_version']}`; candidate depth `{selection['candidate_k']}`; selected sources `{selection['max_selected_evidence']}`.",
+        "- Final real-answer-key query-builder regression: salient TF-IDF terms were non-worsening on all six pre-specified controls and improved `1988_96` from absent to rank 13 at both k=100 and k=500. The complete before/after record is `artifacts/week9_final_freeze_regression.json`.",
         "- Temporal policy: candidate year must be strictly earlier than query year; same-year is logged as ambiguous and excluded; missing dates are excluded.",
         "- Duplicate policy: alignment-gated target/near-case exclusion plus direct six-token source-text self-match exclusion.",
         f"- E1 seed: `{result['experiments']['E1']['random_seed']}`. E2 seed: `{result['experiments']['E2_corrected']['random_seed']}`.",

@@ -2,7 +2,7 @@
   "experiment": "E4",
   "selection_version": "week10-bm25-salient-terms-v1",
   "query_construction_version": "tfidf-segment-salient-terms-v1",
-  "run_id": "1f984e75-6eb5-457e-b3ac-d9df2c6f9b24",
+  "run_id": "fbcb9e4a-26bd-4c1e-8ff2-34e9310e9940",
   "query_id": "week10-replay-01",
   "query_year": 2020,
   "candidate_count": 100,
