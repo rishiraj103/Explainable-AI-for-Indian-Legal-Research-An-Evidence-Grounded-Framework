@@ -1,0 +1,1099 @@
+{
+  "analysis_version": "week11-mandatory-error-analysis-v1",
+  "method": "Read-only reconstruction from the initial evaluation's persisted retrieval run UUIDs; no retrieval configuration, index, or answer key was changed.",
+  "summary": {
+    "cohort_n": 30,
+    "retrieved_and_selected": 11,
+    "retrieved_not_selected": 1,
+    "absent_at_k100": 18,
+    "displayed_citations_total": 135,
+    "displayed_citations_provenance_valid_but_not_answer_key_authority": 124,
+    "relevance_caveat": "A citation that differs from the single expected authority is not automatically substantively irrelevant; no human relevance label was fabricated."
+  },
+  "cases": [
+    {
+      "query_case_id": "2008_1629",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "(2006) 9 scc 630",
+          "matches": [
+            {
+              "rank": 1,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 4,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 5,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 9,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 10,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 14,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 15,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 18,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 29,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 30,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 38,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 50,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 53,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 74,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 80,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 85,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 89,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            },
+            {
+              "rank": 98,
+              "source_id": "S_2006_2_582_600",
+              "corpus_citation": "[2006] SUPP. 2 S.C.R. 582",
+              "decision_date": "2006-05-12",
+              "title": "U. RAGHAVENDRA ACHARYA AND ORS.  versus STATE OF KARNATAKA AND ORS."
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1997_792",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "(1979) 2 scc 409"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1995_322",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "air 1986 sc 794",
+          "matches": [
+            {
+              "rank": 5,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 7,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 10,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 18,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 36,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 41,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 63,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 64,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 71,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            },
+            {
+              "rank": 79,
+              "source_id": "S_1985_1_63_82",
+              "corpus_citation": "[1985] SUPP. 1 S.C.R. 63",
+              "decision_date": "1985-05-01",
+              "title": "STATE OF TAMIL NADU ETC. versus RAMALINGA SAMIGAL MADAM ETC."
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1993_185",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "air 1987 sc 454"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1971_295",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1967] 2 s.c.r. 496"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1974_36",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1966] supp. 1 s.c.r. 63"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1995_375",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "jt (1993) 5 sc 681",
+          "matches": [
+            {
+              "rank": 4,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 6,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 10,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 19,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 24,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 34,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 44,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 45,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 47,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            },
+            {
+              "rank": 76,
+              "source_id": "S_1993_2_551_557",
+              "corpus_citation": "[1993] SUPP. 2 S.C.R. 551",
+              "decision_date": "1993-09-30",
+              "title": "UNION OF INDIA AND ORS. versus DR. GYAN PRAKASH SINGH"
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1986_176",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1963] 3 s.c.r. 884",
+          "matches": [
+            {
+              "rank": 11,
+              "source_id": "1963_3_884_893",
+              "corpus_citation": "[1963] 3 S.C.R. 884",
+              "decision_date": "1962-10-04",
+              "title": "AMIR SINGH AND ANOTHER versus RAM SINGH AND OTHERS"
+            },
+            {
+              "rank": 18,
+              "source_id": "1963_3_884_893",
+              "corpus_citation": "[1963] 3 S.C.R. 884",
+              "decision_date": "1962-10-04",
+              "title": "AMIR SINGH AND ANOTHER versus RAM SINGH AND OTHERS"
+            },
+            {
+              "rank": 39,
+              "source_id": "1963_3_884_893",
+              "corpus_citation": "[1963] 3 S.C.R. 884",
+              "decision_date": "1962-10-04",
+              "title": "AMIR SINGH AND ANOTHER versus RAM SINGH AND OTHERS"
+            },
+            {
+              "rank": 50,
+              "source_id": "1963_3_884_893",
+              "corpus_citation": "[1963] 3 S.C.R. 884",
+              "decision_date": "1962-10-04",
+              "title": "AMIR SINGH AND ANOTHER versus RAM SINGH AND OTHERS"
+            },
+            {
+              "rank": 54,
+              "source_id": "1963_3_884_893",
+              "corpus_citation": "[1963] 3 S.C.R. 884",
+              "decision_date": "1962-10-04",
+              "title": "AMIR SINGH AND ANOTHER versus RAM SINGH AND OTHERS"
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1986_378",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1985] 1 scc 305"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 4,
+      "displayed_citation_checks_passed": 4,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1984_136",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1958] 1 s.c.r. 828"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1977_99",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1966] 3 s.c.r. 527",
+          "matches": [
+            {
+              "rank": 2,
+              "source_id": "1966_3_527_542",
+              "corpus_citation": "[1966] 3 S.C.R. 527",
+              "decision_date": "1966-02-08",
+              "title": "SITARAM MOTILAL KALAL versus SANTANUPRASAD JAISHANKAR BHATT"
+            },
+            {
+              "rank": 12,
+              "source_id": "1966_3_527_542",
+              "corpus_citation": "[1966] 3 S.C.R. 527",
+              "decision_date": "1966-02-08",
+              "title": "SITARAM MOTILAL KALAL versus SANTANUPRASAD JAISHANKAR BHATT"
+            },
+            {
+              "rank": 18,
+              "source_id": "1966_3_527_542",
+              "corpus_citation": "[1966] 3 S.C.R. 527",
+              "decision_date": "1966-02-08",
+              "title": "SITARAM MOTILAL KALAL versus SANTANUPRASAD JAISHANKAR BHATT"
+            },
+            {
+              "rank": 30,
+              "source_id": "1966_3_527_542",
+              "corpus_citation": "[1966] 3 S.C.R. 527",
+              "decision_date": "1966-02-08",
+              "title": "SITARAM MOTILAL KALAL versus SANTANUPRASAD JAISHANKAR BHATT"
+            },
+            {
+              "rank": 76,
+              "source_id": "1966_3_527_542",
+              "corpus_citation": "[1966] 3 S.C.R. 527",
+              "decision_date": "1966-02-08",
+              "title": "SITARAM MOTILAL KALAL versus SANTANUPRASAD JAISHANKAR BHATT"
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 2,
+      "displayed_citation_checks_passed": 2,
+      "provenance_valid_but_not_answer_key_authority_citations": 1,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "2013_35",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "(1992) 3 scc 161"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1980_217",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1978] 3 s.c.r. 370"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1980_133",
+      "bucket": "correct_authority_retrieved_but_not_selected",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [
+        "[1957] 1 s.c.r. 121"
+      ],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1957] 1 s.c.r. 121",
+          "matches": [
+            {
+              "rank": 48,
+              "source_id": "1957_1_121_143",
+              "corpus_citation": "[1957] 1 S.C.R. 121",
+              "decision_date": "1956-11-27",
+              "title": "HARIPRASAD SHIVSHANKAR SHUKLA versus A. D. DIVIKAR"
+            },
+            {
+              "rank": 99,
+              "source_id": "1957_1_121_143",
+              "corpus_citation": "[1957] 1 S.C.R. 121",
+              "decision_date": "1956-11-27",
+              "title": "HARIPRASAD SHIVSHANKAR SHUKLA versus A. D. DIVIKAR"
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1978_33",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1962] 1 s.c.r. 574"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1981_187",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1958] 1 s.c.r. 1495"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 1,
+      "displayed_citation_checks_passed": 1,
+      "provenance_valid_but_not_answer_key_authority_citations": 1,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1980_222",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1979] 2 s.c.r. 75",
+          "matches": [
+            {
+              "rank": 6,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            },
+            {
+              "rank": 21,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            },
+            {
+              "rank": 26,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            },
+            {
+              "rank": 42,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            },
+            {
+              "rank": 45,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            },
+            {
+              "rank": 47,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            },
+            {
+              "rank": 65,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            },
+            {
+              "rank": 69,
+              "source_id": "1979_2_75_81",
+              "corpus_citation": "[1979] 2 S.C.R. 75",
+              "decision_date": "1978-10-06",
+              "title": "BAI TAHIRA  versus ALI HUSSAIN FISSALLI CHOTHIA AND ANR ."
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1977_145",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1965] 1 s.c.r. 686"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1981_55",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1970] 1 s.c.r. 565"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 3,
+      "displayed_citation_checks_passed": 3,
+      "provenance_valid_but_not_answer_key_authority_citations": 3,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1980_105",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1973] 3 s.c.r. 117",
+          "matches": [
+            {
+              "rank": 42,
+              "source_id": "1973_3_117_122",
+              "corpus_citation": "[1973] 3 S.C.R. 117",
+              "decision_date": "1972-12-20",
+              "title": "UNION OF INDIA & ORS. versus S. B. KOHLI & ANR."
+            },
+            {
+              "rank": 86,
+              "source_id": "1973_3_117_122",
+              "corpus_citation": "[1973] 3 S.C.R. 117",
+              "decision_date": "1972-12-20",
+              "title": "UNION OF INDIA & ORS. versus S. B. KOHLI & ANR."
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 2,
+      "displayed_citation_checks_passed": 2,
+      "provenance_valid_but_not_answer_key_authority_citations": 1,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1995_412",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "(1986) 4 scc 566"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1995_403",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "air 1965 sc 202"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 4,
+      "displayed_citation_checks_passed": 4,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1995_425",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1967] 1 s.c.r. 679",
+          "matches": [
+            {
+              "rank": 1,
+              "source_id": "1967_1_679_684",
+              "corpus_citation": "[1967] 1 S.C.R. 679",
+              "decision_date": "1966-10-03",
+              "title": "STATE OF ASSAM & ORS. versus SHRI KANAK CHANDRA DUTTA"
+            },
+            {
+              "rank": 8,
+              "source_id": "1967_1_679_684",
+              "corpus_citation": "[1967] 1 S.C.R. 679",
+              "decision_date": "1966-10-03",
+              "title": "STATE OF ASSAM & ORS. versus SHRI KANAK CHANDRA DUTTA"
+            },
+            {
+              "rank": 38,
+              "source_id": "1967_1_679_684",
+              "corpus_citation": "[1967] 1 S.C.R. 679",
+              "decision_date": "1966-10-03",
+              "title": "STATE OF ASSAM & ORS. versus SHRI KANAK CHANDRA DUTTA"
+            },
+            {
+              "rank": 84,
+              "source_id": "1967_1_679_684",
+              "corpus_citation": "[1967] 1 S.C.R. 679",
+              "decision_date": "1966-10-03",
+              "title": "STATE OF ASSAM & ORS. versus SHRI KANAK CHANDRA DUTTA"
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "2002_944",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "(1994) supp. 1 scc 324",
+          "matches": [
+            {
+              "rank": 6,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 8,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 9,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 10,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 11,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 33,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 50,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 56,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 87,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 89,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            },
+            {
+              "rank": 99,
+              "source_id": "1993_1_891_1026",
+              "corpus_citation": "[1993] 1 S.C.R. 891",
+              "decision_date": "1993-02-10",
+              "title": "R.C. POUDYAL AND ANR. ETC. ETC. versus UNION OF INDIA AND ORS. ETC. ETC."
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1986_397",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "(1978) 3 scc 119"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1982_29",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1976] 3 s.c.r. 160",
+          "matches": [
+            {
+              "rank": 14,
+              "source_id": "1976_3_160_167",
+              "corpus_citation": "[1976] 3 S.C.R. 160",
+              "decision_date": "1976-01-16",
+              "title": "STATE BANK OF INDIA versus SHR N. SUNDARA MONEY"
+            },
+            {
+              "rank": 40,
+              "source_id": "1976_3_160_167",
+              "corpus_citation": "[1976] 3 S.C.R. 160",
+              "decision_date": "1976-01-16",
+              "title": "STATE BANK OF INDIA versus SHR N. SUNDARA MONEY"
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1994_632",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1979] 2 s.c.r. 953"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1985_40",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "[1964] 2 s.c.r. 888"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 4,
+      "displayed_citation_checks_passed": 4,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1992_84",
+      "bucket": "correct_authority_absent_at_k100",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [
+        "(1981) 4 scc 173"
+      ],
+      "expected_match_details": [],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 5,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    },
+    {
+      "query_case_id": "1988_96",
+      "bucket": "correct_authority_retrieved_and_selected",
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [],
+      "expected_authority_absent": [],
+      "expected_match_details": [
+        {
+          "expected_authority_citation": "[1980] 46 stc 63",
+          "matches": [
+            {
+              "rank": 13,
+              "source_id": "1980_3_1271_1277",
+              "corpus_citation": "[1980] 3 S.C.R. 1271",
+              "decision_date": "1980-05-09",
+              "title": "DEPUTY COMMISSIONER, SALES TAX (LAW) BOARD OF  REVENUE (TAXES) ERNAKULAM versus PIO FOOD PACKERS"
+            },
+            {
+              "rank": 84,
+              "source_id": "1980_3_1271_1277",
+              "corpus_citation": "[1980] 3 S.C.R. 1271",
+              "decision_date": "1980-05-09",
+              "title": "DEPUTY COMMISSIONER, SALES TAX (LAW) BOARD OF  REVENUE (TAXES) ERNAKULAM versus PIO FOOD PACKERS"
+            }
+          ]
+        }
+      ],
+      "displayed_citation_checks": 5,
+      "displayed_citation_checks_passed": 5,
+      "provenance_valid_but_not_answer_key_authority_citations": 4,
+      "substantive_relevance_label": "not adjudicated: answer-key mismatch does not establish irrelevance"
+    }
+  ],
+  "headline": "Verification succeeds for retrieved evidence; recovery of the predefined authority is the binding constraint."
+}
