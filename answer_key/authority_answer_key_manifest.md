@@ -73,6 +73,22 @@ mismatches: 0–10), not from retrieval or outcome results on the ILDC test
 split. It is a leakage-safety threshold, not a test-set-tuned retrieval
 parameter.
 
+## Temporal balance and era-coverage watch - 2026-08-30
+
+The corrected 30-case evaluation answer key is not era-balanced: 13/30 cases
+(43.3%) fall in the 1980s, compared with 7/30 (23.3%) in the pre-correction
+key; the corrected key has 2 cases from the 2000s and 1 from the 2010s, versus
+5 and 7 respectively before correction. This is a downstream consequence of
+the content-alignment and primary-source gates, not a deliberate sampling
+choice. It remains a source-verified evaluation subset, but it must not be
+represented as temporally representative of the ILDC test split.
+
+For Week 12 error analysis, report retrieval and citation outcomes by query
+era where sample sizes permit, and distinguish corpus/source absence from
+ranking and evidence-selection failures. The observed source-resolution and
+alignment constraints are a coverage confound to monitor, not proof that model
+quality itself varies by era.
+
 The identifier-namespace collision is concentrated in the legacy 1958–1993
 portion of the corpus, where ILDC and eCourts serial-looking suffixes are
 especially likely to be unrelated; numeric equality is never used as identity.
