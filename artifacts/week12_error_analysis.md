@@ -34,3 +34,17 @@ The frozen E1 model was not serialized in its original run. It was deterministic
 | Answer-key cohort, n=30 | 18 | 3 (`1997_792`) | 3 (`1995_375`) | 6 |
 
 E3/E4 do not make outcome predictions, so “E2 wrong, E3/E4 outcome correct,” “E3/E4 outcome correct but citation unsupported,” and “correct authority retrieved but final answer wrong” are structurally inapplicable. There are zero E3 outputs rejected by E4’s verifier (all 135 citations pass), zero later-date citations, and 19/30 cases where citations are traceable but the expected authority is not selected (for example, `1997_792`). A persisted-evidence faithfulness spot check passes for 5/5 fixed cases (`2008_1629`, `1997_792`, `1980_133`, `2002_944`, `1988_96`). See `artifacts/week12_prediction_cross_reference.md`.
+
+## Final populated mandatory error-analysis table
+
+| Frozen-plan category | Count / denominator | Example | Interpretation |
+|---|---:|---|---|
+| E2 wrong, E3/E4 correct | N/A | `1997_792` is E2-wrong, but E3/E4 have no outcome label | Structurally inapplicable: retrieval/explanation output cannot be outcome-correct or outcome-wrong relative to E2. None of the 3 E2-wrong cohort cases also selected the expected authority. |
+| E3 correct, E4 wrong | 0/30 | None exists | On the applicable verification interpretation, E4 rejected no E3 displayed citation: all 135 passed. |
+| E3/E4 prediction correct but citation unsupported | N/A | None exists | E3/E4 do not emit outcome predictions; unsupported citations are also 0/135. |
+| Correct authority retrieved but final answer wrong | N/A | `2008_1629` retrieved and selected its authority, but has no gold outcome-answer label | The controlled brief intentionally makes no adjudicated legal outcome claim, so final-answer correctness is not defined. |
+| Citation traceable but authority-consistency fails | 19/30 cases | `1997_792` | Selected citations are provenance-valid, but the predefined authority was not selected. This is not a substantive-irrelevance judgment. |
+| Citation later than the historical case date | 0/30 cases; 0/135 citations | None exists | Confirmed per case and per displayed citation; strict temporal eligibility held. |
+| Explanation highlights text not corresponding to retrieved evidence | 0/5 fixed spot checks | `2008_1629` | The five persisted-output reconstructions (`2008_1629`, `1997_792`, `1980_133`, `2002_944`, `1988_96`) all mapped every highlighted passage to an exact retrieved chunk. |
+
+This closes Week 12. The authoritative machine-readable join is `artifacts/week12_prediction_cross_reference.json`; it preserves the exact E1/E2 per-case predictions and the frozen E3/E4 cohort status.
