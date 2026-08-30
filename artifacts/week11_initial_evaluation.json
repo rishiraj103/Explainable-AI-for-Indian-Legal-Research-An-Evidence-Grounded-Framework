@@ -1,0 +1,1738 @@
+{
+  "evaluation_version": "week11-initial-quantitative-evaluation-v1",
+  "freeze": {
+    "evaluation_round_version": "week11-reference-evidence-round-v1",
+    "frozen_from_commit": "f6ea888d8a56352114d7ca7a672a7094854eb84c",
+    "reference_evidence_cases": 30
+  },
+  "sample_sizes": {
+    "E1_E2_outcome_prediction": {
+      "n": 1503,
+      "population": "eligible cases in the full frozen ILDC test split"
+    },
+    "E3_E4_evidence_citation_grounding_provenance": {
+      "n": 30,
+      "population": "frozen source-verified answer-key-covered subset of the ILDC test split"
+    },
+    "E3_E4_outcome_prediction": {
+      "available": false,
+      "reason": "The frozen E3/E4 retrieval-and-evidence pipeline does not emit outcome labels; outcome prediction remains an E1/E2 measure."
+    }
+  },
+  "E1_E2_outcome_prediction_full_test": {
+    "n": 1503,
+    "source": "artifacts/e1_e2_comparison.json; accepted frozen result records reconciled without retraining",
+    "E1": {
+      "accuracy": 0.61344,
+      "macro_f1": 0.612342
+    },
+    "E2_mean_logits": {
+      "accuracy": 0.596806,
+      "macro_f1": 0.592358
+    },
+    "E2_majority_vote": {
+      "accuracy": 0.601464,
+      "macro_f1": 0.593682
+    }
+  },
+  "E3_retrieval_and_controlled_grounding_answer_key_subset": {
+    "n": 30,
+    "recall_at_5": 0.166667,
+    "recall_at_100": 0.4,
+    "authority_consistent_precision": 0.081481,
+    "authority_consistent_recall": 0.366667,
+    "authority_consistent_f1": 0.133333,
+    "citation_groundedness_rate": 1.0,
+    "citation_provenance_validity": 1.0,
+    "temporal_violation_rate": 0.0,
+    "unsupported_claim_rate": 0.0,
+    "denominators": {
+      "expected_authorities": 30,
+      "selected_evidence_items": 135,
+      "displayed_citation_checks": 135
+    }
+  },
+  "E4_verified_retrieval_and_grounded_answer_key_subset": {
+    "n": 30,
+    "recall_at_5": 0.166667,
+    "recall_at_100": 0.4,
+    "authority_consistent_precision": 0.081481,
+    "authority_consistent_recall": 0.366667,
+    "authority_consistent_f1": 0.133333,
+    "citation_groundedness_rate": 1.0,
+    "citation_provenance_validity": 1.0,
+    "temporal_violation_rate": 0.0,
+    "unsupported_claim_rate": 0.0,
+    "denominators": {
+      "expected_authorities": 30,
+      "selected_evidence_items": 135,
+      "displayed_citation_checks": 135
+    }
+  },
+  "interpretation": {
+    "E3": "Frozen retrieval, five-source evidence selection, and controlled extract-only answer rendering. The metrics are measured on the answer-key-covered subset.",
+    "E4": "The same frozen E3 pipeline with the citation/provenance/temporal verifier executed on every displayed evidence item. E3 and E4 share retrieval results; E4 adds hard verification rather than a different ranking model.",
+    "outcome_prediction_for_E3_E4": "Not available: the frozen retrieval/explanation pipeline does not emit outcome predictions, so no outcome accuracy is fabricated for E3/E4."
+  },
+  "per_case_records": [
+    {
+      "query_case_id": "2008_1629",
+      "query_year": 2008,
+      "label": 0,
+      "facts_word_count": 1465,
+      "facts_sha256": "dcf70499b6cc20386cd398625cf3fae447bfef66eb642858b51fac6f06d8ffd2",
+      "retrieval_run_id": "fbc23986-0c6b-4cf0-a14c-7b566241efd9",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "(2006) 9 scc 630"
+      ],
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "(2006) 9 scc 630"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "S_2006_2_582_600::p0015::c004",
+          "citation": "[2006] SUPP. 2 S.C.R. 582",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "S_2005_5_223_237::p0001::c003",
+          "citation": "[2005] SUPP. 5 S.C.R. 223",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "S_1993_1_514_522::p0007::c001",
+          "citation": "[1993] SUPP. 1 S.C.R. 514",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_2006_7_58_80::p0006::c004",
+          "citation": "[2006] SUPP. 7 S.C.R. 58",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "S_2005_1_426_436::p0005::c003",
+          "citation": "[2005] SUPP. 1 S.C.R. 426",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1997_792",
+      "query_year": 1997,
+      "label": 1,
+      "facts_word_count": 12056,
+      "facts_sha256": "1095a80e3d5c556f08b3c8a4b3f88eba01711c273b6c6f3f251bd0e8f9d3dbd6",
+      "retrieval_run_id": "de0f9b3f-886c-49ae-a958-a8ca51d62447",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "(1979) 2 scc 409"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1995_2_396_403::p0002::c002",
+          "citation": "[1995] 2 S.C.R. 396",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "S_1992_2_389_417::p0025::c003",
+          "citation": "[1992] SUPP. 2 S.C.R. 389",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1991_2_105_187::p0001::c005",
+          "citation": "[1991] 2 S.C.R. 105",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1991_2_188_190::p0001::c002",
+          "citation": "[1991] 2 S.C.R. 188",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1993_2_114_120::p0003::c002",
+          "citation": "[1993] 2 S.C.R. 114",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1995_322",
+      "query_year": 1995,
+      "label": 0,
+      "facts_word_count": 1615,
+      "facts_sha256": "22a73d4d78331f2da0d995bccdd76d8207c7ec20dd2333d92229ed86f307db70",
+      "retrieval_run_id": "024f8d3c-c133-4c8f-878a-1b6d3349f85d",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "air 1986 sc 794"
+      ],
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "air 1986 sc 794"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "S_1985_1_63_82::p0017::c002",
+          "citation": "[1985] SUPP. 1 S.C.R. 63",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1973_1_258_276::p0007::c002",
+          "citation": "[1973] 1 S.C.R. 258",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1979_3_201_208::p0005::c005",
+          "citation": "[1979] 3 S.C.R. 201",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1968_1_447_454::p0007::c001",
+          "citation": "[1968] 1 S.C.R. 447",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1969_2_158_165::p0004::c004",
+          "citation": "[1969] 2 S.C.R. 158",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1993_185",
+      "query_year": 1993,
+      "label": 1,
+      "facts_word_count": 2389,
+      "facts_sha256": "cf1037c1739b4a93801e101811be4c67b06b8a62d5415d1d3230e3b3a66392d5",
+      "retrieval_run_id": "ccd76ff0-bbe3-4074-9cd1-0c129382bbd8",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "air 1987 sc 454"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1987_1_603_630::p0001::c003",
+          "citation": "[1987] 1 S.C.R. 603",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1987_1_584_602::p0004::c002",
+          "citation": "[1987] 1 S.C.R. 584",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1990_1_464_469::p0001::c002",
+          "citation": "[1990] 1 S.C.R. 464",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1988_2_805_813::p0005::c002",
+          "citation": "[1988] SUPP. 2 S.C.R. 805",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1987_3_427_455::p0001::c003",
+          "citation": "[1987] 3 S.C.R. 427",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1971_295",
+      "query_year": 1971,
+      "label": 1,
+      "facts_word_count": 1444,
+      "facts_sha256": "d79bae6a85912536c6797f51224e26981276dd893d465a65c38aa9617a6ffd76",
+      "retrieval_run_id": "8d822419-8ca9-482a-a3ca-7a712df4bf16",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1967] 2 s.c.r. 496"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1961_1_88_96::p0004::c001",
+          "citation": "[1961] 1 S.C.R. 88",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1964_3_25_37::p0003::c001",
+          "citation": "[1964] 3 S.C.R. 25",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1964_5_683_800::p0031::c002",
+          "citation": "[1964] 5 S.C.R. 683",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1970_1_163_171::p0002::c005",
+          "citation": "[1970] 1 S.C.R. 163",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "S_1963_1_408_418::p0002::c005",
+          "citation": "[1963] SUPP. 1 S.C.R. 408",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1974_36",
+      "query_year": 1974,
+      "label": 1,
+      "facts_word_count": 1180,
+      "facts_sha256": "72ddb453030517c532e0cebfc50486c7b6b455b10e5497fc79e49eec0fbf883f",
+      "retrieval_run_id": "95f5ade2-ed8b-4eb0-b5ce-a160c6fba952",
+      "candidate_count_after_safety_filters": 81,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1966] supp. 1 s.c.r. 63"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1968_2_572_576::p0001::c008",
+          "citation": "[1968] 2 S.C.R. 572",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1964_5_86_104::p0008::c001",
+          "citation": "[1964] 5 S.C.R. 86",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1971_1_671_682::p0002::c002",
+          "citation": "[1971] 1 S.C.R. 671",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1962_3_483_496::p0004::c003",
+          "citation": "[1962] 3 S.C.R. 483",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1970_1_435_442::p0002::c003",
+          "citation": "[1970] 1 S.C.R. 435",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1995_375",
+      "query_year": 1995,
+      "label": 1,
+      "facts_word_count": 461,
+      "facts_sha256": "84a21c92b90adc3d3be9060644108eb59e473764498f5377a489196bb3dc08f9",
+      "retrieval_run_id": "d9dc3da5-0a5b-4c3d-adde-ce992d093d03",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "jt (1993) 5 sc 681"
+      ],
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "jt (1993) 5 sc 681"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1993_2_1_10::p0004::c003",
+          "citation": "[1993] 2 S.C.R. 1",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "S_1993_2_551_557::p0004::c001",
+          "citation": "[1993] SUPP. 2 S.C.R. 551",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1988_1_335_339::p0004::c001",
+          "citation": "[1988] 1 S.C.R. 335",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1990_1_562_579::p0013::c002",
+          "citation": "[1990] SUPP. 1 S.C.R. 562",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "S_1992_2_356_361::p0004::c003",
+          "citation": "[1992] SUPP. 2 S.C.R. 356",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1986_176",
+      "query_year": 1986,
+      "label": 1,
+      "facts_word_count": 670,
+      "facts_sha256": "8ae980e88ba65e599457f4c51505c886722146a34f8b7309fcf83b193ed1209c",
+      "retrieval_run_id": "ffc39e8d-cfd3-4d3c-bd33-696b977f97b0",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1963] 3 s.c.r. 884"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "[1963] 3 s.c.r. 884"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1970_2_129_135::p0002::c006",
+          "citation": "[1970] 2 S.C.R. 129",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1963_3_884_893::p0005::c002",
+          "citation": "[1963] 3 S.C.R. 884",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1970_1_803_807::p0002::c006",
+          "citation": "[1970] 1 S.C.R. 803",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1968_2_833_841::p0001::c002",
+          "citation": "[1968] 2 S.C.R. 833",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1963_3_858_884::p0027::c004",
+          "citation": "[1963] 3 S.C.R. 858",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1986_378",
+      "query_year": 1986,
+      "label": 1,
+      "facts_word_count": 8084,
+      "facts_sha256": "0fa45f6d425a1436306b4121a818a8404b0c392b9709c583458d6d1ae95a0e36",
+      "retrieval_run_id": "4fd559a4-27e7-4b63-be87-c6fe143e3b8e",
+      "candidate_count_after_safety_filters": 63,
+      "selected_evidence_count": 4,
+      "expected_authority_citations": [
+        "[1985] 1 scc 305"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 4,
+      "citation_checks_passed": 4,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1985_1_751_770::p0009::c002",
+          "citation": "[1985] 1 S.C.R. 751",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1981_2_533_599::p0013::c002",
+          "citation": "[1981] 2 S.C.R. 533",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1980_3_331_363::p0025::c001",
+          "citation": "[1980] 3 S.C.R. 331",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1977_3_525_528::p0002::c006",
+          "citation": "[1977] 3 S.C.R. 525",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1984_136",
+      "query_year": 1984,
+      "label": 1,
+      "facts_word_count": 1207,
+      "facts_sha256": "f8df5d6fc42ad5ff3a6b3d2a26cb59f4f3039e42e68a336451874d692cdb6737",
+      "retrieval_run_id": "90983b1d-a047-42bc-affc-ce8b42cf7cb0",
+      "candidate_count_after_safety_filters": 91,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1958] 1 s.c.r. 828"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1983_2_418_447::p0005::c002",
+          "citation": "[1983] 2 S.C.R. 418",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1983_1_1_7::p0002::c004",
+          "citation": "[1983] 1 S.C.R. 1",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1982_2_365_1455::p1047::c001",
+          "citation": "[1982] 2 S.C.R. 365",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1974_3_754_759::p0002::c004",
+          "citation": "[1974] 3 S.C.R. 754",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1980_3_1006_1014::p0003::c004",
+          "citation": "[1980] 3 S.C.R. 1006",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1977_99",
+      "query_year": 1977,
+      "label": 1,
+      "facts_word_count": 4858,
+      "facts_sha256": "301dc57bc39886430d7a6c6dccfd30c1ec77f72b1dc21592603717676943e9db",
+      "retrieval_run_id": "b45da286-aacc-4850-bd87-c59cf26e974d",
+      "candidate_count_after_safety_filters": 93,
+      "selected_evidence_count": 2,
+      "expected_authority_citations": [
+        "[1966] 3 s.c.r. 527"
+      ],
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "[1966] 3 s.c.r. 527"
+      ],
+      "citation_check_count": 2,
+      "citation_checks_passed": 2,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1966_3_527_542::p0015::c005",
+          "citation": "[1966] 3 S.C.R. 527",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1968_2_515_521::p0004::c002",
+          "citation": "[1968] 2 S.C.R. 515",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "2013_35",
+      "query_year": 2013,
+      "label": 1,
+      "facts_word_count": 791,
+      "facts_sha256": "3b8d2466570e014c24bed9c1d10c207eea3bfafcc7f5043680caa140f3e25651",
+      "retrieval_run_id": "318fa630-2a32-4eae-829a-6b8133f5e594",
+      "candidate_count_after_safety_filters": 96,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "(1992) 3 scc 161"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "S_2006_6_393_403::p0001::c002",
+          "citation": "[2006] SUPP. 6 S.C.R. 393",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "2007_1_671_676::p0004::c003",
+          "citation": "[2007] 1 S.C.R. 671",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "2004_2_52_64::p0005::c004",
+          "citation": "[2004] 2 S.C.R. 52",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "2006_3_348_360::p0001::c002",
+          "citation": "[2006] 3 S.C.R. 348",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "S_2002_1_366_378::p0012::c004",
+          "citation": "[2002] SUPP. 1 S.C.R. 366",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1980_217",
+      "query_year": 1980,
+      "label": 1,
+      "facts_word_count": 1739,
+      "facts_sha256": "cfe19317865adc79acf4e61b705e398f8829cc392f70091883f7aade844ad8bb",
+      "retrieval_run_id": "53776498-439d-4f86-b3d0-b4fc88fc3c21",
+      "candidate_count_after_safety_filters": 85,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1978] 3 s.c.r. 370"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "S_1959_1_892_904::p0010::c001",
+          "citation": "[1959] SUPP. 1 S.C.R. 892",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1958_1_1067_1080::p0014::c004",
+          "citation": "[1958] 1 S.C.R. 1067",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1958_1_1080_1102::p0001::c004",
+          "citation": "[1958] 1 S.C.R. 1080",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1967_2_625_630::p0004::c003",
+          "citation": "[1967] 2 S.C.R. 625",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1974_2_335_347::p0010::c001",
+          "citation": "[1974] 2 S.C.R. 335",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1980_133",
+      "query_year": 1980,
+      "label": 1,
+      "facts_word_count": 1643,
+      "facts_sha256": "8f57c48f76a7322f388ca8bac987390f075964f044c7ed5bd583f84bf8d08272",
+      "retrieval_run_id": "641762f6-3973-4290-8a0b-03f431b8633f",
+      "candidate_count_after_safety_filters": 96,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1957] 1 s.c.r. 121"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [
+        "[1957] 1 s.c.r. 121"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1967_3_727_735::p0003::c002",
+          "citation": "[1967] 3 S.C.R. 727",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1970_1_507_522::p0009::c004",
+          "citation": "[1970] 1 S.C.R. 507",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1973_3_303_312::p0001::c002",
+          "citation": "[1973] 3 S.C.R. 303",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1965_3_448_452::p0002::c005",
+          "citation": "[1965] 3 S.C.R. 448",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1964_5_379_387::p0005::c003",
+          "citation": "[1964] 5 S.C.R. 379",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1978_33",
+      "query_year": 1978,
+      "label": 1,
+      "facts_word_count": 3518,
+      "facts_sha256": "6b4ad8f438cd09aafda4e0d412f9cdd5fd000149f3b71270047f18e4866dbf01",
+      "retrieval_run_id": "acb3380b-ee05-4478-b70a-b8e270586af8",
+      "candidate_count_after_safety_filters": 87,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1962] 1 s.c.r. 574"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1955_2_1140_1196::p0022::c002",
+          "citation": "[1955] 2 S.C.R. 1140",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1978_1_423_515::p0080::c002",
+          "citation": "[1978] 1 S.C.R. 423",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1967_3_186_198::p0001::c003",
+          "citation": "[1967] 3 S.C.R. 186",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1964_3_297_357::p0022::c003",
+          "citation": "[1964] 3 S.C.R. 297",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1960_2_89_117::p0017::c001",
+          "citation": "[1960] 2 S.C.R. 89",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1981_187",
+      "query_year": 1981,
+      "label": 1,
+      "facts_word_count": 1723,
+      "facts_sha256": "c84f8f3f0b3b5f49c842a42dd616ae6876a1ddae9cc3fd2ef7a6b1eba3c9d2e9",
+      "retrieval_run_id": "6c367167-896f-4819-afff-6485987f7392",
+      "candidate_count_after_safety_filters": 94,
+      "selected_evidence_count": 1,
+      "expected_authority_citations": [
+        "[1958] 1 s.c.r. 1495"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 1,
+      "citation_checks_passed": 1,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1979_2_805_815::p0003::c003",
+          "citation": "[1979] 2 S.C.R. 805",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1980_222",
+      "query_year": 1980,
+      "label": 1,
+      "facts_word_count": 3072,
+      "facts_sha256": "a2a63232fee56e238f6fa1fe54528b9a80ce1c5f4181fde234f6a33263f554b6",
+      "retrieval_run_id": "09671886-bedc-462b-8070-dad2397ef7d4",
+      "candidate_count_after_safety_filters": 79,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1979] 2 s.c.r. 75"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "[1979] 2 s.c.r. 75"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1979_2_75_81::p0004::c001",
+          "citation": "[1979] 2 S.C.R. 75",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1979_2_282_291::p0010::c001",
+          "citation": "[1979] 2 S.C.R. 282",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1975_2_483_490::p0003::c002",
+          "citation": "[1975] 2 S.C.R. 483",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1978_3_782_788::p0004::c002",
+          "citation": "[1978] 3 S.C.R. 782",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1951_1_292_302::p0007::c003",
+          "citation": "[1951] 1 S.C.R. 292",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1977_145",
+      "query_year": 1977,
+      "label": 1,
+      "facts_word_count": 2181,
+      "facts_sha256": "d4ede1721ae46916836ffdf5f32950529648a3b399a95670a496b02f8cb9cdef",
+      "retrieval_run_id": "a0896416-b382-4467-818e-cb5ada8ff6e6",
+      "candidate_count_after_safety_filters": 90,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1965] 1 s.c.r. 686"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1965_2_547_576::p0028::c002",
+          "citation": "[1965] 2 S.C.R. 547",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1968_2_887_891::p0004::c003",
+          "citation": "[1968] 2 S.C.R. 887",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1950_1_754_758::p0005::c003",
+          "citation": "[1950] 1 S.C.R. 754",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1976_1_74_81::p0001::c005",
+          "citation": "[1976] SUPP. 1 S.C.R. 74",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1974_3_915_930::p0008::c001",
+          "citation": "[1974] 3 S.C.R. 915",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1981_55",
+      "query_year": 1981,
+      "label": 1,
+      "facts_word_count": 4136,
+      "facts_sha256": "3abcd1429ddb3371815b4d6d311b3de0c65be4be9bf0b092306cfab74a7657be",
+      "retrieval_run_id": "0901e590-8b82-4a99-9000-e8bd338dd86d",
+      "candidate_count_after_safety_filters": 73,
+      "selected_evidence_count": 3,
+      "expected_authority_citations": [
+        "[1970] 1 s.c.r. 565"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 3,
+      "citation_checks_passed": 3,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1979_2_75_81::p0001::c002",
+          "citation": "[1979] 2 S.C.R. 75",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1980_3_1127_1142::p0002::c006",
+          "citation": "[1980] 3 S.C.R. 1127",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1979_2_282_291::p0002::c006",
+          "citation": "[1979] 2 S.C.R. 282",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1980_105",
+      "query_year": 1980,
+      "label": 0,
+      "facts_word_count": 5727,
+      "facts_sha256": "34740c9e28bff1a276e4a38ab884daf53538715b1bb42fc0bfe7e3fb00370a16",
+      "retrieval_run_id": "706da745-c4b8-4d75-8e9f-1479d197dcb0",
+      "candidate_count_after_safety_filters": 58,
+      "selected_evidence_count": 2,
+      "expected_authority_citations": [
+        "[1973] 3 s.c.r. 117"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "[1973] 3 s.c.r. 117"
+      ],
+      "citation_check_count": 2,
+      "citation_checks_passed": 2,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1973_3_117_122::p0002::c004",
+          "citation": "[1973] 3 S.C.R. 117",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1972_3_898_905::p0004::c002",
+          "citation": "[1972] 3 S.C.R. 898",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1995_412",
+      "query_year": 1995,
+      "label": 1,
+      "facts_word_count": 6559,
+      "facts_sha256": "4299a35c7805e43867cb3e22af8991fc9e5ee8c2de5fdca87a93903e86cba605",
+      "retrieval_run_id": "82211732-5acc-4eb2-a3b8-6e2fe99c1115",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "(1986) 4 scc 566"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1990_1_966_970::p0001::c002",
+          "citation": "[1990] 1 S.C.R. 966",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1959_1_12_194::p0005::c002",
+          "citation": "[1959] 1 S.C.R. 12",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "S_1973_1_1_1002::p0086::c009",
+          "citation": "[1973] SUPP. 1 S.C.R. 1",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1985_1_541_560::p0009::c001",
+          "citation": "[1985] SUPP. 1 S.C.R. 541",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1975_2_259_316::p0016::c001",
+          "citation": "[1975] 2 S.C.R. 259",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1995_403",
+      "query_year": 1995,
+      "label": 0,
+      "facts_word_count": 8872,
+      "facts_sha256": "5c1b106c66ddfaca51e23ccdc52ec919f8dd73bf2ebb0ddf054c7e46345c5dd4",
+      "retrieval_run_id": "6cd3854c-db6f-4ab5-82e5-15efff1161dd",
+      "candidate_count_after_safety_filters": 89,
+      "selected_evidence_count": 4,
+      "expected_authority_citations": [
+        "air 1965 sc 202"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 4,
+      "citation_checks_passed": 4,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "S_1988_3_524_530::p0003::c003",
+          "citation": "[1988] SUPP. 3 S.C.R. 524",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1991_2_256_273::p0014::c001",
+          "citation": "[1991] 2 S.C.R. 256",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1981_3_145_164::p0010::c001",
+          "citation": "[1981] 3 S.C.R. 145",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1961_2_890_904::p0003::c002",
+          "citation": "[1961] 2 S.C.R. 890",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1995_425",
+      "query_year": 1995,
+      "label": 1,
+      "facts_word_count": 1988,
+      "facts_sha256": "096a432e961d557039701e952a920737f47ce36734af93d6250ef45a4ca1a059",
+      "retrieval_run_id": "0a239018-8a4a-4799-8209-a04e24bbc7c7",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1967] 1 s.c.r. 679"
+      ],
+      "expected_authority_retrieved_at_5": true,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "[1967] 1 s.c.r. 679"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1967_1_679_684::p0004::c005",
+          "citation": "[1967] 1 S.C.R. 679",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1981_1_144_167::p0018::c001",
+          "citation": "[1981] 1 S.C.R. 144",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1964_5_683_800::p0004::c002",
+          "citation": "[1964] 5 S.C.R. 683",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1977_1_87_95::p0001::c003",
+          "citation": "[1977] 1 S.C.R. 87",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "S_1988_3_1074_1080::p0004::c005",
+          "citation": "[1988] SUPP. 3 S.C.R. 1074",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "2002_944",
+      "query_year": 2002,
+      "label": 0,
+      "facts_word_count": 1493,
+      "facts_sha256": "9db723ca0c820173aed0875c2d62fefd4841c9a350bda318b2c0e51273d0e232",
+      "retrieval_run_id": "2adacc3d-20b6-4ff6-a60a-5c15673bfcc9",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "(1994) supp. 1 scc 324"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "(1994) supp. 1 scc 324"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1993_1_891_1026::p0118::c004",
+          "citation": "[1993] 1 S.C.R. 891",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1980_1_1135_1147::p0004::c002",
+          "citation": "[1980] 1 S.C.R. 1135",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1997_2_475_487::p0006::c003",
+          "citation": "[1997] 2 S.C.R. 475",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1996_5_719_741::p0011::c003",
+          "citation": "[1996] SUPP. 5 S.C.R. 719",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1967_1_400_415::p0011::c002",
+          "citation": "[1967] 1 S.C.R. 400",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1986_397",
+      "query_year": 1986,
+      "label": 1,
+      "facts_word_count": 443,
+      "facts_sha256": "f305f0062c148a35c3cfa75f783277df6a6f04668967c1c8e7117da2ed06bd4b",
+      "retrieval_run_id": "2eb750a3-50e1-4dfb-bbd8-932427b3d631",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "(1978) 3 scc 119"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1984_3_309_314::p0002::c003",
+          "citation": "[1984] 3 S.C.R. 309",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1984_2_35_49::p0001::c002",
+          "citation": "[1984] 2 S.C.R. 35",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "S_1985_1_561_566::p0001::c001",
+          "citation": "[1985] SUPP. 1 S.C.R. 561",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1985_1_971_979::p0003::c003",
+          "citation": "[1985] 1 S.C.R. 971",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1982_1_894_903::p0003::c002",
+          "citation": "[1982] 1 S.C.R. 894",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1982_29",
+      "query_year": 1982,
+      "label": 1,
+      "facts_word_count": 5199,
+      "facts_sha256": "6fa61d0e68ee011d88ab585becbfbf6be8e294d416ccc43d4e3b8a0c5757740b",
+      "retrieval_run_id": "bc21459c-6674-4dc4-a255-09cd649f0abd",
+      "candidate_count_after_safety_filters": 86,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1976] 3 s.c.r. 160"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "[1976] 3 s.c.r. 160"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1976_3_160_167::p0005::c002",
+          "citation": "[1976] 3 S.C.R. 160",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1981_3_518_535::p0012::c001",
+          "citation": "[1981] 3 S.C.R. 518",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1965_3_448_452::p0004::c001",
+          "citation": "[1965] 3 S.C.R. 448",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1973_1_1_1002::p0009::c002",
+          "citation": "[1973] SUPP. 1 S.C.R. 1",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1979_2_45_61::p0014::c003",
+          "citation": "[1979] 2 S.C.R. 45",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1994_632",
+      "query_year": 1994,
+      "label": 0,
+      "facts_word_count": 2855,
+      "facts_sha256": "bc73f28697aefa4b29922e82b616e47976eb61b33a2de2c67a45d6653b796755",
+      "retrieval_run_id": "c32ce1d8-60a9-4a26-88cb-b5309c41e333",
+      "candidate_count_after_safety_filters": 82,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1979] 2 s.c.r. 953"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1993_1_435_454::p0006::c002",
+          "citation": "[1993] 1 S.C.R. 435",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1991_2_198_220::p0009::c006",
+          "citation": "[1991] 2 S.C.R. 198",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1990_1_464_469::p0001::c002",
+          "citation": "[1990] 1 S.C.R. 464",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1976_1_59_66::p0004::c002",
+          "citation": "[1976] SUPP. 1 S.C.R. 59",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "S_1993_3_555_567::p0001::c002",
+          "citation": "[1993] SUPP. 3 S.C.R. 555",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1985_40",
+      "query_year": 1985,
+      "label": 1,
+      "facts_word_count": 2996,
+      "facts_sha256": "32de0dd2acdc77f30021a744da28d9b8c88abd8deb18d112800b21acc657fe30",
+      "retrieval_run_id": "cb48b075-7739-4e25-a2ea-9a2f0e98b0cb",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 4,
+      "expected_authority_citations": [
+        "[1964] 2 s.c.r. 888"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 4,
+      "citation_checks_passed": 4,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1984_3_930_941::p0009::c001",
+          "citation": "[1984] 3 S.C.R. 930",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1972_3_770_783::p0005::c001",
+          "citation": "[1972] 3 S.C.R. 770",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1980_3_1109_1121::p0001::c005",
+          "citation": "[1980] 3 S.C.R. 1109",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1971_3_506_521::p0003::c002",
+          "citation": "[1971] 3 S.C.R. 506",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1992_84",
+      "query_year": 1992,
+      "label": 1,
+      "facts_word_count": 4223,
+      "facts_sha256": "c7d6508ca42af02e287c9a9215663006d8901cfec1b11cfde674104f01cd9d0d",
+      "retrieval_run_id": "98ef7d9b-7188-4765-b394-ff1e9a53be63",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "(1981) 4 scc 173"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": false,
+      "expected_authority_selected": false,
+      "expected_authority_retrieved_not_selected": [],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1971_2_661_671::p0006::c002",
+          "citation": "[1971] 2 S.C.R. 661",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1973_3_364_401::p0037::c008",
+          "citation": "[1973] 3 S.C.R. 364",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1989_3_43_127::p0044::c001",
+          "citation": "[1989] 3 S.C.R. 43",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "S_1985_3_909_1024::p0034::c002",
+          "citation": "[1985] SUPP. 3 S.C.R. 909",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1986_2_278_387::p0020::c001",
+          "citation": "[1986] 2 S.C.R. 278",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    },
+    {
+      "query_case_id": "1988_96",
+      "query_year": 1988,
+      "label": 0,
+      "facts_word_count": 989,
+      "facts_sha256": "d023dcaec8588bac984baa6af18d164a8ec110f53b7bd419084c7712994992e8",
+      "retrieval_run_id": "5fdccf85-6362-4ba9-83f5-410c4802e7f4",
+      "candidate_count_after_safety_filters": 100,
+      "selected_evidence_count": 5,
+      "expected_authority_citations": [
+        "[1980] 46 stc 63"
+      ],
+      "expected_authority_retrieved_at_5": false,
+      "expected_authority_retrieved_at_100": true,
+      "expected_authority_selected": true,
+      "expected_authority_retrieved_not_selected": [
+        "[1980] 46 stc 63"
+      ],
+      "citation_check_count": 5,
+      "citation_checks_passed": 5,
+      "citation_checks": [
+        {
+          "evidence_id": "E1",
+          "chunk_id": "1980_3_1271_1277::p0001::c005",
+          "citation": "[1980] 3 S.C.R. 1271",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E2",
+          "chunk_id": "1982_1_55_68::p0006::c003",
+          "citation": "[1982] 1 S.C.R. 55",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E3",
+          "chunk_id": "1966_2_669_673::p0001::c003",
+          "citation": "[1966] 2 S.C.R. 669",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E4",
+          "chunk_id": "1969_3_490_496::p0006::c004",
+          "citation": "[1969] 3 S.C.R. 490",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "evidence_id": "E5",
+          "chunk_id": "1986_2_927_941::p0004::c001",
+          "citation": "[1986] 2 S.C.R. 927",
+          "passed": true,
+          "failures": []
+        }
+      ],
+      "temporal_violation_count": 0,
+      "unsupported_claim_detected": false
+    }
+  ]
+}

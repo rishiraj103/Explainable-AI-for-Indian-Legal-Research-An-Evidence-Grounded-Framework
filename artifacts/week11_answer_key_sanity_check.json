@@ -1,0 +1,186 @@
+{
+  "artifact_version": "week11-answer-key-sanity-v1",
+  "freeze_version": "week11-reference-evidence-round-v1",
+  "summary": {
+    "frozen_evaluation_cases": 30,
+    "fixed_test_split_membership_pass": 30,
+    "corrected_alignment_gate_pass": 30,
+    "collision_risk_era_1958_1993_cases": 20,
+    "collision_risk_era_cases_all_individually_passed": true
+  },
+  "evaluation_case_ids": [
+    "2008_1629",
+    "1997_792",
+    "1995_322",
+    "1993_185",
+    "1971_295",
+    "1974_36",
+    "1995_375",
+    "1986_176",
+    "1986_378",
+    "1984_136",
+    "1977_99",
+    "2013_35",
+    "1980_217",
+    "1980_133",
+    "1978_33",
+    "1981_187",
+    "1980_222",
+    "1977_145",
+    "1981_55",
+    "1980_105",
+    "1995_412",
+    "1995_403",
+    "1995_425",
+    "2002_944",
+    "1986_397",
+    "1982_29",
+    "1994_632",
+    "1985_40",
+    "1992_84",
+    "1988_96"
+  ],
+  "collision_risk_era_cases": [
+    {
+      "query_case_id": "1993_185",
+      "query_decision_date": "1993-03-16",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 2393,
+      "source_id": "1993_2_353_368"
+    },
+    {
+      "query_case_id": "1971_295",
+      "query_decision_date": "1971-08-12",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 825,
+      "source_id": "1972_1_184_192"
+    },
+    {
+      "query_case_id": "1974_36",
+      "query_decision_date": "1974-02-26",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 697,
+      "source_id": "1974_3_464_469"
+    },
+    {
+      "query_case_id": "1986_176",
+      "query_decision_date": "1986-07-23",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 603,
+      "source_id": "1986_3_378_382"
+    },
+    {
+      "query_case_id": "1986_378",
+      "query_decision_date": "1986-04-04",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 6444,
+      "source_id": "1986_2_187_229"
+    },
+    {
+      "query_case_id": "1984_136",
+      "query_decision_date": "1984-05-03",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 1040,
+      "source_id": "1984_3_752_762"
+    },
+    {
+      "query_case_id": "1977_99",
+      "query_decision_date": "1977-03-25",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 3396,
+      "source_id": "1977_3_372_388"
+    },
+    {
+      "query_case_id": "1980_217",
+      "query_decision_date": "1980-05-09",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 1537,
+      "source_id": "1980_3_1243_1252"
+    },
+    {
+      "query_case_id": "1980_133",
+      "query_decision_date": "1980-04-29",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 1228,
+      "source_id": "1980_3_884_892"
+    },
+    {
+      "query_case_id": "1978_33",
+      "query_decision_date": "1978-02-21",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 2271,
+      "source_id": "1978_3_131_146"
+    },
+    {
+      "query_case_id": "1981_187",
+      "query_decision_date": "1981-05-07",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 1585,
+      "source_id": "1981_3_839_848"
+    },
+    {
+      "query_case_id": "1980_222",
+      "query_decision_date": "1980-05-08",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 2436,
+      "source_id": "1980_3_1127_1142"
+    },
+    {
+      "query_case_id": "1977_145",
+      "query_decision_date": "1977-04-04",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 1245,
+      "source_id": "1977_3_428_436"
+    },
+    {
+      "query_case_id": "1981_55",
+      "query_decision_date": "1981-02-18",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 2832,
+      "source_id": "1981_2_910_929"
+    },
+    {
+      "query_case_id": "1980_105",
+      "query_decision_date": "1980-03-19",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 5412,
+      "source_id": "1980_3_44_70"
+    },
+    {
+      "query_case_id": "1986_397",
+      "query_decision_date": "1986-08-13",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 1125,
+      "source_id": "1986_3_553_561"
+    },
+    {
+      "query_case_id": "1982_29",
+      "query_decision_date": "1982-02-16",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 3574,
+      "source_id": "1982_3_251_276"
+    },
+    {
+      "query_case_id": "1985_40",
+      "query_decision_date": "1985-02-12",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 2432,
+      "source_id": "1985_2_832_850"
+    },
+    {
+      "query_case_id": "1992_84",
+      "query_decision_date": "1992-02-04",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 6542,
+      "source_id": "1992_1_481_529"
+    },
+    {
+      "query_case_id": "1988_96",
+      "query_decision_date": "1988-03-14",
+      "corrected_alignment_status": "pass",
+      "direct_six_token_phrase_matches": 865,
+      "source_id": "1988_3_248_254"
+    }
+  ],
+  "method_note": "This validates the post-identifier-collision, content-driven alignment audit. The direct six-token phrase signal is the decisive content-alignment evidence; title/party overlap is a supplementary signal and is not substituted for content alignment."
+}

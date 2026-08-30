@@ -1,0 +1,29 @@
+{
+  "evaluation_round_version": "week11-reference-evidence-round-v1",
+  "frozen_at_utc": "2026-08-30T10:44:42.5117982Z",
+  "frozen_from_commit": "f6ea888d8a56352114d7ca7a672a7094854eb84c",
+  "reference_evidence_set": {
+    "answer_key_path": "answer_key/authority_answer_key.json",
+    "evaluation_status": "evaluation",
+    "final_case_count": 30,
+    "original_aspirational_target": 40,
+    "remaining_cases_deferred_to_post_week11_backlog": 10,
+    "rationale": "The 40-case coverage target was aspirational rather than a hard evaluation gate. These 30 cases have passed fixed-test-split membership, source-first verification, and the corrected content-alignment gate after the identifier-collision and self-match corrections."
+  },
+  "metric_scope": {
+    "E1_E2_outcome_prediction": {
+      "n": 1503,
+      "population": "eligible cases in the full frozen ILDC test split"
+    },
+    "E3_E4_evidence_citation_grounding_provenance": {
+      "n": 30,
+      "population": "frozen source-verified answer-key-covered subset of the ILDC test split"
+    },
+    "E3_E4_outcome_prediction": {
+      "available": false,
+      "reason": "The frozen E3/E4 retrieval-and-evidence pipeline does not emit outcome labels; outcome prediction remains an E1/E2 measure."
+    }
+  },
+  "alignment_sanity_artifact": "artifacts/week11_answer_key_sanity_check.json",
+  "status": "frozen_for_initial_week11_evaluation"
+}

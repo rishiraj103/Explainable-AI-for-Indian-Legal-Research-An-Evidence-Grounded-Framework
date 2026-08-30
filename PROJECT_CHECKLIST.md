@@ -101,3 +101,13 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Perform a bounded reproducibility replay of one representative pipeline run and record whether its structured output and provenance reproduce. Two independent runs matched after excluding only generated run UUIDs.
 - [x] Recheck the nine-case dev retrieval probe after the coverage-qualified self-match repair. Three additional authorities were recovered; the earlier broad lexical-mismatch conclusion is withdrawn and preserved only as a superseded pre-fix audit record.
 - [x] Run the full test suite and freeze validation; commit the real Week 10 work and its checklist entry without beginning Week 11 evaluation. (Post-reconciliation suite and bounded replay re-run before final commit.)
+
+## Week 11 - Run the Full Held-Out Evaluation
+
+- [x] Freeze the evaluation populations before scoring: E1/E2 use the 1,503 eligible fixed-test cases; E3/E4 citation/grounding measures use the 30-case source-verified answer-key subset. The planned 40 was aspirational; the remaining 10 are a post-Week-11 backlog item.
+- [x] Reconcile the frozen E1 and corrected E2 baselines on the 1,503-case held-out population; retain E2 mean-logit pooling as primary and majority vote as a secondary report.
+- [x] Run frozen E3 retrieval and evidence selection on the 30 covered test queries; measure expected-authority recall, including retrieved-but-not-selected versus absent authorities.
+- [x] Run frozen E4 verified explanations on the same 30 queries; measure citation validity, grounding, temporal-rule violations, and unsupported claims.
+- [x] Compile the initial side-by-side E1/E2/E3/E4 result table with per-row denominators, frozen configuration identifiers, and no post-test tuning.
+- [ ] If a human explanation-readability review is planned, prepare the outreach/materials now; do not treat it as a metric until the planned later review stage.
+- [x] Run evaluation validation and commit the real evaluation artifacts. The scoped E1/E2 and E3/E4 result sets are complete; `pytest -q` is constrained to the project `tests/` suite to avoid collecting the local model cache. Do not begin Week 12 analysis.
