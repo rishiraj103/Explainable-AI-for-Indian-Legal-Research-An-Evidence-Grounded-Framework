@@ -48,3 +48,5 @@ E3/E4 do not make outcome predictions, so “E2 wrong, E3/E4 outcome correct,”
 | Explanation highlights text not corresponding to retrieved evidence | 0/5 fixed spot checks | `2008_1629` | The five persisted-output reconstructions (`2008_1629`, `1997_792`, `1980_133`, `2002_944`, `1988_96`) all mapped every highlighted passage to an exact retrieved chunk. |
 
 This closes Week 12. The authoritative machine-readable join is `artifacts/week12_prediction_cross_reference.json`; it preserves the exact E1/E2 per-case predictions and the frozen E3/E4 cohort status.
+
+The E3-to-E4 comparison reflects a system-level intervention bundling provenance constraints, citation validation, structured explanation, and temporal integrity; it does not isolate the causal contribution of any single component.

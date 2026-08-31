@@ -21,6 +21,17 @@ The reference-evidence set is frozen at 30 cases for this evaluation round. The 
 
 E3/E4 do not output an outcome label, so outcome accuracy is not fabricated for those systems. E3 and E4 share the frozen retrieval/selection output; E4 adds hard citation, provenance, and temporal verification. The answer-key metrics have 30 expected authorities, 135 selected evidence items, and 135 displayed citation checks. The full machine-readable per-case record is `artifacts/week11_initial_evaluation.json`.
 
+### Temporal reporting metrics
+
+| Metric | Numerator / denominator | Value |
+|---|---|---:|
+| FEER (future-ineligible retrieved candidates / all retrieved candidates) | 1,712 / 2,743 | 0.624134 |
+| FCER (future-ineligible final cited output / all final cited output) | 0 / 135 | 0.000000 |
+
+FEER counts only later-year `ineligible` candidates; the 267 same-year items remain a separate `ambiguous_excluded` audit bucket. FCER confirms that no later-year item reached the final cited output.
+
+**Prediction Delta (E4 - E3): not defined.** The frozen E3/E4 systems do not emit outcome-prediction labels, so there is no numeric prediction delta to report without fabrication. The full temporal definitions and counts are in `artifacts/week11_reporting_framework.md`.
+
 ## Configuration provenance and precision definition
 
 The E3/E4 run used the fully corrected frozen retrieval configuration, `week10-bm25-salient-terms-selfmatch-coverage-v2`: `tfidf-segment-salient-terms-v1` query construction, candidate depth 100, five-source diverse selection, strict earlier-year eligibility, and the coverage-qualified direct self-match guard. It did not use the superseded raw self-match rule, legacy first-32-term builder, or pre-correction ID mapping. E2 is the corrected 512-token, 50-token-overlap chunk-and-pool model; the former 256-token result remains discarded and is not used here.

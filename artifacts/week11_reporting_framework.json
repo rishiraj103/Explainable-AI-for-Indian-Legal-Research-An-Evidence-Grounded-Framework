@@ -1,0 +1,33 @@
+{
+  "reporting_framework_version": "week11-temporal-reporting-v1",
+  "scope": "The frozen 30-case answer-key cohort and its persisted Week 11 retrieval runs; no retrieval was rerun.",
+  "temporal_metrics": {
+    "FEER": {
+      "definition": "future-ineligible retrieved candidates / all retrieved candidates logged after duplicate exclusion",
+      "numerator": 1712,
+      "denominator": 2743,
+      "value": 0.624134,
+      "future_ineligible_status": "ineligible (candidate decision year later than query year)",
+      "same_year_ambiguous_excluded_from_numerator": 267
+    },
+    "FCER": {
+      "definition": "future-ineligible final cited evidence items / all final cited evidence items",
+      "numerator": 0,
+      "denominator": 135,
+      "value": 0.0
+    },
+    "candidate_status_counts": {
+      "eligible": 764,
+      "ineligible": 1712,
+      "ambiguous_excluded": 267
+    },
+    "final_cited_status_counts": {
+      "eligible": 135
+    }
+  },
+  "prediction_delta_E4_minus_E3": {
+    "value": null,
+    "status": "not_defined",
+    "reason": "The frozen E3/E4 systems do not emit outcome predictions; their shared evidence output is not a prediction label."
+  }
+}
