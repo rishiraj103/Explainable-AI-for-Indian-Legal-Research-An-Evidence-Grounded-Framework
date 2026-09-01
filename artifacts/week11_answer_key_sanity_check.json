@@ -1,6 +1,6 @@
 {
   "artifact_version": "week11-answer-key-sanity-v1",
-  "freeze_version": "week11-reference-evidence-round-v1",
+  "freeze_version": "week11-reference-evidence-round-v2-temporal-prerank",
   "summary": {
     "frozen_evaluation_cases": 30,
     "fixed_test_split_membership_pass": 30,

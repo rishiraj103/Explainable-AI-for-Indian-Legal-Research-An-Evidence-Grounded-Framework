@@ -1,28 +1,78 @@
 {
-  "analysis_version": "week12-frozen-result-error-analysis-v1",
+  "analysis_version": "week12-final-error-analysis-v2-preranking",
   "basis": {
-    "week11_freeze": "config/week11_evaluation_round.json",
-    "week11_metrics": "artifacts/week11_initial_evaluation.json",
-    "week11_error_buckets": "artifacts/week11_error_analysis.json",
-    "no_reruns_or_configuration_changes": true
+    "final_week11_evaluation": "artifacts/week11_temporal_prerank_evaluation.json",
+    "final_week11_buckets": "artifacts/week11_error_analysis.json",
+    "prediction_cross_reference": "artifacts/week12_prediction_cross_reference.json",
+    "retrieval_configuration": "week11-bm25-salient-terms-preranked-temporal-v3",
+    "derivation": "read-only artifact consolidation; no model inference, retrieval run, answer-key edit, or configuration change"
+  },
+  "summary": {
+    "cohort_n": 30,
+    "retrieved_and_selected": 12,
+    "retrieved_not_selected": 3,
+    "absent_at_k100": 15,
+    "recall_at_5": 0.4,
+    "recall_at_100": 0.5,
+    "displayed_citations": 150,
+    "grounding_passed": 150,
+    "provenance_passed": 150,
+    "temporal_violations": 0,
+    "unsupported_claims": 0
   },
   "mandatory_categories": {
-    "E1_vs_E2_outcome_prediction": {
-      "aggregate": {
-        "E1_accuracy": 0.61344,
-        "E1_macro_f1": 0.612342,
-        "E2_mean_logit_accuracy": 0.596806,
-        "E2_mean_logit_macro_f1": 0.592358,
-        "accuracy_difference_E2_minus_E1": -0.016634000000000038
-      },
-      "case_level_disagreement_examples": "Unavailable: the frozen E1/E2 artifacts retain aggregate metrics and confusion matrices, not per-case prediction vectors. No model was rerun merely to manufacture post-hoc examples."
+    "E2_wrong_E3_E4_outcome_correct": {
+      "status": "structurally_inapplicable",
+      "reason": "E3/E4 do not emit outcome labels. Evidence recovery cannot be represented as E3/E4 outcome correctness.",
+      "E2_wrong_cases_with_expected_authority_selected": [
+        "2008_1629",
+        "1981_187",
+        "1982_29"
+      ]
     },
-    "correct_authority_retrieved_and_selected": [
+    "E3_correct_E4_wrong": {
+      "count": 0,
+      "denominator": 30,
+      "reason": "All 150 E3-displayed citations passed E4 verification."
+    },
+    "E3_E4_prediction_correct_citation_unsupported": {
+      "status": "structurally_inapplicable",
+      "reason": "E3/E4 do not emit outcome predictions and unsupported citations are 0/150."
+    },
+    "correct_authority_retrieved_final_answer_wrong": {
+      "status": "structurally_inapplicable",
+      "reason": "The controlled brief makes no adjudicated outcome claim and there is no gold final-answer correctness label."
+    },
+    "citation_traceable_but_authority_consistency_fails": {
+      "count": 18,
+      "denominator": 30,
+      "example_case_id": "1997_792",
+      "reason": "This is an answer-key consistency measure, not a human substantive-relevance judgment."
+    },
+    "citation_later_than_query": {
+      "count": 0,
+      "denominator": 30
+    },
+    "explanation_highlight_not_retrieved_evidence": {
+      "count": 0,
+      "denominator": 5,
+      "spot_check_case_ids": [
+        "2008_1629",
+        "1997_792",
+        "1980_133",
+        "2002_944",
+        "1988_96"
+      ]
+    }
+  },
+  "retrieval_buckets": {
+    "retrieved_and_selected": [
       "2008_1629",
       "1995_322",
       "1995_375",
       "1986_176",
       "1977_99",
+      "1981_187",
       "1980_222",
       "1980_105",
       "1995_425",
@@ -30,33 +80,21 @@
       "1982_29",
       "1988_96"
     ],
-    "correct_authority_retrieved_but_not_selected": [
+    "retrieved_not_selected": [
       {
         "query_case_id": "1980_133",
-        "details": [
-          {
-            "expected_authority_citation": "[1957] 1 s.c.r. 121",
-            "matches": [
-              {
-                "rank": 48,
-                "source_id": "1957_1_121_143",
-                "corpus_citation": "[1957] 1 S.C.R. 121",
-                "decision_date": "1956-11-27",
-                "title": "HARIPRASAD SHIVSHANKAR SHUKLA versus A. D. DIVIKAR"
-              },
-              {
-                "rank": 99,
-                "source_id": "1957_1_121_143",
-                "corpus_citation": "[1957] 1 S.C.R. 121",
-                "decision_date": "1956-11-27",
-                "title": "HARIPRASAD SHIVSHANKAR SHUKLA versus A. D. DIVIKAR"
-              }
-            ]
-          }
-        ]
+        "best_rank": 15
+      },
+      {
+        "query_case_id": "1981_55",
+        "best_rank": 28
+      },
+      {
+        "query_case_id": "1985_40",
+        "best_rank": 78
       }
     ],
-    "correct_authority_absent_at_k100": [
+    "absent_at_k100": [
       "1997_792",
       "1993_185",
       "1971_295",
@@ -66,25 +104,12 @@
       "2013_35",
       "1980_217",
       "1978_33",
-      "1981_187",
       "1977_145",
-      "1981_55",
       "1995_412",
       "1995_403",
       "1986_397",
       "1994_632",
-      "1985_40",
       "1992_84"
-    ],
-    "provenance_valid_but_substantive_relevance_unadjudicated": {
-      "citation_items": 124,
-      "explanation": "A citation that differs from the single expected authority is not automatically substantively irrelevant; no human relevance label was fabricated."
-    },
-    "temporal_integrity": {
-      "temporal_violations": 0,
-      "interpretation": "No date-rule violation occurred in the frozen 30-case run, so there is no violation example to select."
-    },
-    "E3_E4_outcome_comparison": "Not applicable: E3/E4 are evidence-retrieval/explanation systems and do not emit an outcome label."
-  },
-  "central_finding": "Verification succeeds for retrieved evidence, but expected-authority retrieval coverage is the binding limitation: 11/30 selected, 1/30 retrieved but not selected, and 18/30 absent at k=100."
+    ]
+  }
 }

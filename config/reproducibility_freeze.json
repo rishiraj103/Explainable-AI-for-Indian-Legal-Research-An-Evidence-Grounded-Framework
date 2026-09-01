@@ -33,8 +33,8 @@
     "ecourts_retrieval_corpus": {
       "dataset_manifest": {
         "path": "corpus/dataset_manifest.md",
-        "sha256": "847e242056a8469dc9010b892239ebc63bbf215c048922f45747d188ee3bdd1d",
-        "bytes": 15248
+        "sha256": "e7eb47d00cfdd2e32103e260a97267939a6d026cb92d9bdc23a31b7ffae1e838",
+        "bytes": 15300
       },
       "alignment_gated_crosswalk": {
         "path": "corpus/dedup_matches.csv",
@@ -350,8 +350,8 @@
       "final_temporal_preranking_trial": {
         "artifact": {
           "path": "artifacts/week11_temporal_prerank_evaluation.json",
-          "sha256": "b9dcac571c38390fcca0b2c71fbc9689a7ca5e0b578b446fe42166b8d78e75a6",
-          "bytes": 60463
+          "sha256": "9a475febf1e0256deb3ace54d6257fab92985e94c165fd921e0bdec7b86a227d",
+          "bytes": 60403
         },
         "investigation": {
           "path": "artifacts/week11_temporal_preranking_investigation.md",

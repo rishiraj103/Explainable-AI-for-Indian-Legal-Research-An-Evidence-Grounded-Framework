@@ -122,6 +122,7 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Record temporal-integrity outcomes and at least one honest retrieval/selection limitation for the results discussion.
 - [x] Finalize the Week 12 error-analysis table and commit it without changing frozen evaluation settings. No chart is required to communicate the three exhaustive retrieval buckets.
 - [x] Close Week 12 with the recovered E1/E2 prediction join and final mandatory-category table. Categories requiring an E3/E4 outcome prediction are explicitly marked structurally inapplicable; 0-instance categories are recorded as zero rather than inferred.
+- [x] Reconcile Week 12 against the final pre-ranking retrieval freeze: 12/30 selected, 3/30 retrieved-but-not-selected, and 15/30 absent at k=100; preserve the three-round retrieval investigation summary for Discussion/Limitations.
 
 ## Week 13 - Human Review of Explanation Quality
 

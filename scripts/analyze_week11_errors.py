@@ -1,7 +1,7 @@
-"""Reconcile frozen Week 11 retrieval runs and write objective error buckets.
+"""Reconcile final frozen Week 11 retrieval runs and write objective error buckets.
 
-This script never runs retrieval again.  It reads the run UUIDs stored by the
-initial evaluation, reconstructs candidate/selection identity from PostgreSQL,
+This script never runs retrieval again. It reads the run UUIDs stored by the
+final evaluation, reconstructs candidate/selection identity from PostgreSQL,
 and corrects only the per-case retrieved-but-not-selected reporting field.
 """
 
@@ -53,7 +53,7 @@ def check_objects(record: dict[str, Any]) -> tuple[CitationCheck, ...]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--evaluation", type=Path, default=Path("artifacts/week11_initial_evaluation.json"))
+    parser.add_argument("--evaluation", type=Path, default=Path("artifacts/week11_temporal_prerank_evaluation.json"))
     parser.add_argument("--answer-key", type=Path, default=Path("answer_key/authority_answer_key.json"))
     parser.add_argument("--output", type=Path, default=Path("artifacts/week11_error_analysis.json"))
     parser.add_argument("--markdown", type=Path, default=Path("artifacts/week11_error_analysis.md"))
@@ -125,8 +125,8 @@ def main() -> None:
     if sum(counts.values()) != len(rows):
         raise ValueError("error buckets do not cover the frozen cohort")
     analysis = {
-        "analysis_version": "week11-mandatory-error-analysis-v1",
-        "method": "Read-only reconstruction from the initial evaluation's persisted retrieval run UUIDs; no retrieval configuration, index, or answer key was changed.",
+        "analysis_version": "week11-mandatory-error-analysis-v2-final-preranking",
+        "method": "Read-only reconstruction from the final pre-ranking temporal-filter evaluation's persisted retrieval run UUIDs; no retrieval configuration, index, or answer key was changed.",
         "summary": {
             "cohort_n": len(rows),
             **counts,
@@ -162,7 +162,7 @@ def main() -> None:
         "",
         "## Headline",
         "",
-        "**Verification succeeds for retrieved evidence; recovery of the predefined authority is the binding constraint.** All 135 displayed citations passed grounding and provenance checks, with zero temporal violations and zero unsupported-claim detections. Retrieval found the expected authority for 12/30 cases at k=100 and selected it for 11/30.",
+        f"**Verification succeeds for retrieved evidence; recovery of the predefined authority is the binding constraint.** All {displayed_total} displayed citations passed grounding and provenance checks, with zero temporal violations and zero unsupported-claim detections. Retrieval found the expected authority for {counts['retrieved_and_selected'] + counts['retrieved_not_selected']}/30 cases at k=100 and selected it for {counts['retrieved_and_selected']}/30.",
         "",
         "## Mandatory retrieval buckets",
         "",
@@ -172,15 +172,15 @@ def main() -> None:
         f"| Correct authority retrieved but not selected | {len(grouped['correct_authority_retrieved_but_not_selected'])} | {rank_note} |",
         f"| Correct authority absent at k=100 | {len(grouped['correct_authority_absent_at_k100'])} | " + ", ".join(f"`{row['query_case_id']}`" for row in grouped['correct_authority_absent_at_k100']) + " |",
         "",
-        "Recall@5 is 5/30 (0.166667). Some expected authorities were selected from ranks beyond five because selection is source-diverse and operates over the frozen top-100 candidate set; selected-support success is therefore 11/30, not limited to the Recall@5 count.",
+        f"Recall@5 is {sum(bool(record['expected_authority_retrieved_at_5']) for record in evaluation['per_case_records'])}/30 ({sum(bool(record['expected_authority_retrieved_at_5']) for record in evaluation['per_case_records']) / 30:.6f}). Some expected authorities were selected from ranks beyond five because selection is source-diverse and operates over the frozen top-100 candidate set; selected-support success is therefore {counts['retrieved_and_selected']}/30, not limited to the Recall@5 count.",
         "",
         "## Provenance-valid citations that are not the predefined authority",
         "",
-        f"Of 135 displayed, provenance-valid citations, 124 are not the single predefined authority for their query; 19/30 cases do not display that expected authority. This is an **answer-key consistency** finding, not a substantive-irrelevance label: the answer key has one verified reference authority per case and does not provide a gold human relevance label for every alternative cited authority. No claim that any of these 124 citations is substantively irrelevant is made without such a label.",
+        f"Of {displayed_total} displayed, provenance-valid citations, {displayed_not_key_authority} are not the single predefined authority for their query; {len(rows) - counts['retrieved_and_selected']}/30 cases do not display that expected authority. This is an **answer-key consistency** finding, not a substantive-irrelevance label: the answer key has one verified reference authority per case and does not provide a gold human relevance label for every alternative cited authority. No claim that any of these {displayed_not_key_authority} citations is substantively irrelevant is made without such a label.",
         "",
         "## Measurement provenance",
         "",
-        "This analysis reads the persisted run UUIDs from the initial Week 11 evaluation. It does not rerun retrieval or alter the index, query builder, answer key, or frozen configuration. It also corrects only a per-case presentation field: the original `expected_authority_retrieved_not_selected` value was computed before selection. Aggregate Week 11 metrics were unaffected.",
+        "This analysis reads the persisted run UUIDs from the final pre-ranking Week 11 evaluation. It does not rerun retrieval or alter the index, query builder, answer key, or frozen configuration. It also corrects only a per-case presentation field: `expected_authority_retrieved_not_selected` is computed from selected displayed citations. Aggregate Week 11 metrics are taken from the final evaluation artifact.",
         "",
     ])
     args.markdown.write_text(markdown, encoding="utf-8")

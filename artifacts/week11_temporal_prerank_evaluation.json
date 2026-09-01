@@ -90,9 +90,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "(2006) 9 scc 630"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -208,9 +206,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "air 1986 sc 794"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -442,9 +438,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "jt (1993) 5 sc 681"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -502,9 +496,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1963] 3 s.c.r. 884"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -678,9 +670,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1966] 3 s.c.r. 527"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -972,9 +962,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1958] 1 s.c.r. 1495"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -1032,9 +1020,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1979] 2 s.c.r. 75"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -1210,9 +1196,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1973] 3 s.c.r. 117"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -1386,9 +1370,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1967] 1 s.c.r. 679"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -1446,9 +1428,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "(1994) supp. 1 scc 324"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -1564,9 +1544,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1976] 3 s.c.r. 160"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -1800,9 +1778,7 @@
       "expected_authority_retrieved_at_5": true,
       "expected_authority_retrieved_at_100": true,
       "expected_authority_selected": true,
-      "expected_authority_retrieved_not_selected": [
-        "[1980] 46 stc 63"
-      ],
+      "expected_authority_retrieved_not_selected": [],
       "citation_check_count": 5,
       "citation_checks_passed": 5,
       "citation_checks": [
@@ -1845,5 +1821,11 @@
       "temporal_violation_count": 0,
       "unsupported_claim_detected": false
     }
-  ]
+  ],
+  "per_case_reconciliation": {
+    "field": "expected_authority_retrieved_not_selected",
+    "status": "corrected_from_persisted_retrieval_runs",
+    "note": "The initial writer used the pre-selection measure for this per-case display field. This reconciliation uses selected displayed citations. Aggregate metrics were unaffected.",
+    "artifact": "artifacts/week11_error_analysis.json"
+  }
 }

@@ -1,52 +1,39 @@
-# Week 12 Error Analysis
+# Week 12 Final Error Analysis
 
 ## Basis and scope
 
-This analysis uses the finalized Week 11 records only. It does not rerun a model, change retrieval, alter the answer key, or tune on test outcomes. E1/E2 outcome metrics are final at n=1,503; E3/E4 authority and integrity measures are final at n=30 for this evaluation round.
+This final analysis is derived from the final pre-ranking temporal-filter Week 11 evaluation only. It is read-only: no model was retrained or inferred, no retrieval was rerun, and no answer-key or configuration setting changed.
 
 ## Central finding
 
-**Verification succeeds for retrieved evidence; expected-authority retrieval coverage is the binding limitation.** The frozen E4 verifier accepted all 135 displayed citations with zero temporal violations and zero unsupported-claim detections, while only 11/30 expected authorities were selected and 18/30 were absent at k=100.
+**Verification succeeds for retrieved evidence; expected-authority recovery remains the binding limitation.** All 150 displayed citations passed grounding, provenance, and temporal checks, with zero unsupported claims. Expected-authority Recall@5 is 12/30 and Recall@100 is 15/30.
 
-## Mandatory categories
+## Final retrieval buckets
 
-| Category | Result |
-|---|---|
-| E1 versus E2 | E1 accuracy/macro F1: 0.613440/0.612342; corrected E2 mean-logit: 0.596806/0.592358. E2 trails E1 by 0.016634 accuracy. Per-case prediction vectors were not retained, so no post-hoc disagreement example is fabricated. |
-| Correct authority retrieved and selected | 11/30: `2008_1629`, `1995_322`, `1995_375`, `1986_176`, `1977_99`, `1980_222`, `1980_105`, `1995_425`, `2002_944`, `1982_29`, `1988_96`. |
-| Correct authority retrieved but not selected | 1/30: `1980_133`, with its first matching chunk at rank 48. This is the concrete selection-stage miss. |
-| Correct authority absent at k=100 | 18/30: `1997_792`, `1993_185`, `1971_295`, `1974_36`, `1986_378`, `1984_136`, `2013_35`, `1980_217`, `1978_33`, `1981_187`, `1977_145`, `1981_55`, `1995_412`, `1995_403`, `1986_397`, `1994_632`, `1985_40`, `1992_84`. |
-| Provenance-valid but not answer-key authority | 124/135 displayed citations differ from the one reference authority per case. This is an answer-key-consistency finding, not evidence of substantive irrelevance without a human relevance label. |
-| Temporal violations | 0/135. No violation example exists in the frozen evaluation. |
-| E3/E4 outcome comparison | Not applicable: E3/E4 do not emit an outcome label. |
+| Bucket | Count | Cases |
+|---|---:|---|
+| Correct authority retrieved and selected | 12/30 | `2008_1629`, `1995_322`, `1995_375`, `1986_176`, `1977_99`, `1981_187`, `1980_222`, `1980_105`, `1995_425`, `2002_944`, `1982_29`, `1988_96` |
+| Correct authority retrieved but not selected | 3/30 | `1980_133` (rank 15), `1981_55` (rank 28), `1985_40` (rank 78) |
+| Correct authority absent at k=100 | 15/30 | `1997_792`, `1993_185`, `1971_295`, `1974_36`, `1986_378`, `1984_136`, `2013_35`, `1980_217`, `1978_33`, `1977_145`, `1995_412`, `1995_403`, `1986_397`, `1994_632`, `1992_84` |
 
-## Interpretation for results/discussion
-
-The results distinguish two reliability properties. Once evidence is selected, the system reliably preserves provenance, grounding, and temporal eligibility. It does not reliably recover the single predefined authority within its candidate set, so high citation validity must not be presented as high authority coverage. The fixed five-source display policy also caps authority-consistent precision at 0.222222 with 4.5 displayed citations per case; observed precision is 0.081481 (36.7% of that ceiling).
-
-## Recovered E1/E2 prediction cross-reference
-
-The frozen E1 model was not serialized in its original run. It was deterministically reconstructed from the locked facts-only extraction, train+validation data, TF-IDF settings, C=10.0, and seed, and exactly reproduced 0.613440 accuracy / 0.612342 macro F1 before its artifact and predictions were retained. E2 inference used only frozen checkpoint `checkpoint-6318` and cached 512-token/50-overlap windows, reproducing 0.596806 / 0.592358 exactly.
-
-| Population | Both correct | E1 correct, E2 wrong | E1 wrong, E2 correct | Both wrong |
-|---|---:|---:|---:|---:|
-| Full test, n=1,503 | 684 | 238 (`1957_125`) | 213 (`1967_145`) | 368 |
-| Answer-key cohort, n=30 | 18 | 3 (`1997_792`) | 3 (`1995_375`) | 6 |
-
-E3/E4 do not make outcome predictions, so “E2 wrong, E3/E4 outcome correct,” “E3/E4 outcome correct but citation unsupported,” and “correct authority retrieved but final answer wrong” are structurally inapplicable. There are zero E3 outputs rejected by E4’s verifier (all 135 citations pass), zero later-date citations, and 19/30 cases where citations are traceable but the expected authority is not selected (for example, `1997_792`). A persisted-evidence faithfulness spot check passes for 5/5 fixed cases (`2008_1629`, `1997_792`, `1980_133`, `2002_944`, `1988_96`). See `artifacts/week12_prediction_cross_reference.md`.
+`1980_133` remains retrieved-but-not-selected, but its best matching rank improved from 48 in the post-ranking baseline to 15 under the final pre-ranking filter. `1981_55` (rank 28) and `1985_40` (rank 78) are the two additional retrieved-but-not-selected cases.
 
 ## Final populated mandatory error-analysis table
 
 | Frozen-plan category | Count / denominator | Example | Interpretation |
 |---|---:|---|---|
-| E2 wrong, E3/E4 correct | N/A | `1997_792` is E2-wrong, but E3/E4 have no outcome label | Structurally inapplicable: retrieval/explanation output cannot be outcome-correct or outcome-wrong relative to E2. None of the 3 E2-wrong cohort cases also selected the expected authority. |
-| E3 correct, E4 wrong | 0/30 | None exists | On the applicable verification interpretation, E4 rejected no E3 displayed citation: all 135 passed. |
-| E3/E4 prediction correct but citation unsupported | N/A | None exists | E3/E4 do not emit outcome predictions; unsupported citations are also 0/135. |
-| Correct authority retrieved but final answer wrong | N/A | `2008_1629` retrieved and selected its authority, but has no gold outcome-answer label | The controlled brief intentionally makes no adjudicated legal outcome claim, so final-answer correctness is not defined. |
-| Citation traceable but authority-consistency fails | 19/30 cases | `1997_792` | Selected citations are provenance-valid, but the predefined authority was not selected. This is not a substantive-irrelevance judgment. |
-| Citation later than the historical case date | 0/30 cases; 0/135 citations | None exists | Confirmed per case and per displayed citation; strict temporal eligibility held. |
-| Explanation highlights text not corresponding to retrieved evidence | 0/5 fixed spot checks | `2008_1629` | The five persisted-output reconstructions (`2008_1629`, `1997_792`, `1980_133`, `2002_944`, `1988_96`) all mapped every highlighted passage to an exact retrieved chunk. |
+| E2 wrong, E3/E4 correct | N/A | `2008_1629` | Structurally inapplicable: E3/E4 do not emit outcome labels. 3 E2-wrong cases retrieved and selected the expected authority, but that is evidence recovery rather than an outcome prediction. |
+| E3 correct, E4 wrong | 0/30 | None | All 150 E3-displayed citations passed E4 verification. |
+| E3/E4 prediction correct but citation unsupported | N/A | None | E3/E4 have no outcome labels; unsupported citations are 0/150. |
+| Correct authority retrieved but final answer wrong | N/A | `2008_1629` | The controlled brief makes no adjudicated legal outcome claim, so final-answer correctness is not defined. |
+| Citation traceable but authority-consistency fails | 18/30 cases | `1997_792` | Citations are provenance-valid but the predefined authority was not selected; this is not a substantive-irrelevance judgment. |
+| Citation later than the historical case date | 0/30 cases; 0/150 citations | None | Confirmed per case and displayed citation. |
+| Explanation highlights text not corresponding to retrieved evidence | 0/5 fixed spot checks | `2008_1629` | Every reconstructed highlight mapped to an exact persisted retrieved chunk. |
 
-This closes Week 12. The authoritative machine-readable join is `artifacts/week12_prediction_cross_reference.json`; it preserves the exact E1/E2 per-case predictions and the frozen E3/E4 cohort status.
+## Retrieval-investigation summary for Discussion and Limitations
+
+Three bounded investigations were completed before the final freeze. First, the legacy first-32-term query construction was replaced with deterministic TF-IDF salient terms drawn from the full facts-only input; this removed opening procedural boilerplate from the query without changing the BM25 architecture. Second, the original direct shared-phrase self-match guard was found to suppress quoted earlier authorities. It was repaired by retaining the 100 shared-six-token floor but also requiring 80% unique source-phrase coverage; the corrected dev probe recovered three additional authorities and withdrew the earlier broad lexical-mismatch claim. Third, the post-ranking temporal filter was moved into the BM25 candidate relation before ranking and the top-100 cutoff. This final change improved held-out Recall@5 from 5/30 to 12/30, Recall@100 from 12/30 to 15/30, and selected expected authorities from 11/30 to 12/30, without losing any of the original 12 retrieval successes.
+
+The remaining misses are not explained solely by temporal filtering. `2013_35` remained absent even though its former raw top-100 contained 79 eligible candidates, whereas `1980_105` was recovered despite only three eligible raw candidates in the earlier ordering and became a top-5 hit after the final filter. Together these contrasts indicate residual lexical/relevance mismatch or authority-ranking limitations rather than a remaining filtering artifact. The final system therefore demonstrates that provenance, grounding, and temporal controls can be perfect for displayed evidence while expected-authority coverage remains incomplete.
 
 The E3-to-E4 comparison reflects a system-level intervention bundling provenance constraints, citation validation, structured explanation, and temporal integrity; it does not isolate the causal contribution of any single component.

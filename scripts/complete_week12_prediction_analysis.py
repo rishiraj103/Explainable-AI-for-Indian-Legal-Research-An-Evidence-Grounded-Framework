@@ -83,7 +83,7 @@ def main() -> None:
     database_url = os.getenv("LEGAL_XAI_DATABASE_URL", DEFAULT_DATABASE_URL)
     e1 = {row["case_id"]: row for row in read("artifacts/e1_test_predictions.json")["records"]}
     e2 = {row["case_id"]: row for row in read("artifacts/e2_test_predictions.json")["records"]}
-    evaluation = read("artifacts/week11_initial_evaluation.json")["per_case_records"]
+    evaluation = read("artifacts/week11_temporal_prerank_evaluation.json")["per_case_records"]
     if set(e1) != set(e2):
         raise ValueError("E1/E2 test prediction IDs differ")
     combined = []
@@ -115,7 +115,7 @@ def main() -> None:
     e2_wrong_authority_selected = [row["case_id"] for row in cohort if row["E2_mean_logits_prediction"] != row["true_label"] and row["authority_bucket"] == "retrieved_and_selected"]
     citation_consistency_fails = [row["case_id"] for row in cohort if row["authority_bucket"] != "retrieved_and_selected"]
     payload = {
-        "analysis_version": "week12-prediction-cross-reference-v1",
+        "analysis_version": "week12-prediction-cross-reference-v2-final-preranking",
         "reproduction": {
             "E1": read("artifacts/e1_test_predictions.json")["reproduced_metrics"],
             "E2_mean_logits": read("artifacts/e2_test_predictions.json")["mean_logits_metrics"],
@@ -129,8 +129,8 @@ def main() -> None:
             "per_case_temporal_violations": sum(row["temporal_violation_count"] for row in cohort),
         },
         "structurally_inapplicable_categories": {
-            "E2_wrong_E3_E4_outcome_correct": "E3/E4 do not emit outcome labels, so they cannot be outcome-correct or outcome-wrong relative to E2. On the evidence criterion, none of the three E2-wrong cohort cases retrieved and selected the expected authority.",
-            "E3_correct_E4_wrong": "E4 adds verification to the same controlled E3 evidence output. All 135 displayed citations pass E4 verification; there are zero E3 outputs rejected by E4 in the frozen cohort.",
+            "E2_wrong_E3_E4_outcome_correct": f"E3/E4 do not emit outcome labels, so they cannot be outcome-correct or outcome-wrong relative to E2. {len(e2_wrong_authority_selected)} E2-wrong cohort case(s) retrieved and selected the expected authority, but this remains evidence recovery rather than an E3/E4 outcome prediction.",
+            "E3_correct_E4_wrong": f"E4 adds verification to the same controlled E3 evidence output. All {sum(row['citation_check_count'] for row in evaluation)} displayed citations pass E4 verification; there are zero E3 outputs rejected by E4 in the frozen cohort.",
             "E3_E4_prediction_correct_citation_unsupported": "E3/E4 do not output outcome predictions, and their displayed citations are all supported; this category has no applicable instances.",
             "correct_authority_retrieved_final_answer_wrong": "The controlled E3/E4 brief makes no adjudicated outcome prediction and has no gold final-answer correctness label. Authority recovery is measured separately from source-valid, non-inferential explanation rendering.",
         },

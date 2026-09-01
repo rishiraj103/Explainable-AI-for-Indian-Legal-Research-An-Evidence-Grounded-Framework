@@ -1,0 +1,8 @@
+# Retrieval Investigation Summary
+
+## Retrieval-investigation summary for Discussion and Limitations
+
+Three bounded investigations were completed before the final freeze. First, the legacy first-32-term query construction was replaced with deterministic TF-IDF salient terms drawn from the full facts-only input; this removed opening procedural boilerplate from the query without changing the BM25 architecture. Second, the original direct shared-phrase self-match guard was found to suppress quoted earlier authorities. It was repaired by retaining the 100 shared-six-token floor but also requiring 80% unique source-phrase coverage; the corrected dev probe recovered three additional authorities and withdrew the earlier broad lexical-mismatch claim. Third, the post-ranking temporal filter was moved into the BM25 candidate relation before ranking and the top-100 cutoff. This final change improved held-out Recall@5 from 5/30 to 12/30, Recall@100 from 12/30 to 15/30, and selected expected authorities from 11/30 to 12/30, without losing any of the original 12 retrieval successes.
+
+The remaining misses are not explained solely by temporal filtering. `2013_35` remained absent even though its former raw top-100 contained 79 eligible candidates, whereas `1980_105` was recovered despite only three eligible raw candidates in the earlier ordering and became a top-5 hit after the final filter. Together these contrasts indicate residual lexical/relevance mismatch or authority-ranking limitations rather than a remaining filtering artifact. The final system therefore demonstrates that provenance, grounding, and temporal controls can be perfect for displayed evidence while expected-authority coverage remains incomplete.
+

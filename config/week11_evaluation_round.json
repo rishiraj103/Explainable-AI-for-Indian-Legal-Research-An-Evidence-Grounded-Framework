@@ -29,7 +29,7 @@
     "finalized_at_utc": "2026-09-01T11:39:44.6074224Z",
     "artifact": "artifacts/week11_temporal_prerank_evaluation.json",
     "superseded_post_ranking_artifact": "artifacts/week11_initial_evaluation.json",
-    "error_analysis_artifact": "artifacts/week11_error_analysis.json (pre-ranking-filter analysis; must be read with the superseded baseline artifact)",
+    "error_analysis_artifact": "artifacts/week12_error_analysis.json",
     "E3_E4_reference_authority_outcomes": {
       "expected_authorities": 30,
       "retrieved_and_selected": 12,
