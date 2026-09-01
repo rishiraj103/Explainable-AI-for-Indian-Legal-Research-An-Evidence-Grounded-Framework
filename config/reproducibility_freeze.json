@@ -1,6 +1,6 @@
 {
-  "freeze_version": "week10-reproducibility-freeze-v1",
-  "scope": "Week 10 configuration freeze before Week 11 evaluation; no Week 11 metrics are included.",
+  "freeze_version": "week11-final-retrieval-freeze-v2",
+  "scope": "Final retrieval configuration freeze after the one bounded Week 11 temporal-ordering test; no further retrieval changes are permitted.",
   "datasets_and_splits": {
     "ildc_single": {
       "splits": {
@@ -33,8 +33,8 @@
     "ecourts_retrieval_corpus": {
       "dataset_manifest": {
         "path": "corpus/dataset_manifest.md",
-        "sha256": "eb3f54d8e7f5b49b2653d34c1d791659ee7b7a392aecad1e57e9283ea4a1b389",
-        "bytes": 9014
+        "sha256": "847e242056a8469dc9010b892239ebc63bbf215c048922f45747d188ee3bdd1d",
+        "bytes": 15248
       },
       "alignment_gated_crosswalk": {
         "path": "corpus/dedup_matches.csv",
@@ -48,13 +48,13 @@
       },
       "bm25_index": {
         "path": "retrieval/bm25.sqlite",
-        "sha256": "b136237a7128e2bc49f8339d2994cb5f54a6019d9f45e29b70a15b5ea1d5937e",
-        "bytes": 2079342592
+        "sha256": "3187f7fce824ea8ccc5a26d908936ce4b78e81238289ea69348cb861350d65fb",
+        "bytes": 2269376512
       },
       "index_build_record": {
         "path": "artifacts/bm25_index.json",
-        "sha256": "e8668a6ece679fb098008e78de288ca4269a11a9f4fb5e67aae375e7a0ce4661",
-        "bytes": 291
+        "sha256": "6e904436c515aa34ed9ea09214f32969e2e48bf5e3a495d1b8e0a674eb8aded8",
+        "bytes": 300
       }
     }
   },
@@ -200,8 +200,8 @@
         },
         "src/legal_xai/evidence_pipeline.py": {
           "path": "src/legal_xai/evidence_pipeline.py",
-          "sha256": "9c515cea671c9fff6e55f0fbe063afda21bf6b1f26f3647c6c849024fe9b627f",
-          "bytes": 7439
+          "sha256": "a9efc520358df64946101fb02398b546f160ae406efd1d685b6f9ff3cc27b468",
+          "bytes": 8368
         },
         "src/legal_xai/grounded_answer.py": {
           "path": "src/legal_xai/grounded_answer.py",
@@ -255,17 +255,18 @@
         "unsupported_citation_policy": "The controlled E3 renderer emits corpus case citations only. Any citation without a linked evidence chunk, including an unsupported case-name field, is rejected; statutes or other source types are not silently treated as verified."
       },
       "retrieval_selection": {
-        "selection_version": "week10-bm25-salient-terms-selfmatch-coverage-v2",
+        "selection_version": "week11-bm25-salient-terms-preranked-temporal-v3",
         "candidate_k": 100,
         "max_selected_evidence": 5,
         "query_construction_version": "tfidf-segment-salient-terms-v1",
         "query_construction": "deterministic TF-IDF salient-term extraction over the full frozen facts-only text: segment by sentence/paragraph, remove procedural-report boilerplate, score unigrams by segment TF-IDF with a mild within-document frequency factor, retain section/article cues, and select at most 32 unique terms",
         "legacy_query_construction": "legacy-first-32-terms-v1 (retained only to reproduce the Week 9 final regression)",
-        "eligibility_requirement": "temporal_status == eligible",
+        "eligibility_requirement": "strictly earlier decision year; applied to the BM25 candidate relation before ORDER BY/LIMIT 100",
+        "temporal_filter_stage": "pre_ranking",
         "redundancy_rule": "select at most one chunk per source_id",
         "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
         "direct_content_self_match_rule": "Exclude a content self-match only when at least 100 six-token phrase occurrences overlap and at least 80% of the candidate source's unique six-token fingerprints occur in the query case. This preserves true self-copy protection while retaining an earlier authority substantially quoted in a later query judgment.",
-        "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. After a false-positive content-self-match exclusion was corrected, the final fixed-test regression found salient terms non-worsening on all six controls and improved three expected authorities to ranks 1, 1, and 6."
+        "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. The final bounded temporal-ordering test applies the existing strict earlier-year rule before BM25 ranking so future and same-year documents cannot consume the top-100 depth. On the 30-case frozen answer-key cohort it improved Recall@5 from 5/30 to 12/30, Recall@100 from 12/30 to 15/30, and expected authorities selected from 11/30 to 12/30, with no regression among the original 12 retrieval successes. No further retrieval configuration changes are permitted."
       },
       "query_builder_final_regression": {
         "artifact": {
@@ -345,6 +346,25 @@
           ]
         },
         "interpretation": "The pre-fix broad lexical-mismatch conclusion is withdrawn: the self-match rule was a material contributor. The corrected configuration retrieves 6/9 expected authorities at k=100 and 7/9 at k=500; newly retrieved after the repair are 1984_62, 1988_238, 1992_137. Only the remaining absent cases are residual retrieval failures, not evidence for a corpus-wide lexical-mismatch claim."
+      },
+      "final_temporal_preranking_trial": {
+        "artifact": {
+          "path": "artifacts/week11_temporal_prerank_evaluation.json",
+          "sha256": "b9dcac571c38390fcca0b2c71fbc9689a7ca5e0b578b446fe42166b8d78e75a6",
+          "bytes": 60463
+        },
+        "investigation": {
+          "path": "artifacts/week11_temporal_preranking_investigation.md",
+          "sha256": "9e5004f6142737c20f725f3ace21379041b410207b3a009670cdaae799e4a939",
+          "bytes": 3022
+        },
+        "decision": "adopt_pre_ranking_temporal_filter",
+        "result": {
+          "recall_at_5": 0.4,
+          "recall_at_100": 0.5,
+          "selected_expected_authorities": 12,
+          "regressions_among_original_12_retrieval_successes": 0
+        }
       },
       "temporal_policy": "precedent_decision_year < ildc_query_year; same-year is ambiguous and excluded; missing decision date is excluded.",
       "duplicate_policy": "Exclude alignment-gated target/near-case source IDs. Direct text self-match additionally requires at least 100 shared six-token phrase occurrences and 80% unique source-phrase coverage, preventing a quoted earlier authority from being treated as the query case.",

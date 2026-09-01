@@ -1,16 +1,16 @@
 {
   "experiment": "E4",
-  "selection_version": "week10-bm25-salient-terms-selfmatch-coverage-v2",
+  "selection_version": "week11-bm25-salient-terms-preranked-temporal-v3",
   "query_construction_version": "tfidf-segment-salient-terms-v1",
-  "run_id": "144f6518-be1a-4c15-98eb-5a35b0b9db71",
+  "run_id": "b744b84f-c36e-42f9-98fe-6c3d55c2c8ce",
   "query_id": "week10-replay-01",
   "query_year": 2020,
   "candidate_count": 100,
   "selected_evidence_count": 5,
   "query_duplicate_chunks_excluded": 0,
   "status_counts": {
-    "eligible": 70,
-    "ambiguous_excluded": 30,
+    "eligible": 100,
+    "ambiguous_excluded": 0,
     "ineligible": 0,
     "excluded_missing_metadata": 0
   },

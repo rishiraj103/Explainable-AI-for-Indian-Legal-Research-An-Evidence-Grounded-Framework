@@ -1,9 +1,9 @@
 {
-  "built_at_utc": "2026-08-28T16:55:02.217638+00:00",
-  "index_version": "fts5-bm25-unicode61-v1",
+  "built_at_utc": "2026-09-01T11:28:46.378473+00:00",
+  "index_version": "fts5-bm25-unicode61-temporal-v2",
   "engine": "SQLite FTS5 bm25()",
   "tokenizer": "unicode61 remove_diacritics 2",
   "chunks_indexed": 2036981,
   "index_path": "retrieval\\bm25.sqlite",
-  "index_bytes": 2079342592
+  "index_bytes": 2269376512
 }

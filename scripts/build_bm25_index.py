@@ -14,7 +14,7 @@ import psycopg
 from load_provenance import DEFAULT_DATABASE_URL
 
 
-INDEX_VERSION = "fts5-bm25-unicode61-v1"
+INDEX_VERSION = "fts5-bm25-unicode61-temporal-v2"
 
 
 def main() -> None:
@@ -41,12 +41,34 @@ def main() -> None:
             "CREATE VIRTUAL TABLE chunks_fts USING fts5("
             "chunk_id UNINDEXED, chunk_text, tokenize='unicode61 remove_diacritics 2')"
         )
+        # Keep only the exact date-derived year needed to apply the already
+        # frozen temporal rule inside the candidate query.  This lets SQLite
+        # restrict the candidate set *before* BM25's ORDER BY/LIMIT rather
+        # than discarding future/same-year hits after a global top-k search.
+        sqlite.execute(
+            "CREATE TABLE chunk_temporal_metadata ("
+            "chunk_id TEXT PRIMARY KEY, decision_year INTEGER NOT NULL)"
+        )
+        sqlite.execute(
+            "CREATE INDEX chunk_temporal_metadata_year_idx "
+            "ON chunk_temporal_metadata (decision_year)"
+        )
         indexed = 0
         with psycopg.connect(args.database_url) as connection:
             with connection.cursor(name="corpus_chunks_for_bm25") as cursor:
-                cursor.execute("SELECT chunk_id, chunk_text FROM corpus_chunks ORDER BY chunk_id")
+                cursor.execute(
+                    "SELECT chunk_id, chunk_text, EXTRACT(YEAR FROM decision_date)::INTEGER "
+                    "FROM corpus_chunks ORDER BY chunk_id"
+                )
                 while batch := cursor.fetchmany(args.batch_size):
-                    sqlite.executemany("INSERT INTO chunks_fts (chunk_id, chunk_text) VALUES (?, ?)", batch)
+                    sqlite.executemany(
+                        "INSERT INTO chunks_fts (chunk_id, chunk_text) VALUES (?, ?)",
+                        [(row[0], row[1]) for row in batch],
+                    )
+                    sqlite.executemany(
+                        "INSERT INTO chunk_temporal_metadata (chunk_id, decision_year) VALUES (?, ?)",
+                        [(row[0], row[2]) for row in batch],
+                    )
                     sqlite.commit()
                     indexed += len(batch)
         sqlite.execute("INSERT INTO chunks_fts(chunks_fts) VALUES ('optimize')")

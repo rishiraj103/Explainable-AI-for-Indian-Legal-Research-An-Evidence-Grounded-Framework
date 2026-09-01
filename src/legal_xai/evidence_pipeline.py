@@ -23,6 +23,23 @@ from legal_xai.temporal import assess_temporal_eligibility
 TEMPORAL_POLICY = "precedent_decision_year < ildc_query_year; same-year excluded as ambiguous"
 
 
+def temporal_preranked_bm25_sql() -> str:
+    """Return the fixed candidate query used for temporal-safe BM25 ranking.
+
+    The temporal predicate is deliberately part of the SQL candidate relation,
+    before ``ORDER BY bm25`` and ``LIMIT``.  BM25's corpus statistics remain
+    global, but only strictly earlier judgments compete for the returned top-k.
+    """
+
+    return (
+        "SELECT chunks_fts.chunk_id, bm25(chunks_fts) AS raw_score "
+        "FROM chunks_fts "
+        "JOIN chunk_temporal_metadata USING (chunk_id) "
+        "WHERE chunks_fts MATCH ? AND chunk_temporal_metadata.decision_year < ? "
+        "ORDER BY raw_score LIMIT ?"
+    )
+
+
 def load_ildc_case_text(query_id: str) -> str | None:
     """Resolve an ILDC case's full text for standing content self-leakage checks."""
     for split in ("train", "validation", "test"):
@@ -117,11 +134,18 @@ def retrieve_temporal_candidates(
     query_case_text = load_ildc_case_text(query_id)
     query_six_token_phrases = six_token_phrase_set(query_case_text) if query_case_text else None
     with sqlite3.connect(index_path) as index:
-        rows = index.execute(
-            "SELECT chunk_id, bm25(chunks_fts) AS raw_score "
-            "FROM chunks_fts WHERE chunks_fts MATCH ? ORDER BY raw_score LIMIT ?",
-            (fts_query(query, mode=query_mode), candidate_k),
-        ).fetchall()
+        try:
+            rows = index.execute(
+                temporal_preranked_bm25_sql(),
+                (fts_query(query, mode=query_mode), query_year, candidate_k),
+            ).fetchall()
+        except sqlite3.OperationalError as error:
+            if "chunk_temporal_metadata" in str(error):
+                raise RuntimeError(
+                    "BM25 index lacks temporal metadata; rebuild it with "
+                    "scripts/build_bm25_index.py before retrieval."
+                ) from error
+            raise
     if not rows:
         raise ValueError("BM25 returned no candidates for the supplied query")
 

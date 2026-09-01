@@ -1,4 +1,4 @@
-from legal_xai.evidence_pipeline import EvidenceCandidate, select_diverse_evidence
+from legal_xai.evidence_pipeline import EvidenceCandidate, select_diverse_evidence, temporal_preranked_bm25_sql
 
 
 def candidate(rank: int, source_id: str, score: float, status: str = "eligible") -> EvidenceCandidate:
@@ -27,3 +27,10 @@ def test_selector_has_stable_rank_tie_breaker_and_respects_limit():
         candidate(3, "c", 5.0), candidate(2, "b", 5.0), candidate(1, "a", 5.0),
     ), 2)
     assert [item.source_id for item in selected] == ["a", "b"]
+
+
+def test_bm25_candidate_query_applies_temporal_rule_before_top_k():
+    sql = temporal_preranked_bm25_sql()
+    assert "JOIN chunk_temporal_metadata" in sql
+    assert "decision_year < ?" in sql
+    assert sql.index("decision_year < ?") < sql.index("ORDER BY raw_score LIMIT ?")

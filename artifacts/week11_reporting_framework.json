@@ -1,28 +1,41 @@
 {
-  "reporting_framework_version": "week11-temporal-reporting-v1",
-  "scope": "The frozen 30-case answer-key cohort and its persisted Week 11 retrieval runs; no retrieval was rerun.",
-  "temporal_metrics": {
+  "reporting_framework_version": "week11-temporal-reporting-v2-preranked",
+  "scope": "The frozen 30-case answer-key cohort, rerun once for the approved final pre-ranking temporal-filter test.",
+  "retrieval_configuration": "week11-bm25-salient-terms-preranked-temporal-v3",
+  "temporal_filter_stage": "before BM25 ORDER BY/LIMIT",
+  "pre_ranking_baseline": {
+    "configuration": "week10-bm25-salient-terms-selfmatch-coverage-v2",
     "FEER": {
-      "definition": "future-ineligible retrieved candidates / all retrieved candidates logged after duplicate exclusion",
       "numerator": 1712,
       "denominator": 2743,
-      "value": 0.624134,
-      "future_ineligible_status": "ineligible (candidate decision year later than query year)",
-      "same_year_ambiguous_excluded_from_numerator": 267
-    },
-    "FCER": {
-      "definition": "future-ineligible final cited evidence items / all final cited evidence items",
-      "numerator": 0,
-      "denominator": 135,
-      "value": 0.0
+      "value": 0.624134
     },
     "candidate_status_counts": {
       "eligible": 764,
       "ineligible": 1712,
       "ambiguous_excluded": 267
+    }
+  },
+  "temporal_metrics": {
+    "FEER": {
+      "definition": "future-ineligible retrieved candidates / all retrieved candidates logged after duplicate exclusion",
+      "numerator": 0,
+      "denominator": 3000,
+      "value": 0.0,
+      "future_ineligible_status": "ineligible (candidate decision year later than query year)",
+      "same_year_ambiguous_excluded_from_numerator": 0
+    },
+    "FCER": {
+      "definition": "future-ineligible final cited evidence items / all final cited evidence items",
+      "numerator": 0,
+      "denominator": 150,
+      "value": 0.0
+    },
+    "candidate_status_counts": {
+      "eligible": 3000
     },
     "final_cited_status_counts": {
-      "eligible": 135
+      "eligible": 150
     }
   },
   "prediction_delta_E4_minus_E3": {

@@ -1,13 +1,14 @@
 {
-  "selection_version": "week10-bm25-salient-terms-selfmatch-coverage-v2",
+  "selection_version": "week11-bm25-salient-terms-preranked-temporal-v3",
   "candidate_k": 100,
   "max_selected_evidence": 5,
   "query_construction_version": "tfidf-segment-salient-terms-v1",
   "query_construction": "deterministic TF-IDF salient-term extraction over the full frozen facts-only text: segment by sentence/paragraph, remove procedural-report boilerplate, score unigrams by segment TF-IDF with a mild within-document frequency factor, retain section/article cues, and select at most 32 unique terms",
   "legacy_query_construction": "legacy-first-32-terms-v1 (retained only to reproduce the Week 9 final regression)",
-  "eligibility_requirement": "temporal_status == eligible",
+  "eligibility_requirement": "strictly earlier decision year; applied to the BM25 candidate relation before ORDER BY/LIMIT 100",
+  "temporal_filter_stage": "pre_ranking",
   "redundancy_rule": "select at most one chunk per source_id",
   "ordering": "descending BM25 score; retain original retrieval rank as deterministic tie-breaker",
   "direct_content_self_match_rule": "Exclude a content self-match only when at least 100 six-token phrase occurrences overlap and at least 80% of the candidate source's unique six-token fingerprints occur in the query case. This preserves true self-copy protection while retaining an earlier authority substantially quoted in a later query judgment.",
-  "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. After a false-positive content-self-match exclusion was corrected, the final fixed-test regression found salient terms non-worsening on all six controls and improved three expected authorities to ranks 1, 1, and 6."
+  "rationale": "A small, source-diverse evidence set is easier to inspect and reduces adjacent-passage duplication without adding a learned reranker. The final bounded temporal-ordering test applies the existing strict earlier-year rule before BM25 ranking so future and same-year documents cannot consume the top-100 depth. On the 30-case frozen answer-key cohort it improved Recall@5 from 5/30 to 12/30, Recall@100 from 12/30 to 15/30, and expected authorities selected from 11/30 to 12/30, with no regression among the original 12 retrieval successes. No further retrieval configuration changes are permitted."
 }

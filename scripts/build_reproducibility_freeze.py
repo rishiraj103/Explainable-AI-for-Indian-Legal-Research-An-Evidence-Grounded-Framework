@@ -13,7 +13,7 @@ from typing import Any
 import pyarrow.parquet as pq
 
 
-FREEZE_VERSION = "week10-reproducibility-freeze-v1"
+FREEZE_VERSION = "week11-final-retrieval-freeze-v2"
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -57,11 +57,12 @@ def main() -> None:
     answer_key = json.loads((ROOT / "answer_key/authority_answer_key.json").read_text(encoding="utf-8"))
     query_regression = json.loads((ROOT / "artifacts/week10_post_selfmatch_freeze_regression.json").read_text(encoding="utf-8"))
     dev_recheck = json.loads((ROOT / "artifacts/week10_dev_probe_selfmatch_recheck.json").read_text(encoding="utf-8"))
+    temporal_trial = json.loads((ROOT / "artifacts/week11_temporal_prerank_evaluation.json").read_text(encoding="utf-8"))
 
     evaluation_entries = [entry for entry in answer_key["entries"] if entry.get("status") == "evaluation"]
     result = {
         "freeze_version": FREEZE_VERSION,
-        "scope": "Week 10 configuration freeze before Week 11 evaluation; no Week 11 metrics are included.",
+        "scope": "Final retrieval configuration freeze after the one bounded Week 11 temporal-ordering test; no further retrieval changes are permitted.",
         "datasets_and_splits": {
             "ildc_single": {
                 "splits": {split: split_record(split) for split in ("train", "validation", "test")},
@@ -128,6 +129,17 @@ def main() -> None:
                     "summary": dev_recheck["summary"],
                     "interpretation": dev_recheck["conclusion"],
                 },
+                "final_temporal_preranking_trial": {
+                    "artifact": file_record("artifacts/week11_temporal_prerank_evaluation.json"),
+                    "investigation": file_record("artifacts/week11_temporal_preranking_investigation.md"),
+                    "decision": "adopt_pre_ranking_temporal_filter",
+                    "result": {
+                        "recall_at_5": temporal_trial["E3_retrieval_and_controlled_grounding_answer_key_subset"]["recall_at_5"],
+                        "recall_at_100": temporal_trial["E3_retrieval_and_controlled_grounding_answer_key_subset"]["recall_at_100"],
+                        "selected_expected_authorities": 12,
+                        "regressions_among_original_12_retrieval_successes": 0,
+                    },
+                },
                 "temporal_policy": "precedent_decision_year < ildc_query_year; same-year is ambiguous and excluded; missing decision date is excluded.",
                 "duplicate_policy": "Exclude alignment-gated target/near-case source IDs. Direct text self-match additionally requires at least 100 shared six-token phrase occurrences and 80% unique source-phrase coverage, preventing a quoted earlier authority from being treated as the query case.",
                 "answer_key": {
@@ -158,16 +170,17 @@ def main() -> None:
     config_path.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     markdown = "\n".join([
-        "# Week 10 Reproducibility Freeze",
+        "# Final Retrieval Reproducibility Freeze",
         "",
-        "This is the pre-evaluation freeze for the fixed data, model, retrieval, explanation, and safety configuration. It does not contain Week 11 evaluation results.",
+        "This records the fixed data, model, retrieval, explanation, and safety configuration after the one permitted bounded temporal-ordering test. No further retrieval configuration changes are permitted.",
         "",
         f"- Freeze version: `{FREEZE_VERSION}`",
         f"- ILDC split rows: train `{result['datasets_and_splits']['ildc_single']['splits']['train']['rows']}`, validation `{result['datasets_and_splits']['ildc_single']['splits']['validation']['rows']}`, test `{result['datasets_and_splits']['ildc_single']['splits']['test']['rows']}`",
         f"- Retrieval configuration: `{selection['selection_version']}`; query builder `{selection['query_construction_version']}`; candidate depth `{selection['candidate_k']}`; selected sources `{selection['max_selected_evidence']}`.",
         "- Final real-answer-key query-builder regression: after repairing a quoted-authority false-positive self-match exclusion, salient TF-IDF terms were non-worsening on all six controls and retrieved/selected `2008_1629`, `1995_425`, and `2002_944` at ranks 1, 1, and 6. The complete record is `artifacts/week10_post_selfmatch_freeze_regression.json`.",
         "- Dev-probe recheck: the coverage-qualified self-match rule recovered three further dev authorities, for 6/9 at k=100 and 7/9 at k=500; the earlier broad lexical-mismatch limitation is withdrawn. See `artifacts/week10_dev_probe_selfmatch_recheck.json`.",
-        "- Temporal policy: candidate year must be strictly earlier than query year; same-year is logged as ambiguous and excluded; missing dates are excluded.",
+        "- Final temporal-ordering test: applying the unchanged strict earlier-year rule before BM25 ranking improved the 30-case answer-key Recall@5 from 5/30 to 12/30 and Recall@100 from 12/30 to 15/30, with no loss among the original 12 retrieval successes. It is adopted as the final configuration; see `artifacts/week11_temporal_preranking_investigation.md`.",
+        "- Temporal policy: candidate year must be strictly earlier than query year and is applied before BM25 ranking; same-year and missing-date candidates are excluded before ranking.",
         "- Duplicate policy: alignment-gated target/near-case exclusion plus a direct source-text self-match check requiring both 100 shared six-token phrases and 80% unique candidate-source coverage.",
         f"- E1 seed: `{result['experiments']['E1']['random_seed']}`. E2 seed: `{result['experiments']['E2_corrected']['random_seed']}`.",
         "- E2 correction: the former 256-token-prefix result remains recorded as discarded because 99.20% of eligible test inputs were truncated; the accepted result is the 512-token, 50-overlap chunk-and-pool run in `artifacts/e2_correction_manifest.json`.",

@@ -111,6 +111,7 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Compile the initial side-by-side E1/E2/E3/E4 result table with per-row denominators, frozen configuration identifiers, and no post-test tuning.
 - [ ] If a human explanation-readability review is planned, prepare the outreach/materials now; do not treat it as a metric until the planned later review stage.
 - [x] Run evaluation validation and commit the real evaluation artifacts. The scoped E1/E2 and E3/E4 result sets are complete; `pytest -q` is constrained to the project `tests/` suite to avoid collecting the local model cache. Do not begin Week 12 analysis.
+- [x] Complete the final bounded temporal-ordering test: pre-rank strictly earlier authorities before BM25 top-100, adopt it after Recall@5 improved 5/30 to 12/30 and Recall@100 improved 12/30 to 15/30 with no regression among the prior 12 successes, then freeze the result.
 
 ## Week 12 - Analyze Successes, Failures, and Limits
 

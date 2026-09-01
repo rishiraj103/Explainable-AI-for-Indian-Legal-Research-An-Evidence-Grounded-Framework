@@ -5,13 +5,13 @@
     "query_year": 2020,
     "query": "anticipatory bail section 438"
   },
-  "first_run_id": "f497508d-9f4e-4f6b-9312-86915e53a48b",
-  "second_run_id": "144f6518-be1a-4c15-98eb-5a35b0b9db71",
+  "first_run_id": "35e48fd7-5951-435d-912c-deff19bf02ef",
+  "second_run_id": "b744b84f-c36e-42f9-98fe-6c3d55c2c8ce",
   "comparison_excludes": [
     "run_id"
   ],
-  "first_stable_sha256": "2348301b695d6b860a7e908455d340cdc8f97b5368b9e501be62d16309715fe6",
-  "second_stable_sha256": "2348301b695d6b860a7e908455d340cdc8f97b5368b9e501be62d16309715fe6",
+  "first_stable_sha256": "f920b62540dc4852b20933e11db6fdf9dddef6a00a2c95e9c4acb256924ecc83",
+  "second_stable_sha256": "f920b62540dc4852b20933e11db6fdf9dddef6a00a2c95e9c4acb256924ecc83",
   "matches": true,
   "selected_chunk_ids": [
     "2018_3_739_749::p0001::c003",
@@ -62,8 +62,8 @@
     ]
   },
   "temporal_status_counts": {
-    "eligible": 70,
-    "ambiguous_excluded": 30,
+    "eligible": 100,
+    "ambiguous_excluded": 0,
     "ineligible": 0,
     "excluded_missing_metadata": 0
   }

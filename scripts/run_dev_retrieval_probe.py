@@ -64,7 +64,7 @@ def found_rank(retrieval: object, authority_source_id: str) -> int | None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--probe", type=Path, default=Path("answer_key/dev_retrieval_probe.json"))
-    parser.add_argument("--candidate-k", type=int, action="append", default=[500])
+    parser.add_argument("--candidate-k", type=int, action="append", default=None)
     parser.add_argument("--index-version", default="week9-bm25-salient-terms-candidate-v1")
     parser.add_argument("--query-mode", choices=("legacy_first_32", "salient_tfidf"), default="salient_tfidf")
     parser.add_argument("--output", type=Path, required=True)
@@ -75,6 +75,7 @@ def main() -> None:
         raise ValueError("probe contains non-dev entry")
     texts = load_ildc_texts(probe)
     rule = load_facts_extraction_rule("config/facts_extraction.json")
+    candidate_ks = sorted(set(args.candidate_k or [500]))
     results: list[dict[str, object]] = []
     for entry in probe["entries"]:
         case_id = str(entry["query_case_id"])
@@ -82,7 +83,7 @@ def main() -> None:
         query = facts.text
         query_year = int(str(entry["query_decision_date"])[:4])
         retrievals: dict[str, object] = {}
-        for candidate_k in sorted(set(args.candidate_k)):
+        for candidate_k in candidate_ks:
             retrieval = retrieve_temporal_candidates(
                 query_id=case_id,
                 query_year=query_year,
@@ -119,7 +120,7 @@ def main() -> None:
         "probe_file": str(args.probe).replace("\\", "/"),
         "query_mode": args.query_mode,
         "query_construction": "full frozen facts-only input; TF-IDF ranks substantive terms across sentence/paragraph segments after procedural-stopword removal, retains statute/article cues, and selects up to 32 unique terms" if args.query_mode == "salient_tfidf" else "full frozen facts-only input; first 32 alphanumeric terms in source order",
-        "candidate_ks": sorted(set(args.candidate_k)),
+        "candidate_ks": candidate_ks,
         "results": results,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
