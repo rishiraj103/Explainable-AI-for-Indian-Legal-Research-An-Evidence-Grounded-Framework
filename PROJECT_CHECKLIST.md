@@ -128,6 +128,6 @@ Project progress tracker. It is committed only when the user has explicitly appr
 
 - [x] Prepare a fixed seven-case RQ3 paired ablation packet that compares structured evidence-linked briefs with the exact same evidence in unstructured presentation, using the final Week 11 freeze and shuffled per-case display order.
 - [x] Prepare a structured response template covering source clarity, ease of locating provenance, appropriate trust, uncertainty clarity, and comparative preference; retain a programmatic citation-parity audit for all seven pairs.
-- [x] Explicitly begin the delayed self-review fallback because no outside reviewer response is recorded; preserve the packet and empty response template for a later independent or author-labelled response.
-- [ ] Summarize reviewer ratings and qualitative feedback; state the reviewer status and small-sample limitation honestly.
-- [ ] Commit the completed Week 13 feedback record without modifying system outputs or frozen settings.
+- [x] Complete the delayed self-review fallback because no outside reviewer was available; preserve the blank response template and label the completed response as author self-review rather than independent evidence.
+- [x] Summarize ratings and qualitative feedback honestly: structured was preferred 7/7, with narrow advantages in the two thematically coherent cases and wider advantages where evidence contained apparent relevance noise; the seven-case non-random sample and author-review status limit interpretation.
+- [x] Commit the completed Week 13 feedback record without modifying system outputs or frozen settings.

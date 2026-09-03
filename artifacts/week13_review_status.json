@@ -1,24 +1,36 @@
 {
   "review_version": "week13-human-explanation-review-v2-rq3-ablation",
-  "status": "delayed_self_review_fallback_started",
+  "status": "completed",
   "status_date": "2026-09-03",
-  "reviewer_status": "no_independent_reviewer_response_recorded",
+  "reviewer_status": "author_self_review_fallback",
   "basis": {
     "review_packet": "artifacts/week13_review_packet.md",
     "response_template": "artifacts/week13_review_response_template.json",
     "citation_parity_audit": "artifacts/week13_rq3_ablation_parity.json",
     "frozen_evidence_source": "artifacts/week11_temporal_prerank_evaluation.json"
   },
-  "finding": "No reviewer response or ratings have been supplied. Consequently, no explanation-quality metric, comparative preference, or qualitative reviewer finding is reported.",
+  "finding": "The author-labelled self-review fallback preferred the structured presentation in 7/7 fixed cases. The preference margin was narrow for the two thematically coherent evidence sets (1980_133 and 2013_35) and wider where the retrieved evidence included apparent relevance noise. Case 2013_35 also identified that the identical generic uncertainty boilerplate is visually clear but substantively uncalibrated to retrieval quality.",
+  "completion": {
+    "response": "artifacts/week13_review_response_completed.json",
+    "summary_json": "artifacts/week13_review_summary.json",
+    "summary_markdown": "artifacts/week13_review_summary.md",
+    "reviewer_status": "author_self_review_fallback",
+    "comparative_preferences": {
+      "structured": 7,
+      "unstructured": 0,
+      "no_preference": 0
+    },
+    "interpretation_rule": "This is not independent human-review evidence and must not be represented as such."
+  },
   "fallback": {
     "mode": "delayed_author_self_review",
     "rule": "A later self-review may be summarized only with reviewer.outside_reviewer=false and must not be characterized as independent human-review evidence.",
-    "completion_input": "A completed response conforming to artifacts/week13_review_response_template.json; summarize with scripts/summarize_week13_review.py."
+    "completion_input": "Completed on 2026-09-03; the blank template remains available for provenance, while the completed response and read-only summaries are listed in completion."
   },
   "limitations": [
     "The planned sample contains only seven fixed, non-random cases.",
     "The packet assesses perceived source clarity, provenance-finding ease, appropriate trust, and uncertainty clarity; it does not assess legal correctness.",
-    "No response permits no rating aggregation or qualitative-feedback summary."
+    "The completed result is an author self-review fallback, not independent reviewer evidence."
   ],
   "frozen_settings_changed": false
 }
