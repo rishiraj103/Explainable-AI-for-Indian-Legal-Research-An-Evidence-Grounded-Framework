@@ -1,0 +1,23 @@
+{
+  "review_version": "week13-human-explanation-review-v1",
+  "status": "delayed_self_review_fallback_started",
+  "status_date": "2026-09-03",
+  "reviewer_status": "no_independent_reviewer_response_recorded",
+  "basis": {
+    "review_packet": "artifacts/week13_human_review_packet.md",
+    "response_template": "artifacts/week13_review_response_template.json",
+    "frozen_evidence_source": "artifacts/week11_initial_evaluation.json"
+  },
+  "finding": "No reviewer response or ratings have been supplied. Consequently, no explanation-quality metric, comparative preference, or qualitative reviewer finding is reported.",
+  "fallback": {
+    "mode": "delayed_author_self_review",
+    "rule": "A later self-review may be summarized only with reviewer.outside_reviewer=false and must not be characterized as independent human-review evidence.",
+    "completion_input": "A completed response conforming to artifacts/week13_review_response_template.json; summarize with scripts/summarize_week13_review.py."
+  },
+  "limitations": [
+    "The planned sample contains only four fixed, non-random cases.",
+    "The packet assesses perceived source clarity, provenance-finding ease, appropriate trust, and uncertainty clarity; it does not assess legal correctness.",
+    "No response permits no rating aggregation or qualitative-feedback summary."
+  ],
+  "frozen_settings_changed": false
+}

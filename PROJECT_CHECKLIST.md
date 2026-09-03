@@ -128,6 +128,6 @@ Project progress tracker. It is committed only when the user has explicitly appr
 
 - [x] Prepare a fixed paired review packet that compares structured evidence-linked briefs with the same evidence in a flattened presentation, using four frozen Week 11 cases and alternating presentation order.
 - [x] Prepare a structured response template covering source clarity, ease of locating provenance, appropriate trust, uncertainty clarity, and comparative preference.
-- [ ] Obtain an independent reviewer response, or explicitly begin the delayed self-review fallback if no outside reviewer is available.
+- [x] Explicitly begin the delayed self-review fallback because no outside reviewer response is recorded; preserve the packet and empty response template for a later independent or author-labelled response.
 - [ ] Summarize reviewer ratings and qualitative feedback; state the reviewer status and small-sample limitation honestly.
 - [ ] Commit the completed Week 13 feedback record without modifying system outputs or frozen settings.
