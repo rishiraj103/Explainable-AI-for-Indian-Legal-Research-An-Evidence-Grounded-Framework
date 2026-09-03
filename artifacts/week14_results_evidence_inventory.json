@@ -1,0 +1,217 @@
+{
+  "inventory_version": "week14-final-results-evidence-inventory-v2-mechanism-and-consistency",
+  "scope": "Read-only consolidation of final results for report drafting; no inference, retrieval, evaluation, answer-key edit, or configuration change.",
+  "sources": {
+    "E1_E2": "artifacts/e1_e2_comparison.json",
+    "E3_E4": "artifacts/week11_temporal_prerank_evaluation.json",
+    "error_analysis": "artifacts/week12_error_analysis.json",
+    "per_case_error_analysis": "artifacts/week11_error_analysis.json",
+    "retrieval_investigation": "artifacts/retrieval_investigation_summary.md",
+    "review_packet_audit": "artifacts/week13_rq3_ablation_parity.json",
+    "explanation_review": "artifacts/week13_review_summary.json",
+    "review_status": "artifacts/week13_review_status.json"
+  },
+  "result_inventory": [
+    {
+      "area": "Outcome prediction",
+      "population": "1,503 eligible fixed ILDC test cases",
+      "measures": {
+        "majority_accuracy": 0.501663,
+        "E1_accuracy": 0.61344,
+        "E1_macro_f1": 0.612342,
+        "E2_mean_logit_accuracy": 0.596806,
+        "E2_mean_logit_macro_f1": 0.592358
+      },
+      "permitted_interpretation": "E1 outperformed corrected E2 mean-logit pooling on this frozen outcome-prediction population; both exceeded the majority-accuracy baseline.",
+      "reporting_guard": "Do not use E3/E4 as outcome classifiers or fabricate an E4-minus-E3 prediction delta."
+    },
+    {
+      "area": "Authority recovery and verified evidence",
+      "population": "30 source-verified answer-key-covered fixed-test cases; 150 selected/displayed citations",
+      "measures": {
+        "expected_authority_recall_at_5": 0.4,
+        "expected_authority_recall_at_100": 0.5,
+        "retrieved_and_selected": 12,
+        "retrieved_not_selected": 3,
+        "absent_at_k100": 15,
+        "citation_groundedness_rate": 1.0,
+        "citation_provenance_validity": 1.0,
+        "temporal_violation_rate": 0.0,
+        "unsupported_claim_rate": 0.0
+      },
+      "permitted_interpretation": "The final system verified every displayed citation while recovering the predefined authority for only part of the answer-key subset; verification quality and expected-authority recall must be reported separately.",
+      "reporting_guard": "Authority consistency is defined against the source-first answer key and is not a human substantive-relevance judgment for alternative citations."
+    },
+    {
+      "area": "Explanation-format review",
+      "population": "7 fixed paired cases; author self-review fallback",
+      "measures": {
+        "structured_preferences": 7,
+        "unstructured_preferences": 0,
+        "no_preference": 0,
+        "structured_mean_ratings": {
+          "source_clarity": 4.571428571428571,
+          "source_finding_ease": 4.571428571428571,
+          "appropriate_trust": 4.428571428571429,
+          "limits_clear": 4.428571428571429
+        },
+        "unstructured_mean_ratings": {
+          "source_clarity": 2.7142857142857144,
+          "source_finding_ease": 2.2857142857142856,
+          "appropriate_trust": 2.857142857142857,
+          "limits_clear": 3.0
+        }
+      },
+      "permitted_interpretation": "The author self-review preferred the structured display on all seven paired cases and identified navigation and retrieval-noise triage as its perceived advantages.",
+      "reporting_guard": "This is not independent human-review evidence, is non-random and small, and measures perceived explanation quality rather than legal correctness."
+    }
+  ],
+  "retrieval_mechanism": {
+    "source": "artifacts/retrieval_investigation_summary.md",
+    "summary": "Three bounded changes preceded the final freeze; their mechanism and effect must accompany final recall figures in Results.",
+    "rounds": [
+      {
+        "change": "Replace legacy first-32-term query construction with deterministic TF-IDF salient terms from the full facts-only input.",
+        "effect": "Removed opening procedural boilerplate without changing the BM25 architecture."
+      },
+      {
+        "change": "Repair the direct shared-phrase self-match guard by retaining the 100 shared-six-token floor and requiring 80% unique source-phrase coverage.",
+        "effect": "Recovered three additional authorities in the corrected development probe and withdrew the prior broad lexical-mismatch claim."
+      },
+      {
+        "change": "Apply the strict earlier-year temporal rule to the BM25 candidate relation before ranking and the top-100 cutoff.",
+        "effect": "Improved held-out Recall@5 from 5/30 to 12/30, Recall@100 from 12/30 to 15/30, and selected expected authorities from 11/30 to 12/30, without losing any original retrieval successes."
+      }
+    ]
+  },
+  "indexed_qualitative_findings": [
+    {
+      "finding": "Boilerplate-uncertainty miscalibration",
+      "source": "artifacts/week13_review_summary.md (Case 2013_35)",
+      "summary": "The identical generic uncertainty language was visually clear but did not adapt to the high coherence of 2013_35's evidence; it signalled the same caution level as noisier evidence sets. This is a system-level limitation, not a format-specific result."
+    },
+    {
+      "finding": "Eligible-pool size and lexical relevance are independent contributors",
+      "source": "artifacts/retrieval_investigation_summary.md",
+      "summary": "2013_35 remained absent despite 79 eligible candidates in its former raw top-100, while 1980_105 was recovered despite only three eligible raw candidates and became a top-5 hit after the final filter. This indicates residual lexical/relevance or ranking limitations beyond temporal filtering alone."
+    }
+  ],
+  "answer_key_era_distribution": {
+    "source": "artifacts/week11_temporal_prerank_evaluation.json",
+    "counts_by_query_decade": {
+      "1970s": 5,
+      "1980s": 13,
+      "1990s": 9,
+      "2000s": 2,
+      "2010s": 1
+    },
+    "1980s_count": 13,
+    "answer_key_case_count": 30,
+    "summary": "The corrected 30-case answer-key subset contains 13/30 cases from the 1980s, so this era is overrepresented in the evaluated authority-recovery sample."
+  },
+  "consistency_checks": {
+    "self_review_case_alignment": {
+      "source": "artifacts/week13_rq3_ablation_parity.json cross-checked with artifacts/week11_error_analysis.json",
+      "description": "Each of the seven Week 13 self-review case IDs must occur in the final 30-case answer-key analysis, with a retrieval-outcome bucket consistent with its declared sample role; each must retain five passed displayed citation checks and exact structured/unstructured citation parity.",
+      "rows": [
+        {
+          "case_id": "2008_1629",
+          "week13_sample_role": "clean_success",
+          "final_week11_week12_bucket": "correct_authority_retrieved_and_selected",
+          "expected_bucket_from_sample_role": "correct_authority_retrieved_and_selected",
+          "displayed_citation_checks_passed": 5,
+          "citation_parity_passed": true,
+          "passed": true
+        },
+        {
+          "case_id": "1980_105",
+          "week13_sample_role": "clean_success_small_eligible_pool_top5",
+          "final_week11_week12_bucket": "correct_authority_retrieved_and_selected",
+          "expected_bucket_from_sample_role": "correct_authority_retrieved_and_selected",
+          "displayed_citation_checks_passed": 5,
+          "citation_parity_passed": true,
+          "passed": true
+        },
+        {
+          "case_id": "1980_133",
+          "week13_sample_role": "retrieved_not_selected_rank_15",
+          "final_week11_week12_bucket": "correct_authority_retrieved_but_not_selected",
+          "expected_bucket_from_sample_role": "correct_authority_retrieved_but_not_selected",
+          "displayed_citation_checks_passed": 5,
+          "citation_parity_passed": true,
+          "passed": true
+        },
+        {
+          "case_id": "1981_55",
+          "week13_sample_role": "retrieved_not_selected_rank_28",
+          "final_week11_week12_bucket": "correct_authority_retrieved_but_not_selected",
+          "expected_bucket_from_sample_role": "correct_authority_retrieved_but_not_selected",
+          "displayed_citation_checks_passed": 5,
+          "citation_parity_passed": true,
+          "passed": true
+        },
+        {
+          "case_id": "1985_40",
+          "week13_sample_role": "retrieved_not_selected_rank_78",
+          "final_week11_week12_bucket": "correct_authority_retrieved_but_not_selected",
+          "expected_bucket_from_sample_role": "correct_authority_retrieved_but_not_selected",
+          "displayed_citation_checks_passed": 5,
+          "citation_parity_passed": true,
+          "passed": true
+        },
+        {
+          "case_id": "1997_792",
+          "week13_sample_role": "citation_traceable_authority_consistency_failure",
+          "final_week11_week12_bucket": "correct_authority_absent_at_k100",
+          "expected_bucket_from_sample_role": "correct_authority_absent_at_k100",
+          "displayed_citation_checks_passed": 5,
+          "citation_parity_passed": true,
+          "passed": true
+        },
+        {
+          "case_id": "2013_35",
+          "week13_sample_role": "absent_at_k100",
+          "final_week11_week12_bucket": "correct_authority_absent_at_k100",
+          "expected_bucket_from_sample_role": "correct_authority_absent_at_k100",
+          "displayed_citation_checks_passed": 5,
+          "citation_parity_passed": true,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    "population_separation": {
+      "description": "Outcome prediction, citation/grounding, and explanation-format observations are stored in separate inventory rows and may not be aggregated or compared as one common population.",
+      "checks": [
+        {
+          "name": "Outcome-prediction population",
+          "expected_n": 1503,
+          "actual_n": 1503,
+          "source": "artifacts/week11_temporal_prerank_evaluation.json",
+          "passed": true
+        },
+        {
+          "name": "Citation/grounding population",
+          "expected_n": 30,
+          "actual_n": 30,
+          "source": "artifacts/week11_temporal_prerank_evaluation.json",
+          "passed": true
+        },
+        {
+          "name": "Explanation-format review population",
+          "expected_n": 7,
+          "actual_n": 7,
+          "source": "artifacts/week13_review_summary.json",
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  "cross_cutting_reporting_guards": [
+    "Keep the 1,503-case outcome-prediction population distinct from the 30-case source-verified answer-key subset and the 7-case self-review sample.",
+    "Use only the final pre-ranking temporal-filter evaluation; do not present the superseded post-ranking result as final.",
+    "The strict temporal rule is earlier decision year only because ILDC query dates are year-granular.",
+    "The Week 13 review status is author_self_review_fallback; it cannot be generalized as an independent reviewer result."
+  ]
+}
