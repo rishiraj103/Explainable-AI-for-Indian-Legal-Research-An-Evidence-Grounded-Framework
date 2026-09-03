@@ -22,6 +22,7 @@ def read_text(relative_path: str) -> str:
 def main() -> None:
     comparison = read("artifacts/e1_e2_comparison.json")
     evaluation = read("artifacts/week11_temporal_prerank_evaluation.json")
+    superseded_evaluation = read("artifacts/week11_initial_evaluation.json")
     errors = read("artifacts/week12_error_analysis.json")
     case_errors = read("artifacts/week11_error_analysis.json")
     review = read("artifacts/week13_review_summary.json")
@@ -111,6 +112,8 @@ def main() -> None:
                     "E1_macro_f1": comparison["E1"]["macro_f1"],
                     "E2_mean_logit_accuracy": comparison["E2_corrected"]["mean_logits_primary"]["accuracy"],
                     "E2_mean_logit_macro_f1": comparison["E2_corrected"]["mean_logits_primary"]["macro_f1"],
+                    "E2_majority_vote_accuracy": comparison["E2_corrected"]["majority_vote_secondary"]["accuracy"],
+                    "E2_majority_vote_macro_f1": comparison["E2_corrected"]["majority_vote_secondary"]["macro_f1"],
                 },
                 "permitted_interpretation": "E1 outperformed corrected E2 mean-logit pooling on this frozen outcome-prediction population; both exceeded the majority-accuracy baseline.",
                 "reporting_guard": "Do not use E3/E4 as outcome classifiers or fabricate an E4-minus-E3 prediction delta.",
@@ -174,6 +177,31 @@ def main() -> None:
                 },
             ],
         },
+        "retrieval_investigation_visualization": {
+            "source": "artifacts/retrieval_investigation_summary.md; development-stage values are recorded in the linked Week 9/10 probe artifacts and the held-out comparison in artifacts/week11_temporal_preranking_investigation.md.",
+            "reporting_guard": "The query-construction and self-match repairs were evaluated on a nine-case development probe; only the post-ranking versus pre-ranking temporal comparison is a held-out 30-case Recall@5/Recall@100 comparison. Do not plot these as one common-population trend.",
+            "development_probe_recall_at_100": [
+                {"stage": "First-32-term query", "numerator": 0, "denominator": 9},
+                {"stage": "Salient-term query", "numerator": 3, "denominator": 9},
+                {"stage": "Self-match repair", "numerator": 6, "denominator": 9},
+                {"stage": "Pre-ranking check", "numerator": 7, "denominator": 9},
+            ],
+            "held_out_temporal_comparison": [
+                {"stage": "Post-ranking baseline", "recall_at_5": 5 / 30, "recall_at_100": 12 / 30, "denominator": 30},
+                {"stage": "Pre-ranking final", "recall_at_5": 12 / 30, "recall_at_100": 15 / 30, "denominator": 30},
+            ],
+        },
+        "citation_cardinality_transition": {
+            "prior_superseded_source": "artifacts/week11_initial_evaluation.json",
+            "final_source": "artifacts/week11_temporal_prerank_evaluation.json",
+            "prior_displayed_citations": superseded_evaluation["E4_verified_retrieval_and_grounded_answer_key_subset"]["denominators"]["displayed_citation_checks"],
+            "final_displayed_citations": e4["denominators"]["displayed_citation_checks"],
+            "case_count": e4["n"],
+            "prior_citations_per_case": superseded_evaluation["E4_verified_retrieval_and_grounded_answer_key_subset"]["denominators"]["displayed_citation_checks"] / e4["n"],
+            "final_citations_per_case": e4["denominators"]["displayed_citation_checks"] / e4["n"],
+            "final_precision_ceiling": e4["n"] / e4["denominators"]["displayed_citation_checks"],
+            "summary": "The superseded post-ranking round displayed 135/30 = 4.5 citations per case; the final pre-ranking round displayed 150/30 = 5.0. This expected change follows the pre-ranking temporal filter preventing ineligible candidates from consuming the candidate depth, so the final fixed-cardinality precision ceiling is 1/5 = 0.200000 rather than the prior approximate 1/4.5 ceiling.",
+        },
         "indexed_qualitative_findings": [
             {
                 "finding": "Boilerplate-uncertainty miscalibration",
@@ -232,6 +260,7 @@ def main() -> None:
             "| Outcome prediction | 1,503 eligible fixed test cases | "
             f"E1 accuracy {comparison['E1']['accuracy']:.4f}, macro F1 {comparison['E1']['macro_f1']:.4f}; "
             f"corrected E2 accuracy {comparison['E2_corrected']['mean_logits_primary']['accuracy']:.4f}, macro F1 {comparison['E2_corrected']['mean_logits_primary']['macro_f1']:.4f}; "
+            f"E2 majority-vote accuracy {comparison['E2_corrected']['majority_vote_secondary']['accuracy']:.4f}, macro F1 {comparison['E2_corrected']['majority_vote_secondary']['macro_f1']:.4f}; "
             f"majority accuracy {comparison['majority_class_baseline']['accuracy']:.4f} | E1 leads corrected E2 on this frozen outcome task; both exceed majority accuracy. |"
         ),
         (
@@ -256,6 +285,10 @@ def main() -> None:
         f"Source: `{inventory['retrieval_mechanism']['source']}`. {inventory['retrieval_mechanism']['summary']}",
         "",
         *[f"- **Round {index}:** {round_['change']} {round_['effect']}" for index, round_ in enumerate(inventory["retrieval_mechanism"]["rounds"], start=1)],
+        "",
+        "## Citation-cardinality context for authority-consistency precision",
+        "",
+        inventory["citation_cardinality_transition"]["summary"],
         "",
         "## Indexed qualitative findings",
         "",

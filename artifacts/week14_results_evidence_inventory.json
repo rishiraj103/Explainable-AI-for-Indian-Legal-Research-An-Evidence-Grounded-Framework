@@ -20,7 +20,9 @@
         "E1_accuracy": 0.61344,
         "E1_macro_f1": 0.612342,
         "E2_mean_logit_accuracy": 0.596806,
-        "E2_mean_logit_macro_f1": 0.592358
+        "E2_mean_logit_macro_f1": 0.592358,
+        "E2_majority_vote_accuracy": 0.601464,
+        "E2_majority_vote_macro_f1": 0.593682
       },
       "permitted_interpretation": "E1 outperformed corrected E2 mean-logit pooling on this frozen outcome-prediction population; both exceeded the majority-accuracy baseline.",
       "reporting_guard": "Do not use E3/E4 as outcome classifiers or fabricate an E4-minus-E3 prediction delta."
@@ -93,6 +95,57 @@
         "effect": "Improved held-out Recall@5 from 5/30 to 12/30, Recall@100 from 12/30 to 15/30, and selected expected authorities from 11/30 to 12/30, without losing any original retrieval successes."
       }
     ]
+  },
+  "retrieval_investigation_visualization": {
+    "source": "artifacts/retrieval_investigation_summary.md; development-stage values are recorded in the linked Week 9/10 probe artifacts and the held-out comparison in artifacts/week11_temporal_preranking_investigation.md.",
+    "reporting_guard": "The query-construction and self-match repairs were evaluated on a nine-case development probe; only the post-ranking versus pre-ranking temporal comparison is a held-out 30-case Recall@5/Recall@100 comparison. Do not plot these as one common-population trend.",
+    "development_probe_recall_at_100": [
+      {
+        "stage": "First-32-term query",
+        "numerator": 0,
+        "denominator": 9
+      },
+      {
+        "stage": "Salient-term query",
+        "numerator": 3,
+        "denominator": 9
+      },
+      {
+        "stage": "Self-match repair",
+        "numerator": 6,
+        "denominator": 9
+      },
+      {
+        "stage": "Pre-ranking check",
+        "numerator": 7,
+        "denominator": 9
+      }
+    ],
+    "held_out_temporal_comparison": [
+      {
+        "stage": "Post-ranking baseline",
+        "recall_at_5": 0.16666666666666666,
+        "recall_at_100": 0.4,
+        "denominator": 30
+      },
+      {
+        "stage": "Pre-ranking final",
+        "recall_at_5": 0.4,
+        "recall_at_100": 0.5,
+        "denominator": 30
+      }
+    ]
+  },
+  "citation_cardinality_transition": {
+    "prior_superseded_source": "artifacts/week11_initial_evaluation.json",
+    "final_source": "artifacts/week11_temporal_prerank_evaluation.json",
+    "prior_displayed_citations": 135,
+    "final_displayed_citations": 150,
+    "case_count": 30,
+    "prior_citations_per_case": 4.5,
+    "final_citations_per_case": 5.0,
+    "final_precision_ceiling": 0.2,
+    "summary": "The superseded post-ranking round displayed 135/30 = 4.5 citations per case; the final pre-ranking round displayed 150/30 = 5.0. This expected change follows the pre-ranking temporal filter preventing ineligible candidates from consuming the candidate depth, so the final fixed-cardinality precision ceiling is 1/5 = 0.200000 rather than the prior approximate 1/4.5 ceiling."
   },
   "indexed_qualitative_findings": [
     {

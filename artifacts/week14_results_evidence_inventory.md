@@ -8,7 +8,7 @@ Read-only consolidation of final results for report drafting; no inference, retr
 
 | Area | Population | Measured result | Permitted interpretation |
 |---|---|---|---|
-| Outcome prediction | 1,503 eligible fixed test cases | E1 accuracy 0.6134, macro F1 0.6123; corrected E2 accuracy 0.5968, macro F1 0.5924; majority accuracy 0.5017 | E1 leads corrected E2 on this frozen outcome task; both exceed majority accuracy. |
+| Outcome prediction | 1,503 eligible fixed test cases | E1 accuracy 0.6134, macro F1 0.6123; corrected E2 accuracy 0.5968, macro F1 0.5924; E2 majority-vote accuracy 0.6015, macro F1 0.5937; majority accuracy 0.5017 | E1 leads corrected E2 on this frozen outcome task; both exceed majority accuracy. |
 | Authority recovery and verified evidence | 30 answer-key cases; 150 displayed citations | Recall@5 0.40; Recall@100 0.50; 12 selected / 3 retrieved-not-selected / 15 absent; authority-consistency precision 0.080000, recall 0.400000, F1 0.133333; 150/150 displayed citations grounded, provenance-valid, and temporally eligible | Report verification quality separately from predefined-authority recovery. |
 | Explanation-format review | 7 fixed paired cases; author self-review fallback | Structured preference 7/7; structured vs. unstructured source-clarity mean 4.57 vs. 2.71 | Descriptive author self-review only; not an independent human-review or legal-correctness result. |
 
@@ -26,6 +26,10 @@ Source: `artifacts/retrieval_investigation_summary.md`. Three bounded changes pr
 - **Round 1:** Replace legacy first-32-term query construction with deterministic TF-IDF salient terms from the full facts-only input. Removed opening procedural boilerplate without changing the BM25 architecture.
 - **Round 2:** Repair the direct shared-phrase self-match guard by retaining the 100 shared-six-token floor and requiring 80% unique source-phrase coverage. Recovered three additional authorities in the corrected development probe and withdrew the prior broad lexical-mismatch claim.
 - **Round 3:** Apply the strict earlier-year temporal rule to the BM25 candidate relation before ranking and the top-100 cutoff. Improved held-out Recall@5 from 5/30 to 12/30, Recall@100 from 12/30 to 15/30, and selected expected authorities from 11/30 to 12/30, without losing any original retrieval successes.
+
+## Citation-cardinality context for authority-consistency precision
+
+The superseded post-ranking round displayed 135/30 = 4.5 citations per case; the final pre-ranking round displayed 150/30 = 5.0. This expected change follows the pre-ranking temporal filter preventing ineligible candidates from consuming the candidate depth, so the final fixed-cardinality precision ceiling is 1/5 = 0.200000 rather than the prior approximate 1/4.5 ceiling.
 
 ## Indexed qualitative findings
 

@@ -1,0 +1,50 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='640' viewBox='0 0 1100 640' role='img' aria-labelledby='title desc'>
+<title id='title'>Explanation-format ratings: author self-review only (n=7)</title>
+<desc id='desc'>Explanation-format ratings: author self-review only (n=7)</desc>
+<rect width='100%' height='100%' fill='white'/>
+<text x='55' y='44' font-family='Arial, Helvetica, sans-serif' font-size='25' font-weight='700' fill='#202124'>Explanation-format ratings: author self-review only (n=7)</text>
+<line x1='105.0' y1='540.0' x2='1050.0' y2='540.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='95.0' y='545.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0</text>
+<line x1='105.0' y1='455.0' x2='1050.0' y2='455.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='95.0' y='460.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>1</text>
+<line x1='105.0' y1='370.0' x2='1050.0' y2='370.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='95.0' y='375.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>2</text>
+<line x1='105.0' y1='285.0' x2='1050.0' y2='285.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='95.0' y='290.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>3</text>
+<line x1='105.0' y1='200.0' x2='1050.0' y2='200.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='95.0' y='205.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>4</text>
+<line x1='105.0' y1='115.0' x2='1050.0' y2='115.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='95.0' y='120.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>5</text>
+<line x1='105.0' y1='115.0' x2='105.0' y2='540.0' stroke='#202124' stroke-width='1.5'/>
+<line x1='105.0' y1='540.0' x2='1050.0' y2='540.0' stroke='#202124' stroke-width='1.5'/>
+<text x='42.0' y='330.0' font-family='Arial, Helvetica, sans-serif' font-size='15' font-weight='400' fill='#5f6368' text-anchor='start'>Mean rating (1–5)</text>
+<rect x='162.1' y='151.4' width='54.0' height='388.6' fill='#2962a3'/>
+<text x='189.1' y='143.4' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>4.57</text>
+<rect x='230.1' y='309.3' width='54.0' height='230.7' fill='#d97706'/>
+<text x='257.1' y='301.3' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>2.71</text>
+<text x='223.1' y='568.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>Source clarity</text>
+<text x='223.1' y='586.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'></text>
+<rect x='398.4' y='151.4' width='54.0' height='388.6' fill='#2962a3'/>
+<text x='425.4' y='143.4' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>4.57</text>
+<rect x='466.4' y='345.7' width='54.0' height='194.3' fill='#d97706'/>
+<text x='493.4' y='337.7' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>2.29</text>
+<text x='459.4' y='568.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>Source-finding ease</text>
+<text x='459.4' y='586.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'></text>
+<rect x='634.6' y='163.6' width='54.0' height='376.4' fill='#2962a3'/>
+<text x='661.6' y='155.6' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>4.43</text>
+<rect x='702.6' y='297.1' width='54.0' height='242.9' fill='#d97706'/>
+<text x='729.6' y='289.1' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>2.86</text>
+<text x='695.6' y='568.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>Appropriate trust</text>
+<text x='695.6' y='586.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'></text>
+<rect x='870.9' y='163.6' width='54.0' height='376.4' fill='#2962a3'/>
+<text x='897.9' y='155.6' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>4.43</text>
+<rect x='938.9' y='285.0' width='54.0' height='255.0' fill='#d97706'/>
+<text x='965.9' y='277.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>3.00</text>
+<text x='931.9' y='568.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>Limits clear</text>
+<text x='931.9' y='586.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'></text>
+<rect x='690.0' y='69.0' width='16.0' height='16.0' fill='#2962a3'/>
+<text x='714.0' y='82.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='start'>Structured</text>
+<rect x='825.0' y='69.0' width='16.0' height='16.0' fill='#d97706'/>
+<text x='849.0' y='82.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='start'>Unstructured</text>
+<text x='105.0' y='603.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#5f6368' text-anchor='start'>Descriptive author self-review fallback; not independent human-review evidence.</text>
+</svg>
