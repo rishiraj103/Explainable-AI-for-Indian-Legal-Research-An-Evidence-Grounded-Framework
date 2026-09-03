@@ -9,7 +9,7 @@ Read-only consolidation of final results for report drafting; no inference, retr
 | Area | Population | Measured result | Permitted interpretation |
 |---|---|---|---|
 | Outcome prediction | 1,503 eligible fixed test cases | E1 accuracy 0.6134, macro F1 0.6123; corrected E2 accuracy 0.5968, macro F1 0.5924; majority accuracy 0.5017 | E1 leads corrected E2 on this frozen outcome task; both exceed majority accuracy. |
-| Authority recovery and verified evidence | 30 answer-key cases; 150 displayed citations | Recall@5 0.40; Recall@100 0.50; 12 selected / 3 retrieved-not-selected / 15 absent; 150/150 displayed citations grounded, provenance-valid, and temporally eligible | Report verification quality separately from predefined-authority recovery. |
+| Authority recovery and verified evidence | 30 answer-key cases; 150 displayed citations | Recall@5 0.40; Recall@100 0.50; 12 selected / 3 retrieved-not-selected / 15 absent; authority-consistency precision 0.080000, recall 0.400000, F1 0.133333; 150/150 displayed citations grounded, provenance-valid, and temporally eligible | Report verification quality separately from predefined-authority recovery. |
 | Explanation-format review | 7 fixed paired cases; author self-review fallback | Structured preference 7/7; structured vs. unstructured source-clarity mean 4.57 vs. 2.71 | Descriptive author self-review only; not an independent human-review or legal-correctness result. |
 
 ## Mandatory reporting guards

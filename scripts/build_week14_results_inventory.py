@@ -121,6 +121,9 @@ def main() -> None:
                 "measures": {
                     "expected_authority_recall_at_5": e3["recall_at_5"],
                     "expected_authority_recall_at_100": e3["recall_at_100"],
+                    "authority_consistent_precision": e3["authority_consistent_precision"],
+                    "authority_consistent_recall": e3["authority_consistent_recall"],
+                    "authority_consistent_f1": e3["authority_consistent_f1"],
                     "retrieved_and_selected": errors["summary"]["retrieved_and_selected"],
                     "retrieved_not_selected": errors["summary"]["retrieved_not_selected"],
                     "absent_at_k100": errors["summary"]["absent_at_k100"],
@@ -131,6 +134,13 @@ def main() -> None:
                 },
                 "permitted_interpretation": "The final system verified every displayed citation while recovering the predefined authority for only part of the answer-key subset; verification quality and expected-authority recall must be reported separately.",
                 "reporting_guard": "Authority consistency is defined against the source-first answer key and is not a human substantive-relevance judgment for alternative citations.",
+                "fixed_cardinality_context": {
+                    "matched_expected_authorities": errors["summary"]["retrieved_and_selected"],
+                    "displayed_citations": e3["denominators"]["displayed_citation_checks"],
+                    "displayed_citations_per_case": e3["denominators"]["displayed_citation_checks"] / e3["n"],
+                    "structural_precision_ceiling": e3["n"] / e3["denominators"]["displayed_citation_checks"],
+                    "summary": "The frozen renderer displays five citations per case and the answer key credits one expected authority per case; under that fixed-cardinality policy, the maximum authority-consistency precision is 30/150 = 0.200000.",
+                },
             },
             {
                 "area": "Explanation-format review",
@@ -227,7 +237,7 @@ def main() -> None:
         (
             "| Authority recovery and verified evidence | 30 answer-key cases; 150 displayed citations | "
             f"Recall@5 {e3['recall_at_5']:.2f}; Recall@100 {e3['recall_at_100']:.2f}; "
-            f"12 selected / 3 retrieved-not-selected / 15 absent; 150/150 displayed citations grounded, provenance-valid, and temporally eligible | "
+            f"12 selected / 3 retrieved-not-selected / 15 absent; authority-consistency precision {e3['authority_consistent_precision']:.6f}, recall {e3['authority_consistent_recall']:.6f}, F1 {e3['authority_consistent_f1']:.6f}; 150/150 displayed citations grounded, provenance-valid, and temporally eligible | "
             "Report verification quality separately from predefined-authority recovery. |"
         ),
         (

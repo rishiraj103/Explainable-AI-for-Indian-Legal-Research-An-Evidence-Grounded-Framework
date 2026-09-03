@@ -136,8 +136,8 @@ Project progress tracker. It is committed only when the user has explicitly appr
 
 - [x] Define Week 14 as a read-only synthesis stage: consolidate final E1/E2, E3/E4, Week 12, and Week 13 evidence without rerunning or tuning the system.
 - [x] Build a consolidated results-evidence inventory with every metric's source artifact, denominator, and permitted interpretation.
-- [ ] Draft an RQ-aligned findings outline that separates outcome prediction, authority recovery/verification, and explanation-format observations.
+- [x] Draft an RQ-aligned findings outline that separates outcome prediction, authority recovery/verification, and explanation-format observations.
 - [ ] Draft the Results and Discussion narrative using only frozen artifacts; distinguish measured results from qualitative interpretation.
-- [ ] Write the limitations and threats-to-validity section, including answer-key coverage, retrieval recall, temporal rule granularity, OCR/corpus limits, and author self-review bias.
+- [x] Write an initial limitations and threats-to-validity draft covering answer-key era concentration, residual retrieval limitations, year-only temporal granularity, boilerplate uncertainty, and author self-review bias; retain OCR/corpus limits for the later cross-artifact final check.
 - [ ] Perform a final cross-artifact consistency check for metrics, denominators, configuration identifiers, and superseded results.
 - [ ] Commit the Week 14 synthesis artifacts without modifying model, retrieval, answer-key, or evaluation outputs.

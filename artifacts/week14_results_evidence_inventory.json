@@ -31,6 +31,9 @@
       "measures": {
         "expected_authority_recall_at_5": 0.4,
         "expected_authority_recall_at_100": 0.5,
+        "authority_consistent_precision": 0.08,
+        "authority_consistent_recall": 0.4,
+        "authority_consistent_f1": 0.133333,
         "retrieved_and_selected": 12,
         "retrieved_not_selected": 3,
         "absent_at_k100": 15,
@@ -40,7 +43,14 @@
         "unsupported_claim_rate": 0.0
       },
       "permitted_interpretation": "The final system verified every displayed citation while recovering the predefined authority for only part of the answer-key subset; verification quality and expected-authority recall must be reported separately.",
-      "reporting_guard": "Authority consistency is defined against the source-first answer key and is not a human substantive-relevance judgment for alternative citations."
+      "reporting_guard": "Authority consistency is defined against the source-first answer key and is not a human substantive-relevance judgment for alternative citations.",
+      "fixed_cardinality_context": {
+        "matched_expected_authorities": 12,
+        "displayed_citations": 150,
+        "displayed_citations_per_case": 5.0,
+        "structural_precision_ceiling": 0.2,
+        "summary": "The frozen renderer displays five citations per case and the answer key credits one expected authority per case; under that fixed-cardinality policy, the maximum authority-consistency precision is 30/150 = 0.200000."
+      }
     },
     {
       "area": "Explanation-format review",
