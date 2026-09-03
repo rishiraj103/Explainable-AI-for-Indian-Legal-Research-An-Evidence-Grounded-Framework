@@ -1,5 +1,5 @@
 {
-  "review_version": "week13-human-explanation-review-v1",
+  "review_version": "week13-human-explanation-review-v2-rq3-ablation",
   "reviewer": {
     "role_or_background": "",
     "review_date": "",
@@ -8,7 +8,7 @@
   "ratings": [
     {
       "case_id": "2008_1629",
-      "presentation_order": "structured_first",
+      "presentation_order": "unstructured_first",
       "display_1": {
         "source_clarity": null,
         "source_finding_ease": null,
@@ -27,8 +27,8 @@
       "comparison_notes": ""
     },
     {
-      "case_id": "1997_792",
-      "presentation_order": "flat_first",
+      "case_id": "1980_105",
+      "presentation_order": "unstructured_first",
       "display_1": {
         "source_clarity": null,
         "source_finding_ease": null,
@@ -67,8 +67,68 @@
       "comparison_notes": ""
     },
     {
-      "case_id": "2002_944",
-      "presentation_order": "flat_first",
+      "case_id": "1981_55",
+      "presentation_order": "structured_first",
+      "display_1": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "display_2": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "comparison_preference": "",
+      "comparison_notes": ""
+    },
+    {
+      "case_id": "1985_40",
+      "presentation_order": "unstructured_first",
+      "display_1": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "display_2": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "comparison_preference": "",
+      "comparison_notes": ""
+    },
+    {
+      "case_id": "1997_792",
+      "presentation_order": "unstructured_first",
+      "display_1": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "display_2": {
+        "source_clarity": null,
+        "source_finding_ease": null,
+        "appropriate_trust": null,
+        "limits_clear": null,
+        "notes": ""
+      },
+      "comparison_preference": "",
+      "comparison_notes": ""
+    },
+    {
+      "case_id": "2013_35",
+      "presentation_order": "structured_first",
       "display_1": {
         "source_clarity": null,
         "source_finding_ease": null,

@@ -1,0 +1,214 @@
+{
+  "review_version": "week13-human-explanation-review-v2-rq3-ablation",
+  "source": "artifacts/week11_temporal_prerank_evaluation.json",
+  "derivation": "Read persisted final Week 11 E4 citation checks and corpus chunks only; no retrieval, model, answer-key, or frozen-setting change.",
+  "randomization_seed": 20260903,
+  "sample_case_count": 7,
+  "sample_notes": {
+    "absent_at_k100_case": "2013_35"
+  },
+  "per_case": [
+    {
+      "case_id": "2008_1629",
+      "sample_role": "clean_success",
+      "presentation_order": "unstructured_first",
+      "frozen_e4_citation_ids": [
+        "S_2006_2_582_600::p0015::c004",
+        "S_2005_5_223_237::p0001::c003",
+        "S_1993_1_514_522::p0007::c001",
+        "S_2006_7_58_80::p0006::c004",
+        "S_2005_1_426_436::p0005::c003"
+      ],
+      "structured_citation_ids": [
+        "S_2006_2_582_600::p0015::c004",
+        "S_2005_5_223_237::p0001::c003",
+        "S_1993_1_514_522::p0007::c001",
+        "S_2006_7_58_80::p0006::c004",
+        "S_2005_1_426_436::p0005::c003"
+      ],
+      "unstructured_citation_ids": [
+        "S_2006_2_582_600::p0015::c004",
+        "S_2005_5_223_237::p0001::c003",
+        "S_1993_1_514_522::p0007::c001",
+        "S_2006_7_58_80::p0006::c004",
+        "S_2005_1_426_436::p0005::c003"
+      ],
+      "citation_parity_passed": true,
+      "citation_checks_passed": 5
+    },
+    {
+      "case_id": "1980_105",
+      "sample_role": "clean_success_small_eligible_pool_top5",
+      "presentation_order": "unstructured_first",
+      "frozen_e4_citation_ids": [
+        "1973_3_117_122::p0002::c004",
+        "1972_3_898_905::p0004::c002",
+        "1977_1_702_708::p0004::c002",
+        "1980_1_209_227::p0013::c003",
+        "1979_3_242_253::p0007::c001"
+      ],
+      "structured_citation_ids": [
+        "1973_3_117_122::p0002::c004",
+        "1972_3_898_905::p0004::c002",
+        "1977_1_702_708::p0004::c002",
+        "1980_1_209_227::p0013::c003",
+        "1979_3_242_253::p0007::c001"
+      ],
+      "unstructured_citation_ids": [
+        "1973_3_117_122::p0002::c004",
+        "1972_3_898_905::p0004::c002",
+        "1977_1_702_708::p0004::c002",
+        "1980_1_209_227::p0013::c003",
+        "1979_3_242_253::p0007::c001"
+      ],
+      "citation_parity_passed": true,
+      "citation_checks_passed": 5
+    },
+    {
+      "case_id": "1980_133",
+      "sample_role": "retrieved_not_selected_rank_15",
+      "presentation_order": "structured_first",
+      "frozen_e4_citation_ids": [
+        "1967_3_727_735::p0003::c002",
+        "1970_1_507_522::p0009::c004",
+        "1973_3_303_312::p0001::c002",
+        "1965_3_448_452::p0002::c005",
+        "1964_5_379_387::p0005::c003"
+      ],
+      "structured_citation_ids": [
+        "1967_3_727_735::p0003::c002",
+        "1970_1_507_522::p0009::c004",
+        "1973_3_303_312::p0001::c002",
+        "1965_3_448_452::p0002::c005",
+        "1964_5_379_387::p0005::c003"
+      ],
+      "unstructured_citation_ids": [
+        "1967_3_727_735::p0003::c002",
+        "1970_1_507_522::p0009::c004",
+        "1973_3_303_312::p0001::c002",
+        "1965_3_448_452::p0002::c005",
+        "1964_5_379_387::p0005::c003"
+      ],
+      "citation_parity_passed": true,
+      "citation_checks_passed": 5
+    },
+    {
+      "case_id": "1981_55",
+      "sample_role": "retrieved_not_selected_rank_28",
+      "presentation_order": "structured_first",
+      "frozen_e4_citation_ids": [
+        "1979_2_75_81::p0001::c002",
+        "1980_3_1127_1142::p0002::c006",
+        "1979_2_282_291::p0002::c006",
+        "1975_2_483_490::p0004::c001",
+        "1960_3_431_440::p0007::c001"
+      ],
+      "structured_citation_ids": [
+        "1979_2_75_81::p0001::c002",
+        "1980_3_1127_1142::p0002::c006",
+        "1979_2_282_291::p0002::c006",
+        "1975_2_483_490::p0004::c001",
+        "1960_3_431_440::p0007::c001"
+      ],
+      "unstructured_citation_ids": [
+        "1979_2_75_81::p0001::c002",
+        "1980_3_1127_1142::p0002::c006",
+        "1979_2_282_291::p0002::c006",
+        "1975_2_483_490::p0004::c001",
+        "1960_3_431_440::p0007::c001"
+      ],
+      "citation_parity_passed": true,
+      "citation_checks_passed": 5
+    },
+    {
+      "case_id": "1985_40",
+      "sample_role": "retrieved_not_selected_rank_78",
+      "presentation_order": "unstructured_first",
+      "frozen_e4_citation_ids": [
+        "1984_3_930_941::p0009::c001",
+        "1972_3_770_783::p0005::c001",
+        "1980_3_1109_1121::p0001::c005",
+        "1971_3_506_521::p0003::c002",
+        "1973_1_822_840::p0004::c004"
+      ],
+      "structured_citation_ids": [
+        "1984_3_930_941::p0009::c001",
+        "1972_3_770_783::p0005::c001",
+        "1980_3_1109_1121::p0001::c005",
+        "1971_3_506_521::p0003::c002",
+        "1973_1_822_840::p0004::c004"
+      ],
+      "unstructured_citation_ids": [
+        "1984_3_930_941::p0009::c001",
+        "1972_3_770_783::p0005::c001",
+        "1980_3_1109_1121::p0001::c005",
+        "1971_3_506_521::p0003::c002",
+        "1973_1_822_840::p0004::c004"
+      ],
+      "citation_parity_passed": true,
+      "citation_checks_passed": 5
+    },
+    {
+      "case_id": "1997_792",
+      "sample_role": "citation_traceable_authority_consistency_failure",
+      "presentation_order": "unstructured_first",
+      "frozen_e4_citation_ids": [
+        "1995_2_396_403::p0002::c002",
+        "S_1992_2_389_417::p0025::c003",
+        "1991_2_105_187::p0001::c005",
+        "1991_2_188_190::p0001::c002",
+        "1993_2_114_120::p0003::c002"
+      ],
+      "structured_citation_ids": [
+        "1995_2_396_403::p0002::c002",
+        "S_1992_2_389_417::p0025::c003",
+        "1991_2_105_187::p0001::c005",
+        "1991_2_188_190::p0001::c002",
+        "1993_2_114_120::p0003::c002"
+      ],
+      "unstructured_citation_ids": [
+        "1995_2_396_403::p0002::c002",
+        "S_1992_2_389_417::p0025::c003",
+        "1991_2_105_187::p0001::c005",
+        "1991_2_188_190::p0001::c002",
+        "1993_2_114_120::p0003::c002"
+      ],
+      "citation_parity_passed": true,
+      "citation_checks_passed": 5
+    },
+    {
+      "case_id": "2013_35",
+      "sample_role": "absent_at_k100",
+      "presentation_order": "structured_first",
+      "frozen_e4_citation_ids": [
+        "S_2006_6_393_403::p0001::c002",
+        "2007_1_671_676::p0004::c003",
+        "2004_2_52_64::p0005::c004",
+        "2006_3_348_360::p0001::c002",
+        "S_2002_1_366_378::p0012::c004"
+      ],
+      "structured_citation_ids": [
+        "S_2006_6_393_403::p0001::c002",
+        "2007_1_671_676::p0004::c003",
+        "2004_2_52_64::p0005::c004",
+        "2006_3_348_360::p0001::c002",
+        "S_2002_1_366_378::p0012::c004"
+      ],
+      "unstructured_citation_ids": [
+        "S_2006_6_393_403::p0001::c002",
+        "2007_1_671_676::p0004::c003",
+        "2004_2_52_64::p0005::c004",
+        "2006_3_348_360::p0001::c002",
+        "S_2002_1_366_378::p0012::c004"
+      ],
+      "citation_parity_passed": true,
+      "citation_checks_passed": 5
+    }
+  ],
+  "summary": {
+    "citation_parity_passed": true,
+    "cases_with_exact_citation_parity": 7,
+    "total_citations_per_presentation": 35,
+    "ratings_recorded": 0
+  }
+}

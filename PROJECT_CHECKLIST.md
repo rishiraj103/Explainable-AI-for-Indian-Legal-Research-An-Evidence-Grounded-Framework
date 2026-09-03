@@ -126,8 +126,8 @@ Project progress tracker. It is committed only when the user has explicitly appr
 
 ## Week 13 - Human Review of Explanation Quality
 
-- [x] Prepare a fixed paired review packet that compares structured evidence-linked briefs with the same evidence in a flattened presentation, using four frozen Week 11 cases and alternating presentation order.
-- [x] Prepare a structured response template covering source clarity, ease of locating provenance, appropriate trust, uncertainty clarity, and comparative preference.
+- [x] Prepare a fixed seven-case RQ3 paired ablation packet that compares structured evidence-linked briefs with the exact same evidence in unstructured presentation, using the final Week 11 freeze and shuffled per-case display order.
+- [x] Prepare a structured response template covering source clarity, ease of locating provenance, appropriate trust, uncertainty clarity, and comparative preference; retain a programmatic citation-parity audit for all seven pairs.
 - [x] Explicitly begin the delayed self-review fallback because no outside reviewer response is recorded; preserve the packet and empty response template for a later independent or author-labelled response.
 - [ ] Summarize reviewer ratings and qualitative feedback; state the reviewer status and small-sample limitation honestly.
 - [ ] Commit the completed Week 13 feedback record without modifying system outputs or frozen settings.
