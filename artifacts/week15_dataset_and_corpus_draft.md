@@ -1,0 +1,35 @@
+# Dataset and Legal Corpus
+
+## Purpose-split corpus design
+
+The study used two corpora for different experimental purposes rather than treating them as interchangeable records. ILDC Single supplied the fixed case-level splits and binary outcome labels used in the E1 and E2 prediction experiments. The local ILDC release contains 7,593 judgments: 5,082 training cases, 994 validation cases, and 1,517 test cases. Both prediction systems received the same deterministically extracted pre-decision text. After the shared sufficiency rule excluded 14 test records, the common held-out prediction population contained 1,503 cases.
+
+The E3 and E4 evidence experiments used the Indian Supreme Court Judgments collection obtained from the public eCourts-derived archive. That collection provides judgment PDFs and evidence-level metadata that ILDC does not provide, including citations, exact decision dates, court and case identifiers, source paths, and page and character locators. The downloaded evidence collection covered 1950-2020 and contained 39,069 English PDF instances. After quality repair and exclusions, 39,066 PDFs yielded 2,343,435 labeled chunks; 2,036,981 unique chunks were loaded into the PostgreSQL provenance store and SQLite FTS5 BM25 index.
+
+This purpose split follows the information available in each source. ILDC is suitable for fixed-split outcome prediction but exposes only a year in the case identifier and lacks the citation and passage provenance needed for evidence verification. The eCourts-derived collection supports dated, traceable retrieval but is not used as a substitute outcome-label benchmark. Cross-corpus links are used only after alignment checks. Because ILDC query dates are year-granular, an eCourts precedent is eligible only when its decision year is strictly earlier than the ILDC query year; same-year items are excluded as temporally ambiguous.
+
+## Source-quality audit and OCR repair
+
+A full audit of all 39,069 local PDF instances found that the stored JSONL text was valid UTF-8 but that 15 PDF instances, representing 14 source IDs, had missing or badly corrupted embedded text. The failures were concentrated in image-backed Supreme Court Reports from the 1980s and 1990s, with one mojibake-affected 2018 file. The audit applied fixed checks for absent embedded text, control characters, mojibake markers, visible-ASCII ratio, and English-token ratio.
+
+Only the 15 flagged instances were rendered and processed with English Tesseract OCR at 250 DPI, after which the same quality gate was rerun. Twelve instances passed and were restored to the usable corpus. Three one-page PDFs remained below the fixed quality threshold and were transparently excluded rather than forced into the index. The raw PDFs were preserved unchanged, the exclusions were recorded in the cleaning manifest, and the provenance store and BM25 index were rebuilt from the accepted corpus. This targeted procedure both recovered most affected material and kept residual OCR uncertainty visible.
+
+## Cross-corpus identifier alignment
+
+During cross-corpus deduplication, a superficially natural identifier conversion was found to be unsafe. Converting an eCourts identifier of the form `YYYY INSC N` to the ILDC-like string `YYYY_N` produced 5,391 syntactic candidate matches. A corpus-wide audit showed that only 11 of these candidates passed the content-alignment procedure; 5,380 were identifier-namespace collisions. The mismatch was not a single offset or a year-specific scrape defect: examples occurred across multiple years, and the collision concentration in the legacy 1958-1993 material showed that numerically similar suffixes often denoted different judgments.
+
+The corrected pipeline therefore treats identifier equality only as candidate generation. A reusable alignment gate evaluates title or party identity together with direct six-token phrase overlap before a cross-corpus mapping may drive deduplication or retrieval exclusion. When syntactic and title/party candidates were combined, the full scan contained 8,927 deduplicated candidate pairs; 1,304 passed the alignment gate and 7,623 were rejected. Runtime retrieval adds a separate full-document self-match safeguard so that an unmapped copy of the query judgment can still be excluded, while a later judgment that merely quotes an earlier authority is retained.
+
+This is more than a corrective implementation detail. It provides direct evidence that naive identifier-based matching is unreliable for the ILDC/eCourts dataset pair and documents a validated alternative: use syntactic identity only to propose pairs, then require content-based alignment before accepting them. The same gate was made reusable across answer-key validation, development probes, leakage checks, and retrieval-time query exclusion.
+
+## Source-verified authority answer key
+
+The authority-recovery evaluation used a frozen set of 30 ILDC fixed-test cases. Candidate query cases were checked for fixed-test membership before external verification. For each accepted case, the query judgment was inspected through a primary judgment source or the accepted eCourts mirror, one earlier authority was recorded independently of this system's retrieval output, and the authority was reconciled to the evidence corpus through a stable source ID, a normalized citation, or a normalized title plus exact decision date for parallel reporter forms. Each record preserved its source locator, verification method, verification date, and temporal status.
+
+The identifier-collision discovery triggered a read-only audit of the then-current 30 query-source mappings. Twenty passed, nine resolved sources failed direct content alignment, and one source could not be resolved. The correction retained no known mismatches: `2013_35` was relinked to a content-aligned source, and the other nine flagged records were replaced with new fixed-test cases that passed source-first verification. A final direct-content audit recorded 30/30 passes before the Week 11 evaluation was frozen.
+
+The corrected sample is source-verified but not era-balanced. Its query cases comprise five from the 1970s, thirteen from the 1980s, nine from the 1990s, two from the 2000s, and one from the 2010s. The 1980s therefore account for 13/30 cases (43.3%). This distribution arose from the content-alignment and primary-source gates rather than deliberate temporal sampling and should not be treated as representative of the full ILDC test split.
+
+## Draft provenance
+
+This section is grounded in `corpus/dataset_manifest.md`, `artifacts/corpus_quality_rebuild.md`, `artifacts/matching_root_cause.md`, `artifacts/matching_correction_checkpoint.md`, `corpus/dedup_report.md`, `answer_key/authority_answer_key_manifest.md`, `artifacts/answer_key_reresolution.md`, `artifacts/answer_key_alignment_audit_corrected.md`, and `artifacts/week14_results_evidence_inventory.json`. These repository references are drafting traceability notes and can be converted to the paper's final citation style during typesetting.

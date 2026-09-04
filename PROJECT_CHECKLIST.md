@@ -139,5 +139,19 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Draft an RQ-aligned findings outline that separates outcome prediction, authority recovery/verification, and explanation-format observations.
 - [x] Assemble the Results and Discussion draft from frozen artifacts only: retain distinct populations, show final authority-recovery arithmetic and precision ceiling, document the retrieval mechanism, and label the Week 13 finding as author self-review rather than independent evidence.
 - [x] Write an initial limitations and threats-to-validity draft covering answer-key era concentration, residual retrieval limitations, year-only temporal granularity, boilerplate uncertainty, and author self-review bias; retain OCR/corpus limits for the later cross-artifact final check.
-- [ ] Perform a final cross-artifact consistency check for metrics, denominators, configuration identifiers, and superseded results.
-- [ ] Commit the Week 14 synthesis artifacts without modifying model, retrieval, answer-key, or evaluation outputs.
+- [x] Perform a final cross-artifact consistency check for metrics, denominators, configuration identifiers, and superseded results.
+- [x] Commit the Week 14 synthesis artifacts without modifying model, retrieval, answer-key, or evaluation outputs. (`92809a9`, pushed with local `main`, `origin/main`, and GitHub `main` aligned.)
+
+## Week 15 - Assemble the Full Paper Draft
+
+- [x] Inventory the paper sections that should be adapted from the revised execution plan versus sections requiring fresh project-specific writing; record that the revised-plan source document is not currently present in the repository or available attachments.
+- [x] Draft the Dataset and Legal Corpus section from the executed dual-corpus record: ILDC for E1/E2, eCourts for E3/E4, the 15-PDF-instance OCR audit and repair, the identifier-namespace collision, the alignment gate, and the corrected 30-case answer key with its era distribution.
+- [x] Draft the Experimental Methodology section from the frozen implementation: shared facts-only inputs, E1, corrected E2 chunk-and-pool, E3 retrieval and controlled evidence presentation, E4 verification, the three-round retrieval investigation, and the bundled-intervention caveat.
+- [x] Resolve the unavailable full revised-plan source using the scope-refinement language and Section 31 category list supplied in the completion task, the available frozen-plan excerpts, verified related-work sources, and final project evidence; disclose that no verbatim comparison with the unavailable file was possible.
+- [x] Merge the supplied Section 31 categories with `artifacts/week14_limitations_draft.md`, preferring evidence-backed wording and retaining English-only and semester-scale limits as unpadded general statements.
+- [x] Draft the Error Analysis section directly from the final pre-ranking `artifacts/week12_error_analysis.md` record.
+- [x] Write the Introduction and Indian Legal Context after the evidence sections stabilized, using the verified *Pooja Ramesh Singh* framing without expanding the project's demonstrated claims.
+- [x] Assemble the adapted and fresh sections into `artifacts/paper_draft.md`, using `artifacts/results_chapter_draft.md` as the Results and Discussion anchor.
+- [x] Write the Conclusion last and limit it to the final supported findings: 150/150 verified citations, 15/30 Recall@100, the seven-case author self-review observation, and E1 outperforming corrected E2 on the frozen outcome task.
+- [x] Read the assembled paper end-to-end and resolve contradictions in experiment definitions, claims, denominators, configuration identifiers, novelty framing, and superseded results; record the passing checks in `artifacts/week15_consistency_check.md`.
+- [x] Commit and push the completed Week 15 paper artifacts; confirm local `main`, `origin/main`, and GitHub `main` match.
