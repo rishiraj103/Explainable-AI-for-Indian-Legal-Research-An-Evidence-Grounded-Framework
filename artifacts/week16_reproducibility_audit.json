@@ -1,0 +1,104 @@
+{
+  "audit_version": "week16-final-reproducibility-audit-v2",
+  "audited_at_ist": "2026-09-04T17:15:20+05:30",
+  "reverified_at_ist": "2026-09-05T08:59:02+05:30",
+  "audited_commit": "af28d5ca5c0c5fa8defb2cf2b9d05334557c1187",
+  "documentation_summary": {
+    "pass": 11,
+    "fail": 3,
+    "failed_items": [
+      "dataset_version_and_split",
+      "model_checkpoints",
+      "software_dependencies_and_container_versions"
+    ],
+    "freeze_path_hash_integrity": {
+      "checked": 24,
+      "passed": 24,
+      "missing": 0,
+      "mismatched": 0
+    }
+  },
+  "documentation_checks": [
+    {"item": "dataset_version_and_split", "status": "fail", "locations": ["config/reproducibility_freeze.json#/datasets_and_splits", "config/datasets.json", "corpus/dataset_manifest.md"], "reason": "ILDC revision/split hashes pass, but no immutable upstream eCourts snapshot revision or aggregate raw/cleaned-corpus or PostgreSQL dump hash is recorded; config/datasets.json also retains the stale pre-rebuild cleaned count 2,343,407 instead of the final 2,343,435."},
+    {"item": "preprocessing_and_tokenization", "status": "pass", "locations": ["config/reproducibility_freeze.json#/datasets_and_splits/ildc_single/facts_extraction", "config/facts_extraction.json", "config/e1_baseline.json#/tfidf", "config/e2_chunk_pool.json#/model", "config/e2_chunk_pool.json#/input"]},
+    {"item": "model_checkpoints", "status": "fail", "locations": ["corpus/dataset_manifest.md#prediction-recovery-correction", "artifacts/e1_test_predictions.json", "artifacts/e2_chunk_pool_results.json#/best_checkpoint", "artifacts/e2_test_predictions.json"], "reason": "Checkpoint identities are documented, but the freeze omits artifact hashes and the E2 weights are gitignored."},
+    {"item": "bm25_and_query_construction", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/retrieval_selection", "config/evidence_selection.json", "scripts/build_bm25_index.py", "artifacts/bm25_index.json"]},
+    {"item": "passage_segmentation", "status": "pass", "locations": ["corpus/ecourts/cleaning_record.json#/chunking", "src/legal_xai/corpus.py#chunk_page_text", "scripts/clean_and_chunk_ecourts.py"]},
+    {"item": "top_k_retrieval_depth", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/retrieval_selection/candidate_k", "config/evidence_selection.json#/candidate_k"]},
+    {"item": "evidence_selection_rule", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/retrieval_selection", "config/evidence_selection.json", "src/legal_xai/evidence_pipeline.py"]},
+    {"item": "random_seeds", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E1/random_seed", "config/reproducibility_freeze.json#/experiments/E2_corrected/random_seed", "config/e1_baseline.json#/random_seed", "config/e2_chunk_pool.json#/training/seed"]},
+    {"item": "training_hyperparameters", "status": "pass", "locations": ["config/e1_baseline.json", "config/e2_chunk_pool.json"]},
+    {"item": "reference_evidence_construction", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/answer_key", "config/week11_evaluation_round.json#/reference_evidence_set", "artifacts/week11_answer_key_sanity_check.json", "answer_key/authority_answer_key_manifest.md"]},
+    {"item": "citation_matching_rule", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/citation_verifier/answer_key_measurement", "config/citation_verification.json", "src/legal_xai/citation_verifier.py#evaluate_against_answer_key", "artifacts/week9_answer_key_spot_checks.md"]},
+    {"item": "temporal_eligibility", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/retrieval_selection", "config/reproducibility_freeze.json#/experiments/E4/temporal_policy", "config/evidence_selection.json", "src/legal_xai/evidence_pipeline.py#temporal_preranked_bm25_sql"]},
+    {"item": "provenance_schema", "status": "pass", "locations": ["scripts/load_provenance.py#SCHEMA_SQL", "config/citation_verification.json#/required_checks"]},
+    {"item": "software_dependencies_and_container_versions", "status": "fail", "locations": ["config/reproducibility_freeze.json#/environment", "requirements.txt", "compose.yaml", "docker/Dockerfile.ocr", "docker/e2.Dockerfile"], "reason": "Host and E2 dependency versions conflict, requirements.txt is incomplete, container tags lack digests, and PostgreSQL 16.15 is observed locally but not tracked."}
+  ],
+  "observed_unfrozen_asset_hashes": {
+    "artifacts/e1_reconstructed_model.joblib": "60f407d85483214485b2152c05529af2c473b1a7ea59e8f0d7bb44b7409efec8",
+    "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318/model.safetensors": "924a5bb9078bcc212ef07acb9f08dfaa8593e880ae3868203deb28586dbdc773",
+    "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318/config.json": "b0b0142bc2f3b2c96238a7210382934f3901974b882e75ed6abd21152e38bae6",
+    "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318/trainer_state.json": "78b3ec16acfb6be14b484225822c99265812d43728855b565b8d03daa98be97f"
+  },
+  "initial_replay": {
+    "checkout": "fresh GitHub clone of origin/main",
+    "commit": "af28d5ca5c0c5fa8defb2cf2b9d05334557c1187",
+    "scope": "E1 reconstruction, E2 frozen-checkpoint inference, and E3/E4 final 30-case retrieval-to-verification evaluation",
+    "asset_note": "Untracked large data, cached windows, checkpoint, BM25 index, dedup crosswalk, and running PostgreSQL corpus were supplied from the original local artifact store.",
+    "stages": {
+      "E1": {"status": "pass", "n": 1503, "records_exact": true, "accuracy": 0.61344, "macro_f1": 0.612342},
+      "E2": {"status": "pass", "n": 1503, "windows": 9576, "records_exact": true, "mean_logit_accuracy": 0.596806, "mean_logit_macro_f1": 0.592358},
+      "E3_E4": {"status": "fail", "n": 30, "aggregate_metrics_exact": true, "stable_case_ids_and_order_exact": true, "stable_per_case_payload_exact": false, "differing_cases": 12, "differing_field": "expected_authority_retrieved_not_selected", "recall_at_5": 0.4, "recall_at_100": 0.5, "citation_groundedness_rate": 1.0, "citation_provenance_validity": 1.0, "temporal_violation_rate": 0.0, "unsupported_claim_rate": 0.0}
+    },
+    "strict_overall_status": "fail",
+    "failure_reason": "The current runner writes the retrieved-not-selected field from a retrieval-only measurement, so all 12 selected expected authorities are also mislabeled retrieved-not-selected in the replay payload. Frozen aggregate metrics and all other stable outputs reproduce.",
+    "output_sha256": {
+      "e1_predictions": "9af1cad0313d604259680ceeccb020f56c17afa704179615ed207be54b660ca4",
+      "e2_predictions": "43f33a3931302335ec22c441877b54cebcac606191740a657057424bb72cc733",
+      "e3_e4_full_evaluation": "f681de6818f750f6e974d2dbd8d9a9a83f9fdcceb8e6855c1fa1c56267fb49f6"
+    }
+  },
+  "reverification": {
+    "status": "pass",
+    "defect_found": "The initial runner used retrieval-only key_measure to populate expected_authority_retrieved_not_selected, so 12 retrieved-and-selected authorities were mislabeled.",
+    "fix": {
+      "script": "scripts/run_week11_initial_evaluation.py",
+      "field": "expected_authority_retrieved_not_selected",
+      "previous_source": "key_measure.expected_authorities_retrieved_not_selected",
+      "corrected_source": "selected_measure.expected_authorities_retrieved_not_selected"
+    },
+    "checkout": {
+      "method": "fresh local clone of the corrected immutable commit",
+      "commit": "bc70006a44f64a5cef1b208c8737eefa8f797d8e",
+      "clean_before_ignored_replay_assets": true
+    },
+    "scope": "E1 reconstruction, E2 frozen-checkpoint inference, and E3/E4 final 30-case retrieval-to-verification evaluation",
+    "asset_note": "The same untracked hash-checked local data, cached windows, checkpoint, BM25 index, dedup crosswalk, and running PostgreSQL corpus were supplied to the clean clone.",
+    "verification": {
+      "E1": {"status": "pass", "n": 1503, "records_exact": true, "metrics_exact": true, "raw_sha256": "9af1cad0313d604259680ceeccb020f56c17afa704179615ed207be54b660ca4", "matches_first_replay_raw_sha256": true},
+      "E2": {"status": "pass", "n": 1503, "windows": 9576, "records_exact": true, "metrics_exact": true, "raw_sha256": "43f33a3931302335ec22c441877b54cebcac606191740a657057424bb72cc733", "matches_first_replay_raw_sha256": true},
+      "E3_E4": {
+        "status": "pass",
+        "n": 30,
+        "raw_sha256": "247583501287767687c6ab32f9ad487c74c9a1048bbd83a021f30e36b7d84d5b",
+        "aggregate_metrics_exact": true,
+        "case_ids_and_order_exact": true,
+        "retrieved_and_selected_cases": 12,
+        "retrieved_and_selected_all_have_empty_retrieved_not_selected": true,
+        "genuine_retrieved_but_not_selected_case_ids": ["1980_133", "1981_55", "1985_40"],
+        "only_stable_differences_from_first_replay_excluding_run_ids": {"field": "expected_authority_retrieved_not_selected", "case_count": 12},
+        "all_other_stable_fields_exact": true,
+        "canonical_stable_sha256_excluding_run_ids": "7257e6a5a1c78d7c028e252f9ebcafb02a5d31630b5cdc05becb0b9ca608b6b6",
+        "canonical_sha256_excluding_run_ids_and_corrected_field": "beb683cbaaa71d41a590c61060613af55f2ee799225d05eacc11ff949f090e95",
+        "matches_first_replay_when_uuid_and_corrected_field_are_excluded": true,
+        "recall_at_5": 0.4,
+        "recall_at_100": 0.5,
+        "citation_groundedness_rate": 1.0,
+        "citation_provenance_validity": 1.0,
+        "temporal_violation_rate": 0.0,
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    "strict_overall_status": "pass"
+  }
+}

@@ -193,7 +193,11 @@ def main() -> None:
             "expected_authority_retrieved_at_5": retrieved_at_5,
             "expected_authority_retrieved_at_100": retrieved_at_100,
             "expected_authority_selected": selected_expected,
-            "expected_authority_retrieved_not_selected": key_measure["expected_authorities_retrieved_not_selected"],
+            # This classification is selection-aware. `key_measure` intentionally
+            # has no displayed checks so it can measure candidate retrieval; using
+            # it here would wrongly classify every retrieved-and-selected authority
+            # as retrieved-but-not-selected.
+            "expected_authority_retrieved_not_selected": selected_measure["expected_authorities_retrieved_not_selected"],
             "citation_check_count": len(checks),
             "citation_checks_passed": passed_checks,
             "citation_checks": checks,

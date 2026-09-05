@@ -155,3 +155,12 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Write the Conclusion last and limit it to the final supported findings: 150/150 verified citations, 15/30 Recall@100, the seven-case author self-review observation, and E1 outperforming corrected E2 on the frozen outcome task.
 - [x] Read the assembled paper end-to-end and resolve contradictions in experiment definitions, claims, denominators, configuration identifiers, novelty framing, and superseded results; record the passing checks in `artifacts/week15_consistency_check.md`.
 - [x] Commit and push the completed Week 15 paper artifacts; confirm local `main`, `origin/main`, and GitHub `main` match.
+
+## Week 16 - Final Reproducibility Audit
+
+- [x] Audit every frozen reproducibility item against an explicit tracked file/key rather than project memory; record 11 passes and 3 documentation failures in `artifacts/week16_reproducibility_audit.md` and `.json`, and verify all 24 existing freeze path/hash pairs without a mismatch.
+- [x] Run one uninterrupted clean-code-checkout replay covering E1 reconstruction (n=1,503), E2 checkpoint inference (9,576 windows / n=1,503), and E3/E4 retrieval-through-verification (n=30).
+- [x] Confirm the replay exactly reproduces every E1/E2 prediction and all final E3/E4 aggregate metrics, including Recall@5 0.40, Recall@100 0.50, 150/150 citation/provenance checks, zero temporal violations, and zero unsupported claims.
+- [x] Record the strict replay failure: all 12 selected expected authorities are also mislabeled in `expected_authority_retrieved_not_selected` by the current runner, although no aggregate metric or other stable per-case field changes.
+- [ ] Freeze an immutable eCourts source/database identity, E1/E2 artifact hashes and availability contract, and exact dependency/container digests; the current Git checkout alone is insufficient to recreate the large local assets.
+- [x] Correct the replay runner's selected-versus-retrieved-only bookkeeping and re-run from a clean checkout. All 12 selected authorities now have empty retrieved-not-selected lists; only the three genuine retrieved-but-not-selected cases remain, and every other stable field and aggregate result matches the first replay.
