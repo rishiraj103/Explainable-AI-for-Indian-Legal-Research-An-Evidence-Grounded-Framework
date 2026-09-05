@@ -1,0 +1,453 @@
+{
+  "identity_version": "ecourts-cleaned-corpus-identity-v1",
+  "cleaned_corpus": {
+    "root": "corpus/ecourts/cleaned",
+    "included_files": "**/chunks.jsonl",
+    "file_count": 71,
+    "total_bytes": 2712095037,
+    "jsonl_record_count": 2343435,
+    "aggregate_sha256_algorithm": "SHA-256 over sorted, length-delimited relative path, byte size, and per-file SHA-256 values",
+    "aggregate_sha256": "f0229bbb1242548abd57c4f8ec86a03d4edef4d2182d0ed6cbc442ee708f000f",
+    "files": [
+      {
+        "path": "year=1950/chunks.jsonl",
+        "bytes": 4949346,
+        "sha256": "e2a8fc982899bfb60c8792e7978de2ec3e72668eb7e1cd24529d5e47983ee0b4",
+        "jsonl_record_count": 4097
+      },
+      {
+        "path": "year=1951/chunks.jsonl",
+        "bytes": 6445697,
+        "sha256": "6f94150ac6482adcf71294884a1595be370149127dbabfae113f84b92b842eb3",
+        "jsonl_record_count": 5241
+      },
+      {
+        "path": "year=1952/chunks.jsonl",
+        "bytes": 7485112,
+        "sha256": "aae36130f60932e5f66559cb9f918f3d8914f9582bc0b2cda63272b5b99a4ad7",
+        "jsonl_record_count": 6370
+      },
+      {
+        "path": "year=1953/chunks.jsonl",
+        "bytes": 9068806,
+        "sha256": "0e1d5670280c78ce2fce545ece3cff5d254e038b41367656a3f6756c06d634ba",
+        "jsonl_record_count": 7563
+      },
+      {
+        "path": "year=1954/chunks.jsonl",
+        "bytes": 11327836,
+        "sha256": "107be1dd3e61639b1a410aee053672b9a2250a13bf3fdcf2fb70850cec1283ee",
+        "jsonl_record_count": 9646
+      },
+      {
+        "path": "year=1955/chunks.jsonl",
+        "bytes": 13227839,
+        "sha256": "c595a9771346725998ef1389026f9c35e1a71ea604b05208189234feebe12df5",
+        "jsonl_record_count": 11185
+      },
+      {
+        "path": "year=1956/chunks.jsonl",
+        "bytes": 5872581,
+        "sha256": "af64a5a32e77e45aafd0ca7deface365de52f50123661ab16e5cbdd4872e1add",
+        "jsonl_record_count": 4985
+      },
+      {
+        "path": "year=1957/chunks.jsonl",
+        "bytes": 10604592,
+        "sha256": "2d0d48aab37ae8ed0f7965597af4fd138d97b1093e9191c552f3281c8021217b",
+        "jsonl_record_count": 9079
+      },
+      {
+        "path": "year=1958/chunks.jsonl",
+        "bytes": 18511117,
+        "sha256": "7ea25bf3c5cff4257e0fb0fed5879644830dc7c10ef42212f06eeeaf895175a4",
+        "jsonl_record_count": 15567
+      },
+      {
+        "path": "year=1959/chunks.jsonl",
+        "bytes": 25264550,
+        "sha256": "90880459f53feb8f8785fd1a330d470e4f1b8c0678bd6344a1f3be5ab74e1c0d",
+        "jsonl_record_count": 21454
+      },
+      {
+        "path": "year=1960/chunks.jsonl",
+        "bytes": 26461512,
+        "sha256": "7e82b01bd448762d934c8e2598a9c22921f5539e961a71554ca753f30913590c",
+        "jsonl_record_count": 22706
+      },
+      {
+        "path": "year=1961/chunks.jsonl",
+        "bytes": 34726534,
+        "sha256": "44404bcf7aa820bc28f9c8e5877d5c554ebb57353ee248492afd2756ff166038",
+        "jsonl_record_count": 29914
+      },
+      {
+        "path": "year=1962/chunks.jsonl",
+        "bytes": 49533386,
+        "sha256": "03350e397d96f6b9d632c000e9ee6d1f2a1bf417d1be1b9ee1b3207ca5953722",
+        "jsonl_record_count": 42865
+      },
+      {
+        "path": "year=1963/chunks.jsonl",
+        "bytes": 42103433,
+        "sha256": "c76e6794018aeff3a6d9098eae802b86c57c01aca9058b3eac2866fbb06879a1",
+        "jsonl_record_count": 36470
+      },
+      {
+        "path": "year=1964/chunks.jsonl",
+        "bytes": 43301900,
+        "sha256": "8c69a7910ae9bf913e6e23ce99dbc562ed78c16681c3dada2483cc874b332ee2",
+        "jsonl_record_count": 37154
+      },
+      {
+        "path": "year=1965/chunks.jsonl",
+        "bytes": 26906556,
+        "sha256": "5c6c36ffa1fbb5fd83b36720f73c7e21eb45344300ae167967650ff43af5252a",
+        "jsonl_record_count": 23081
+      },
+      {
+        "path": "year=1966/chunks.jsonl",
+        "bytes": 26258136,
+        "sha256": "e72d6c91d11596a0fa083ec6c5650c8d9125f6e52fc6d32b2b2ec83a72d4b8dc",
+        "jsonl_record_count": 22813
+      },
+      {
+        "path": "year=1967/chunks.jsonl",
+        "bytes": 25555669,
+        "sha256": "63c90f4fb3f4cfcf7ddaad39992656e209628722849bed762266d03a47534842",
+        "jsonl_record_count": 21961
+      },
+      {
+        "path": "year=1968/chunks.jsonl",
+        "bytes": 27946248,
+        "sha256": "3761208317717512f5830a559f9437c3500704533934a34010f2d9284dff2de3",
+        "jsonl_record_count": 24386
+      },
+      {
+        "path": "year=1969/chunks.jsonl",
+        "bytes": 30200396,
+        "sha256": "153a4a6bd53a5c473d1b22ce618fc4af047b87021464b4900cebaff8e4c7f406",
+        "jsonl_record_count": 26536
+      },
+      {
+        "path": "year=1970/chunks.jsonl",
+        "bytes": 26807145,
+        "sha256": "8d3c0983754303f9871a43f32145f5bd6723b79eeca34ba616406e1d7363068f",
+        "jsonl_record_count": 23740
+      },
+      {
+        "path": "year=1971/chunks.jsonl",
+        "bytes": 33136003,
+        "sha256": "a3641e55ce13708612a736ad33b7e8af52eb8d18953d3b77ccf8dba6f5ed7690",
+        "jsonl_record_count": 29415
+      },
+      {
+        "path": "year=1972/chunks.jsonl",
+        "bytes": 30992568,
+        "sha256": "d66a45e270b76ca5c1f57239596f28bb7185aa1089081db5df04311a78672f7a",
+        "jsonl_record_count": 27307
+      },
+      {
+        "path": "year=1973/chunks.jsonl",
+        "bytes": 35913264,
+        "sha256": "4f9efb1c0c9b2173462217a27a5163eddfc8d6b60a2a28ef6249c70a8895f322",
+        "jsonl_record_count": 31246
+      },
+      {
+        "path": "year=1974/chunks.jsonl",
+        "bytes": 31738261,
+        "sha256": "fd4710182e85fc90ea62d074a32238ea0d86313e8137c9d34b785dde5d206bce",
+        "jsonl_record_count": 27481
+      },
+      {
+        "path": "year=1975/chunks.jsonl",
+        "bytes": 36684051,
+        "sha256": "ae3f81f7f23625ab81a0baba140f0f94920b69d943bc1a6a70c270a477f2a986",
+        "jsonl_record_count": 31750
+      },
+      {
+        "path": "year=1976/chunks.jsonl",
+        "bytes": 34829189,
+        "sha256": "1e21450c57ffad4bb0e3ef859092e140eb2f568024be52be69ae6cc26eb87b22",
+        "jsonl_record_count": 30028
+      },
+      {
+        "path": "year=1977/chunks.jsonl",
+        "bytes": 26278724,
+        "sha256": "94bbc742388d7dffce3a86106ed2a739069a2691922be3671ecbd14b240fc3fa",
+        "jsonl_record_count": 22307
+      },
+      {
+        "path": "year=1978/chunks.jsonl",
+        "bytes": 28655274,
+        "sha256": "b295c2ee5986f2ebd07fff1cfef9cf6abad760ffa1c76af5ac8354db33dc0868",
+        "jsonl_record_count": 24351
+      },
+      {
+        "path": "year=1979/chunks.jsonl",
+        "bytes": 30556839,
+        "sha256": "1f0aab8b4f5523327788535fa1cbf2fa4586176d3993e5b0783f65dda6fdc5fe",
+        "jsonl_record_count": 26387
+      },
+      {
+        "path": "year=1980/chunks.jsonl",
+        "bytes": 31758322,
+        "sha256": "11aa6b2f0eb4dbb35374c58788b4f308a2aee3786f9b999b50566f1fb0fe6c3c",
+        "jsonl_record_count": 26845
+      },
+      {
+        "path": "year=1981/chunks.jsonl",
+        "bytes": 29880089,
+        "sha256": "837baa3a381a1850a5b702297790975a24c28b14804b451f8764f113914e8cff",
+        "jsonl_record_count": 24674
+      },
+      {
+        "path": "year=1982/chunks.jsonl",
+        "bytes": 21901768,
+        "sha256": "3291c81b3dade81cb2b0b943de8949e5ed1f763d86d0039ff30c5ed2cae5fe80",
+        "jsonl_record_count": 17921
+      },
+      {
+        "path": "year=1983/chunks.jsonl",
+        "bytes": 21235484,
+        "sha256": "c4d9fd5bce5d8665762e46612688ae12ff83f2bf655b712ea0f0961bad4afb21",
+        "jsonl_record_count": 17447
+      },
+      {
+        "path": "year=1984/chunks.jsonl",
+        "bytes": 22965261,
+        "sha256": "2d38d739f811ee617907f8b58da1942f1a762865e473e14bd2b0cdd5ef69fbb3",
+        "jsonl_record_count": 18806
+      },
+      {
+        "path": "year=1985/chunks.jsonl",
+        "bytes": 30832711,
+        "sha256": "e756a0bf47274ebbed3a63714f44affaa2c528e8dedbd51c66a90c6f1a32ff45",
+        "jsonl_record_count": 24999
+      },
+      {
+        "path": "year=1986/chunks.jsonl",
+        "bytes": 19341751,
+        "sha256": "0b57be3d318c7e77d241bb386870114a55bf779f2fba9a94226bcd5932d69202",
+        "jsonl_record_count": 16033
+      },
+      {
+        "path": "year=1987/chunks.jsonl",
+        "bytes": 25939038,
+        "sha256": "fbf0a0e1d05d1f99832a9f034e4e46433a6b959facf18eec1947af9ec8f7575f",
+        "jsonl_record_count": 22251
+      },
+      {
+        "path": "year=1988/chunks.jsonl",
+        "bytes": 31619383,
+        "sha256": "e55209e0de0c9f15705912a4aa0359c79967e9ea13c4c20f9363f5de1c991c74",
+        "jsonl_record_count": 27424
+      },
+      {
+        "path": "year=1989/chunks.jsonl",
+        "bytes": 23529978,
+        "sha256": "9d1009b5cb378092529166ed58a8188f32ca788e9865dcc455dd82b330f79909",
+        "jsonl_record_count": 20193
+      },
+      {
+        "path": "year=1990/chunks.jsonl",
+        "bytes": 25919439,
+        "sha256": "965c18ad6218326e5a568437e3f0801b6fe3191b584e3e969b12f944e19fd98b",
+        "jsonl_record_count": 22158
+      },
+      {
+        "path": "year=1991/chunks.jsonl",
+        "bytes": 24670641,
+        "sha256": "0d678616efc7d1a164b7b330df0f6101409819e6c9ac29347c6eb68f0838a07b",
+        "jsonl_record_count": 20978
+      },
+      {
+        "path": "year=1992/chunks.jsonl",
+        "bytes": 29108530,
+        "sha256": "88e83356eb574dc282343bbffecbc38688870ff74ae0e938fdfc6f4c13f99aa3",
+        "jsonl_record_count": 24609
+      },
+      {
+        "path": "year=1993/chunks.jsonl",
+        "bytes": 29217362,
+        "sha256": "a504a094f364bc2fdd65ccba746881dfbaef9f0f10aa1d9e2cf7166639075313",
+        "jsonl_record_count": 25022
+      },
+      {
+        "path": "year=1994/chunks.jsonl",
+        "bytes": 38655612,
+        "sha256": "744fa8e6cbc37ba0c6c6df7816dc2f8fb0e96e5025135482761127f798728777",
+        "jsonl_record_count": 33531
+      },
+      {
+        "path": "year=1995/chunks.jsonl",
+        "bytes": 43834654,
+        "sha256": "3956d027c6cbedcb328dff1125b6d4c4b56b3fcef51cc0b80b2ff1fddbe26a17",
+        "jsonl_record_count": 37874
+      },
+      {
+        "path": "year=1996/chunks.jsonl",
+        "bytes": 64646055,
+        "sha256": "f8a420a23d434a2c938d0cfadd4525fc51d34866f312b25e2f483ae3d5992ceb",
+        "jsonl_record_count": 56509
+      },
+      {
+        "path": "year=1997/chunks.jsonl",
+        "bytes": 39019275,
+        "sha256": "9ba66c58939f1dfd6bc3789c09535ac803f796c64e45a57877db074d3ff39b78",
+        "jsonl_record_count": 34089
+      },
+      {
+        "path": "year=1998/chunks.jsonl",
+        "bytes": 29338111,
+        "sha256": "99f2b8b5668e2dd9426b9861677127f30f91000fc9935d76fc6b7dd9cf1bf666",
+        "jsonl_record_count": 25293
+      },
+      {
+        "path": "year=1999/chunks.jsonl",
+        "bytes": 35963953,
+        "sha256": "a10f4280a723ccfb692d162f2b92591f8432c372ac84524c4903d84aa22bd010",
+        "jsonl_record_count": 31235
+      },
+      {
+        "path": "year=2000/chunks.jsonl",
+        "bytes": 36789630,
+        "sha256": "d166f66896011c59862ba29b52f5ae4e71a4a55c35924362589513b919e46938",
+        "jsonl_record_count": 31579
+      },
+      {
+        "path": "year=2001/chunks.jsonl",
+        "bytes": 34703627,
+        "sha256": "39d5b4c75b91dd0c31a50b66a651bee6c76a2174e12316b3aa05b59ebb11251b",
+        "jsonl_record_count": 29831
+      },
+      {
+        "path": "year=2002/chunks.jsonl",
+        "bytes": 36793654,
+        "sha256": "d81a0c2454f3350d39c58def6466eb2f78a9ef25114896210af9cd087a09af93",
+        "jsonl_record_count": 31836
+      },
+      {
+        "path": "year=2003/chunks.jsonl",
+        "bytes": 51658609,
+        "sha256": "e11ba138a3d502af5ca3548d5ec0afe5c115db79459301adefd118a9b527b2e1",
+        "jsonl_record_count": 44863
+      },
+      {
+        "path": "year=2004/chunks.jsonl",
+        "bytes": 49081018,
+        "sha256": "8a250b9e38b7e8da0bf7cbe0e75add8607959279d8f08fd65f5769ba5fd87234",
+        "jsonl_record_count": 43005
+      },
+      {
+        "path": "year=2005/chunks.jsonl",
+        "bytes": 44888436,
+        "sha256": "39b26ae15616996a27248de7d9c51c268947f9a1e34101244ede214b5fb85b64",
+        "jsonl_record_count": 39350
+      },
+      {
+        "path": "year=2006/chunks.jsonl",
+        "bytes": 67768337,
+        "sha256": "6c4b0570f3b0d6f0f7a8249320164a2203a3bad481b7cd8c1cc590715ff531a0",
+        "jsonl_record_count": 60065
+      },
+      {
+        "path": "year=2007/chunks.jsonl",
+        "bytes": 74176915,
+        "sha256": "f1922ddfb3b36fc75f00b3b5e2ba8ead68558cf0a440d0d016aa08d0a9c00bf4",
+        "jsonl_record_count": 67130
+      },
+      {
+        "path": "year=2008/chunks.jsonl",
+        "bytes": 87156098,
+        "sha256": "cec75aaa5c9b00418189618648b0cf6667f0bd6e1031de41db4581fc5cd66a24",
+        "jsonl_record_count": 78977
+      },
+      {
+        "path": "year=2009/chunks.jsonl",
+        "bytes": 76268733,
+        "sha256": "a8e1a68ebcf15f50f7ec9829cf580b20cc121c89daeb0f1b7950d38c777db6ce",
+        "jsonl_record_count": 69529
+      },
+      {
+        "path": "year=2010/chunks.jsonl",
+        "bytes": 71272980,
+        "sha256": "09ea45fc252a0086262e7f2a5b10088e582270c501aedaebd5fd8e91b156e760",
+        "jsonl_record_count": 63032
+      },
+      {
+        "path": "year=2011/chunks.jsonl",
+        "bytes": 70210981,
+        "sha256": "cd370eb1bcef4e84bd795f8b70741a831bde51e131f2d597cc96c26da6588cf6",
+        "jsonl_record_count": 61333
+      },
+      {
+        "path": "year=2012/chunks.jsonl",
+        "bytes": 61814354,
+        "sha256": "bb4587ac8f37863ab08da8f120343658f16b45e3f666ec6ddbba4d24caef9494",
+        "jsonl_record_count": 54238
+      },
+      {
+        "path": "year=2013/chunks.jsonl",
+        "bytes": 78379238,
+        "sha256": "4920c171b4bb1d1cfbf08b7d6322b8f27d5f0b8593db29f06a7291e4aa6e6ee7",
+        "jsonl_record_count": 68843
+      },
+      {
+        "path": "year=2014/chunks.jsonl",
+        "bytes": 66420322,
+        "sha256": "a653427cd5219ffabce99a2ce30a8ab6c686f16b746b5fb2ef4efcdf04204f53",
+        "jsonl_record_count": 58095
+      },
+      {
+        "path": "year=2015/chunks.jsonl",
+        "bytes": 61974094,
+        "sha256": "a35115e4c97085b168bf50403c4eb7a2fe244244bb7cd1cf45fc7e29f960acb9",
+        "jsonl_record_count": 53545
+      },
+      {
+        "path": "year=2016/chunks.jsonl",
+        "bytes": 53441943,
+        "sha256": "de5bdd5ac44465f26cf924f36b2b5434d7f2e1377ea08f08fdc20fd7dfc0f726",
+        "jsonl_record_count": 45596
+      },
+      {
+        "path": "year=2017/chunks.jsonl",
+        "bytes": 66458180,
+        "sha256": "8d3280d17fbaf33312afec08c5c8f41af4a678ee9b1e7f114bb8c10aa7623a2e",
+        "jsonl_record_count": 56817
+      },
+      {
+        "path": "year=2018/chunks.jsonl",
+        "bytes": 74265211,
+        "sha256": "cf77df205300e542b848750fc4caafc88a57a1d0ab54d37bf063bd6baa2f2a6c",
+        "jsonl_record_count": 61791
+      },
+      {
+        "path": "year=2019/chunks.jsonl",
+        "bytes": 95435736,
+        "sha256": "e600dfabc1bf59097493ed354819f31600ab6aa7ade8b7b0a1ba5e2bd6259f47",
+        "jsonl_record_count": 79272
+      },
+      {
+        "path": "year=2020/chunks.jsonl",
+        "bytes": 72416960,
+        "sha256": "861f5ddda0e6e0128c2b92dd1ab57a12455ade890074a8a06b52e06abd51840b",
+        "jsonl_record_count": 59732
+      }
+    ]
+  },
+  "linked_final_artifacts": {
+    "cleaning_record": {
+      "path": "corpus/ecourts/cleaning_record.json",
+      "sha256": "6cf58140c663c6cf27a16276c20d570e2dde1a1d76a1ddf263aa929e3ea2076e"
+    },
+    "bm25_index": {
+      "path": "retrieval/bm25.sqlite",
+      "sha256": "3187f7fce824ea8ccc5a26d908936ce4b78e81238289ea69348cb861350d65fb",
+      "bytes": 2269376512
+    }
+  },
+  "guarantees": "This identifies the exact bytes of the final local cleaned JSONL corpus and links that corpus to the local cleaning record and BM25 index at generation time.",
+  "does_not_guarantee": "It is not an immutable upstream S3 snapshot identifier, does not hash the raw PDFs, and does not substitute for a PostgreSQL volume dump. Reconstructing the database still requires loading this identified cleaned corpus with the tracked provenance loader."
+}

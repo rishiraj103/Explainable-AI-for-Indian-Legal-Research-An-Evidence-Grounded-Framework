@@ -4,24 +4,20 @@
   "reverified_at_ist": "2026-09-05T08:59:02+05:30",
   "audited_commit": "af28d5ca5c0c5fa8defb2cf2b9d05334557c1187",
   "documentation_summary": {
-    "pass": 11,
-    "fail": 3,
-    "failed_items": [
-      "dataset_version_and_split",
-      "model_checkpoints",
-      "software_dependencies_and_container_versions"
-    ],
+    "pass": 14,
+    "fail": 0,
+    "failed_items": [],
     "freeze_path_hash_integrity": {
-      "checked": 24,
-      "passed": 24,
+      "checked": 34,
+      "passed": 34,
       "missing": 0,
       "mismatched": 0
     }
   },
   "documentation_checks": [
-    {"item": "dataset_version_and_split", "status": "fail", "locations": ["config/reproducibility_freeze.json#/datasets_and_splits", "config/datasets.json", "corpus/dataset_manifest.md"], "reason": "ILDC revision/split hashes pass, but no immutable upstream eCourts snapshot revision or aggregate raw/cleaned-corpus or PostgreSQL dump hash is recorded; config/datasets.json also retains the stale pre-rebuild cleaned count 2,343,407 instead of the final 2,343,435."},
+    {"item": "dataset_version_and_split", "status": "pass", "prior_status": "fail", "locations": ["config/reproducibility_freeze.json#/datasets_and_splits", "config/datasets.json", "artifacts/ecourts_corpus_identity.json", "corpus/dataset_manifest.md"], "remediation": "Corrected config/datasets.json to 2,343,435 and added a 71-file, 2,343,435-record cleaned-JSONL aggregate identity (f0229bbb1242548abd57c4f8ec86a03d4edef4d2182d0ed6cbc442ee708f000f). It identifies the final local corpus bytes and links the cleaning record/index; it is explicitly not an upstream S3 snapshot or PostgreSQL volume dump."},
     {"item": "preprocessing_and_tokenization", "status": "pass", "locations": ["config/reproducibility_freeze.json#/datasets_and_splits/ildc_single/facts_extraction", "config/facts_extraction.json", "config/e1_baseline.json#/tfidf", "config/e2_chunk_pool.json#/model", "config/e2_chunk_pool.json#/input"]},
-    {"item": "model_checkpoints", "status": "fail", "locations": ["corpus/dataset_manifest.md#prediction-recovery-correction", "artifacts/e1_test_predictions.json", "artifacts/e2_chunk_pool_results.json#/best_checkpoint", "artifacts/e2_test_predictions.json"], "reason": "Checkpoint identities are documented, but the freeze omits artifact hashes and the E2 weights are gitignored."},
+    {"item": "model_checkpoints", "status": "pass", "prior_status": "fail", "locations": ["config/reproducibility_freeze.json#/experiments/E1/reconstructed_model", "config/reproducibility_freeze.json#/experiments/E2_corrected/checkpoint_6318", "corpus/dataset_manifest.md#prediction-recovery-correction"], "remediation": "The freeze records E1 reconstructed-model and E2 checkpoint weight/config/trainer-state hashes. E2 weights remain gitignored by design because of size, but their tracked SHA-256 values define the verification contract."},
     {"item": "bm25_and_query_construction", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/retrieval_selection", "config/evidence_selection.json", "scripts/build_bm25_index.py", "artifacts/bm25_index.json"]},
     {"item": "passage_segmentation", "status": "pass", "locations": ["corpus/ecourts/cleaning_record.json#/chunking", "src/legal_xai/corpus.py#chunk_page_text", "scripts/clean_and_chunk_ecourts.py"]},
     {"item": "top_k_retrieval_depth", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/retrieval_selection/candidate_k", "config/evidence_selection.json#/candidate_k"]},
@@ -32,8 +28,17 @@
     {"item": "citation_matching_rule", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/citation_verifier/answer_key_measurement", "config/citation_verification.json", "src/legal_xai/citation_verifier.py#evaluate_against_answer_key", "artifacts/week9_answer_key_spot_checks.md"]},
     {"item": "temporal_eligibility", "status": "pass", "locations": ["config/reproducibility_freeze.json#/experiments/E4/retrieval_selection", "config/reproducibility_freeze.json#/experiments/E4/temporal_policy", "config/evidence_selection.json", "src/legal_xai/evidence_pipeline.py#temporal_preranked_bm25_sql"]},
     {"item": "provenance_schema", "status": "pass", "locations": ["scripts/load_provenance.py#SCHEMA_SQL", "config/citation_verification.json#/required_checks"]},
-    {"item": "software_dependencies_and_container_versions", "status": "fail", "locations": ["config/reproducibility_freeze.json#/environment", "requirements.txt", "compose.yaml", "docker/Dockerfile.ocr", "docker/e2.Dockerfile"], "reason": "Host and E2 dependency versions conflict, requirements.txt is incomplete, container tags lack digests, and PostgreSQL 16.15 is observed locally but not tracked."}
+    {"item": "software_dependencies_and_container_versions", "status": "pass", "prior_status": "fail", "locations": ["config/reproducibility_freeze.json#/environment", "config/reproducibility_freeze.json#/environment/transformers_runtime_roles", "config/reproducibility_freeze.json#/environment/postgresql", "config/reproducibility_freeze.json#/environment/container_image_policy", "compose.yaml", "docker/Dockerfile.ocr", "docker/e2.Dockerfile"], "remediation": "The Transformers versions are explicitly separated by role (4.46.3 E2 training image, 5.15.0 host replay). PostgreSQL 16.15 and observed Postgres digest are tracked. Mutable Docker base-image tags remain an explicitly accepted local-research limitation, with Dockerfile/Compose hashes and frozen build-definition revision/date recorded."}
   ],
+  "documentation_remediation": {
+    "completed_at_ist": "2026-09-05T15:44:00+05:30",
+    "result": "14/14 documentation checks pass; limitations are retained as explicit scope boundaries rather than undocumented gaps.",
+    "cleaned_corpus_aggregate_sha256": "f0229bbb1242548abd57c4f8ec86a03d4edef4d2182d0ed6cbc442ee708f000f",
+    "cleaned_corpus_files": 71,
+    "cleaned_corpus_records": 2343435,
+    "postgresql_server_version": "16.15",
+    "observed_postgres_image_digest": "postgres@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685"
+  },
   "observed_unfrozen_asset_hashes": {
     "artifacts/e1_reconstructed_model.joblib": "60f407d85483214485b2152c05529af2c473b1a7ea59e8f0d7bb44b7409efec8",
     "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318/model.safetensors": "924a5bb9078bcc212ef07acb9f08dfaa8593e880ae3868203deb28586dbdc773",

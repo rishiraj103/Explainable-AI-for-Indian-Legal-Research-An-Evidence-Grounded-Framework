@@ -17,7 +17,7 @@
     "years": [1950, 2020],
     "stage": "bm25_indexed_with_postgresql_provenance",
     "pdf_count": 39069,
-    "cleaned_chunk_count": 2343407,
+    "cleaned_chunk_count": 2343435,
     "fields": [
       "title",
       "petitioner",

@@ -1,5 +1,5 @@
 {
-  "freeze_version": "week11-final-retrieval-freeze-v2",
+  "freeze_version": "week16-final-reproducibility-freeze-v3",
   "scope": "Final retrieval configuration freeze after the one bounded Week 11 temporal-ordering test; no further retrieval changes are permitted.",
   "datasets_and_splits": {
     "ildc_single": {
@@ -46,6 +46,15 @@
         "sha256": "6cf58140c663c6cf27a16276c20d570e2dde1a1d76a1ddf263aa929e3ea2076e",
         "bytes": 18822
       },
+      "cleaned_corpus_identity": {
+        "path": "artifacts/ecourts_corpus_identity.json",
+        "sha256": "d88d6b197d6991efc44cfb2338618d4993473b524a123cab9bb4d35e785d77ca",
+        "bytes": 16545,
+        "cleaned_jsonl_aggregate_sha256": "f0229bbb1242548abd57c4f8ec86a03d4edef4d2182d0ed6cbc442ee708f000f",
+        "cleaned_jsonl_file_count": 71,
+        "cleaned_jsonl_record_count": 2343435,
+        "identity_scope": "Final local cleaned JSONL corpus. This identifies the cleaned corpus bytes but is not an immutable upstream S3 snapshot or PostgreSQL volume dump."
+      },
       "bm25_index": {
         "path": "retrieval/bm25.sqlite",
         "sha256": "3187f7fce824ea8ccc5a26d908936ce4b78e81238289ea69348cb861350d65fb",
@@ -69,6 +78,13 @@
         "path": "artifacts/e1_baseline_results.json",
         "sha256": "0726043d7e2445886f7c8658e4c7b8560f321d079b3e8203aa2d5890c9ccf13d",
         "bytes": 5858
+      },
+      "reconstructed_model": {
+        "path": "artifacts/e1_reconstructed_model.joblib",
+        "sha256": "60f407d85483214485b2152c05529af2c473b1a7ea59e8f0d7bb44b7409efec8",
+        "bytes": 2079388,
+        "status": "tracked_reconstruction_artifact",
+        "note": "Deterministic reconstruction from frozen C=10.0 train+validation inputs; its hash is frozen for verification."
       },
       "random_seed": 202605,
       "test_metrics": {
@@ -107,6 +123,25 @@
         "path": "artifacts/e2_correction_manifest.json",
         "sha256": "1ae92bc5e5b54fac129480e3c647dd755527cd66fc8f4fa476c636c4341b9f0e",
         "bytes": 2309
+      },
+      "checkpoint_6318": {
+        "weights": {
+          "path": "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318/model.safetensors",
+          "sha256": "924a5bb9078bcc212ef07acb9f08dfaa8593e880ae3868203deb28586dbdc773",
+          "bytes": 437958648
+        },
+        "config": {
+          "path": "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318/config.json",
+          "sha256": "b0b0142bc2f3b2c96238a7210382934f3901974b882e75ed6abd21152e38bae6",
+          "bytes": 760
+        },
+        "trainer_state": {
+          "path": "artifacts/e2_chunk_pool_checkpoints_cached/checkpoint-6318/trainer_state.json",
+          "sha256": "78b3ec16acfb6be14b484225822c99265812d43728855b565b8d03daa98be97f",
+          "bytes": 12931
+        },
+        "storage": "gitignored_local_artifact",
+        "note": "Checkpoint weights remain gitignored by design because of size; their SHA-256 values are tracked here for verification before replay or inference."
       },
       "discarded_256_token_prefix": {
         "status": "Discarded",
@@ -392,7 +427,59 @@
       "transformers": "5.15.0"
     },
     "database_url_source": "LEGAL_XAI_DATABASE_URL environment variable or scripts/load_provenance.py default; credentials are intentionally not frozen in the repository.",
-    "cuda_visible_devices": "not-set"
+    "cuda_visible_devices": "not-set",
+    "transformers_runtime_roles": {
+      "host_replay_environment": {
+        "transformers": "5.15.0",
+        "role": "The Week 16 clean-checkout E2 inference replay used the host environment and reproduced the frozen checkpoint metrics exactly."
+      },
+      "E2_training_image": {
+        "dockerfile": {
+          "path": "docker/e2.Dockerfile",
+          "sha256": "330ebd999830665b51f83deeacf8c8558f0274b0f772e31e26315b0525ec9ed8",
+          "bytes": 308
+        },
+        "transformers": "4.46.3",
+        "role": "The frozen E2 checkpoint was trained under this Dockerfile's pinned training dependency set."
+      },
+      "resolution": "The two versions coexist by role, not as an unresolved dependency conflict: 4.46.3 identifies the original E2 training container, while host 5.15.0 is the later replay environment that exactly reproduced its inference output. Re-pinning the host at this late frozen stage is unnecessary and could destabilize the verified replay."
+    },
+    "postgresql": {
+      "server_version_observed": "16.15",
+      "compose_definition": {
+        "path": "compose.yaml",
+        "sha256": "10e373be01febafb869d7e8839cd7a344faec3bf16a9126f319caaac12781016",
+        "bytes": 532
+      },
+      "declared_tag": "postgres:16-alpine",
+      "resolved_image_digest_observed": "postgres@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "resolved_image_created_at_utc": "2026-08-13T19:18:09.513955733Z"
+    },
+    "container_image_policy": {
+      "scope": "local research deployment, not production infrastructure",
+      "build_definitions_last_committed": {
+        "commit": "d80114784ba814a0770b75098ce3abf872da6b51",
+        "committed_at": "2026-08-28T22:30:00+05:30",
+        "files": {
+          "compose": {
+            "path": "compose.yaml",
+            "sha256": "10e373be01febafb869d7e8839cd7a344faec3bf16a9126f319caaac12781016",
+            "bytes": 532
+          },
+          "ocr": {
+            "path": "docker/Dockerfile.ocr",
+            "sha256": "c74526c1197be57a56fd5daadcd0088d6f1ea79efd9ee3db1081b8c4e91870f0",
+            "bytes": 254
+          },
+          "E2_training": {
+            "path": "docker/e2.Dockerfile",
+            "sha256": "330ebd999830665b51f83deeacf8c8558f0274b0f772e31e26315b0525ec9ed8",
+            "bytes": 308
+          }
+        }
+      },
+      "mutable_tag_limitation": "The PostgreSQL service, OCR base image (python:3.11-slim), and E2 base image (pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime) are recorded as tags. The observed PostgreSQL digest is included above, but external base-image tags are not pinned to digests. This is an accepted limitation for the frozen local research workflow; the Dockerfile/compose hashes and last build-definition commit identify the build instructions, not an immutable remote image snapshot."
+    }
   },
   "replay_contract": {
     "script": "scripts/run_week10_reproducibility_replay.py",
