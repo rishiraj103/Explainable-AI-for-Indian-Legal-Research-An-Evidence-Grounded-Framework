@@ -158,6 +158,8 @@ Project progress tracker. It is committed only when the user has explicitly appr
 
 ## Week 16 - Final Reproducibility Audit
 
+- [x] Build the minimal local researcher interface in `demo/`, with a Python standard-library launcher, seven frozen Week 13 cases, and structured/unstructured switching. Verify 14 browser displays against the packet and final evaluation (35/35 citation IDs and reporter citations per format, unchanged passages); record launch instructions in `demo/README.md` and screenshot in `artifacts/week16_demo.png`.
+
 - [x] Audit every frozen reproducibility item against an explicit tracked file/key rather than project memory; close all three initial documentation findings with an eCourts cleaned-corpus identity, frozen checkpoint hashes, and explicit runtime/container records. The final documentation table is 14/14 PASS and the expanded freeze check is 34/34 valid hashes.
 - [x] Run one uninterrupted clean-code-checkout replay covering E1 reconstruction (n=1,503), E2 checkpoint inference (9,576 windows / n=1,503), and E3/E4 retrieval-through-verification (n=30).
 - [x] Confirm the replay exactly reproduces every E1/E2 prediction and all final E3/E4 aggregate metrics, including Recall@5 0.40, Recall@100 0.50, 150/150 citation/provenance checks, zero temporal violations, and zero unsupported claims.

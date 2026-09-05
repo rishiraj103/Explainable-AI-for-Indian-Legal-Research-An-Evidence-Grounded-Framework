@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legal evidence explorer · Week 16</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><p class="eyebrow">INDIAN LEGAL RESEARCH · FROZEN E4 DEMO</p>
+    <h1>Explore the evidence.</h1>
+    <p>Seven examples from the final evaluation. Inspect the selected authorities, original passages, and limits of each research brief.</p>
+  </header>
+  <main>
+    <nav aria-label="Example and presentation">
+      <label for="case">Example case</label><select id="case" disabled></select>
+      <label for="format">Presentation</label><select id="format" disabled>
+        <option value="structured">Structured E4 brief</option>
+        <option value="unstructured">Unstructured RQ3 comparison</option>
+      </select>
+    </nav>
+    <p id="status" role="status">Loading frozen artifacts…</p>
+    <section id="context" aria-label="Evaluation context"></section>
+    <article id="brief" aria-label="Frozen research brief"></article>
+    <footer>
+      <p>Minimal researcher-facing demo for a single user. Precomputed evidence only; no live retrieval. This is not legal advice.</p>
+      <p>Sources: <a href="../artifacts/week13_review_packet.md">Week 13 paired packet</a> · <a href="../artifacts/week11_temporal_prerank_evaluation.json">Final evaluation JSON</a> · <a href="../artifacts/week13_rq3_ablation_parity.json">Citation parity audit</a></p>
+      <p>The issue is the packet’s frozen excerpt. Formatting comparisons use identical evidence. Verified provenance does not establish relevance or legal correctness.</p>
+    </footer>
+  </main>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
