@@ -1,0 +1,51 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='640' viewBox='0 0 1100 640' role='img' aria-labelledby='title desc'>
+<title id='title'>Outcome prediction on the frozen test population (n=1,503)</title>
+<desc id='desc'>Outcome prediction on the frozen test population (n=1,503)</desc>
+<rect width='100%' height='100%' fill='white'/>
+<text x='55' y='44' font-family='Arial, Helvetica, sans-serif' font-size='25' font-weight='700' fill='#202124'>Outcome prediction on the frozen test population (n=1,503)</text>
+<line x1='100.0' y1='555.0' x2='1050.0' y2='555.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='560.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.0</text>
+<line x1='100.0' y1='492.1' x2='1050.0' y2='492.1' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='497.1' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.1</text>
+<line x1='100.0' y1='429.3' x2='1050.0' y2='429.3' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='434.3' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.2</text>
+<line x1='100.0' y1='366.4' x2='1050.0' y2='366.4' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='371.4' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.3</text>
+<line x1='100.0' y1='303.6' x2='1050.0' y2='303.6' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='308.6' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.4</text>
+<line x1='100.0' y1='240.7' x2='1050.0' y2='240.7' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='245.7' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.5</text>
+<line x1='100.0' y1='177.9' x2='1050.0' y2='177.9' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='182.9' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.6</text>
+<line x1='100.0' y1='115.0' x2='1050.0' y2='115.0' stroke='#d7dce2' stroke-width='1'/>
+<text x='88.0' y='120.0' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#5f6368' text-anchor='end'>0.7</text>
+<line x1='100.0' y1='115.0' x2='100.0' y2='555.0' stroke='#202124' stroke-width='1.5'/>
+<line x1='100.0' y1='555.0' x2='1050.0' y2='555.0' stroke='#202124' stroke-width='1.5'/>
+<text x='32.0' y='335.0' font-family='Arial, Helvetica, sans-serif' font-size='15' font-weight='400' fill='#5f6368' text-anchor='start'>Score</text>
+<rect x='155.8' y='169.4' width='58.0' height='385.6' fill='#2962a3'/>
+<text x='184.8' y='160.4' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>0.613</text>
+<rect x='223.8' y='170.1' width='58.0' height='384.9' fill='#d97706'/>
+<text x='252.8' y='161.1' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>0.612</text>
+<text x='218.8' y='582.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='middle'>E1</text>
+<text x='218.8' y='602.0' font-family='Arial, Helvetica, sans-serif' font-size='12' font-weight='400' fill='#5f6368' text-anchor='middle'></text>
+<rect x='393.2' y='179.9' width='58.0' height='375.1' fill='#2962a3'/>
+<text x='422.2' y='170.9' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>0.597</text>
+<rect x='461.2' y='182.7' width='58.0' height='372.3' fill='#d97706'/>
+<text x='490.2' y='173.7' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>0.592</text>
+<text x='456.2' y='582.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='middle'>E2 mean-logit</text>
+<text x='456.2' y='602.0' font-family='Arial, Helvetica, sans-serif' font-size='12' font-weight='400' fill='#5f6368' text-anchor='middle'></text>
+<rect x='630.8' y='176.9' width='58.0' height='378.1' fill='#2962a3'/>
+<text x='659.8' y='167.9' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>0.601</text>
+<rect x='698.8' y='181.8' width='58.0' height='373.2' fill='#d97706'/>
+<text x='727.8' y='172.8' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>0.594</text>
+<text x='693.8' y='582.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='middle'>E2 majority-vote</text>
+<text x='693.8' y='602.0' font-family='Arial, Helvetica, sans-serif' font-size='12' font-weight='400' fill='#5f6368' text-anchor='middle'></text>
+<rect x='868.2' y='239.7' width='58.0' height='315.3' fill='#2962a3'/>
+<text x='897.2' y='230.7' font-family='Arial, Helvetica, sans-serif' font-size='13' font-weight='400' fill='#202124' text-anchor='middle'>0.502</text>
+<text x='931.2' y='582.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='middle'>Majority baseline</text>
+<text x='931.2' y='602.0' font-family='Arial, Helvetica, sans-serif' font-size='12' font-weight='400' fill='#5f6368' text-anchor='middle'>(accuracy only)</text>
+<rect x='730.0' y='70.0' width='16.0' height='16.0' fill='#2962a3'/>
+<text x='754.0' y='83.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='start'>Accuracy</text>
+<rect x='850.0' y='70.0' width='16.0' height='16.0' fill='#d97706'/>
+<text x='874.0' y='83.0' font-family='Arial, Helvetica, sans-serif' font-size='14' font-weight='400' fill='#202124' text-anchor='start'>Macro F1</text>
+</svg>

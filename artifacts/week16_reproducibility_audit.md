@@ -66,4 +66,4 @@ Corrected replay output SHA-256 values:
 - E3/E4 full evaluation: `247583501287767687c6ab32f9ad487c74c9a1048bbd83a021f30e36b7d84d5b`
 - E3/E4 canonical stable payload excluding generated run UUIDs: `7257e6a5a1c78d7c028e252f9ebcafb02a5d31630b5cdc05becb0b9ca608b6b6`
 
-Final clean-checkout replay status: **PASS**. The three outstanding documentation-completeness findings remain open, but the runner bookkeeping defect is fixed and its full evaluation replay now reproduces the audited results exactly apart from generated run UUIDs and the intentionally corrected field.
+Final clean-checkout replay status: **PASS**. The three documentation-completeness findings were closed in the freeze record before this final packaging pass. The runner bookkeeping defect is fixed, and the full evaluation replay reproduces the audited results exactly apart from generated run UUIDs and the intentionally corrected field.

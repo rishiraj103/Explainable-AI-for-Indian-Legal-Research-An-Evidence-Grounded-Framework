@@ -166,3 +166,12 @@ Project progress tracker. It is committed only when the user has explicitly appr
 - [x] Record the strict replay failure: all 12 selected expected authorities are also mislabeled in `expected_authority_retrieved_not_selected` by the current runner, although no aggregate metric or other stable per-case field changes.
 - [x] Freeze the final local eCourts corpus identity, E1/E2 artifact hashes and availability contract, PostgreSQL patch/digest observation, and role-specific dependency/container records. The local-research mutable-image-tag boundary is explicitly documented rather than treated as production infrastructure.
 - [x] Correct the replay runner's selected-versus-retrieved-only bookkeeping and re-run from a clean checkout. All 12 selected authorities now have empty retrieved-not-selected lists; only the three genuine retrieved-but-not-selected cases remain, and every other stable field and aggregate result matches the first replay.
+
+## Week 16 - Final submission packaging
+
+- [x] Audit the tracked source tree for dead code, commented-out experiments, and stale scratch output. No tracked pipeline or demo code was removed; ignored E2 build/training logs and generated Python caches are not submission inputs.
+- [x] Verify every `path` and `script` recorded in `config/reproducibility_freeze.json` and `artifacts/week16_reproducibility_audit.md` resolves to an existing file.
+- [x] Add the top-level `README.md` with project purpose, demo launch instructions, replay contract, artifact map, and scope boundary.
+- [x] Assemble `submission/` with the editable paper source, formatted PDF/HTML, copied figures, manifest, demo/reproducibility pointers, and neutral declaration/certificate templates where no institutional template was available.
+- [x] Run the final paper formatting pass: numbered Figures 1–5, Tables 1–2, sequential sections 1–15, numbered citations for all six external sources, and visual PDF inspection of representative pages.
+- [x] Confirm the required-deliverable manifest covers E1–E4, retrieval index/build record, citation/provenance and explainability modules, evaluation tables/plots, error analysis, reproducibility freeze, demo/instructions, paper, and presentation/demo script.
